@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Participant</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <directory>&#47;</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <read/>
+      <write/>
+      <input/>
+      <output/>
+      <update/>
+      <rejected/>
+      <connection/>
+      <table/>
+      <step_performance_table/>
+      <use_batchid>Y</use_batchid>
+      <use_logfield>N</use_logfield>
+      <size_limit_lines/>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <modified_user>-</modified_user>
+  <modified_date>2009&#47;10&#47;02 13:44:39.092</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>caTissue</name>
+    <server>${catissue.db.host}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${catissue.db.name}</database>
+    <port>${catissue.db.port}</port>
+    <username>${catissue.db.username}</username>
+    <password>${catissue.db.password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${catissue.db.port}</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CBMMySQL</name>
+    <server>${cbm.db.host}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${cbm.db.name}</database>
+    <port>${cbm.db.port}</port>
+    <username>${cbm.db.username}</username>
+    <password>${cbm.db.password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${cbm.db.port}</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>caTissue participant</from><to>Group by</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>Table output</to><enabled>Y</enabled> </hop>  <hop> <from>Group by</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue participant 2</from><to>Group by 2</to><enabled>Y</enabled> </hop>  <hop> <from>Table output</from><to>Database join</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>caTissue participant</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>caTissue</connection>
+    <sql>SELECT
+p.identifier
+, r.collection_protocol_id
+, GENDER
+, ETHNICITY
+FROM catissue_participant p, catissue_coll_prot_reg r
+where ETHNICITY is not null
+and p.identifier = participant_id
+order by collection_protocol_id, GENDER, ETHNICITY</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>51</xloc>
+      <yloc>239</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>Y</add_linenr>
+      <linenr_fieldname>partgroupid</linenr_fieldname>
+      <give_back_row>Y</give_back_row>
+      <group>
+        <field>
+          <name>collection_protocol_id</name>
+        </field>
+        <field>
+          <name>GENDER</name>
+        </field>
+        <field>
+          <name>ETHNICITY</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>parts</aggregate>
+          <subject>IDENTIFIER</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>216</xloc>
+      <yloc>258</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>ParticipantCollectionSummary</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>586</xloc>
+      <yloc>279</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>ETHNICITY</name>
+        <rename>ethnicity</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>GENDER</name>
+        <rename>gender</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>parts</name>
+        <rename>count</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>collection_protocol_id</name>
+        <rename>registered_to</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>id</name>
+        <rename>participantCollectionSummaryID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>446</xloc>
+      <yloc>274</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add sequence</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <valuename>id</valuename>
+      <use_database>N</use_database>
+      <connection/>
+      <schema/>
+      <seqname>SEQ_</seqname>
+      <use_counter>Y</use_counter>
+      <counter_name/>
+      <start_at>1</start_at>
+      <increment_by>1</increment_by>
+      <max_value>999999999</max_value>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>312</xloc>
+      <yloc>265</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>caTissue participant 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>caTissue</connection>
+    <sql>SELECT
+p.identifier
+, r.collection_protocol_id
+, GENDER
+, ETHNICITY
+, s.type
+, c.tissue_site
+, &apos;fixative&apos; preservation
+FROM catissue_participant p, catissue_coll_prot_reg r,
+catissue_specimen_coll_group g, catissue_specimen s,
+catissue_specimen_char c
+where ETHNICITY is not null
+and p.identifier = participant_id
+and g.IDENTIFIER=s.specimen_collection_group_id 
+AND r.IDENTIFIER=g.collection_protocol_reg_id
+and s.specimen_characteristics_id = c.identifier
+order by collection_protocol_id, GENDER, ETHNICITY,
+s.type, c.tissue_site, preservation</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>58</xloc>
+      <yloc>111</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by 2</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>collection_protocol_id</name>
+        </field>
+        <field>
+          <name>ETHNICITY</name>
+        </field>
+        <field>
+          <name>GENDER</name>
+        </field>
+        <field>
+          <name>type</name>
+        </field>
+        <field>
+          <name>preservation</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>no_of_specimens</aggregate>
+          <subject>collection_protocol_id</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>220</xloc>
+      <yloc>102</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Database join</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>caTissue</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT
+p.identifier
+, s.type
+, c.tissue_site
+, &apos;fixative&apos; preservation
+FROM catissue_participant p, catissue_coll_prot_reg r,
+catissue_specimen_coll_group g, catissue_specimen s,
+catissue_specimen_char c
+where ETHNICITY = ?
+and gender = ?
+and r.collection_protocol_id = ?
+and p.identifier = participant_id
+and g.IDENTIFIER=s.specimen_collection_group_id 
+AND r.IDENTIFIER=g.collection_protocol_reg_id
+and s.specimen_characteristics_id = c.identifier
+order by 
+s.type, c.tissue_site, preservation</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>ethnicity</name>
+        <type>String</type>
+      </field>
+      <field>
+        <name>gender</name>
+        <type>String</type>
+      </field>
+      <field>
+        <name>registered_to</name>
+        <type>Integer</type>
+      </field>
+    </parameter>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>398</xloc>
+      <yloc>108</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>
