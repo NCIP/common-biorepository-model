@@ -146,6 +146,7 @@ CREATE TABLE CollectionProtocol
 	makes_available INTEGER,
 	is_assigned_to INTEGER,
 	is_constrained_by INTEGER,
+	identifier VARCHAR(50),
 	PRIMARY KEY (collectionProtocolID),
 	KEY (makes_available),
 	KEY (is_assigned_to),
