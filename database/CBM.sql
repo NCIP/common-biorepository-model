@@ -84,7 +84,7 @@ CREATE TABLE JoinAddressToSpecimenCollectionContact
 
 CREATE TABLE SpecimenCollectionSummary
 (
-	anatomicSource VARCHAR(50),
+	anatomicSource VARCHAR(150),
 	count INTEGER,
 	patientAgeAtCollection VARCHAR(50),
 	specimenType VARCHAR(50),
