@@ -659,6 +659,8 @@ FROM catissue_institution
 , STATUS_COMMENT
 , FIRST_TIME_LOGIN
 FROM catissue_user
+where identifier in
+(select p.PRINCIPAL_INVESTIGATOR_ID from  catissue_specimen_protocol p)
 </sql>
     <limit>0</limit>
     <lookup/>
