@@ -588,8 +588,8 @@
            </partitioning>
     <connection>caTissue</connection>
     <sql>SELECT IDENTIFIER , PRINCIPAL_INVESTIGATOR_ID , TITLE , SHORT_TITLE , IRB_IDENTIFIER ,
-      START_DATE , END_DATE , ENROLLMENT , DESCRIPTION_URL , ACTIVITY_STATUS , CURRENT_DATE() , 16
-      availability_profie , 337 annotation_profie FROM catissue_specimen_protocol </sql>
+      START_DATE , END_DATE , ENROLLMENT , DESCRIPTION_URL , ACTIVITY_STATUS , CURRENT_DATE , 16
+      availability_profile , 337 annotation_profile FROM catissue_specimen_protocol </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -656,26 +656,26 @@
         <rename>startDate</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>CURRENT_DATE()</name>
+      </field>      <field>        <name>IRB_IDENTIFIER</name>
+        <rename>identifier</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CURRENT_DATE</name>
         <rename>dateLastUpdated</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>annotation_profie</name>
-        <rename>makes_available</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>availability_profie</name>
+      </field>      <field>        <name>availability_profile</name>
         <rename>is_constrained_by</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>IRB_IDENTIFIER</name>
-        <rename>identifier</rename>
+      </field>      <field>        <name>annotation_profile</name>
+        <rename>makes_available</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>332</xloc>
+      <xloc>331</xloc>
       <yloc>11</yloc>
       <draw>Y</draw>
       </GUI>
