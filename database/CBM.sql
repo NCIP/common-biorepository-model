@@ -118,7 +118,7 @@ CREATE TABLE JoinParticipantCollectionSummaryToRace
 
 CREATE TABLE JoinParticipantCollectionSummaryToDiagnosis
 (
-	diagnosisID Integer,
+	diagnosisID bigint,
 	participantCollectionSummaryID Integer,
 	KEY (diagnosisID),
 	KEY (participantCollectionSummaryID)
@@ -210,8 +210,8 @@ CREATE TABLE Organization
 
 CREATE TABLE Diagnosis
 (
-	diagnosisType VARCHAR(100),
-	diagnosisID INTEGER NOT NULL,
+	diagnosisType VARCHAR(225),
+	diagnosisID bigint NOT NULL,
 	PRIMARY KEY (diagnosisID)
 ) 
 ;

@@ -373,8 +373,7 @@ where PUBLIC_ID = &apos;2003995&apos;
 , VALUE
 , PUBLIC_ID
 FROM catissue_permissible_value
-where PARENT_IDENTIFIER = 1852
-</sql>
+where public_id = &apos;Clinical_Diagnosis_PID&apos;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
