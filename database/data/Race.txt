@@ -1,0 +1,6 @@
+ID	Race
+1	American Indian or Alaska Native
+2	Asian
+3	Black or African American
+4	Caucasian
+5	Native Hawaiian or other Pacific Islander
