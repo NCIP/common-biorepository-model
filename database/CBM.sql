@@ -39,6 +39,8 @@ DROP TABLE IF EXISTS AnnotationAvailabilityProfile
 DROP TABLE IF EXISTS Address
 ;
 
+
+
 CREATE TABLE ParticipantCollectionSummary
 (
 	count INTEGER,
@@ -118,7 +120,7 @@ CREATE TABLE JoinParticipantCollectionSummaryToRace
 
 CREATE TABLE JoinParticipantCollectionSummaryToDiagnosis
 (
-	diagnosisID bigint,
+	diagnosisID Integer,
 	participantCollectionSummaryID Integer,
 	KEY (diagnosisID),
 	KEY (participantCollectionSummaryID)
@@ -211,7 +213,7 @@ CREATE TABLE Organization
 CREATE TABLE Diagnosis
 (
 	diagnosisType VARCHAR(225),
-	diagnosisID bigint NOT NULL,
+	diagnosisID INTEGER NOT NULL,
 	PRIMARY KEY (diagnosisID)
 ) 
 ;
