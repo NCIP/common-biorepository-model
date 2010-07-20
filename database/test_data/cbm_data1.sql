@@ -19,6 +19,9 @@
 -- Table structure for table `Address`
 --
 
+create database CBM;
+use CBM;
+
 DROP TABLE IF EXISTS `Address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -129,8 +132,8 @@ DROP TABLE IF EXISTS `Diagnosis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Diagnosis` (
-  `diagnosisType` varchar(100) default NULL,
-  `diagnosisID` int(11) NOT NULL,
+  `diagnosisType` varchar(225) default NULL,
+  `diagnosisID` bigint NOT NULL,
   PRIMARY KEY  (`diagnosisID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -346,7 +349,7 @@ DROP TABLE IF EXISTS `ParticipantCollectionSummary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ParticipantCollectionSummary` (
-  `count` int(11) default NULL,
+  `participant_count` int(11) default NULL,
   `ethnicity` varchar(50) default NULL,
   `gender` varchar(50) default NULL,
   `participantCollectionSummaryID` int(11) NOT NULL,
@@ -504,7 +507,7 @@ DROP TABLE IF EXISTS `SpecimenCollectionSummary`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SpecimenCollectionSummary` (
   `anatomicSource` varchar(50) default NULL,
-  `count` int(11) default NULL,
+  `specimen_count` int(11) default NULL,
   `patientAgeAtCollection` varchar(50) default NULL,
   `specimenType` varchar(50) default NULL,
   `specimenCollectionSummaryID` int(11) NOT NULL,

@@ -1,6 +1,3 @@
-SET storage_engine=INNODB;
-
-CREATE DATABASE CBM;
 USE CBM
 ;
 
@@ -46,7 +43,7 @@ DROP TABLE IF EXISTS Address
 
 CREATE TABLE ParticipantCollectionSummary
 (
-	count INTEGER,
+	participant_count INTEGER,
 	ethnicity VARCHAR(50),
 	gender VARCHAR(50),
 	participantCollectionSummaryID INTEGER NOT NULL,
@@ -90,7 +87,7 @@ CREATE TABLE JoinAddressToSpecimenCollectionContact
 CREATE TABLE SpecimenCollectionSummary
 (
 	anatomicSource VARCHAR(150),
-	count INTEGER,
+	specimen_count INTEGER,
 	patientAgeAtCollection VARCHAR(50),
 	specimenType VARCHAR(50),
 	specimenCollectionSummaryID INTEGER NOT NULL,

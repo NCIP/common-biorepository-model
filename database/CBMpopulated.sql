@@ -325,7 +325,7 @@ DROP TABLE IF EXISTS `ParticipantCollectionSummary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ParticipantCollectionSummary` (
-  `count` int(11) default NULL,
+  `participantCount` int(11) default NULL,
   `ethnicity` varchar(50) default NULL,
   `gender` varchar(50) default NULL,
   `participantCollectionSummaryID` int(11) NOT NULL,
@@ -479,7 +479,7 @@ DROP TABLE IF EXISTS `SpecimenCollectionSummary`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SpecimenCollectionSummary` (
   `anatomicSource` varchar(150) default NULL,
-  `count` int(11) default NULL,
+  `specimenCount` int(11) default NULL,
   `patientAgeAtCollection` varchar(50) default NULL,
   `specimenType` varchar(50) default NULL,
   `specimenCollectionSummaryID` int(11) NOT NULL,
