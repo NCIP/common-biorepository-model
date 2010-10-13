@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("1.1:1", "", "DDL", "EARoot/EA1/EA1/EA28.htm", "175.png", "56", "0", "", "Logical diagram0","{0A945799-1F5B-4bd7-95CD-D828B2B9CDA7}");
+tocTab[tocTab.length] = new Array("1.1:2", "", "«table» Boolean", "EARoot/EA1/EA1/EA30.htm", "28.png", "693", "0", "", "Class0","{053A0C21-9A6F-40e2-9A04-AD8346CA9D58}");
+tocTab[tocTab.length] = new Array("1.1:3", "", "«table» Character", "EARoot/EA1/EA1/EA31.htm", "28.png", "701", "0", "", "Class0","{F55E36C5-9926-42be-84C2-F0B46F1C2BDE}");
+tocTab[tocTab.length] = new Array("1.1:4", "", "«table» Date", "EARoot/EA1/EA1/EA32.htm", "28.png", "692", "0", "", "Class0","{0442960D-20B4-457a-9EDE-E417171DAADA}");
+tocTab[tocTab.length] = new Array("1.1:5", "", "«table» Double", "EARoot/EA1/EA1/EA33.htm", "28.png", "697", "0", "", "Class0","{59B0D64B-BED6-46b5-9CA1-01A33DE8B126}");
+tocTab[tocTab.length] = new Array("1.1:6", "", "«table» Float", "EARoot/EA1/EA1/EA34.htm", "28.png", "699", "0", "", "Class0","{7AD35342-2B8D-4c75-B636-42CB93FB7588}");
+tocTab[tocTab.length] = new Array("1.1:7", "", "«table» Integer", "EARoot/EA1/EA1/EA35.htm", "28.png", "700", "0", "", "Class0","{A48D45E3-F471-4662-8E5A-B8BB4295FCA5}");
+tocTab[tocTab.length] = new Array("1.1:8", "", "«table» JoinParticipantCollectionSummaryToRace", "EARoot/EA1/EA1/EA36.htm", "28.png", "696", "0", "", "Class0","{587E47B5-6794-4f2f-B0C8-795261B86440}");
+tocTab[tocTab.length] = new Array("1.1:9", "", "«table» Long", "EARoot/EA1/EA1/EA37.htm", "28.png", "695", "0", "", "Class0","{47808717-C0CD-472c-9CA8-390245D24010}");
+tocTab[tocTab.length] = new Array("1.1:10", "", "«table» Race", "EARoot/EA1/EA1/EA38.htm", "28.png", "698", "0", "", "Class0","{76FEF072-DE14-4e72-99B2-257CD25DBE1A}");
+tocTab[tocTab.length] = new Array("1.1:11", "", "«table» String", "EARoot/EA1/EA1/EA39.htm", "28.png", "694", "0", "", "Class0","{35498A6A-09B0-44ae-A153-0D3B91B74627}");
