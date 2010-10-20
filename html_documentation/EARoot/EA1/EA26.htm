@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>SpecimenCollectionContact</title>
+<title>Preservation</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,11 +16,11 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">SpecimenCollectionContact  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">Preservation  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:57 PM</td>
+			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:56 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -57,14 +57,14 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{81E18B81-8D34-48a5-A81A-528D447E25F6}</td>
+			<td class="ObjectDetailsValue">{9680D6DB-9520-4d99-9A61-AE324EAD49D3}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="EA7.htm">DDL</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Contact information for the person who is responsible for the collection&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Information that describes the storage conditions for a collection of specimens&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -81,24 +81,34 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;phone</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionContact.phone<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../EA2/EA4/EA85.htm">VARCHAR(100)</a></i><br /><strong>&nbsp;&nbsp;preservationType</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.preservationType<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Phone number of the Contact person
+			Method by which specimens are stored
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;collectionProtocolID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>private INTEGER</i><br /><strong>&nbsp;&nbsp;storageTemperatureInCentigrade</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.storageTemperatureInCentegrades<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Temperature in degrees Centigrade at which the Specimen is stored
+		</td>
+	</tr>
+</table></div>
+</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;specimenCollectionContactID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionContact.id<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;preservationID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.id<br>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -110,22 +120,22 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_SpecimenCollectionContact</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{AF358658-8154-4582-A606-F5F1A048F1DF}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{AF358658-8154-4582-A606-F5F1A048F1DF}" border="0" />specimenCollectionContactID: INTEGER</a>, 
+					<strong>FK_Preservation_preservation_type</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{E60B3E06-8F01-479a-A69B-B32DE9569206}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}" border="0" />preservationType: VARCHAR</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}00" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}01" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}02" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}03" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -133,11 +143,11 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
+					<i> &lt;&lt;FK&gt;&gt; </i>
 					<table>
 						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
 						</tr>
 					</table>
 					
@@ -146,22 +156,22 @@ function initPage(src) {
 			<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>FK_SpecimenCollectionContact_Person</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{60E16A6B-91AA-4ada-B1F0-13142E73195F}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}" border="0" />specimenCollectionContactID: INTEGER</a>, 
+					<strong>PK_Preservation</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}" border="0" />preservationID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}00" style="display: none;">
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}01" style="display: none;">
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}02" style="display: none;">
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}03" style="display: none;">
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -169,7 +179,7 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
+					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -191,15 +201,15 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA22.htm">«table» Person</a><br />
+						<a href="EA10.htm">«table» preservation_type</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_SpecimenCollectionContact_Person<br />
+						<strong>Name:</strong> FK_Preservation_preservation_type<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Person<br />
+						<strong>Name:</strong> UQ_preservation_type_preservation_type<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
@@ -217,60 +227,15 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA15.htm">«table» JoinAddressToSpecimenCollectionContact</a><br />
+						<a href="EA30.htm">«table» SpecimenCollectionSummary</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> SpecimenCollectionContact<br />
+						<strong>Name:</strong> FK_undergoes<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA11.htm">«table» CollectionProtocol</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_isAssignedTo<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA11.htm">«table» CollectionProtocol</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_is_assigned_to<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA17.htm">«table» JoinInstitutionToSpecimenCollectionContact</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> SpecimenCollectionContact<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
+						<strong>Name:</strong> PK_Preservation<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
@@ -287,7 +252,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA64.htm">SpecimenCollectionContact</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA64.htm">Preservation</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

@@ -1,8 +1,8 @@
-tocTab[tocTab.length] = new Array("2.4:1", "", "Local Value Domains", "EARoot/EA2/EA4/EA76.htm", "175.png", "68", "0", "", "Logical diagram0","{4463C503-24B1-4dc7-8B47-77CBB09DDFAB}");
-tocTab[tocTab.length] = new Array("2.4:2", "", "«enumeration» AnatomicSource", "EARoot/EA2/EA4/EA78.htm", "5.png", "863", "0", "", "Class0","{F10E455E-9730-4464-BD38-A14B64984620}");
-tocTab[tocTab.length] = new Array("2.4:3", "", "«enumeration» DiagnosisType", "EARoot/EA2/EA4/EA79.htm", "5.png", "858", "0", "", "Class0","{29C93408-25AA-40c1-81A2-C14748F2260C}");
-tocTab[tocTab.length] = new Array("2.4:4", "", "«enumeration» Ethnicity", "EARoot/EA2/EA4/EA80.htm", "5.png", "861", "0", "", "Class0","{CC79DCBB-F3DB-4171-A48B-F47C7E786E7E}");
-tocTab[tocTab.length] = new Array("2.4:5", "", "«enumeration» Gender", "EARoot/EA2/EA4/EA81.htm", "5.png", "859", "0", "", "Class0","{BC9C3D98-53C0-4905-86B6-23AADFC0784C}");
-tocTab[tocTab.length] = new Array("2.4:6", "", "«enumeration» PreservationType", "EARoot/EA2/EA4/EA82.htm", "5.png", "857", "0", "", "Class0","{29919708-53BF-46f9-9B59-2A5B275B9431}");
-tocTab[tocTab.length] = new Array("2.4:7", "", "«enumeration» Race", "EARoot/EA2/EA4/EA83.htm", "5.png", "860", "0", "", "Class0","{C6963A3D-9A4C-4bd5-8C7F-347BF29FB01D}");
-tocTab[tocTab.length] = new Array("2.4:8", "", "«enumeration» SpecimenType", "EARoot/EA2/EA4/EA84.htm", "5.png", "862", "0", "", "Class0","{CF21A1F1-75DD-4178-B329-EF575949081A}");
+tocTab[tocTab.length] = new Array("2.4:1", "", "Local Value Domains", "EARoot/EA2/EA4/EA79.htm", "175.png", "68", "0", "", "Logical diagram0","{4463C503-24B1-4dc7-8B47-77CBB09DDFAB}");
+tocTab[tocTab.length] = new Array("2.4:2", "", "«enumeration» AnatomicSource", "EARoot/EA2/EA4/EA81.htm", "5.png", "863", "0", "", "Class0","{F10E455E-9730-4464-BD38-A14B64984620}");
+tocTab[tocTab.length] = new Array("2.4:3", "", "«enumeration» DiagnosisType", "EARoot/EA2/EA4/EA82.htm", "5.png", "858", "0", "", "Class0","{29C93408-25AA-40c1-81A2-C14748F2260C}");
+tocTab[tocTab.length] = new Array("2.4:4", "", "«enumeration» Ethnicity", "EARoot/EA2/EA4/EA83.htm", "5.png", "861", "0", "", "Class0","{CC79DCBB-F3DB-4171-A48B-F47C7E786E7E}");
+tocTab[tocTab.length] = new Array("2.4:5", "", "«enumeration» Gender", "EARoot/EA2/EA4/EA84.htm", "5.png", "859", "0", "", "Class0","{BC9C3D98-53C0-4905-86B6-23AADFC0784C}");
+tocTab[tocTab.length] = new Array("2.4:6", "", "«enumeration» PreservationType", "EARoot/EA2/EA4/EA85.htm", "5.png", "857", "0", "", "Class0","{29919708-53BF-46f9-9B59-2A5B275B9431}");
+tocTab[tocTab.length] = new Array("2.4:7", "", "«enumeration» Race", "EARoot/EA2/EA4/EA86.htm", "5.png", "860", "0", "", "Class0","{C6963A3D-9A4C-4bd5-8C7F-347BF29FB01D}");
+tocTab[tocTab.length] = new Array("2.4:8", "", "«enumeration» SpecimenType", "EARoot/EA2/EA4/EA87.htm", "5.png", "862", "0", "", "Class0","{CF21A1F1-75DD-4178-B329-EF575949081A}");
