@@ -1,3 +1,7 @@
+SET storage_engine=INNODB;
+
+CREATE DATABASE CBM;
+
 USE CBM
 ;
 
@@ -52,7 +56,7 @@ CREATE TABLE SpecimenCollectionSummary
 	anatomicSource VARCHAR(150),
 	specimen_count INTEGER,
 	patientAgeGroupAtCollection INTEGER,
-	specimenType INTEGER,
+	specimenType VARCHAR(50),
 	is_collected_from INTEGER,
 	specimenCollectionSummaryID INTEGER NOT NULL,
 	undergoes Integer,
@@ -178,10 +182,10 @@ CREATE TABLE CollectionProtocol
 
 CREATE TABLE SpecimenAvailabilitySummaryProfile
 (
-	isAvailableToCommercialOrganizations BIT,
-	isAvailableToForeignInvestigators BIT,
-	isAvailableToOutsideInstitution BIT,
-	isCollaborationRequired BIT,
+	isAvailableToCommercialOrganizations BOOL,
+	isAvailableToForeignInvestigators BOOL,
+	isAvailableToOutsideInstitution BOOL,
+	isCollaborationRequired BOOL,
 	specimenAvailabilitySummaryProfileID INTEGER NOT NULL,
 	PRIMARY KEY (specimenAvailabilitySummaryProfileID)
 ) 
@@ -263,16 +267,16 @@ CREATE TABLE Diagnosis
 
 CREATE TABLE AnnotationAvailabilityProfile
 (
-	hasAdditionalPatientDemographics BIT,
-	hasExposureHistory BIT,
-	hasFamilyHistory BIT,
-	hasHistopathologicInformation BIT,
-	hasLabData BIT,
-	hasLongitudinalSpecimens BIT,
-	hasMatchedSpecimens BIT,
-	hasOutcomeInformation BIT,
-	hasParticipantsAvailableForFollowup BIT,
-	hasTreatmentInformation BIT,
+	hasAdditionalPatientDemographics BOOL,
+	hasExposureHistory BOOL,
+	hasFamilyHistory BOOL,
+	hasHistopathologicInformation BOOL,
+	hasLabData BOOL,
+	hasLongitudinalSpecimens BOOL,
+	hasMatchedSpecimens BOOL,
+	hasOutcomeInformation BOOL,
+	hasParticipantsAvailableForFollowup BOOL,
+	hasTreatmentInformation BOOL,
 	annotationAvailabilityProfileID INTEGER NOT NULL,
 	PRIMARY KEY (annotationAvailabilityProfileID)
 ) 
