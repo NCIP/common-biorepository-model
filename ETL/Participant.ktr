@@ -5,22 +5,35 @@
     <description/>
     <extended_description/>
     <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#47;</directory>
     <parameters>
     </parameters>
     <log>
-      <read/>
-      <write/>
-      <input/>
-      <output/>
-      <update/>
-      <rejected/>
-      <connection/>
-      <table/>
-      <step_performance_table/>
-      <use_batchid>Y</use_batchid>
-      <use_logfield>N</use_logfield>
-      <size_limit_lines/>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>N</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>N</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -39,6 +52,7 @@
     <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit/>
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -99,7 +113,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>caTissue participant</from><to>Group by</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>Table output</to><enabled>Y</enabled> </hop>  <hop> <from>Group by</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Table output</from><to>Database join</to><enabled>Y</enabled> </hop>  <hop> <from>Database join</from><to>Add specimen group id</to><enabled>Y</enabled> </hop>  <hop> <from>Add specimen group id</from><to>CBM specimen summary Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM specimen summary Mapping</from><to>CBM specimen summary</to><enabled>Y</enabled> </hop>  <hop> <from>Join to Diagnosis</from><to>participant collection diagnoses Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>participant collection diagnoses Mapping</from><to>participant collection diagnoses</to><enabled>Y</enabled> </hop>  <hop> <from>Table output</from><to>Join to SCG</to><enabled>Y</enabled> </hop>  <hop> <from>Join to SCG</from><to>Join to Diagnosis</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>caTissue participant</from><to>Group by</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>Table output</to><enabled>Y</enabled> </hop>  <hop> <from>Group by</from><to>Add sequence</to><enabled>Y</enabled> </hop>  <hop> <from>Add sequence</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Join to Diagnosis</from><to>participant collection diagnoses Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>participant collection diagnoses Mapping</from><to>participant collection diagnoses</to><enabled>Y</enabled> </hop>  <hop> <from>Table output</from><to>Join to SCG</to><enabled>Y</enabled> </hop>  <hop> <from>Join to SCG</from><to>Join to Diagnosis</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Add sequence</name>
     <type>Sequence</type>
@@ -124,173 +138,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>309</xloc>
       <yloc>15</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Add specimen group id</name>
-    <type>Sequence</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <valuename>id</valuename>
-      <use_database>N</use_database>
-      <connection/>
-      <schema/>
-      <seqname>SEQ_</seqname>
-      <use_counter>Y</use_counter>
-      <counter_name/>
-      <start_at>1</start_at>
-      <increment_by>1</increment_by>
-      <max_value>999999999</max_value>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>38</xloc>
-      <yloc>313</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM specimen summary</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>SpecimenCollectionSummary</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>310</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM specimen summary Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>participantCollectionSummaryID</name>
-        <rename>is_collected_from</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>tissue_site</name>
-        <rename>anatomicSource</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>specimen_type</name>
-        <rename>specimenType</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>id</name>
-        <rename>specimenCollectionSummaryID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>specimen_count</name>
-        <rename>count</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>222</xloc>
-      <yloc>314</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Database join</name>
-    <type>DBJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>caTissue</connection>
-    <rowlimit>0</rowlimit>
-    <sql>SELECT
-r.collection_protocol_id
-, GENDER
-, ETHNICITY
-, a.specimen_type
-, c.tissue_site
-, &apos;fixative&apos; preservation
-, clinical_diagnosis
-, count(s.identifier) specimen_count
-FROM catissue_participant p, catissue_coll_prot_reg r,
-catissue_specimen_coll_group g, 
-catissue_abs_speci_coll_group ag, 
-catissue_specimen s, catissue_abstract_specimen a,
-catissue_specimen_char c
-where r.collection_protocol_id = ?
-and ethnicity = ?
-and gender = ? 
-and a.identifier = s.identifier
-and p.identifier = participant_id
-and g.IDENTIFIER=s.specimen_collection_group_id 
-and ag.IDENTIFIER=s.specimen_collection_group_id 
-AND r.IDENTIFIER=g.collection_protocol_reg_id
-and a.specimen_characteristics_id = c.identifier
-group by collection_protocol_id, GENDER, ETHNICITY,
-a.specimen_type, c.tissue_site, preservation
-
-</sql>
-    <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
-    <parameter>
-      <field>
-        <name>registered_to</name>
-        <type>Integer</type>
-      </field>
-      <field>
-        <name>ethnicity</name>
-        <type>String</type>
-      </field>
-      <field>
-        <name>gender</name>
-        <type>String</type>
-      </field>
-    </parameter>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>40</xloc>
-      <yloc>211</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -326,7 +173,7 @@ a.specimen_type, c.tissue_site, preservation
       </group>
       <fields>
         <field>
-          <aggregate>parts</aggregate>
+          <aggregate>participants</aggregate>
           <subject>IDENTIFIER</subject>
           <type>COUNT_ALL</type>
           <valuefield/>
@@ -336,6 +183,92 @@ a.specimen_type, c.tissue_site, preservation
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>214</xloc>
       <yloc>15</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join to Diagnosis</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <rowlimit>0</rowlimit>
+    <sql>select diagnosisid
+from diagnosis
+where diagnosistype = ?
+</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>clinical_diagnosis</name>
+        <type>-</type>
+      </field>
+    </parameter>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>337</xloc>
+      <yloc>215</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Join to SCG</name>
+    <type>DBJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>caTissue</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT
+r.collection_protocol_id
+, GENDER
+, ETHNICITY
+, clinical_diagnosis
+, count(g.identifier) group_count
+FROM catissue_participant p, catissue_coll_prot_reg r,
+catissue_specimen_coll_group g, 
+catissue_abs_speci_coll_group ag
+where r.collection_protocol_id = ?
+and ethnicity = ?
+and gender = ? 
+and p.identifier = participant_id
+and ag.IDENTIFIER=g.IDENTIFIER
+AND r.IDENTIFIER=g.collection_protocol_reg_id
+group by collection_protocol_id, GENDER, ETHNICITY,
+clinical_diagnosis
+</sql>
+    <outer_join>N</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>registered_to</name>
+        <type>-</type>
+      </field>
+      <field>
+        <name>ethnicity</name>
+        <type>-</type>
+      </field>
+      <field>
+        <name>gender</name>
+        <type>-</type>
+      </field>
+    </parameter>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>246</xloc>
+      <yloc>215</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -395,16 +328,16 @@ a.specimen_type, c.tissue_site, preservation
         <rename>gender</rename>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>parts</name>
-        <rename>count</rename>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>      <field>        <name>collection_protocol_id</name>
         <rename>registered_to</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>id</name>
         <rename>participantCollectionSummaryID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>participants</name>
+        <rename>participant_count</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
@@ -486,38 +419,6 @@ order by collection_protocol_id, GENDER, ETHNICITY</sql>
     </step>
 
   <step>
-    <name>Join to Diagnosis</name>
-    <type>DBJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <rowlimit>0</rowlimit>
-    <sql>select diagnosisid
-from diagnosis
-where diagnosistype = ?
-</sql>
-    <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
-    <parameter>
-      <field>
-        <name>clinical_diagnosis</name>
-        <type>-</type>
-      </field>
-    </parameter>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>337</xloc>
-      <yloc>215</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>participant collection diagnoses Mapping</name>
     <type>SelectValues</type>
     <description/>
@@ -540,60 +441,6 @@ where diagnosistype = ?
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>453</xloc>
       <yloc>213</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Join to SCG</name>
-    <type>DBJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>caTissue</connection>
-    <rowlimit>0</rowlimit>
-    <sql>SELECT
-r.collection_protocol_id
-, GENDER
-, ETHNICITY
-, clinical_diagnosis
-, count(g.identifier) group_count
-FROM catissue_participant p, catissue_coll_prot_reg r,
-catissue_specimen_coll_group g, 
-catissue_abs_speci_coll_group ag
-where r.collection_protocol_id = ?
-and ethnicity = ?
-and gender = ? 
-and p.identifier = participant_id
-and ag.IDENTIFIER=g.IDENTIFIER
-AND r.IDENTIFIER=g.collection_protocol_reg_id
-group by collection_protocol_id, GENDER, ETHNICITY,
-clinical_diagnosis
-</sql>
-    <outer_join>N</outer_join>
-    <replace_vars>N</replace_vars>
-    <parameter>
-      <field>
-        <name>registered_to</name>
-        <type>-</type>
-      </field>
-      <field>
-        <name>ethnicity</name>
-        <type>-</type>
-      </field>
-      <field>
-        <name>gender</name>
-        <type>-</type>
-      </field>
-    </parameter>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>246</xloc>
-      <yloc>215</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

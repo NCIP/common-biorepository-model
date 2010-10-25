@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>mappings</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#47;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>N</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>N</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit/>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <modified_user>-</modified_user>
+  <modified_date>2009&#47;10&#47;02 13:00:23.665</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>caTissue</name>
+    <server>${catissue.db.host}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${catissue.db.name}</database>
+    <port>${catissue.db.port}</port>
+    <username>${catissue.db.username}</username>
+    <password>${catissue.db.password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${catissue.db.port}</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CBMMySQL</name>
+    <server>${cbm.db.host}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${cbm.db.name}</database>
+    <port>3306</port>
+    <username>${cbm.db.username}</username>
+    <password>${cbm.db.password}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>EVS definitions</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>mappings</to><enabled>Y</enabled> </hop>  <hop> <from>Clinical diagnoses</from><to>Table output 2 Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Table output 2 Mapping</from><to>Clinical_Diagnosis_SCG</to><enabled>Y</enabled> </hop>  <hop> <from>Excel Input</from><to>Table output Mapping 2</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping 2</from><to>Table output</to><enabled>Y</enabled> </hop>  </order>
+  <step>
+    <name>Clinical diagnoses</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filename>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;Clinical_Diagnosis_SCG.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>&quot;</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Permissible Value</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>73</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SNOMED Code</name>
+        <type>String</type>
+        <format/>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>19</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>146</xloc>
+      <yloc>159</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Clinical_Diagnosis_SCG</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>Clinical_Diagnosis_SCG</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>Permissible_Value</column_name>
+          <stream_name>Permissible_Value</stream_name>
+        </field>
+        <field>
+          <column_name>SNOMED_Code</column_name>
+          <stream_name>SNOMED_Code</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>478</xloc>
+      <yloc>149</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>EVS definitions</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>Row #</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>CBM Name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Source</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Source Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Source concept name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Mappings</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>33</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Excel Input</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;Tissue Site.xls</name>
+      <filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Site (caTissue 1.1 List)</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Parent</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Parent_1</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ICD Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Meta CUI</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Sheet1</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>153</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>anatomic_site_mapping</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>488</xloc>
+      <yloc>284</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output 2 Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Permissible Value</name>
+        <rename>Permissible_Value</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>SNOMED Code</name>
+        <rename>SNOMED_Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>290</xloc>
+      <yloc>159</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Row #</name>
+        <rename>term_id</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Code</name>
+        <rename>NCI_Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Name</name>
+        <rename>NCI_Name</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Source</name>
+        <rename>Source</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>CBM Name</name>
+        <rename>CBM_Name</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Source Code</name>
+        <rename>Source_Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Source concept name</name>
+        <rename>Source_concept_name</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>303</xloc>
+      <yloc>30</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output Mapping 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>Code</name>
+        <rename>Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Site (caTissue 1.1 List)</name>
+        <rename>Site</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Parent</name>
+        <rename>Parent</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>ICD Code</name>
+        <rename>ICD_Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Meta CUI</name>
+        <rename>NCI_Meta_CUI</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Code</name>
+        <rename>NCI_Code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>340</xloc>
+      <yloc>283</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>mappings</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>mappings</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>484</xloc>
+      <yloc>25</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>

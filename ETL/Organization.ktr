@@ -112,7 +112,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>caTissue Institution</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>CBM Organization</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue Institution</from><to>Table output Mapping 2</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping 2</from><to>CBM Institution</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue User</from><to>CBM Person Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Person Mapping</from><to>CBM Person</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue User</from><to>CBM Contact Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Contact Mapping</from><to>CBM Contact</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue User</from><to>CBM Contact Institution Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Contact Institution Mapping</from><to>CBM Contact Institution</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue Address</from><to>CBM Address Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Address Mapping</from><to>CBM Address</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue User</from><to>Table output Mapping 3</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping 3</from><to>CBM Contact Address</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>caTissue Institution</from><to>Table output Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Table output Mapping</from><to>CBM Organization</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue User</from><to>CBM Person Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Person Mapping</from><to>CBM Person</to><enabled>Y</enabled> </hop>  <hop> <from>caTissue Address</from><to>CBM Address Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Address Mapping</from><to>CBM Address</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>CBM Address</name>
     <type>TableOutput</type>
@@ -194,208 +194,6 @@
     </step>
 
   <step>
-    <name>CBM Contact</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>SpecimenCollectionContact</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>431</xloc>
-      <yloc>300</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Contact Address</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>JoinAddressToSpecimenCollectionContact</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>434</xloc>
-      <yloc>415</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Contact Institution</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>JoinInstitutionToSpecimenCollectionContact</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>370</xloc>
-      <yloc>347</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Contact Institution Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>IDENTIFIER</name>
-        <rename>specimenCollectionContactID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>INSTITUTION_ID</name>
-        <rename>institutionID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>217</xloc>
-      <yloc>346</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Contact Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>IDENTIFIER</name>
-        <rename>specimenCollectionContactID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>phone_number</name>
-        <rename>phone</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>297</xloc>
-      <yloc>300</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Institution</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>Institution</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>370</xloc>
-      <yloc>17</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>CBM Organization</name>
     <type>TableOutput</type>
     <description/>
@@ -426,8 +224,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>370</xloc>
-      <yloc>135</yloc>
+      <xloc>369</xloc>
+      <yloc>74</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -529,58 +327,8 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>250</xloc>
-      <yloc>137</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table output Mapping 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>IDENTIFIER</name>
-        <rename>institutionID</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>252</xloc>
-      <yloc>18</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table output Mapping 3</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>IDENTIFIER</name>
-        <rename>specimenCollectionContactID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>ADDRESS_ID</name>
-        <rename>addressID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>164</xloc>
-      <yloc>411</yloc>
+      <xloc>241</xloc>
+      <yloc>74</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -688,8 +436,8 @@ and cu.user_id = tu.identifier
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>71</xloc>
-      <yloc>312</yloc>
+      <xloc>68</xloc>
+      <yloc>253</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
