@@ -124,7 +124,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;Clinical_Diagnosis_SCG.csv</filename>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;data&#47;Clinical_Diagnosis_SCG.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -239,7 +239,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
       <filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
@@ -380,7 +380,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>&#47;Users&#47;ian&#47;dev&#47;CornerstoneTest&#47;trunk&#47;ETL&#47;data&#47;Tissue Site.xls</name>
+      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;Tissue Site.xls</name>
       <filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
