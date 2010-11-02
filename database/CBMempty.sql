@@ -197,7 +197,6 @@ CREATE TABLE specimen_type
 	id INTEGER NOT NULL,
 	specimen_type VARCHAR(50),
 	NCI_code VARCHAR(50),
-	NCI_preferred_name VARCHAR(255),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
 	UNIQUE (NCI_code),
@@ -220,7 +219,6 @@ CREATE TABLE preservation_type
 	id INTEGER NOT NULL,
 	preservation_type VARCHAR(100),
 	NCI_code VARCHAR(50),
-	NCI_preferred_name VARCHAR(255),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
 	UNIQUE (NCI_code),
@@ -244,7 +242,7 @@ CREATE TABLE Person
 
 CREATE TABLE Organization
 (
-	name VARCHAR(50),
+	name VARCHAR(150),
 	organizationID INTEGER NOT NULL,
 	PRIMARY KEY (organizationID)
 ) 
@@ -256,7 +254,6 @@ CREATE TABLE Diagnosis
 	diagnosisType VARCHAR(225),
 	diagnosisID INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
-	NCI_preferred_name VARCHAR(255),
 	NCI_Definition TEXT,
 	PRIMARY KEY (diagnosisID),
 	UNIQUE (diagnosisType),
@@ -288,7 +285,6 @@ CREATE TABLE anatomic_source
 	id INTEGER NOT NULL,
 	anatomic_source VARCHAR(150),
 	NCI_code VARCHAR(50),
-	NCI_preferred_name VARCHAR(255),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
 	UNIQUE (anatomic_source),
@@ -310,7 +306,7 @@ CREATE TABLE Address
 	state VARCHAR(50),
 	streetPostDirectional VARCHAR(50),
 	streetPreDirectional VARCHAR(50),
-	streetOrThoroughfareNameAndType VARCHAR(50),
+	streetOrThoroughfareNameAndType VARCHAR(150),
 	streetOrThoroughfareNumber VARCHAR(50),
 	streetOrThoroughfareSectionName VARCHAR(50),
 	streetOrThoroughfareExtensionName VARCHAR(50),
