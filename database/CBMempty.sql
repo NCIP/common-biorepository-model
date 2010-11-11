@@ -10,8 +10,6 @@ DROP TABLE IF EXISTS SpecimenCollectionSummary
 ;
 DROP TABLE IF EXISTS ParticipantCollectionSummary
 ;
-DROP TABLE IF EXISTS JoinInstitutionToSpecimenCollectionContact
-;
 DROP TABLE IF EXISTS JoinCollectionProtocolToInstitution
 ;
 DROP TABLE IF EXISTS JoinAddressToSpecimenCollectionContact
@@ -78,16 +76,6 @@ CREATE TABLE ParticipantCollectionSummary
 	participantCollectionSummaryID INTEGER NOT NULL,
 	PRIMARY KEY (participantCollectionSummaryID),
 	KEY (registered_to)
-) 
-;
-
-
-CREATE TABLE JoinInstitutionToSpecimenCollectionContact
-(
-	specimenCollectionContactID INTEGER,
-	institutionID INTEGER,
-	KEY (specimenCollectionContactID),
-	KEY (institutionID)
 ) 
 ;
 
@@ -333,14 +321,6 @@ ALTER TABLE SpecimenCollectionSummary ADD CONSTRAINT FK_is_collected_from
 
 ALTER TABLE SpecimenCollectionSummary ADD CONSTRAINT FK_undergoes 
 	FOREIGN KEY (undergoes) REFERENCES Preservation (preservationID)
-;
-
-ALTER TABLE JoinInstitutionToSpecimenCollectionContact ADD CONSTRAINT SpecimenCollectionContact 
-	FOREIGN KEY (specimenCollectionContactID) REFERENCES SpecimenCollectionContact (specimenCollectionContactID)
-;
-
-ALTER TABLE JoinInstitutionToSpecimenCollectionContact ADD CONSTRAINT Institution 
-	FOREIGN KEY (institutionID) REFERENCES Institution (institutionID)
 ;
 
 ALTER TABLE JoinCollectionProtocolToInstitution ADD CONSTRAINT Institution 
