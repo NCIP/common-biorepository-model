@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Person</title>
+<title>Preservation</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,11 +16,11 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Person  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">Preservation  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">9/10/2009 6:28:29 PM</td>
+			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:56 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -57,18 +57,20 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{90CE5D68-FDB3-4a88-ADCD-17634ECA5584}</td>
+			<td class="ObjectDetailsValue">{9680D6DB-9520-4d99-9A61-AE324EAD49D3}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="EA7.htm">DDL</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">&lt;p&gt;Information that describes the storage conditions for a collection of specimens&lt;br/&gt;&lt;/p&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -79,73 +81,34 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;fullName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.fullName<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../EA2/EA4/EA84.htm">VARCHAR(100)</a></i><br /><strong>&nbsp;&nbsp;preservationType</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.preservationType<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.&nbsp;<WBR> 
+			Method by which specimens are stored
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;firstName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.firstName<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private INTEGER</i><br /><strong>&nbsp;&nbsp;storageTemperatureInCentigrade</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.storageTemperatureInCentegrades<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A word or group of words indicating a person&#39;s first (personal or given) name; the name that precedes the surname. Synonym = Given Name. 
+			Temperature in degrees Centigrade at which the Specimen is stored
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;lastName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.lastName<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s last (family) name. Synonym = Last Name, Surname.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;middleNameOrInitial</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.middleNameOrInitial<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s middle name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;emailAddress</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.emailAddress<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The string of characters that represents the electronic mail address of a person.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;personID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.id<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;preservationID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Preservation.id<br>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -157,22 +120,58 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_Person</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}" border="0" />personID: INTEGER</a>, 
+					<strong>FK_Preservation_preservation_type</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{E60B3E06-8F01-479a-A69B-B32DE9569206}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}" border="0" />preservationType: VARCHAR</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}00" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}01" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}02" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}03" style="display: none;">
+						<tr id="param{E60B3E06-8F01-479a-A69B-B32DE9569206}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>PK_Preservation</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}" border="0" />preservationID: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{DAD0D38E-6D3E-49af-A8A0-1BB2FD729808}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -192,7 +191,7 @@ function initPage(src) {
 			</tr>
 
 		</table>
-</div>		<div class="ItemBody" id="AssociationsFromTable">
+</div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="20%" class="TableHeading">Element</td>
@@ -202,15 +201,41 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA29.htm">«table» SpecimenCollectionContact</a><br />
+						<a href="EA10.htm">«table» preservation_type</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_SpecimenCollectionContact_Person<br />
+						<strong>Name:</strong> FK_Preservation_preservation_type<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Person<br />
+						<strong>Name:</strong> UQ_preservation_type_preservation_type<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA29.htm">«table» SpecimenCollectionSummary</a><br />
+						Class «FK» 
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_undergoes<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_Preservation<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
@@ -227,7 +252,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA63.htm">Person</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA63.htm">Preservation</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

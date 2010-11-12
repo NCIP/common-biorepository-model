@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Address</title>
+<title>AnnotationAvailabilityProfile</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Address  : public   class</span>
+	<span class="ObjectTitle">AnnotationAvailabilityProfile  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">5/24/2009 11:17:21 AM</td>
+			<td width="85%" class="ObjectDetailsValue">11/3/2008 11:08:08 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/19/2009 4:02:57 PM</td>
+			<td class="ObjectDetailsValue">8/20/2009 9:27:31 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -33,7 +33,7 @@ function initPage(src) {
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue">Baris Suzek</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
@@ -57,18 +57,19 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B0E78028-62D5-4e55-9E7D-915192730BDC}</td>
+			<td class="ObjectDetailsValue">{B94EA73A-6368-4f56-BDB8-A434509B7BB1}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA49.htm">Logical Model</a>, <a href="../../../../../../EA1/EA47.htm">Domain Objects Revised for Standard Use</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA48.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;A standardized representation of the location of a person, business, building, or organization.&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Metadata describing the availability of information pertaining to specimens in a collection.&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -79,206 +80,168 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;city</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179601<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a city, town, or village.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasAdditionalPatientDemographics</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are demographic information (e.g. age, sex, race, ethnicity) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C16495<br>PropertyQualifierConceptCode2=C25406<br>PropertyQualifierConceptCode3=C16960<br>PropertyQualifierConceptDefinition1=The statistical characterization of human populations or segments of human populations (e.g., characterization by age, sex, race, or income).<br>PropertyQualifierConceptDefinition2=Added; extra; further.<br>PropertyQualifierConceptDefinition3=A person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptDefinitionSource3=NCI<br>PropertyQualifierConceptPreferredName1=Demographics<br>PropertyQualifierConceptPreferredName2=Additional<br>PropertyQualifierConceptPreferredName3=Patient<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a city, town, or village.
+			Are demographic information (e.g. age, sex, race, ethnicity) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;country</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179604<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a country.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasExposureHistory</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are the exposure data (e.g. smoking, alcohol, drugs, chemicals) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C18772<br>PropertyQualifierConceptCode2=C17941<br>PropertyQualifierConceptDefinition1=A record of a patient's background regarding health and the occurrence of disease events of the individual.  In addition, personal medical history may be a variable in epidemiologic studies.<br>PropertyQualifierConceptDefinition2=The act of subjecting someone or something to an influencing experience.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Personal Medical History<br>PropertyQualifierConceptPreferredName2=Exposure<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a country.
+			Are the exposure data (e.g. smoking, alcohol, drugs, chemicals) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;departmentOrDivision</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341930<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specialized division of a large organization.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasFamilyHistory</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are family history data available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C17726<br>PropertyQualifierConceptDefinition1=A record of a patient's background regarding health and disease events of blood relatives.  A patients family medical history may be important in diagnosing existing conditions.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Family Medical History<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a specialized division of a large organization.
+			Are family history data available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;entityName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341926<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasHistopathologicInformation</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are histopathologic data (e.g. stage, grade, histologic type, subtype) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C48191<br>PropertyQualifierConceptCode2=C18190<br>PropertyQualifierConceptDefinition1=Knowledge derived from study, experience, or instruction that has been gathered or received by communication.<br>PropertyQualifierConceptDefinition2=The microscopic study of characteristic tissue abnormalities by employing various cytochemical and immunocytochemical stains.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Information<br>PropertyQualifierConceptPreferredName2=Histopathologic Examination<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.
+			Are histopathologic data (e.g. stage, grade, histologic type, subtype) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;entityNumber</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341928<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasLabData</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are lab data available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C25474<br>PropertyQualifierConceptCode2=C37984<br>PropertyQualifierConceptDefinition1=A collection or single item of factual information, derived from measurement or research, from which conclusions may be drawn.<br>PropertyQualifierConceptDefinition2=A facility equipped and competent to conduct scientific experiments, observations, tests, investigations, and/or to manufacture chemicals or medical products.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Data<br>PropertyQualifierConceptPreferredName2=Laboratory<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.
+			Are lab data available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;floorOrPremises</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405150<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of the story or level of a building.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasLongitudinalSpecimens</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are longitudinal specimens (specimens collected from the same patient over time) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C15273<br>PropertyQualifierConceptCode2=C25474<br>PropertyQualifierConceptCode3=C48191<br>PropertyQualifierConceptDefinition1=In medicine, a study or clinical trial in which participants are identified and then followed forward in time.<br>PropertyQualifierConceptDefinition2=A collection or single item of factual information, derived from measurement or research, from which conclusions may be drawn.<br>PropertyQualifierConceptDefinition3=Knowledge derived from study, experience, or instruction that has been gathered or received by communication.<br>PropertyQualifierConceptDefinitionSource1=NCI-GLOSS<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptDefinitionSource3=NCI<br>PropertyQualifierConceptPreferredName1=Longitudinal Study<br>PropertyQualifierConceptPreferredName2=Data<br>PropertyQualifierConceptPreferredName3=Information<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of the story or level of a building.
+			Are longitudinal specimens (specimens collected from the same patient over time) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;postOfficeBox</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341934<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a delivery box at a postal facility.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasMatchedSpecimens</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are matched specimens (tumor and non-tumor from the same patient, tissue and blood from the same patient, for example) available? <br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=0<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C70699<br>PropertyQualifierConceptCode2=C92469<br>PropertyQualifierConceptCode3=C48191<br>PropertyQualifierConceptDefinition1=Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospe<br>PropertyQualifierConceptDefinition1_2=cimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.<br>PropertyQualifierConceptDefinition2=Tissues samples from a single source that differ minimally (e.g., normal and cancerous tissues, treated and untreated tissues).<br>PropertyQualifierConceptDefinition3=Knowledge derived from study, experience, or instruction that has been gathered or received by communication.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptDefinitionSource3=NCI<br>PropertyQualifierConceptPreferredName1=Biospecimen<br>PropertyQualifierConceptPreferredName2=Matched Tissues<br>PropertyQualifierConceptPreferredName3=Information<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a delivery box at a postal facility.
+			Are matched specimens (tumor and non-tumor from the same patient, tissue and blood from the same patient, for example) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;zipCode</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179606<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a ge<br>CADSR_Description2=ographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasOutcomeInformation</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Is outcome information (effectiveness of treatment, side effects, etc) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C48191<br>PropertyQualifierConceptCode2=C20200<br>PropertyQualifierConceptDefinition1=Knowledge derived from study, experience, or instruction that has been gathered or received by communication.<br>PropertyQualifierConceptDefinition2=The result of an action.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Information<br>PropertyQualifierConceptPreferredName2=Outcome<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.
+			Is outcome information (effectiveness of treatment, side effects, etc) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;state</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179603<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A component of an address that specifies a location by identification of a principal administrative unit of a country.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasParticipantsAvailableForFollowup</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=For the collection (for example, clinical trial group), are patients available for follow-up?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C25429<br>PropertyQualifierConceptCode2=C16960<br>PropertyQualifierConceptCode3=C16033<br>PropertyQualifierConceptDefinition1=The quality of being obtainable or accessible and ready for use or service.<br>PropertyQualifierConceptDefinition2=A person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary.<br>PropertyQualifierConceptDefinition3=The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptDefinitionSource3=NCI<br>PropertyQualifierConceptPreferredName1=Availability<br>PropertyQualifierConceptPreferredName2=Patient<br>PropertyQualifierConceptPreferredName3=Follow-up<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of a principal administrative unit of a country.
+			For the collection (for example, clinical trial group), are patients available for follow-up?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetPostDirectional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341900<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private Boolean</i><br /><strong>&nbsp;&nbsp;hasTreatmentInformation</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Are treatment data (e.g. drug, schedule, response to therapy) available?<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C43578<br>PropertyConceptDefinition=An indicator that can be set or unset in order to signal whether a particular condition is true.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Flag<br>PropertyQualifierConceptCode1=C25474<br>PropertyQualifierConceptCode2=C49236<br>PropertyQualifierConceptDefinition1=A collection or single item of factual information, derived from measurement or research, from which conclusions may be drawn.<br>PropertyQualifierConceptDefinition2=An action or administration of therapeutic agents to produce an effect that is intended to alter or stop a pathologic process.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Data<br>PropertyQualifierConceptPreferredName2=Therapeutic Procedure<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.
+			Are treatment data (e.g. drug, schedule) available?
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetPreDirectional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341893<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA77.htm">String</a></i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareNameAndType</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341883<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a related road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a related road or public highway and a component of an address that specifies a location by identification of a street/thoroughfare by type.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareNumber</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341863<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareSectionName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405174<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a distinct area of road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a distinct area of road or public highway.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareExtensionName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405176<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of an expanded part of road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of an expanded part of road or public highway.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA75.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA74.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
-</div><div class="ItemBody" id="TaggedValTable">
+</div>		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA57.htm">CollectionProtocol</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> providesInformationTo<br />
+						One Collection makes available zero or more Collection Summary Data.
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> makesAvailable<br />
+						Zero or more Collection Summary Data indicates whether information is stored for one Collection	
+					</td>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;Collection Summary Data indicates whether information is stored for a Collection, and Collection Summary Data is made available through a Collection.&#160; A Collection has zero or more Collection Summary Data, and a Collection Data Summary has exactly one Collection.&lt;br/&gt;&lt;/p&gt;</div>
+</td>
+				</tr>
+
+			</table>
+		</div>
+<div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 	<tr>
 			<td width="30%" class="TableHeading">Tag</td>
@@ -287,11 +250,59 @@ function initPage(src) {
 	</tr>
 					<tr>
 				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">A standardized representation of the location of a person, business, building, or organization.</td>
+				<td width="30%" class="TableRow" valign="top">Metadata describing the availability of information pertaining to specimens in a collection.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
 				<td width="30%" class="TableRow" valign="top">1</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
+				<td width="30%" class="TableRow" valign="top">C52095</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
+				<td width="30%" class="TableRow" valign="top">Data about data; information that describes another set of data.</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
+				<td width="30%" class="TableRow" valign="top">NCI</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
+				<td width="30%" class="TableRow" valign="top">Metadata</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode1</td>
+				<td width="30%" class="TableRow" valign="top">C25429</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode2</td>
+				<td width="30%" class="TableRow" valign="top">C48191</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
+				<td width="30%" class="TableRow" valign="top">The quality of being obtainable or accessible and ready for use or service.</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition2</td>
+				<td width="30%" class="TableRow" valign="top">Knowledge derived from study, experience, or instruction that has been gathered or received by communication.</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource1</td>
+				<td width="30%" class="TableRow" valign="top">NCI</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource2</td>
+				<td width="30%" class="TableRow" valign="top">NCI</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName1</td>
+				<td width="30%" class="TableRow" valign="top">Availability</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName2</td>
+				<td width="30%" class="TableRow" valign="top">Information</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
@@ -308,7 +319,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA12.htm">«table» Address</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA13.htm">«table» AnnotationAvailabilityProfile</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

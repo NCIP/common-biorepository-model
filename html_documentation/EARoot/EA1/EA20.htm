@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>JoinInstitutionToSpecimenCollectionContact</title>
+<title>JoinParticipantCollectionSummaryToDiagnosis</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,11 +16,11 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">JoinInstitutionToSpecimenCollectionContact  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">JoinParticipantCollectionSummaryToDiagnosis  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:56 PM</td>
+			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:55 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
@@ -57,7 +57,7 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{3A2DAF34-919A-4a08-A756-B9629E96FEA8}</td>
+			<td class="ObjectDetailsValue">{558F7250-16F0-45cf-8CD3-0BAFF5DBD7DA}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
@@ -78,11 +78,11 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;specimenCollectionContactID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Institution.designates<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public Integer</i><br /><strong>&nbsp;&nbsp;diagnosisID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.receives<br>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;institutionID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.Institution.designates<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public Integer</i><br /><strong>&nbsp;&nbsp;participantCollectionSummaryID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Diagnosis.isProvidedTo<br>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -94,22 +94,22 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>SpecimenCollectionContact</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{8785826C-D09F-48ff-954B-167A5A2FCBD8}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{8785826C-D09F-48ff-954B-167A5A2FCBD8}" border="0" />specimenCollectionContactID: Integer</a>, 
+					<strong>Diagnosis</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}" border="0" />diagnosisID: Integer</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{8785826C-D09F-48ff-954B-167A5A2FCBD8}00" style="display: none;">
+						<tr id="param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{8785826C-D09F-48ff-954B-167A5A2FCBD8}01" style="display: none;">
+						<tr id="param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{8785826C-D09F-48ff-954B-167A5A2FCBD8}02" style="display: none;">
+						<tr id="param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{8785826C-D09F-48ff-954B-167A5A2FCBD8}03" style="display: none;">
+						<tr id="param{48C24FDD-5714-4f2e-A4FD-9825F3E18E8E}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -130,22 +130,22 @@ function initPage(src) {
 			<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>Institution</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}" border="0" />institutionID: Integer</a>, 
+					<strong>ParticipantCollectionSummary</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{05F461CA-1463-45b3-B7D2-2FA03D999B05}')" style="text-decoration: none; color: #000000;"><img src="../../images/plus03.gif" align="absmiddle" id="param{05F461CA-1463-45b3-B7D2-2FA03D999B05}" border="0" />participantCollectionSummaryID: Integer</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}00" style="display: none;">
+						<tr id="param{05F461CA-1463-45b3-B7D2-2FA03D999B05}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}01" style="display: none;">
+						<tr id="param{05F461CA-1463-45b3-B7D2-2FA03D999B05}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}02" style="display: none;">
+						<tr id="param{05F461CA-1463-45b3-B7D2-2FA03D999B05}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{7D3EA667-7903-41c9-B4AB-4ED7FFC3D44D}03" style="display: none;">
+						<tr id="param{05F461CA-1463-45b3-B7D2-2FA03D999B05}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -175,30 +175,30 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA17.htm">«table» Institution</a><br />
+						<a href="EA16.htm">«table» Diagnosis</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Institution<br />
+						<strong>Name:</strong> Diagnosis<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Institution<br />
+						<strong>Name:</strong> PK_Diagnosis<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA29.htm">«table» SpecimenCollectionContact</a><br />
+						<a href="EA23.htm">«table» ParticipantCollectionSummary</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> SpecimenCollectionContact<br />
+						<strong>Name:</strong> ParticipantCollectionSummary<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
+						<strong>Name:</strong> PK_ParticipantCollectionSummary<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>

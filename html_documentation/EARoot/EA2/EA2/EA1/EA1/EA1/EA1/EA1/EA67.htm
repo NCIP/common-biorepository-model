@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>SpecimenCollectionContact</title>
+<title>SpecimenCollectionSummary</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">SpecimenCollectionContact  : public   class</span>
+	<span class="ObjectTitle">SpecimenCollectionSummary  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">10/30/2008 4:32:51 PM</td>
+			<td width="85%" class="ObjectDetailsValue">1/11/2006 9:35:21 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:43 PM</td>
+			<td class="ObjectDetailsValue">8/20/2009 9:27:45 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,19 +57,19 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B5865DF1-6934-4927-996A-60A47ABE6614}</td>
+			<td class="ObjectDetailsValue">{ABD8DCF4-9833-4017-843B-98063D20AB46}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA49.htm">Logical Model</a>, <a href="../../../../../../EA1/EA47.htm">Domain Objects Revised for Standard Use</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA48.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Contact information for the person who is responsible for the collection&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Distinguishable portion of biomaterial&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -80,21 +80,63 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA77.htm">String</a></i><br /><strong>&nbsp;&nbsp;phone</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Phone number of the Contact person<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C40978<br>PropertyConceptDefinition=A sequence of decimal digits (0-9) that is used for identifying a destination telephone line or other device in a telephone network.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Telephone Number<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA76.htm">String</a></i><br /><strong>&nbsp;&nbsp;anatomicSource</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=AnatomicSource<br>CADSR_Description=Anatomic source from which the Specimen was collected<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25683<br>PropertyConceptDefinition=Where something is available or from where it originates.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Source<br>PropertyQualifierConceptCode1=C13717<br>PropertyQualifierConceptDefinition1=Named locations of or within the body.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Anatomic Site<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Phone number of the Contact person
+			Anatomic source from which the Specimen was collected
 		</td>
 	</tr>
 </table></div>
 </td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA74.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;specimen_count</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Number of specimens with the same collection summary information, originating from the same profile of patient<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25256<br>PropertyConceptDefinition=How much there is of something that you can measure; the total amount or number.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Quantity<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Number of specimens with the same collection summary information, originating from the same profile of patient
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA74.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;patientAgeGroupAtCollection</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Age of patient on tissue collection date<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25150<br>PropertyConceptDefinition=How long something has existed; elapsed time since birth.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Age<br>PropertyQualifierConceptCode1=C16960<br>PropertyQualifierConceptCode2=C25453<br>PropertyQualifierConceptDefinition1=A person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary.<br>PropertyQualifierConceptDefinition2=The act of gathering things together; having been brought together in one place.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Patient<br>PropertyQualifierConceptPreferredName2=Collection<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Age of patient on tissue collection date
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA76.htm">String</a></i><br /><strong>&nbsp;&nbsp;specimenType</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=SpecimenType<br>CADSR_Description=A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C70713<br>PropertyConceptDefinition=The type of a material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes. This includes particular types of cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory subst<br>PropertyConceptDefinition_2=ances.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Biospecimen Type<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA74.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
-</div>		<div class="ItemBody" id="AssociationsFromTable">
+</div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="20%" class="TableHeading">Element</td>
@@ -104,18 +146,34 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA58.htm">CollectionProtocol</a><br />
+						<a href="EA61.htm">ParticipantCollectionSummary</a><br />
 						Class &nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isResponsibleFor<br />
-						A Collection is assigned to exactly one Contact person.
+						<strong>Name:</strong> provides<br />
+						A Specimen is collected from exactly one Patient
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isAssignedTo<br />
-						A Contact person is responsible for zero or more Collections.	
+						<strong>Name:</strong> isCollectedFrom<br />
+						A Patient provides at least one Specimen	
 					</td>
-					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Contact person is responsible for a Collection.&#160; A Collection is assigned to a Contact person.&#160; A Contact has zero or more Collections.&#160; A Collection is assigned one Contact.&lt;br/&gt;&lt;/p&gt;</div>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Specimen is collected from one Patient.&#160; A Patient provides at least one Specimen.&#160; &lt;br/&gt;&lt;/p&gt;</div>
+</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA63.htm">Preservation</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> isAppliedTo<br />
+						A Specimen undergoes exactly one Preservation protocol.
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> undergoes<br />
+						A Preservation method is applied to zero or more Specimens.	
+					</td>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Specimen undergoes one form of Preservation.&#160; A Preservation method is applied is applied to zero or more Specimens.&lt;br/&gt;&lt;/p&gt;</div>
 </td>
 				</tr>
 
@@ -130,7 +188,7 @@ function initPage(src) {
 	</tr>
 					<tr>
 				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">Contact information for the person who is responsible for the collection</td>
+				<td width="30%" class="TableRow" valign="top">Distinguishable portions of biomaterial (collection of)</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
@@ -138,11 +196,11 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
-				<td width="30%" class="TableRow" valign="top">C60776</td>
+				<td width="30%" class="TableRow" valign="top">C42581</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
-				<td width="30%" class="TableRow" valign="top">Information regarding the means of contacting a person or group.</td>
+				<td width="30%" class="TableRow" valign="top">A shortened version of a speech or written text, containing only the main points.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
@@ -150,27 +208,27 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
-				<td width="30%" class="TableRow" valign="top">Contact Information</td>
+				<td width="30%" class="TableRow" valign="top">Summary</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode1</td>
-				<td width="30%" class="TableRow" valign="top">C70699</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode2</td>
 				<td width="30%" class="TableRow" valign="top">C25453</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
-				<td width="30%" class="TableRow" valign="top">Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospe</td>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode2</td>
+				<td width="30%" class="TableRow" valign="top">C70699</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1_2</td>
-				<td width="30%" class="TableRow" valign="top">cimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.</td>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
+				<td width="30%" class="TableRow" valign="top">The act of gathering things together; having been brought together in one place.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition2</td>
-				<td width="30%" class="TableRow" valign="top">The act of gathering things together; having been brought together in one place.</td>
+				<td width="30%" class="TableRow" valign="top">Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospe</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition2_2</td>
+				<td width="30%" class="TableRow" valign="top">cimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource1</td>
@@ -182,11 +240,11 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName1</td>
-				<td width="30%" class="TableRow" valign="top">Biospecimen</td>
+				<td width="30%" class="TableRow" valign="top">Collection</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName2</td>
-				<td width="30%" class="TableRow" valign="top">Collection</td>
+				<td width="30%" class="TableRow" valign="top">Biospecimen</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
@@ -203,15 +261,9 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA29.htm">«table» SpecimenCollectionContact</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA29.htm">«table» SpecimenCollectionSummary</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA63.htm">Person</a></td>
-					<td width="15%" class="TableRow" valign="top">Class</td>
-					<td width="15%" class="TableRow" valign="top">Generalization</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 

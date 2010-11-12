@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Diagnosis</title>
+<title>Institution</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Diagnosis  : public   class</span>
+	<span class="ObjectTitle">Institution  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">10/31/2008 9:24:45 PM</td>
+			<td width="85%" class="ObjectDetailsValue">11/3/2008 12:09:40 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:34 PM</td>
+			<td class="ObjectDetailsValue">8/20/2009 9:27:36 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,14 +57,14 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{F92513CA-1900-4121-BF39-DBF3DA3B7FBC}</td>
+			<td class="ObjectDetailsValue">{3CBB5B57-FD5D-4fb9-9DBD-4ABDCA5EC4EB}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA49.htm">Logical Model</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA48.htm">Logical Model</a>, <a href="../../../../../../EA1/EA46.htm">Domain Objects Revised for Standard Use</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;High level groupings of medical conditions with which participants have been diagnosed&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Facility at which the Collection resides&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -80,21 +80,18 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA77.htm">String</a></i><br /><strong>&nbsp;&nbsp;diagnosisType</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=DiagnosisType<br>CADSR_Description=Full description of the diagnosis (e.g. breast cancer, schizophrenia, Glioma)<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C15220<br>PropertyConceptDefinition=The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Diagnosis<br>PropertyQualifierConceptCode1=C25284<br>PropertyQualifierConceptDefinition1=Something distinguishable as an identifiable class based on common qualities.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Type<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA76.htm">String</a></i><br /><strong>&nbsp;&nbsp;homepageURL</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=URL for the institution or the institution's biobank<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C42743<br>PropertyConceptDefinition=The global address of documents and other resources on the World Wide Web.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Uniform Resource Locator<br>PropertyQualifierConceptCode1=C19467<br>PropertyQualifierConceptDefinition1=The introductory page of a website; its navigational starting point.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Home Page<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			High-level groupings of diagnosis types
+			URL for the institution or the institution&#39;s biobank
 		</td>
 	</tr>
 </table></div>
 </td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA75.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
 </div>		<div class="ItemBody" id="AssociationsFromTable">
@@ -107,18 +104,18 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA62.htm">ParticipantCollectionSummary</a><br />
+						<a href="EA57.htm">CollectionProtocol</a><br />
 						Class &nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isProvidedTo<br />
-						A Patient receives zero or more Diagnoses
+						<strong>Name:</strong> owns<br />
+						A Collection resides at exactly one Institution
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> receives<br />
-						A Diagnosis is provided to zero or more Patients.	
+						<strong>Name:</strong> residesAt<br />
+						An Institution owns at least one Collection	
 					</td>
-					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Patient receives zero or more Diagnoses.&#160; A Diagnosis is provided to zero or more Patients.&lt;br/&gt;&lt;/p&gt;</div>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;An Institution owns at least one Collection.&#160; A Collection resides at one Institution.&lt;br/&gt;&lt;/p&gt;</div>
 </td>
 				</tr>
 
@@ -133,7 +130,7 @@ function initPage(src) {
 	</tr>
 					<tr>
 				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">High level groupings of medical conditions with which participants have been diagnosed</td>
+				<td width="30%" class="TableRow" valign="top">Facility at which the Collection resides</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
@@ -141,11 +138,11 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
-				<td width="30%" class="TableRow" valign="top">C15220</td>
+				<td width="30%" class="TableRow" valign="top">C41206</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
-				<td width="30%" class="TableRow" valign="top">The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.</td>
+				<td width="30%" class="TableRow" valign="top">An established society, corporation, foundation or other organization founded and united for a specific purpose, e.g. for health-related research; also used to refer to a building or buildings occupied or used by such organization.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
@@ -153,7 +150,7 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
-				<td width="30%" class="TableRow" valign="top">Diagnosis</td>
+				<td width="30%" class="TableRow" valign="top">Institution</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
@@ -170,9 +167,15 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA16.htm">«table» Diagnosis</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA17.htm">«table» Institution</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA60.htm">Organization</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalization</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 

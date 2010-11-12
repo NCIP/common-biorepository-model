@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Integer</title>
+<title>JoinParticipantCollectionSummaryToRace</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Integer  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">JoinParticipantCollectionSummaryToRace  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/17/2010 1:32:39 PM</td>
+			<td width="85%" class="ObjectDetailsValue">8/17/2010 1:32:42 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/17/2010 1:32:39 PM</td>
+			<td class="ObjectDetailsValue">8/17/2010 1:32:42 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,11 +57,11 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{A48D45E3-F471-4662-8E5A-B8BB4295FCA5}</td>
+			<td class="ObjectDetailsValue">{587E47B5-6794-4f2f-B0C8-795261B86440}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA31.htm">DDL</a></td>
+			<td class="ObjectDetailsValue"><a href="EA30.htm">DDL</a></td>
 		</tr>
 	</table>
 	
@@ -69,6 +69,7 @@ function initPage(src) {
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -77,8 +78,11 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;integerID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;raceID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;participantCollectionSummaryID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -90,22 +94,22 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_Integer</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{03351C03-9FCD-4e60-9D28-8088F023B0FC}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{03351C03-9FCD-4e60-9D28-8088F023B0FC}" border="0" />integerID: INTEGER</a>, 
+					<strong>Race</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{7DB73B12-3777-4e56-B206-B3A879312A22}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{7DB73B12-3777-4e56-B206-B3A879312A22}" border="0" />raceID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{03351C03-9FCD-4e60-9D28-8088F023B0FC}00" style="display: none;">
+						<tr id="param{7DB73B12-3777-4e56-B206-B3A879312A22}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{03351C03-9FCD-4e60-9D28-8088F023B0FC}01" style="display: none;">
+						<tr id="param{7DB73B12-3777-4e56-B206-B3A879312A22}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{03351C03-9FCD-4e60-9D28-8088F023B0FC}02" style="display: none;">
+						<tr id="param{7DB73B12-3777-4e56-B206-B3A879312A22}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{03351C03-9FCD-4e60-9D28-8088F023B0FC}03" style="display: none;">
+						<tr id="param{7DB73B12-3777-4e56-B206-B3A879312A22}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -113,7 +117,43 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
+					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>ParticipantCollectionSummary</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}" border="0" />participantCollectionSummaryID: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{D7FD76ED-FE84-4350-A170-CC3C7EF53AA4}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -125,7 +165,48 @@ function initPage(src) {
 			</tr>
 
 		</table>
-</div>	</div>
+</div>		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA40.htm">«table» Race</a><br />
+						Class «FK» 
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> Race<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_Race<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="../EA23.htm">«table» ParticipantCollectionSummary</a><br />
+						Class «FK» 
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> ParticipantCollectionSummary<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_ParticipantCollectionSummary<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
 <div class="pageFooter"></div>
  
 </body>
