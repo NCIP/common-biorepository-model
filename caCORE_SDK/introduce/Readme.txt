@@ -1,6 +1,6 @@
 Introduce
 
-General and usage information can be found 
+  General and usage information can be found 
 in the doc directory. For more information, 
 visit our website: http://cagrid.org
 
