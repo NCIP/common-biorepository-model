@@ -1,6 +1,0 @@
-Race	ID
-American Indian or Alaska Native	1
-Asian	2
-Black or African American	3
-Caucasian	4
-Native Hawaiian or other Pacific Islander	5
