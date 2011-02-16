@@ -1,0 +1,47 @@
+<project name="CBM Test" default="test" basedir=".">
+    	<description>
+        	CBM Test Package
+    	</description>
+
+  	<!-- set global properties for this build -->
+  	<property name="test.reports.dir" location="report"/>
+	<property name="test.data.dir" location="data"/>
+	<property name="test.bin.dir" location="bin"/>
+
+  
+
+  <target name="test">
+    	<!-- Create the time stamp -->
+    	<tstamp/>
+    	<!-- Create the build directory structure used by compile -->
+	<delete dir="${test.reports.dir}"/>
+	<delete dir="${test.data.dir}"/>    
+	<mkdir dir="${test.reports.dir}"/>
+	<mkdir dir="${test.data.dir}"/>
+    
+    	<junit fork="no" haltonfailure="no" >
+    		<classpath>
+    		      <pathelement path="${classpath}"/>
+    				<fileset dir="lib">
+    					<include name="**/*.jar"/>
+    				</fileset>
+    				<dirset dir="${test.bin.dir}">
+    					<include name="**/**"/>
+    				</dirset>
+    		    </classpath>
+    		
+  			<test name="org.cagrid.cbm.test.AllCbmTests" todir="${test.data.dir}">
+  				<formatter type="xml"/>
+  			</test>
+    	</junit>
+
+    	<junitreport todir="${test.data.dir}">
+       	<fileset dir="${test.data.dir}">
+      		<include name="TEST-*.xml"/>
+       	</fileset>
+    	<report todir="${test.reports.dir}"/>
+  	</junitreport>
+
+  </target>
+
+</project>
