@@ -33,13 +33,20 @@ public abstract class CbmTest extends junit.framework.TestCase {
        * TODO: Pull URL from environment args set value in one of the following: - ant build script;
        * test execution script; as argument to test execution script
        */
-
+      boolean authenticate = false;
+      if (authenticate) {
+         try {
+            GridAuthenticator.authenticateWithGrid();
+         }
+         catch (Exception e) {
+            fail("Unable to authenticate with grid");
+         }
+      }
       // IMS CBM URL
       // serviceUrl = "https://cabigapps01.cancer.gov:9295/wsrf/services/cagrid/CBM";
-
-      // Hollings Cancer Center CBM URL
-      serviceUrl = "http://128.23.35.126:8080/wsrf/services/cagrid/CBM";
-
+      serviceUrl = "http://cabigapps01.cancer.gov:9294/wsrf/services/cagrid/CBM";
+      // Holling's Cancer Center CBM URL
+      // serviceUrl = "http://128.23.35.126:8080/wsrf/services/cagrid/CBM";
       serviceClient = new DataServiceClient(serviceUrl);
    }
 

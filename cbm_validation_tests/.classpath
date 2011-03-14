@@ -34,5 +34,16 @@
 	<classpathentry kind="lib" path="lib/caGrid-iso21090SdkQueryProcessor-processor-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/xercesImpl-2.7.1.jar"/>
 	<classpathentry kind="lib" path="lib/junit-4.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-authentication-service-client-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-authentication-service-stubs-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-dorian-client-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-dorian-stubs-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-opensaml-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-dorian-common-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-gaards-core-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-authentication-service-common-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-metadata-common-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/caGrid-ServiceSecurityProvider-stubs-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/xmlsec.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
