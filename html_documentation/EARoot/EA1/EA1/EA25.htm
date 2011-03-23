@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Person</title>
+<title>patient_age_group</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Person  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">patient_age_group  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">9/10/2009 6:28:29 PM</td>
+			<td width="85%" class="ObjectDetailsValue">3/15/2011 11:06:48 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/22/2009 9:31:40 PM</td>
+			<td class="ObjectDetailsValue">3/15/2011 11:08:14 AM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,7 +57,7 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{90CE5D68-FDB3-4a88-ADCD-17634ECA5584}</td>
+			<td class="ObjectDetailsValue">{514B5FAC-DF4C-4446-BD43-2EFD8BD0ABA2}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
@@ -70,7 +70,6 @@ function initPage(src) {
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -79,73 +78,14 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;fullName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.fullName<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.&nbsp;<WBR> 
-		</td>
-	</tr>
-</table></div>
-</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;firstName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.firstName<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A word or group of words indicating a person&#39;s first (personal or given) name; the name that precedes the surname. Synonym = Given Name. 
-		</td>
-	</tr>
-</table></div>
-</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;age_group_low</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;lastName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.lastName<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s last (family) name. Synonym = Last Name, Surname.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;middleNameOrInitial</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.middleNameOrInitial<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s middle name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;emailAddress</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.emailAddress<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The string of characters that represents the electronic mail address of a person.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;personID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Person.id<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;age_group_high</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -157,22 +97,22 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_Person</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}" border="0" />personID: INTEGER</a>, 
+					<strong>PK_patient_age_group</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{405E04FC-48DB-422b-93E2-F33389B69529}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{405E04FC-48DB-422b-93E2-F33389B69529}" border="0" />id: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}00" style="display: none;">
+						<tr id="param{405E04FC-48DB-422b-93E2-F33389B69529}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}01" style="display: none;">
+						<tr id="param{405E04FC-48DB-422b-93E2-F33389B69529}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}02" style="display: none;">
+						<tr id="param{405E04FC-48DB-422b-93E2-F33389B69529}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6FFF8EA6-580E-4a71-B4D7-2F38F2735A63}03" style="display: none;">
+						<tr id="param{405E04FC-48DB-422b-93E2-F33389B69529}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -180,7 +120,7 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
+					<i> &lt;&lt;PK&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -202,35 +142,18 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA29.htm">«table» SpecimenCollectionContact</a><br />
+						<a href="EA32.htm">«table» specimen_collection_summary</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_SpecimenCollectionContact_Person<br />
+						<strong>Name:</strong> FK_specimen_collection_summary_patient_age<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Person<br />
+						<strong>Name:</strong> PK_patient_age_group<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="LinksTable">
-			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="30%" class="TableHeading">Object</td>
-					<td width="15%" class="TableHeading">Type</td>
-					<td width="15%" class="TableHeading">Connection</td>
-					<td width="40%" class="TableHeading">Notes</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA63.htm">Person</a></td>
-					<td width="15%" class="TableRow" valign="top">Class</td>
-					<td width="15%" class="TableRow" valign="top">Dependency</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 
 			</table>

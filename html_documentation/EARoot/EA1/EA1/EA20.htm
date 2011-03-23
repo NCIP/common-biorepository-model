@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>JoinCollectionProtocolToInstitution</title>
+<title>join_collection_protocol_to_institution</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,7 +16,7 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">JoinCollectionProtocolToInstitution  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">join_collection_protocol_to_institution  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -24,7 +24,7 @@ function initPage(src) {
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/22/2009 9:31:40 PM</td>
+			<td class="ObjectDetailsValue">2/16/2011 2:18:08 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -78,10 +78,10 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;institutionID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.CollectionProtocol.residesAt<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;institution_ID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.CollectionProtocol.residesAt<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.Institution.owns<br>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;collectionProtocolID</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;collection_protocol_ID</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Institution.owns<br>&nbsp;</td>
 			</tr>
 		</table>
@@ -95,7 +95,7 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>Institution</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{C1787238-0841-4917-9ADB-B0C51C12C3A4}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}" border="0" />institutionID: Integer</a>, 
+					<a href="#" onclick="parent.toggleData('param{C1787238-0841-4917-9ADB-B0C51C12C3A4}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}" border="0" />institution_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 						<tr id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
@@ -131,7 +131,7 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>CollectionProtocol</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}" border="0" />collectionProtocolID: Integer</a>, 
+					<a href="#" onclick="parent.toggleData('param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}" border="0" />collection_protocol_ID: Integer</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
 						<tr id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
@@ -175,7 +175,7 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA15.htm">«table» CollectionProtocol</a><br />
+						<a href="EA13.htm">«table» collection_protocol</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">

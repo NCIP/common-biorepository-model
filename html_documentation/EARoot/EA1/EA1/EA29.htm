@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>SpecimenCollectionContact</title>
+<title>Race</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,7 +16,7 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">SpecimenCollectionContact  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">Race  : public   &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -57,20 +57,18 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{81E18B81-8D34-48a5-A81A-528D447E25F6}</td>
+			<td class="ObjectDetailsValue">{998D7C9C-0722-4f58-B4A1-18B00AC07856}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="EA8.htm">DDL</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Contact information for the person who is responsible for the collection&lt;br/&gt;&lt;/p&gt;</div>
-
+	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
@@ -81,21 +79,27 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;phone</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionContact.phone<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private static <a href="EA29.htm">VARCHAR(50)</a></i><br /><strong>&nbsp;&nbsp;race</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Race.race<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Phone number of the Contact person
+			Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;specimenCollectionContactID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionContact.id<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;race_ID</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Race.id<br>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public TEXT</i><br /><strong>&nbsp;&nbsp;NCI_Definition</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -107,22 +111,22 @@ function initPage(src) {
 						<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_SpecimenCollectionContact</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{AF358658-8154-4582-A606-F5F1A048F1DF}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{AF358658-8154-4582-A606-F5F1A048F1DF}" border="0" />specimenCollectionContactID: INTEGER</a>, 
+					<strong>PK_Race</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}" border="0" />race_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}00" style="display: none;">
+						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}01" style="display: none;">
+						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}02" style="display: none;">
+						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{AF358658-8154-4582-A606-F5F1A048F1DF}03" style="display: none;">
+						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -143,22 +147,22 @@ function initPage(src) {
 			<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
-					<strong>FK_SpecimenCollectionContact_Person</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{60E16A6B-91AA-4ada-B1F0-13142E73195F}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}" border="0" />specimenCollectionContactID: INTEGER</a>, 
+					<strong>UQ_race_race</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}" border="0" />race: VARCHAR</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}00" style="display: none;">
+						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}01" style="display: none;">
+						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}02" style="display: none;">
+						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{60E16A6B-91AA-4ada-B1F0-13142E73195F}03" style="display: none;">
+						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -166,7 +170,43 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
+					<i> &lt;&lt;unique&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_race_NCI_code</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}" border="0" />NCI_code: VARCHAR</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -178,7 +218,7 @@ function initPage(src) {
 			</tr>
 
 		</table>
-</div>		<div class="ItemBody" id="AssociationsToTable">
+</div>		<div class="ItemBody" id="AssociationsFromTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="20%" class="TableHeading">Element</td>
@@ -188,71 +228,15 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA25.htm">«table» Person</a><br />
+						<a href="EA21.htm">«table» join_participant_collection_summary_to_race</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_SpecimenCollectionContact_Person<br />
+						<strong>Name:</strong> Race<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Person<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA19.htm">«table» JoinAddressToSpecimenCollectionContact</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> SpecimenCollectionContact<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA15.htm">«table» CollectionProtocol</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_isAssignedTo<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA15.htm">«table» CollectionProtocol</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_is_assigned_to<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
+						<strong>Name:</strong> PK_Race<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
@@ -269,7 +253,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA67.htm">SpecimenCollectionContact</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA68.htm">Race</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

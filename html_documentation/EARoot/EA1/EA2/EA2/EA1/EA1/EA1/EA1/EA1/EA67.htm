@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>SpecimenCollectionContact</title>
+<title>Preservation</title>
 <link href="../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">SpecimenCollectionContact  : public   class</span>
+	<span class="ObjectTitle">Preservation  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">10/30/2008 4:32:51 PM</td>
+			<td width="85%" class="ObjectDetailsValue">11/2/2008 9:46:11 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:43 PM</td>
+			<td class="ObjectDetailsValue">8/20/2009 9:27:38 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,14 +57,14 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B5865DF1-6934-4927-996A-60A47ABE6614}</td>
+			<td class="ObjectDetailsValue">{F202D5E0-5E21-4cc3-905D-C887BD7AA33A}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA49.htm">Logical Model</a>, <a href="../../../../../../EA1/EA47.htm">Domain Objects Revised for Standard Use</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA52.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Contact information for the person who is responsible for the collection&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Information that describes the storage conditions for a collection of specimens&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -80,18 +80,34 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA77.htm">String</a></i><br /><strong>&nbsp;&nbsp;phone</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Phone number of the Contact person<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C40978<br>PropertyConceptDefinition=A sequence of decimal digits (0-9) that is used for identifying a destination telephone line or other device in a telephone network.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Telephone Number<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;preservationType</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=PreservationType<br>CADSR_Description=Method by which specimens are stored<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C19232<br>PropertyConceptDefinition=Procedures utilized to save substances from decay. Some preservation procedures are meant to maintain cells, tissues, or organisms in a viable state.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Preservation Procedure<br>PropertyQualifierConceptCode1=C25284<br>PropertyQualifierConceptDefinition1=Something distinguishable as an identifiable class based on common qualities.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Type<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Phone number of the Contact person
+			Method by which specimens are stored
 		</td>
 	</tr>
 </table></div>
 </td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA78.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;storageTemperatureInCentegrades</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Temperature in degrees Centigrade at which the Specimen is stored<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25206<br>PropertyConceptDefinition=A measure of the average kinetic energy of a system of particles. Temperature may be quantified, in the context of thermodynamics, as the potential of one system to transfer thermal energy to another system until both systems reach a state of thermal equi<br>PropertyConceptDefinition_2=librium.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Temperature<br>PropertyQualifierConceptCode1=C60824<br>PropertyQualifierConceptCode2=C42559<br>PropertyQualifierConceptDefinition1=The act of safekeeping goods in a depository.<br>PropertyQualifierConceptDefinition2=A unit of temperature of the temperature scale designed so that the freezing point of water is 0 degrees and the boiling point is 100 degrees at standard atmospheric pressure. The current official definition of the Celsius sets 0.01 C to be at the triple <br>PropertyQualifierConceptDefinition2_2=point of water and a degree to be 1/273.16 of the difference in temperature between the triple point of water and absolute zero. One degree Celsius represents the same temperature difference as one Kelvin.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Storage<br>PropertyQualifierConceptPreferredName2=Degree Celsius<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Temperature in degrees Centigrade at which the Specimen is stored
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA78.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
 </div>		<div class="ItemBody" id="AssociationsFromTable">
@@ -104,18 +120,18 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA58.htm">CollectionProtocol</a><br />
+						<a href="EA71.htm">SpecimenCollectionSummary</a><br />
 						Class &nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isResponsibleFor<br />
-						A Collection is assigned to exactly one Contact person.
+						<strong>Name:</strong> isAppliedTo<br />
+						A Specimen undergoes exactly one Preservation protocol.
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isAssignedTo<br />
-						A Contact person is responsible for zero or more Collections.	
+						<strong>Name:</strong> undergoes<br />
+						A Preservation method is applied to zero or more Specimens.	
 					</td>
-					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Contact person is responsible for a Collection.&#160; A Collection is assigned to a Contact person.&#160; A Contact has zero or more Collections.&#160; A Collection is assigned one Contact.&lt;br/&gt;&lt;/p&gt;</div>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Specimen undergoes one form of Preservation.&#160; A Preservation method is applied is applied to zero or more Specimens.&lt;br/&gt;&lt;/p&gt;</div>
 </td>
 				</tr>
 
@@ -130,7 +146,7 @@ function initPage(src) {
 	</tr>
 					<tr>
 				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">Contact information for the person who is responsible for the collection</td>
+				<td width="30%" class="TableRow" valign="top">Information that describes the storage conditions for a collection of specimens</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
@@ -138,11 +154,11 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
-				<td width="30%" class="TableRow" valign="top">C60776</td>
+				<td width="30%" class="TableRow" valign="top">C19232</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
-				<td width="30%" class="TableRow" valign="top">Information regarding the means of contacting a person or group.</td>
+				<td width="30%" class="TableRow" valign="top">Procedures utilized to save substances from decay. Some preservation procedures are meant to maintain cells, tissues, or organisms in a viable state.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
@@ -150,43 +166,7 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
-				<td width="30%" class="TableRow" valign="top">Contact Information</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode1</td>
-				<td width="30%" class="TableRow" valign="top">C70699</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode2</td>
-				<td width="30%" class="TableRow" valign="top">C25453</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
-				<td width="30%" class="TableRow" valign="top">Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospe</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1_2</td>
-				<td width="30%" class="TableRow" valign="top">cimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition2</td>
-				<td width="30%" class="TableRow" valign="top">The act of gathering things together; having been brought together in one place.</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource1</td>
-				<td width="30%" class="TableRow" valign="top">NCI</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource2</td>
-				<td width="30%" class="TableRow" valign="top">NCI</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName1</td>
-				<td width="30%" class="TableRow" valign="top">Biospecimen</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName2</td>
-				<td width="30%" class="TableRow" valign="top">Collection</td>
+				<td width="30%" class="TableRow" valign="top">Preservation Procedure</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
@@ -203,15 +183,9 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA29.htm">«table» SpecimenCollectionContact</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA27.htm">«table» Preservation</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA63.htm">Person</a></td>
-					<td width="15%" class="TableRow" valign="top">Class</td>
-					<td width="15%" class="TableRow" valign="top">Generalization</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Race</title>
+<title>ParticipantCollectionSummary</title>
 <link href="../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Race  : public   class</span>
+	<span class="ObjectTitle">ParticipantCollectionSummary  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/20/2009 7:08:58 PM</td>
+			<td width="85%" class="ObjectDetailsValue">1/11/2006 9:35:26 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:41 PM</td>
+			<td class="ObjectDetailsValue">2/9/2011 12:18:57 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -33,7 +33,7 @@ function initPage(src) {
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue">princeek</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
@@ -57,18 +57,19 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{DC5F178A-1C88-4c9f-A3F4-CBC583350BEE}</td>
+			<td class="ObjectDetailsValue">{BA3DC5A6-C012-4759-979A-71E4C5432742}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA49.htm">Logical Model</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA52.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;Information about the Participant from whom the Specimen was collected&lt;br/&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
@@ -80,14 +81,50 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA77.htm">String</a></i><br /><strong>&nbsp;&nbsp;race</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=Race<br>CADSR_Description=Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and <br>CADSR_Description2=behavior, and in case of humans, by common history, nationality, or geographic distribution.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C17049<br>PropertyConceptDefinition=An arbitrary classification of a taxonomic group that is a division of a species.  It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of <br>PropertyConceptDefinition_2=humans, by common history, nationality, or geographic distribution.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Race<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA78.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;participantCount</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Number of participants with matching ethnicity, gender, and race profile<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25256<br>PropertyConceptDefinition=How much there is of something that you can measure; the total amount or number.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Quantity<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Number of participants with matching ethnicity, gender, and race profile
+		</td>
+	</tr>
+</table></div>
+</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA75.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;ethnicity</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_VD_ID=2016566<br>CADSR_VD_VERSION=5.1<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C16564<br>PropertyConceptDefinition=ethnic or cultural origination based on OMG approved categories.<br>PropertyConceptDefinition_2=nctive features in their lifestyle habits and shared experiences. They often have a common genetic heritage which may be reflected in their experience of health and disease.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Ethnic Group<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Ethnicity of the Participant
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;gender</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=Gender<br>CADSR_ConceptualDomainVersion=2.0<br>CADSR_Description=Gender of Participant<br>CADSR_RepresentationVersion=2.0<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C28421<br>PropertyConceptDefinition=The assemblage of physical properties or qualities by which male is distinguished from female; the physical difference between male and female; the distinguishing peculiarity of male or female.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Sex<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Gender of Participant
+		</td>
+	</tr>
+</table></div>
+</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA78.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
-</div>		<div class="ItemBody" id="AssociationsFromTable">
+</div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="20%" class="TableHeading">Element</td>
@@ -97,7 +134,7 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="EA62.htm">ParticipantCollectionSummary</a><br />
+						<a href="EA68.htm">Race</a><br />
 						Class &nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -109,6 +146,65 @@ function initPage(src) {
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA62.htm">Diagnosis</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> isProvidedTo<br />
+						A Patient receives zero or more Diagnoses
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> receives<br />
+						A Diagnosis is provided to zero or more Patients.	
+					</td>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Patient receives zero or more Diagnoses.&#160; A Diagnosis is provided to zero or more Patients.&lt;br/&gt;&lt;/p&gt;</div>
+</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA71.htm">SpecimenCollectionSummary</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> provides<br />
+						A Specimen is collected from exactly one Patient
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> isCollectedFrom<br />
+						A Patient provides at least one Specimen	
+					</td>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Specimen is collected from one Patient.&#160; A Patient provides at least one Specimen.&#160; &lt;br/&gt;&lt;/p&gt;</div>
+</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA61.htm">CollectionProtocol</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> isEnrolledIn<br />
+						A Collection enrolls at least one Patient
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> enrolls<br />
+						A Patient is enrolled in at least one Collection.	
+					</td>
+					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Collection enrolls a Patient.&#160; A Patient is enrolled in a Collection.&#160; A Collection is comprised of at least one Patient.&#160; A Patient is entrolled in at least on Collection.&lt;br/&gt;&lt;/p&gt;</div>
+</td>
 				</tr>
 
 			</table>
@@ -122,11 +218,7 @@ function initPage(src) {
 	</tr>
 					<tr>
 				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and </td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">CADSR_Description2</td>
-				<td width="30%" class="TableRow" valign="top">behavior, and in case of humans, by common history, nationality, or geographic distribution.</td>
+				<td width="30%" class="TableRow" valign="top">Information about the Participant from whom the Specimen was collected</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
@@ -134,15 +226,11 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
-				<td width="30%" class="TableRow" valign="top">C17049</td>
+				<td width="30%" class="TableRow" valign="top">C42581</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
-				<td width="30%" class="TableRow" valign="top">An arbitrary classification of a taxonomic group that is a division of a species.  It usually arises as a consequence of geographical isolation within a species and is characterized by shared heredity, physical attributes and behavior, and in the case of </td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition_2</td>
-				<td width="30%" class="TableRow" valign="top">humans, by common history, nationality, or geographic distribution.</td>
+				<td width="30%" class="TableRow" valign="top">A shortened version of a speech or written text, containing only the main points.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
@@ -150,23 +238,39 @@ function initPage(src) {
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
-				<td width="30%" class="TableRow" valign="top">Race</td>
+				<td width="30%" class="TableRow" valign="top">Summary</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode1</td>
 				<td width="30%" class="TableRow" valign="top">C29867</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptCode2</td>
+				<td width="30%" class="TableRow" valign="top">C25453</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
 				<td width="30%" class="TableRow" valign="top">Someone who takes part in an activity.</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition2</td>
+				<td width="30%" class="TableRow" valign="top">The act of gathering things together; having been brought together in one place.</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource1</td>
 				<td width="30%" class="TableRow" valign="top">NCI</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource2</td>
+				<td width="30%" class="TableRow" valign="top">NCI</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName1</td>
 				<td width="30%" class="TableRow" valign="top">Participant</td>
+				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>			<tr>
+				<td width="30%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName2</td>
+				<td width="30%" class="TableRow" valign="top">Collection</td>
 				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 			</tr>			<tr>
 				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
@@ -183,7 +287,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA27.htm">«table» Race</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA24.htm">«table» participant_collection_summary</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
