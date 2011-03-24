@@ -140,7 +140,7 @@ CREATE TABLE Organization
 	name VARCHAR(150) COMMENT 'The name of the organization or an institution.',
 	organization_ID INTEGER NOT NULL,
 	PRIMARY KEY (organization_ID)
-)  COMMENT='A formal group of people that exists to further a particular profession.'
+)  COMMENT='A formal group of people that exists to further a particular'
 ;
 
 
@@ -153,7 +153,7 @@ CREATE TABLE Address
 	entity_number VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
 	floor_or_premises VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of the story or level of a building.',
 	post_office_box VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a delivery box at a postal facility.',
-	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.',
+	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to ',
 	state VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a principal administrative unit of a country.',
 	street_post_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.',
 	street_pre_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.',
@@ -163,7 +163,7 @@ CREATE TABLE Address
 	street_or_thoroughfare_extension_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of an expanded part of road or public highway.',
 	address_ID INTEGER NOT NULL,
 	PRIMARY KEY (address_ID)
-)  COMMENT='A standardized representation of the location of a person, business, building, or organization.'
+)  COMMENT='A standardized representation of the location of a person, .'
 ;
 
 
@@ -210,7 +210,7 @@ CREATE TABLE specimen_collection_contact
 	specimen_collection_contact_ID INTEGER NOT NULL,
 	PRIMARY KEY (specimen_collection_contact_ID),
 	KEY (specimen_collection_contact_ID)
-)  COMMENT='Contact information for the person who is responsible for the collection'
+)  COMMENT='Contact information for the person who is responsible for'
 ;
 
 
@@ -228,7 +228,7 @@ CREATE TABLE specimen_availability_summary_profile
 
 CREATE TABLE Race
 (
-	race VARCHAR(50) COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.',
+	race VARCHAR(50) COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of',
 	race_ID INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
@@ -246,7 +246,7 @@ CREATE TABLE Preservation
 	preservation_ID INTEGER NOT NULL,
 	PRIMARY KEY (preservation_ID),
 	KEY (preservation_type)
-)  COMMENT='Information that describes the storage conditions for a collection of specimens'
+)  COMMENT='Information that describes the storage conditions '
 ;
 
 
@@ -260,7 +260,7 @@ CREATE TABLE participant_collection_summary
 	PRIMARY KEY (participant_collection_summary_ID),
 	KEY (registered_to),
 	KEY (gender_ID)
-)  COMMENT='Information about the Participant from whom the Specimen was collected'
+)  COMMENT='Information about the Participant from whom the Specimen'
 ;
 
 
@@ -293,7 +293,7 @@ CREATE TABLE Diagnosis
 	PRIMARY KEY (diagnosis_ID),
 	UNIQUE (diagnosisType),
 	UNIQUE (NCI_code)
-)  COMMENT='High level groupings of medical conditions with which participants have been diagnosed'
+)  COMMENT='High level groupings of medical conditions with which p'
 ;
 
 
@@ -340,7 +340,7 @@ CREATE TABLE annotation_availability_profile
 	has_treatment_information BOOL COMMENT 'Are treatment data (e.g. drug, schedule) available?',
 	annotation_availability_profile_ID INTEGER NOT NULL,
 	PRIMARY KEY (annotation_availability_profile_ID)
-)  COMMENT='Metadata describing the availability of information pertaining to specimens in a collection.'
+)  COMMENT='Metadata describing the availability of information'
 ;
 
 
@@ -352,11 +352,11 @@ ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_su
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_anatomic_source 
-	FOREIGN KEY (anatomic_source_ID) REFERENCES anatomic_source (anatomic_source)
+	FOREIGN KEY (anatomic_source_ID) REFERENCES anatomic_source (id)
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_specimen_type 
-	FOREIGN KEY (specimen_type_ID) REFERENCES specimen_type (specimen_type)
+	FOREIGN KEY (specimen_type_ID) REFERENCES specimen_type (id)
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_is_collected_from 
@@ -380,7 +380,7 @@ ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionCont
 ;
 
 ALTER TABLE Preservation ADD CONSTRAINT FK_Preservation_preservation_type 
-	FOREIGN KEY (preservation_type) REFERENCES preservation_type (preservation_type)
+	FOREIGN KEY (preservation_type) REFERENCES preservation_type (id)
 ;
 
 ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_gender_ID 
