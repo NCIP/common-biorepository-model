@@ -4,6 +4,13 @@ import gov.nih.nci.cagrid.common.Utils;
 import gov.nih.nci.cagrid.cqlquery.CQLQuery;
 import gov.nih.nci.cagrid.cqlresultset.CQLQueryResults;
 import gov.nih.nci.cagrid.data.client.DataServiceClient;
+import gov.nih.nci.cagrid.metadata.MetadataUtils;
+import gov.nih.nci.cagrid.metadata.dataservice.DomainModel;
+import gov.nih.nci.cagrid.metadata.dataservice.DomainModelExposedUMLClassCollection;
+import gov.nih.nci.cagrid.metadata.dataservice.UMLClass;
+import gov.nih.nci.cagrid.metadata.exceptions.InvalidResourcePropertyException;
+import gov.nih.nci.cagrid.metadata.exceptions.RemoteResourcePropertyRetrievalException;
+import gov.nih.nci.cagrid.metadata.exceptions.ResourcePropertyRetrievalException;
 
 import java.io.FileInputStream;
 import java.io.StringReader;
@@ -11,6 +18,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
 
+import org.apache.axis.message.addressing.AttributedURI;
+import org.apache.axis.message.addressing.EndpointReferenceType;
+import org.apache.axis.types.URI.MalformedURIException;
+import org.cagrid.cbm.test.query.QueryBuilder.QueryType;
 import org.junit.BeforeClass;
 
 /**
@@ -21,10 +32,14 @@ import org.junit.BeforeClass;
 
 public abstract class CbmTest extends junit.framework.TestCase {
 
+   protected static String targetGrid;
    protected static String serviceUrl;
    protected static DataServiceClient serviceClient;
+   protected static UMLClass[] umlClassList;
    protected static final String cqlDirectory = "./cql/";
    protected static final String referenceDirectory = "./cbm_reference/";
+
+   public static final QueryType DEFAULT_QUERY_TYPE = QueryType.CQL;
 
    @Override
    @BeforeClass
@@ -50,6 +65,18 @@ public abstract class CbmTest extends junit.framework.TestCase {
       serviceClient = new DataServiceClient(serviceUrl);
    }
 
+   public static String getTargetGrid() {
+      return targetGrid;
+   }
+
+   public static String getServiceUrl() {
+      return serviceUrl;
+   }
+
+   public static DataServiceClient getServiceClient() {
+      return serviceClient;
+   }
+
    /**
     * Retrieves a string array containing the complete list of code list values for the given code
     * list name. TODO: Consider pulling the list of valid code list values from a reference CBM
@@ -61,15 +88,20 @@ public abstract class CbmTest extends junit.framework.TestCase {
    protected List<String> getReferenceCodeListValues(CodeList codeList) throws Exception {
       String fileName = referenceDirectory + codeList.getDefinitionFileName();
       Scanner scanner = new Scanner(new FileInputStream(fileName));
-      List<String> codeListValue = new Vector<String>();
+      List<String> codeListValues = new Vector<String>();
       while (scanner.hasNextLine()) {
          String line = scanner.nextLine();
          String[] valuePair = line.split(";");
          String value = valuePair[0];
          value = value.replace("\"", "");
-         codeListValue.add(value);
+         codeListValues.add(value);
       }
-      return codeListValue;
+
+      if (codeListValues.size() <= 0) {
+         fail("No valid codelist values found for " + codeList.getCodeListName());
+      }
+
+      return codeListValues;
    }
 
    /**
@@ -94,6 +126,11 @@ public abstract class CbmTest extends junit.framework.TestCase {
 
       return null;
 
+   }
+
+   protected static CQLQueryResults executeQuery(CQLQuery query) throws Exception {
+      CQLQueryResults results = serviceClient.query(query);
+      return results;
    }
 
    protected static CQLQueryResults executeQueryString(String queryString) throws Exception {
@@ -132,36 +169,21 @@ public abstract class CbmTest extends junit.framework.TestCase {
       }
       errorMsg = errorMsg + allErrorValues.toString();
       return errorMsg;
-
    }
 
-   protected String buildObjectCountSql(CbmObject object) {
-      StringBuffer cql = new StringBuffer();
-      cql.append("<CQLQuery xmlns=\"http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery\">");
-      cql.append("<Target name=\"gov.nih.nci.cbm.domain.LogicalModel." + object.getSimpleName() + "\"/>");
-      cql.append("<QueryModifier countOnly=\"true\"/>");
-      cql.append("</CQLQuery>");
-      return cql.toString();
-   }
+   protected UMLClass[] getUmlClassesFromService() throws MalformedURIException, InvalidResourcePropertyException, RemoteResourcePropertyRetrievalException, ResourcePropertyRetrievalException {
 
-   protected static String createDistinctAttributeQueryCql(CbmObject object, String attributeName) {
-      StringBuffer cql = new StringBuffer();
-      cql.append("<CQLQuery xmlns=\"http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery\">");
-      cql.append("<Target name=\"gov.nih.nci.cbm.domain.LogicalModel." + object.getSimpleName() + "\"/>");
-      cql.append("<QueryModifier countOnly=\"false\">");
-      cql.append("<DistinctAttribute>" + attributeName + "</DistinctAttribute>");
-      cql.append("</QueryModifier>");
-      cql.append("</CQLQuery>");
-      return cql.toString();
-   }
+      if (umlClassList == null) {
+         EndpointReferenceType epr = new EndpointReferenceType();
+         AttributedURI uri = new AttributedURI(getServiceUrl());
+         epr.setAddress(uri);
 
-   protected static String createRetrieveAllObjectsQueryCql(CbmObject object) {
-      StringBuffer cql = new StringBuffer();
-      cql.append("<ns1:CQLQuery xmlns:ns1=\"http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery\">");
-      cql.append("<ns1:Target name=\"gov.nih.nci.cbm.domain.LogicalModel." + object.getSimpleName() + "\"/>");
-      cql.append("</ns1:CQLQuery>");
+         DomainModel domainModel = MetadataUtils.getDomainModel(epr);
+         DomainModelExposedUMLClassCollection classCollection = domainModel.getExposedUMLClassCollection();
+         umlClassList = classCollection.getUMLClass();
 
-      return cql.toString();
+      }
+      return umlClassList;
    }
 
    protected static class CbmException extends Exception {

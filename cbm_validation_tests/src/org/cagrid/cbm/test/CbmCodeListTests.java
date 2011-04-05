@@ -6,6 +6,41 @@ import org.junit.Test;
 
 public class CbmCodeListTests extends CbmTest {
 
+   @Test
+   public void testSpecimenTypeDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.SPECIMEN_TYPE);
+   }
+
+   @Test
+   public void testRaceDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.RACE);
+   }
+
+   @Test
+   public void testDiagnosisDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.DIAGNOSIS);
+   }
+
+   @Test
+   public void testPreservationDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.PRESERVATION);
+   }
+
+   @Test
+   public void testAnatomicSourceDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.ANATOMIC_SOURCE);
+   }
+
+   @Test
+   public void testGenderDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.GENDER);
+   }
+
+   @Test
+   public void testEthnicityDataValuesAreValid() throws Exception {
+      checkRemoteAttributeValues(CodeList.ETHNICITY);
+   }
+
    /*
     * TODO: Write the rest of these tests using the code list value retrieval methods to be added to
     * the CBM service.
@@ -44,12 +79,27 @@ public class CbmCodeListTests extends CbmTest {
 
    protected void missingValueTest(CodeList codeList) throws Exception {
       List<String> referenceValues = getReferenceCodeListValues(codeList);
+      System.out.println("Count 1 = " + referenceValues.size());
       List<String> remoteValues = codeList.getRemoteCodeListValues();
+      System.out.println("Count 2 = " + remoteValues.size());
       List<String> missingValues = compareCodeLists(remoteValues, referenceValues);
 
       if (missingValues.size() > 0) {
+         System.out.println("Missing values found for " + codeList.getCodeListName());
          String errorMsg = "Remote code list is missing the following values: \n";
          String failMessage = buildFailMessage(errorMsg, missingValues);
+         fail(failMessage);
+      }
+   }
+
+   private void checkRemoteAttributeValues(CodeList codeList) throws Exception {
+      List<String> referenceValues = getReferenceCodeListValues(codeList);
+      List<String> valuesFromNode = codeList.getRemoteDistinctValues();
+      List<String> extraValues = compareCodeLists(referenceValues, valuesFromNode);
+
+      if (extraValues.size() > 0) {
+         String errorMsg = "The remote " + codeList.getCodeListName() + "data contains the following extra values: \n";
+         String failMessage = buildFailMessage(errorMsg, extraValues);
          fail(failMessage);
       }
    }

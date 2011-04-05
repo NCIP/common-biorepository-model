@@ -14,7 +14,7 @@ import gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile;
 import gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionContact;
 import gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionSummary;
 
-enum CbmObject {
+public enum CbmObject {
    ADDRESS(Address.class),
    ANNOTATION_AVAILABILITY_PROFILE(AnnotationAvailabilityProfile.class),
    COLLECTION_PROTOCOL(CollectionProtocol.class),
@@ -35,11 +35,11 @@ enum CbmObject {
       cbmClass = theCbmClass;
    }
 
-   protected Class<?> getCbmClass() {
+   public Class<?> getCbmClass() {
       return cbmClass;
    }
 
-   protected String getSimpleName() {
+   public String getSimpleName() {
       return cbmClass.getSimpleName();
    }
 }

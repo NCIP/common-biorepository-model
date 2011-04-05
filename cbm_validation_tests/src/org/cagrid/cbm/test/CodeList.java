@@ -1,5 +1,6 @@
 package org.cagrid.cbm.test;
 
+import gov.nih.nci.cagrid.cqlquery.CQLQuery;
 import gov.nih.nci.cagrid.cqlresultset.CQLQueryResults;
 import gov.nih.nci.cagrid.cqlresultset.TargetAttribute;
 import gov.nih.nci.cagrid.data.utilities.CQLQueryResultsIterator;
@@ -12,6 +13,8 @@ import java.util.List;
 import java.util.Vector;
 
 import org.cagrid.cbm.test.CbmTest.CbmException;
+import org.cagrid.cbm.test.query.DistinctAttributesQueryBuilder;
+import org.cagrid.cbm.test.query.RetrieveAllAttributesQueryBuilder;
 
 enum CodeList {
    DIAGNOSIS(CbmObject.DIAGNOSIS,
@@ -62,10 +65,10 @@ enum CodeList {
    }
 
    protected List<String> getRemoteDistinctValues() throws Exception {
-      if (remoteCodeListValues == null) {
-         remoteCodeListValues = getRemoteDistinctAttributeValues(this);
+      if (remoteDistinctValues == null) {
+         remoteDistinctValues = getRemoteDistinctAttributeValues(this);
       }
-      return remoteCodeListValues;
+      return remoteDistinctValues;
    }
 
    private CodeList(CbmObject theParentObject, String theCodeListName, String theDefinitionLocation) {
@@ -87,8 +90,10 @@ enum CodeList {
     * @throws CbmException
     */
    private List<String> getRemoteCodeListContents(CodeList codeList) throws Exception {
-      String cql = CbmTest.createRetrieveAllObjectsQueryCql(codeList.getParentObject());
-      CQLQueryResults results = CbmTest.executeQueryString(cql);
+      RetrieveAllAttributesQueryBuilder builder = new RetrieveAllAttributesQueryBuilder();
+      CQLQuery query = builder.getQuery(codeList.getParentObject());
+      CQLQueryResults results = CbmTest.executeQuery(query);
+
       InputStream resourceAsStream = CbmCodeListTests.class.getResourceAsStream("client-config.wsdd");
       Iterator<?> iter = new CQLQueryResultsIterator(results, resourceAsStream);
 
@@ -121,8 +126,10 @@ enum CodeList {
     * @throws Exception
     */
    private List<String> getRemoteDistinctAttributeValues(CodeList codeList) throws Exception {
-      String cql = CbmTest.createDistinctAttributeQueryCql(codeList.getParentObject(), codeList.getCodeListName());
-      CQLQueryResults results = CbmTest.executeQueryString(cql);
+      DistinctAttributesQueryBuilder builder = new DistinctAttributesQueryBuilder();
+      CQLQuery query = builder.getQuery(codeList.getParentObject(), codeList.getCodeListName());
+
+      CQLQueryResults results = CbmTest.executeQuery(query);
       InputStream resourceAsStream = CbmCodeListTests.class.getResourceAsStream("client-config.wsdd");
       Iterator<?> iter = new CQLQueryResultsIterator(results, resourceAsStream);
 
@@ -144,5 +151,4 @@ enum CodeList {
       }
       return remoteValues;
    }
-
 }

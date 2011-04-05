@@ -11,7 +11,9 @@
   
 
   <target name="test">
-    	<!-- Create the time stamp -->
+    <echo>Start</echo>	
+  	<echo>${test.bin.dir}</echo>
+  	<!-- Create the time stamp -->
     	<tstamp/>
     	<!-- Create the build directory structure used by compile -->
 	<delete dir="${test.reports.dir}"/>
@@ -30,9 +32,20 @@
     				</dirset>
     		    </classpath>
     		
+    		
+    		
+    		<batchtest todir="${test.data.dir}">
+    			<formatter type="xml"/>
+    			<fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />	
+    			
+    		</batchtest>
+    		
+    		<!-- 
   			<test name="org.cagrid.cbm.test.AllCbmTests" todir="${test.data.dir}">
   				<formatter type="xml"/>
   			</test>
+  			-->
+    		
     	</junit>
 
     	<junitreport todir="${test.data.dir}">
