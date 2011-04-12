@@ -12,7 +12,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import org.cagrid.cbm.test.query.FirstBasicQueryBuilder;
 import org.junit.Test;
 
 /**
@@ -22,10 +21,29 @@ public class CbmBasicQueryTests extends CbmTest {
 
    @Test
    public void testFirstBasicQuery() throws Exception {
+      // Show me all the specimens and collections from a given organization?
 
-      FirstBasicQueryBuilder builder = new FirstBasicQueryBuilder();
-      CQLQuery query = builder.getQuery(null, "");
+      // FirstBasicQueryBuilder builder = new FirstBasicQueryBuilder();
+      // CQLQuery query = builder.getQuery(null, "");
+      // serviceClient.query(query);
+
+   }
+
+   public void testObjectRetrieval() throws Exception {
+      CbmObject object = CbmObject.COLLECTION_PROTOCOL;
+      CQLQuery query = getAllObjectsQuery(object);
       serviceClient.query(query);
+
+   }
+
+   private CQLQuery getAllObjectsQuery(CbmObject object) {
+      gov.nih.nci.cagrid.cqlquery.Object target = new gov.nih.nci.cagrid.cqlquery.Object();
+
+      target.setName(object.getCbmClass().getName());
+      CQLQuery query = new gov.nih.nci.cagrid.cqlquery.CQLQuery();
+      query.setTarget(target);
+
+      return query;
    }
 
    private List<String> processResults(CQLQueryResults results) throws Exception {
@@ -35,7 +53,7 @@ public class CbmBasicQueryTests extends CbmTest {
 
       List<String> remoteValues = new Vector<String>();
 
-      // Check that all retrieved values are supported by the reference code list
+      // Check that all retrieved values are supported by the reference code list while
       while (iter.hasNext()) {
          String typeValue;
          Object rawValue = iter.next();
@@ -59,5 +77,43 @@ public class CbmBasicQueryTests extends CbmTest {
       }
       return remoteValues;
    }
-
 }
+
+// public void testObjectRetrieval2() throws Exception {
+// CQLQuery query = new CQLQuery();
+// CQLTargetObject target = new CQLTargetObject();
+// target.setClassName(SpecimenCollectionSummary.class.getName());
+//
+// AssociationPopulationSpecification population = new AssociationPopulationSpecification();
+// NamedAssociation isCollectedFrom = new NamedAssociation();
+//
+// isCollectedFrom.setRoleName("isCollectedFrom");
+// population.setNamedAssociationList(new NamedAssociationList(new NamedAssociation[]
+// {isCollectedFrom}));
+// query.setCQLTargetObject(target);
+// query.setAssociationPopulationSpecification(population);
+//
+// try {
+// QName resultsQname = new QName("http://CQL.caBIG/2/gov.nih.nci.cagrid.cql.Results",
+// "CQLQueryResults");
+//
+// CQL2QueryProcessor queryProcessor = new CQL2QueryProcessor(getApplicationService(),
+// getDomainTypesInfo(), getDomainModel(), getQNameResolver());
+//
+// QueryRunner runner = QueryRunner.createConfiguredQueryRunner();
+// // CQLQuery query = (CQLQuery)Utils.deserializeDocument("queries/allPayments.xml",
+// // CQLQuery.class);
+// CQLQueryResults results = runner.executeQuery(query);
+// StringWriter writer = new StringWriter();
+// Utils.serializeObject(results, resultsQname, writer, runner.getWsddInputStream());
+// System.out.println(writer.getBuffer().toString());
+// }
+// catch (Exception ex) {
+// ex.printStackTrace();
+//
+// }
+//
+// CQLQueryResults results = serviceClient.query(query);
+//
+// }
+
