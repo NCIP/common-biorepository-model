@@ -17,8 +17,8 @@
   	<echo>Timestamp: ${directory.timestamp}</echo>
     
   	<!-- Create the build directory structure used by compile -->
-  	<mkdir dir="${test.reports.dir}/${TSTAMP}"/>
-	<mkdir dir="${test.data.dir}/${TSTAMP}"/>
+  	<mkdir dir="${test.reports.dir}/${directory.timestamp}"/>
+	<mkdir dir="${test.data.dir}/${directory.timestamp}"/>
   	
     <echo>Testing against CBM node: ${cbm.url}</echo>
     	<junit fork="yes" haltonfailure="no" >
@@ -35,7 +35,7 @@
     		
     		
     		
-    		<batchtest todir="${test.data.dir}">
+    		<batchtest todir="${test.data.dir}/${directory.timestamp}">
     			
     			<formatter type="xml"/>
     			<fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />	
@@ -45,11 +45,11 @@
     		
     	</junit>
 
-    	<junitreport todir="${test.data.dir}/${TSTAMP}">
-       	<fileset dir="${test.data.dir}/${TSTAMP}">
+    	<junitreport todir="${test.data.dir}/${directory.timestamp}">
+       	<fileset dir="${test.data.dir}/${directory.timestamp}">
       		<include name="TEST-*.xml"/>
        	</fileset>
-    	<report todir="${test.reports.dir}"/>
+    	<report todir="${test.reports.dir}/${directory.timestamp}"/>
   	</junitreport>
 
   </target>

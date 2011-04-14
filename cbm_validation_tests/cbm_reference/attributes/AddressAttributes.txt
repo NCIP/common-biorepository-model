@@ -1,0 +1,16 @@
+city
+country
+departmentOrDivision
+entityName
+entityNumber
+floorOrPremises
+postOfficeBox
+zipCode
+state
+streetPostDirectional
+streetPreDirectional
+streetOrThoroughfareNameAndType
+streetOrThoroughfareNumber
+streetOrThoroughfareSectionName
+streetOrThoroughfareExtensionName
+id

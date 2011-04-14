@@ -1,0 +1,5 @@
+isAvailableToCommercialOrganizations
+isAvailableToForeignInvestigators
+isAvailableToOutsideInstitution
+isCollaborationRequired
+id

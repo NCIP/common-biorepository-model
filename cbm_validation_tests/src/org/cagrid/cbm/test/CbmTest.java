@@ -86,7 +86,7 @@ public abstract class CbmTest extends junit.framework.TestCase {
     * @return
     */
    protected List<String> getReferenceCodeListValues(CodeList codeList) throws Exception {
-      String fileName = referenceDirectory + codeList.getDefinitionFileName();
+      String fileName = referenceDirectory + "codelists/" + codeList.getDefinitionFileName();
       Scanner scanner = new Scanner(new FileInputStream(fileName));
       List<String> codeListValues = new Vector<String>();
       while (scanner.hasNextLine()) {

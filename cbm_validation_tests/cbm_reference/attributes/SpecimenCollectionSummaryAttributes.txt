@@ -1,0 +1,5 @@
+anatomicSource
+specimen_count
+patientAgeGroupAtCollection
+specimenType
+id

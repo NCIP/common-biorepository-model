@@ -4,8 +4,10 @@ import gov.nih.nci.cagrid.metadata.common.UMLAttribute;
 import gov.nih.nci.cagrid.metadata.common.UMLClassUmlAttributeCollection;
 import gov.nih.nci.cagrid.metadata.dataservice.UMLClass;
 
+import java.io.FileInputStream;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Vector;
 
 import org.junit.Test;
@@ -157,29 +159,22 @@ public class CbmObjectExistenceTests extends CbmTest {
     * @return
     * @throws SecurityException
     */
-   private List<String> getAttributeList(CbmObject theCbmObject) throws SecurityException {
-      Method[] methodList = theCbmObject.getCbmClass().getMethods();
-      List<String> methodExcludeList = new Vector<String>();
+   private List<String> getAttributeList(CbmObject theCbmObject) throws Exception {
+	   String fileName = referenceDirectory + "attributes/" + theCbmObject.getSimpleName() + "Attributes.txt";
+	      Scanner scanner = new Scanner(new FileInputStream(fileName));
+	      List<String> attributeList = new Vector<String>();
+	      while (scanner.hasNextLine()) {
+	         String line = scanner.nextLine();
+	         String[] valuePair = line.split(";");
+	         String value = valuePair[0];
+	         attributeList.add(value);
+	      }
 
-      // Don't check these methods.
-      methodExcludeList.add("getClass");
+	      if (attributeList.size() <= 0) {
+	         fail("No valid attribute values found for " + theCbmObject.getSimpleName());
+	      }
 
-      List<String> attributeList = new Vector<String>();
-      for (Method method: methodList) {
-         String methodName = method.getName();
-
-         boolean isExcluded = methodExcludeList.contains(methodName);
-         boolean isGetter = methodName.startsWith("get") ? true : false;
-         int numParameters = method.getGenericParameterTypes().length;
-
-         if (!isExcluded && isGetter && numParameters == 0) {
-            // Convert the method name to an attribute name
-            String attributeName = methodName.replace("get", "");
-            attributeName = Character.toLowerCase(attributeName.charAt(0)) + attributeName.substring(1);
-            attributeList.add(attributeName);
-         }
-      }
-      return attributeList;
+	      return attributeList;
    }
 
    protected void checkObjectExistence(CbmObject object) throws Exception {
@@ -199,16 +194,13 @@ public class CbmObjectExistenceTests extends CbmTest {
       List<String> attributeList = getAttributeList(object);
       List<String> remoteAttributes = new Vector<String>();
       for (UMLClass theClass: umlClass) {
-         System.out.println(theClass.getClassName());
          if (theClass.getClassName().equals(object.getSimpleName())) {
             UMLClassUmlAttributeCollection attrCollection = theClass.getUmlAttributeCollection();
             UMLAttribute[] umlAttributeList = attrCollection.getUMLAttribute();
             for (UMLAttribute attribute: umlAttributeList) {
-               System.out.println(attribute.getName());
                remoteAttributes.add(attribute.getName());
             }
          }
-         System.out.println("-----------------------------------");
       }
 
       List<String> missingItems = new Vector<String>();
@@ -267,10 +259,8 @@ public class CbmObjectExistenceTests extends CbmTest {
    // checkAttributeExistence(theCbmObject, attributeName);
    // }
    // catch (Exception e) {
-   // System.out.println(".....not found");
    // missingAttributeList.add(attributeName);
    // }
-   // System.out.println(".....found");
    // }
    //
    // if (missingAttributeList.size() > 0) {

@@ -2,17 +2,17 @@ package org.cagrid.cbm.test;
 
 import gov.nih.nci.cagrid.cqlquery.CQLQuery;
 import gov.nih.nci.cagrid.cqlresultset.CQLQueryResults;
-import gov.nih.nci.cagrid.cqlresultset.TargetAttribute;
+import gov.nih.nci.cagrid.data.faults.MalformedQueryExceptionType;
+import gov.nih.nci.cagrid.data.faults.QueryProcessingExceptionType;
 import gov.nih.nci.cagrid.data.utilities.CQLQueryResultsIterator;
-import gov.nih.nci.cbm.domain.LogicalModel.Diagnosis;
-import gov.nih.nci.cbm.domain.LogicalModel.Organization;
-import gov.nih.nci.cbm.domain.LogicalModel.Race;
 
 import java.io.InputStream;
+import java.rmi.RemoteException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+import org.cagrid.cbm.test.query.RetrieveAllAttributesQueryBuilder;
 import org.junit.Test;
 
 /**
@@ -20,69 +20,122 @@ import org.junit.Test;
  */
 public class CbmBasicQueryTests extends CbmTest {
 
-   @Test
-   public void testFirstBasicQuery() throws Exception {
-      // Show me all the specimens and collections from a given organization?
+	@Test
+	public void testRetrieveAddressQuery() throws Exception {
+		CbmObject theObject = CbmObject.ADDRESS;
+		retrieveAllAttributes(theObject);
+	}
 
-      // FirstBasicQueryBuilder builder = new FirstBasicQueryBuilder();
-      // CQLQuery query = builder.getQuery(null, "");
-      // serviceClient.query(query);
+	@Test
+	public void testRetrieveAnnotationAvailabilityProfileQuery() throws Exception {
+		CbmObject theObject = CbmObject.ANNOTATION_AVAILABILITY_PROFILE;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveCollectionProtocolQuery() throws Exception {
+		CbmObject theObject = CbmObject.COLLECTION_PROTOCOL;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveDiagnosisQuery() throws Exception {
+		CbmObject theObject = CbmObject.DIAGNOSIS;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveInstitutionQuery() throws Exception {
+		CbmObject theObject = CbmObject.INSTITUTION;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveOrganizationQuery() throws Exception {
+		CbmObject theObject = CbmObject.ORGANIZATION;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveParticipantCollectionSummaryQuery() throws Exception {
+		CbmObject theObject = CbmObject.PARTICIPANT_COLLECTION_SUMMARY;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrievePreservationQuery() throws Exception {
+		CbmObject theObject = CbmObject.PRESERVATION;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveRaceQuery() throws Exception {
+		CbmObject theObject = CbmObject.RACE;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveSpecimenAvailabilitySummaryProfileQuery() throws Exception {
+		CbmObject theObject = CbmObject.SPECIMEN_AVAILABILITY_SUMMARY_PROFILE;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveSpecimenCollectionContactQuery() throws Exception {
+		CbmObject theObject = CbmObject.SPECIMEN_COLLECTION_CONTACT;
+		retrieveAllAttributes(theObject);
+	}
+	
+	@Test
+	public void testRetrieveSpecimenCollectionSummaryQuery() throws Exception {
+		CbmObject theObject = CbmObject.SPECIMEN_COLLECTION_SUMMARY;
+		retrieveAllAttributes(theObject);
+	}
 
-   }
 
-   public void testObjectRetrieval() throws Exception {
 
-      // CQLQueryResults results = executeQueryFile(cqlDirectory + "basic_query_1a.xml");
-      //
-      // processResults(results);
-   }
+	/**
+	 * Retrieve all attributes for the given object.  This tests that records from each object can be retrieved.
+	 * In reality, this method really just retrieves the first 1000 records for each object due to the build in page
+	 * size of caCORE
+	 * 
+	 * @param theObject
+	 * @throws Exception
+	 * @throws RemoteException
+	 * @throws MalformedQueryExceptionType
+	 * @throws QueryProcessingExceptionType
+	 */
+	private void retrieveAllAttributes(CbmObject theObject) throws Exception{
+		RetrieveAllAttributesQueryBuilder builder = new RetrieveAllAttributesQueryBuilder();
+		CQLQuery query = builder.getQuery(theObject);
+		CQLQueryResults results = serviceClient.query(query);
+		List<Object> values = processResults(results);
+		if(values.size() < 1){
+			throw new Exception("No records found for object " + theObject.getSimpleName());
+		}
+	}
 
-   private CQLQuery getAllObjectsQuery(CbmObject object) {
-      gov.nih.nci.cagrid.cqlquery.Object target = new gov.nih.nci.cagrid.cqlquery.Object();
 
-      target.setName(object.getCbmClass().getName());
-      CQLQuery query = new gov.nih.nci.cagrid.cqlquery.CQLQuery();
-      query.setTarget(target);
 
-      return query;
-   }
 
-   private List<String> processResults(CQLQueryResults results) throws Exception {
 
-      InputStream resourceAsStream = CbmCodeListTests.class.getResourceAsStream("client-config.wsdd");
-      Iterator<?> iter = new CQLQueryResultsIterator(results, resourceAsStream);
+	private List<Object> processResults(CQLQueryResults results) throws Exception {
 
-      List<String> remoteValues = new Vector<String>();
+		InputStream resourceAsStream = CbmCodeListTests.class.getResourceAsStream("client-config.wsdd");
+		Iterator<?> iter = new CQLQueryResultsIterator(results, resourceAsStream);
 
-      // Check that all retrieved values are supported by the reference code list while
-      while (iter.hasNext()) {
-         String typeValue;
-         Object rawValue = iter.next();
-         if (rawValue instanceof Diagnosis) {
-            Diagnosis diagnosis = (Diagnosis)rawValue;
-            typeValue = diagnosis.getDiagnosisType();
-         }
-         else if (rawValue instanceof Race) {
-            Race race = (Race)rawValue;
-            typeValue = race.getRace();
-         }
-         else if (rawValue instanceof Organization) {
-            Organization org = (Organization)rawValue;
-            typeValue = org.getName();
-         }
-         else if (rawValue instanceof TargetAttribute[]) {
-            TargetAttribute[] attrs = (TargetAttribute[])rawValue;
-            TargetAttribute attr = attrs[0];
-            typeValue = attr.getName() + " = " + attr.getValue();
-         }
-         else {
-            throw new Exception("Unsupported type");
-         }
-         remoteValues.add(typeValue);
+		List<Object> remoteValues = new Vector<Object>();
 
-      }
-      return remoteValues;
-   }
+		// Check that all retrieved values are supported by the reference code list while
+		while (iter.hasNext()) {
+			String typeValue;
+			Object rawValue = iter.next();
+
+			remoteValues.add(rawValue);
+
+		}
+		return remoteValues;
+	}
 }
 
 // public void testObjectRetrieval2() throws Exception {
@@ -112,7 +165,6 @@ public class CbmBasicQueryTests extends CbmTest {
 // CQLQueryResults results = runner.executeQuery(query);
 // StringWriter writer = new StringWriter();
 // Utils.serializeObject(results, resultsQname, writer, runner.getWsddInputStream());
-// System.out.println(writer.getBuffer().toString());
 // }
 // catch (Exception ex) {
 // ex.printStackTrace();
