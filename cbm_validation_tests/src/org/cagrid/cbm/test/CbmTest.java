@@ -58,7 +58,8 @@ public abstract class CbmTest extends junit.framework.TestCase {
          }
       }
       // IMS CBM URL
-      serviceUrl = System.getenv("cbm_url");
+      
+      serviceUrl = System.getProperty("cbm.url");
 
       // "http://cabigapps01.cancer.gov:9294/wsrf/services/cagrid/CBM";
       serviceClient = new DataServiceClient(serviceUrl);

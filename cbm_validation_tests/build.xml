@@ -4,24 +4,25 @@
     	</description>
 
   	<!-- set global properties for this build -->
-  	<property name="test.reports.dir" location="report"/>
-	<property name="test.data.dir" location="data"/>
+  	<property name="test.reports.dir" location="${report.dir}"/>
+	<property name="test.data.dir" location="${output.dir}"/>
 	<property name="test.bin.dir" location="bin"/>
 
   
 
   <target name="test">
-    <echo>Start</echo>	
   	<echo>${test.bin.dir}</echo>
   	<!-- Create the time stamp -->
-    	<tstamp/>
-    	<!-- Create the build directory structure used by compile -->
-	<delete dir="${test.reports.dir}"/>
-	<delete dir="${test.data.dir}"/>    
-	<mkdir dir="${test.reports.dir}"/>
-	<mkdir dir="${test.data.dir}"/>
+	<tstamp><format property="directory.timestamp"  pattern="MMddyyyy_hhmmss"/></tstamp>
+  	<echo>Timestamp: ${directory.timestamp}</echo>
     
-    	<junit fork="no" haltonfailure="no" >
+  	<!-- Create the build directory structure used by compile -->
+  	<mkdir dir="${test.reports.dir}/${TSTAMP}"/>
+	<mkdir dir="${test.data.dir}/${TSTAMP}"/>
+  	
+    <echo>Testing against CBM node: ${cbm.url}</echo>
+    	<junit fork="yes" haltonfailure="no" >
+    		<jvmarg value="-Dcbm.url=${cbm.url}"/>
     		<classpath>
     		      <pathelement path="${classpath}"/>
     				<fileset dir="lib">
@@ -35,21 +36,17 @@
     		
     		
     		<batchtest todir="${test.data.dir}">
+    			
     			<formatter type="xml"/>
     			<fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />	
     			
     		</batchtest>
     		
-    		<!-- 
-  			<test name="org.cagrid.cbm.test.AllCbmTests" todir="${test.data.dir}">
-  				<formatter type="xml"/>
-  			</test>
-  			-->
     		
     	</junit>
 
-    	<junitreport todir="${test.data.dir}">
-       	<fileset dir="${test.data.dir}">
+    	<junitreport todir="${test.data.dir}/${TSTAMP}">
+       	<fileset dir="${test.data.dir}/${TSTAMP}">
       		<include name="TEST-*.xml"/>
        	</fileset>
     	<report todir="${test.reports.dir}"/>
