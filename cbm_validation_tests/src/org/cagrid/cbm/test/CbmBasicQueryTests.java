@@ -2,6 +2,7 @@ package org.cagrid.cbm.test;
 
 import gov.nih.nci.cagrid.cqlquery.CQLQuery;
 import gov.nih.nci.cagrid.cqlresultset.CQLQueryResults;
+import gov.nih.nci.cagrid.cqlresultset.TargetAttribute;
 import gov.nih.nci.cagrid.data.utilities.CQLQueryResultsIterator;
 import gov.nih.nci.cbm.domain.LogicalModel.Diagnosis;
 import gov.nih.nci.cbm.domain.LogicalModel.Organization;
@@ -30,10 +31,10 @@ public class CbmBasicQueryTests extends CbmTest {
    }
 
    public void testObjectRetrieval() throws Exception {
-      CbmObject object = CbmObject.COLLECTION_PROTOCOL;
-      CQLQuery query = getAllObjectsQuery(object);
-      serviceClient.query(query);
 
+      // CQLQueryResults results = executeQueryFile(cqlDirectory + "basic_query_1a.xml");
+      //
+      // processResults(results);
    }
 
    private CQLQuery getAllObjectsQuery(CbmObject object) {
@@ -68,6 +69,11 @@ public class CbmBasicQueryTests extends CbmTest {
          else if (rawValue instanceof Organization) {
             Organization org = (Organization)rawValue;
             typeValue = org.getName();
+         }
+         else if (rawValue instanceof TargetAttribute[]) {
+            TargetAttribute[] attrs = (TargetAttribute[])rawValue;
+            TargetAttribute attr = attrs[0];
+            typeValue = attr.getName() + " = " + attr.getValue();
          }
          else {
             throw new Exception("Unsupported type");
