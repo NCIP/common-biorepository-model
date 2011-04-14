@@ -1,5 +1,8 @@
 package org.cagrid.cbm.test;
 
+import gov.nih.nci.cagrid.cqlquery.CQLQuery;
+
+import org.cagrid.cbm.test.query.ObjectCountQueryBuilder;
 import org.junit.Test;
 
 /**
@@ -20,7 +23,10 @@ public class CbmConnectivityTests extends CbmTest {
    @Test
    public void testConnection() {
       try {
-         executeQueryFile(cqlDirectory + "diagnosisCount.xml");
+    	  ObjectCountQueryBuilder builder = new ObjectCountQueryBuilder();
+    	  CQLQuery query = builder.getQuery(CbmObject.DIAGNOSIS);
+    	  serviceClient.query(query);
+    	  
       }
       catch (Exception e) {
          fail("Unable to connect to grid service end point " + serviceUrl + ": " + e.getMessage());

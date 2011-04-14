@@ -7,10 +7,29 @@
   	<property name="test.reports.dir" location="${report.dir}"/>
 	<property name="test.data.dir" location="${output.dir}"/>
 	<property name="test.bin.dir" location="bin"/>
+	<property name="test.src.dir" location="src"/>
+	<property name="test.lib.dir" location="lib"/>
 
   
-
-  <target name="test">
+	<path id="master-classpath">
+	  <fileset dir="${test.lib.dir}">
+	    <include name="*.jar"/>
+	  </fileset>
+	</path>
+	
+	<target name="compile">
+		 <javac destdir="${test.bin.dir}">
+		 	<src path="${test.src.dir}" />
+		 	<classpath refid="master-classpath"/>
+		 </javac>
+		
+		<copy todir="${test.bin.dir}/org/cagrid/cbm">
+		    <fileset dir="${test.src.dir}/org/cagrid/cbm" includes="*.xml"/>
+		</copy>
+	</target>
+  
+	
+	<target name="test" depends="compile">
   	<echo>${test.bin.dir}</echo>
   	<!-- Create the time stamp -->
 	<tstamp><format property="directory.timestamp"  pattern="MMddyyyy_hhmmss"/></tstamp>
@@ -32,7 +51,6 @@
     					<include name="**/**"/>
     				</dirset>
     		    </classpath>
-    		
     		
     		
     		<batchtest todir="${test.data.dir}/${directory.timestamp}">

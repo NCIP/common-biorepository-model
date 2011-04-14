@@ -1,11 +1,16 @@
-This is the CBM validation test package.  
-To execute the tests in this package
+This is the CBM validation test package.  The purpose of this package is to provide a suite of JUnit tests that can validate 
+a give CBM node.
+
+To execute the tests in this package:
 
 - Download Ant 1.7.0 and place it in an accessible location
 - Modify the test execution script, run_tests.bat or run_tests.sh to suit your local environment
 - Execute the test execution script.  This will execute the suite of the CBM validation tests against the CBM node URL specified in the script.
+- Test result xml data files are stored in the /data directory, in a directory named with a MMDDYYYY_HHMMSS timestamp
+- HTML test result files are stored in the /report directory, in a directory named with a MMDDYYYY_HHMMSS timestamp
 
-The tests are organized into the following categories:
+
+The CBM validation tests are organized into the following categories:
 
 CbmConnectivityTests
 	These tests test basic connectivity to the CBM node.
@@ -26,3 +31,8 @@ CbmComplexQueryTests (TO BE WRITTEN)
 	These tests check that complex queries, including retrieval of associated objects can be performed.
 	A test fails if there is an exception in the query.
 
+
+TODO:
+- Complete the complex query tests
+- Add a connectivity test to check whether or not a node exists in a target grid index
+- Update ant build file to jar up test classes
