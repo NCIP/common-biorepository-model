@@ -1,5 +1,5 @@
 anatomicSource
-specimen_count
+specimenCount
 patientAgeGroupAtCollection
 specimenType
 id

@@ -203,21 +203,21 @@ public class CbmObjectExistenceTests extends CbmTest {
          }
       }
 
-      List<String> missingItems = new Vector<String>();
+      List<String> extraItems = new Vector<String>();
 
       for (String remoteAttribute: remoteAttributes) {
          int index = attributeList.indexOf(remoteAttribute);
          if (index < 0) {
-            missingItems.add(remoteAttribute);
+        	 extraItems.add(remoteAttribute);
          }
       }
 
-      List<String> extraItems = new Vector<String>();
+      List<String> missingItems = new Vector<String>();
 
       for (String attribute: attributeList) {
          int index = remoteAttributes.indexOf(attribute);
          if (index < 0) {
-            extraItems.add(attribute);
+        	 missingItems.add(attribute);
          }
       }
 

@@ -17,8 +17,10 @@
 	  </fileset>
 	</path>
 	
-	<target name="compile">
-		 <javac destdir="${test.bin.dir}">
+	<target name="build">
+		<delete file="${test.lib.dir}/cbm-test.jar"/> 
+		
+		<javac destdir="${test.bin.dir}">
 		 	<src path="${test.src.dir}" />
 		 	<classpath refid="master-classpath"/>
 		 </javac>
@@ -26,40 +28,32 @@
 		<copy todir="${test.bin.dir}/org/cagrid/cbm">
 		    <fileset dir="${test.src.dir}/org/cagrid/cbm" includes="*.xml"/>
 		</copy>
+		
+		<jar destfile="${test.lib.dir}/cbm-test.jar"
+		    basedir="${test.bin.dir}"
+		 />
 	</target>
   
 	
-	<target name="test" depends="compile">
-  	<echo>${test.bin.dir}</echo>
-  	<!-- Create the time stamp -->
-	<tstamp><format property="directory.timestamp"  pattern="MMddyyyy_hhmmss"/></tstamp>
-  	<echo>Timestamp: ${directory.timestamp}</echo>
-    
-  	<!-- Create the build directory structure used by compile -->
-  	<mkdir dir="${test.reports.dir}/${directory.timestamp}"/>
-	<mkdir dir="${test.data.dir}/${directory.timestamp}"/>
-  	
-    <echo>Testing against CBM node: ${cbm.url}</echo>
+	<target name="test" depends="build">
+	  	<!-- Create the time stamp -->
+		<tstamp>
+			<format property="directory.timestamp"  pattern="MMddyyyy_hhmmss"/>
+		</tstamp>
+	    
+	  	<!-- Create the build directory structure used by compile -->
+	  	<mkdir dir="${test.reports.dir}/${directory.timestamp}"/>
+		<mkdir dir="${test.data.dir}/${directory.timestamp}"/>
+	  	
+	    <echo>Testing against CBM node: ${cbm.url}</echo>
     	<junit fork="yes" haltonfailure="no" >
     		<jvmarg value="-Dcbm.url=${cbm.url}"/>
-    		<classpath>
-    		      <pathelement path="${classpath}"/>
-    				<fileset dir="lib">
-    					<include name="**/*.jar"/>
-    				</fileset>
-    				<dirset dir="${test.bin.dir}">
-    					<include name="**/**"/>
-    				</dirset>
-    		    </classpath>
-    		
+    		<classpath refid="master-classpath"/>
     		
     		<batchtest todir="${test.data.dir}/${directory.timestamp}">
-    			
     			<formatter type="xml"/>
     			<fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />	
-    			
     		</batchtest>
-    		
     		
     	</junit>
 
@@ -68,6 +62,7 @@
       		<include name="TEST-*.xml"/>
        	</fileset>
     	<report todir="${test.reports.dir}/${directory.timestamp}"/>
+    		
   	</junitreport>
 
   </target>
