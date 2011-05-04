@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS patient_age_group
+DROP TABLE IF EXISTS patient_age_group_at_collection
 ;
 DROP TABLE IF EXISTS gender
 ;
@@ -47,7 +47,7 @@ DROP TABLE IF EXISTS annotation_availability_profile
 
 
 
-CREATE TABLE patient_age_group
+CREATE TABLE patient_age_group_at_collection
 (
 	id INTEGER NOT NULL,
 	age_group_low INTEGER,
@@ -59,11 +59,12 @@ CREATE TABLE patient_age_group
 
 CREATE TABLE gender
 (
-	gender VARCHAR(50),
-	ID INTEGER NOT NULL,
+	gender VARCHAR(50) NOT NULL,
+	id INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
-	PRIMARY KEY (ID),
+	PRIMARY KEY (id),
+	UNIQUE (id),
 	UNIQUE (gender),
 	UNIQUE (NCI_code)
 ) 
@@ -72,11 +73,12 @@ CREATE TABLE gender
 
 CREATE TABLE ethnicity
 (
-	ethnicity VARCHAR(50),
+	ethnicity VARCHAR(50) NOT NULL,
 	id INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_definition TEXT,
 	PRIMARY KEY (id),
+	UNIQUE (id),
 	UNIQUE (NCI_code),
 	UNIQUE (ethnicity)
 ) 
@@ -86,10 +88,11 @@ CREATE TABLE ethnicity
 CREATE TABLE preservation_type
 (
 	id INTEGER NOT NULL,
-	preservation_type VARCHAR(100),
+	preservation_type VARCHAR(50) NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
+	UNIQUE (id),
 	UNIQUE (NCI_code),
 	UNIQUE (preservation_type)
 ) 
@@ -99,11 +102,12 @@ CREATE TABLE preservation_type
 CREATE TABLE anatomic_source
 (
 	id INTEGER NOT NULL,
-	anatomic_source VARCHAR(150),
+	anatomic_source VARCHAR(50) NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
 	UNIQUE (anatomic_source),
+	UNIQUE (id),
 	UNIQUE (NCI_code)
 ) 
 ;
@@ -112,10 +116,11 @@ CREATE TABLE anatomic_source
 CREATE TABLE specimen_type
 (
 	id INTEGER NOT NULL,
-	specimen_type VARCHAR(50),
+	specimen_type VARCHAR(50) NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
+	UNIQUE (id),
 	UNIQUE (NCI_code),
 	UNIQUE (specimen_type)
 ) 
@@ -140,7 +145,7 @@ CREATE TABLE Organization
 	name VARCHAR(150) COMMENT 'The name of the organization or an institution.',
 	organization_ID INTEGER NOT NULL,
 	PRIMARY KEY (organization_ID)
-)  COMMENT='A formal group of people that exists to further a particular'
+)  COMMENT='A formal group of people that exists to further a...'
 ;
 
 
@@ -153,7 +158,7 @@ CREATE TABLE Address
 	entity_number VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
 	floor_or_premises VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of the story or level of a building.',
 	post_office_box VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a delivery box at a postal facility.',
-	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to ',
+	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment ....',
 	state VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a principal administrative unit of a country.',
 	street_post_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.',
 	street_pre_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.',
@@ -163,33 +168,42 @@ CREATE TABLE Address
 	street_or_thoroughfare_extension_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of an expanded part of road or public highway.',
 	address_ID INTEGER NOT NULL,
 	PRIMARY KEY (address_ID)
-)  COMMENT='A standardized representation of the location of a person, .'
+)  COMMENT='A standardized representation of the location of a ....'
 ;
 
 
 CREATE TABLE join_participant_collection_summary_to_race
 (
 	participant_collection_summary_ID INTEGER,
-	race_ID INTEGER
+	race VARCHAR(50),
+	race_id INTEGER,
+	KEY (race_id),
+	KEY (race)
 ) 
 ;
 
 
 CREATE TABLE specimen_collection_summary
 (
-	anatomic_source_ID INTEGER COMMENT 'Anatomic source from which the Specimen was collected',
+	specimen_collection_summary_ID INTEGER NOT NULL,
+	anatomic_source_id INTEGER COMMENT 'Anatomic source from which the Specimen was collected',
+	anatomic_source VARCHAR(50),
 	specimen_count INTEGER COMMENT 'Number of specimens with the same collection summary information, originating from the same profile of patient',
 	patient_age_group_at_collection INTEGER COMMENT 'Age of patient on tissue collection date',
-	specimen_type_ID INTEGER COMMENT 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)',
+	patient_age_group_at_collection_low INTEGER,
+	patient_age_group_at_collection_high INTEGER,
+	specimen_type_id INTEGER,
+	specimen_type VARCHAR(50) COMMENT 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)',
 	is_collected_from INTEGER,
-	specimen_collection_summary_ID INTEGER NOT NULL,
 	undergoes INTEGER,
+	qualifiesPatientAgeAtSpecimenCollection INTEGER,
 	PRIMARY KEY (specimen_collection_summary_ID),
+	KEY (anatomic_source_id),
 	KEY (patient_age_group_at_collection),
-	KEY (anatomic_source_ID),
-	KEY (specimen_type_ID),
+	KEY (specimen_type_id),
 	KEY (is_collected_from),
-	KEY (undergoes)
+	KEY (undergoes),
+	KEY (qualifiesPatientAgeAtSpecimenCollection)
 )  COMMENT='Distinguishable portion of biomaterial'
 ;
 
@@ -210,7 +224,7 @@ CREATE TABLE specimen_collection_contact
 	specimen_collection_contact_ID INTEGER NOT NULL,
 	PRIMARY KEY (specimen_collection_contact_ID),
 	KEY (specimen_collection_contact_ID)
-)  COMMENT='Contact information for the person who is responsible for'
+)  COMMENT='Contact information for the person who is responsible...'
 ;
 
 
@@ -228,11 +242,12 @@ CREATE TABLE specimen_availability_summary_profile
 
 CREATE TABLE Race
 (
-	race VARCHAR(50) COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of',
+	race VARCHAR(50) NOT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division ....',
 	race_ID INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (race_ID),
+	UNIQUE (race_ID),
 	UNIQUE (race),
 	UNIQUE (NCI_code)
 ) 
@@ -241,26 +256,29 @@ CREATE TABLE Race
 
 CREATE TABLE Preservation
 (
-	preservation_type INTEGER COMMENT 'Method by which specimens are stored',
+	preservation_type VARCHAR(50) COMMENT 'Method by which specimens are stored',
 	storage_temperature_in_centigrade INTEGER COMMENT 'Temperature in degrees Centigrade at which the Specimen is stored',
 	preservation_ID INTEGER NOT NULL,
 	PRIMARY KEY (preservation_ID),
-	KEY (preservation_type)
-)  COMMENT='Information that describes the storage conditions '
+	KEY (preservation_ID)
+)  COMMENT='Information that describes the storage conditions ...'
 ;
 
 
 CREATE TABLE participant_collection_summary
 (
 	participant_count INTEGER COMMENT 'Number of participants with matching ethnicity, gender, and race profile',
-	ethnicity_ID INTEGER COMMENT 'Ethnicity of the Participant',
-	gender_ID INTEGER COMMENT 'Gender of Participant',
 	registered_to INTEGER,
 	participant_collection_summary_ID INTEGER NOT NULL,
+	ethnicity VARCHAR(50),
+	ethnicity_id INTEGER,
+	gender VARCHAR(50),
+	gender_id INTEGER,
 	PRIMARY KEY (participant_collection_summary_ID),
-	KEY (registered_to),
-	KEY (gender_ID)
-)  COMMENT='Information about the Participant from whom the Specimen'
+	KEY (ethnicity_id),
+	KEY (gender_id),
+	KEY (registered_to)
+)  COMMENT='Information about the Participant from whom the ...'
 ;
 
 
@@ -276,9 +294,11 @@ CREATE TABLE Institution
 
 CREATE TABLE join_participant_collection_summary_todiagnosis
 (
-	diagnosis_ID INTEGER,
+	diagnosis VARCHAR(50),
+	diagnosis_id INTEGER,
 	participant_collection_summary_ID INTEGER,
-	KEY (diagnosis_ID),
+	KEY (diagnosis),
+	KEY (diagnosis_id),
 	KEY (participant_collection_summary_ID)
 ) 
 ;
@@ -286,14 +306,15 @@ CREATE TABLE join_participant_collection_summary_todiagnosis
 
 CREATE TABLE Diagnosis
 (
-	diagnosisType VARCHAR(225) COMMENT 'High-level groupings of diagnosis types',
+	diagnosisType VARCHAR(50) NOT NULL COMMENT 'High-level groupings of diagnosis types',
 	diagnosis_ID INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (diagnosis_ID),
+	UNIQUE (diagnosis_ID),
 	UNIQUE (diagnosisType),
 	UNIQUE (NCI_code)
-)  COMMENT='High level groupings of medical conditions with which p'
+)  COMMENT='High level groupings of medical conditions with which ...'
 ;
 
 
@@ -340,23 +361,27 @@ CREATE TABLE annotation_availability_profile
 	has_treatment_information BOOL COMMENT 'Are treatment data (e.g. drug, schedule) available?',
 	annotation_availability_profile_ID INTEGER NOT NULL,
 	PRIMARY KEY (annotation_availability_profile_ID)
-)  COMMENT='Metadata describing the availability of information'
+)  COMMENT='Metadata describing the availability of information ....'
 ;
 
 
 
 
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_patient_age 
-	FOREIGN KEY (patient_age_group_at_collection) REFERENCES patient_age_group (id)
+ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_id_Race 
+	FOREIGN KEY (race_id) REFERENCES Race (race_ID)
 ;
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_anatomic_source 
-	FOREIGN KEY (anatomic_source_ID) REFERENCES anatomic_source (id)
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_anatomic_source 
+	FOREIGN KEY (anatomic_source_id) REFERENCES anatomic_source (id)
 ;
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_specimen_type 
-	FOREIGN KEY (specimen_type_ID) REFERENCES specimen_type (id)
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_patient_age_group_at_collection 
+	FOREIGN KEY (patient_age_group_at_collection) REFERENCES patient_age_group_at_collection (id)
+;
+
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_specimen_type 
+	FOREIGN KEY (specimen_type_id) REFERENCES specimen_type (id)
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_is_collected_from 
@@ -380,22 +405,26 @@ ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionCont
 ;
 
 ALTER TABLE Preservation ADD CONSTRAINT FK_Preservation_preservation_type 
-	FOREIGN KEY (preservation_type) REFERENCES preservation_type (id)
+	FOREIGN KEY (preservation_ID) REFERENCES preservation_type (id)
 ;
 
-ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_gender_ID 
-	FOREIGN KEY (gender_ID) REFERENCES gender (ID)
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_ethnicity 
+	FOREIGN KEY (ethnicity_id) REFERENCES ethnicity (id)
+;
+
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_gender 
+	FOREIGN KEY (gender_id) REFERENCES gender (id)
 ;
 
 ALTER TABLE Institution ADD CONSTRAINT FK_Institution_Organization 
 	FOREIGN KEY (institution_ID) REFERENCES Organization (organization_ID)
 ;
 
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT Diagnosis 
-	FOREIGN KEY (diagnosis_ID) REFERENCES Diagnosis (diagnosis_ID)
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis_id_Diagnosis 
+	FOREIGN KEY (diagnosis_id) REFERENCES Diagnosis (diagnosis_ID)
 ;
 
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT ParticipantCollectionSummary 
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis 
 	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
 ;
 
