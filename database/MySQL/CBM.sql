@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.1.55, for apple-darwin10.3.0 (i386)
 --
--- Host: localhost    Database: CBM
+-- Host: localhost    Database: cbm
 -- ------------------------------------------------------
 -- Server version	5.1.55
 
@@ -30,7 +30,7 @@ CREATE TABLE `Address` (
   `entity_number` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
   `floor_or_premises` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of the story or level of a building.',
   `post_office_box` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of a delivery box at a postal facility.',
-  `zip_code` varchar(50) DEFAULT NULL COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to ',
+  `zip_code` varchar(50) DEFAULT NULL COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic ...',
   `state` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of a principal administrative unit of a country.',
   `street_post_directional` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.',
   `street_pre_directional` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.',
@@ -40,7 +40,7 @@ CREATE TABLE `Address` (
   `street_or_thoroughfare_extension_name` varchar(50) DEFAULT NULL COMMENT 'A component of an address that specifies a location by identification of an expanded part of road or public highway.',
   `address_ID` int(11) NOT NULL,
   PRIMARY KEY (`address_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='A standardized representation of the location of a person, .';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='A standardized representation of the location of...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,14 +60,15 @@ DROP TABLE IF EXISTS `Diagnosis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Diagnosis` (
-  `diagnosisType` varchar(225) DEFAULT NULL COMMENT 'High-level groupings of diagnosis types',
+  `diagnosisType` varchar(225) NOT NULL COMMENT 'High-level groupings of diagnosis types',
   `diagnosis_ID` int(11) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
   PRIMARY KEY (`diagnosis_ID`),
+  UNIQUE KEY `diagnosis_ID` (`diagnosis_ID`),
   UNIQUE KEY `diagnosisType` (`diagnosisType`),
   UNIQUE KEY `NCI_code` (`NCI_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='High level groupings of medical conditions with which p';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='High level groupings of medical conditions with which ...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +117,7 @@ CREATE TABLE `Organization` (
   `name` varchar(150) DEFAULT NULL COMMENT 'The name of the organization or an institution.',
   `organization_ID` int(11) NOT NULL,
   PRIMARY KEY (`organization_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='A formal group of people that exists to further a particular';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='A formal group of people that exists to further a...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,13 +164,13 @@ DROP TABLE IF EXISTS `Preservation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Preservation` (
-  `preservation_type` int(11) DEFAULT NULL COMMENT 'Method by which specimens are stored',
+  `preservation_type` varchar(100) DEFAULT NULL COMMENT 'Method by which specimens are stored',
   `storage_temperature_in_centigrade` int(11) DEFAULT NULL COMMENT 'Temperature in degrees Centigrade at which the Specimen is stored',
   `preservation_ID` int(11) NOT NULL,
   PRIMARY KEY (`preservation_ID`),
-  KEY `preservation_type` (`preservation_type`),
-  CONSTRAINT `FK_Preservation_preservation_type` FOREIGN KEY (`preservation_type`) REFERENCES `preservation_type` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Information that describes the storage conditions ';
+  KEY `preservation_ID` (`preservation_ID`),
+  CONSTRAINT `FK_Preservation_preservation_type` FOREIGN KEY (`preservation_ID`) REFERENCES `preservation_type` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Information that describes the storage conditions...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,11 +190,12 @@ DROP TABLE IF EXISTS `Race`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Race` (
-  `race` varchar(50) DEFAULT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of',
+  `race` varchar(50) NOT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of t...',
   `race_ID` int(11) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
   PRIMARY KEY (`race_ID`),
+  UNIQUE KEY `race_ID` (`race_ID`),
   UNIQUE KEY `race` (`race`),
   UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -218,11 +220,12 @@ DROP TABLE IF EXISTS `anatomic_source`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `anatomic_source` (
   `id` int(11) NOT NULL,
-  `anatomic_source` varchar(150) DEFAULT NULL,
+  `anatomic_source` varchar(150) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `anatomic_source` (`anatomic_source`),
+  UNIQUE KEY `id` (`id`),
   UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -257,7 +260,7 @@ CREATE TABLE `annotation_availability_profile` (
   `has_treatment_information` tinyint(1) DEFAULT NULL COMMENT 'Are treatment data (e.g. drug, schedule) available?',
   `annotation_availability_profile_ID` int(11) NOT NULL,
   PRIMARY KEY (`annotation_availability_profile_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Metadata describing the availability of information';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Metadata describing the availability of information ...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -313,13 +316,14 @@ DROP TABLE IF EXISTS `ethnicity`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ethnicity` (
-  `ethnicity` varchar(50) DEFAULT NULL,
+  `ethnicity` varchar(50) NOT NULL,
   `id` int(11) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_definition` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `NCI_code` (`NCI_code`),
-  UNIQUE KEY `ethnicity` (`ethnicity`)
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `ethnicity` (`ethnicity`),
+  UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -341,11 +345,12 @@ DROP TABLE IF EXISTS `gender`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gender` (
-  `gender` varchar(50) DEFAULT NULL,
-  `ID` int(11) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
-  PRIMARY KEY (`ID`),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   UNIQUE KEY `gender` (`gender`),
   UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -422,7 +427,11 @@ DROP TABLE IF EXISTS `join_participant_collection_summary_to_race`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `join_participant_collection_summary_to_race` (
   `participant_collection_summary_ID` int(11) DEFAULT NULL,
-  `race_ID` int(11) DEFAULT NULL
+  `race` varchar(50) DEFAULT NULL,
+  `race_id` int(11) DEFAULT NULL,
+  KEY `race_id` (`race_id`),
+  KEY `race` (`race`),
+  CONSTRAINT `FK_join_participant_collection_summary_to_race_id_Race` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -443,12 +452,14 @@ DROP TABLE IF EXISTS `join_participant_collection_summary_todiagnosis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `join_participant_collection_summary_todiagnosis` (
-  `diagnosis_ID` int(11) DEFAULT NULL,
+  `diagnosis` varchar(225) DEFAULT NULL,
+  `diagnosis_id` int(11) DEFAULT NULL,
   `participant_collection_summary_ID` int(11) DEFAULT NULL,
-  KEY `diagnosis_ID` (`diagnosis_ID`),
   KEY `participant_collection_summary_ID` (`participant_collection_summary_ID`),
-  CONSTRAINT `ParticipantCollectionSummary` FOREIGN KEY (`participant_collection_summary_ID`) REFERENCES `participant_collection_summary` (`participant_collection_summary_ID`),
-  CONSTRAINT `Diagnosis` FOREIGN KEY (`diagnosis_ID`) REFERENCES `diagnosis` (`diagnosis_ID`)
+  KEY `diagnosis_id` (`diagnosis_id`),
+  KEY `diagnosis` (`diagnosis`),
+  CONSTRAINT `FK_join_participant_collection_summary_todiagnosis_id_Diagnosis` FOREIGN KEY (`diagnosis_id`) REFERENCES `diagnosis` (`diagnosis_ID`),
+  CONSTRAINT `FK_join_participant_collection_summary_todiagnosis` FOREIGN KEY (`participant_collection_summary_ID`) REFERENCES `participant_collection_summary` (`participant_collection_summary_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -470,15 +481,19 @@ DROP TABLE IF EXISTS `participant_collection_summary`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `participant_collection_summary` (
   `participant_count` int(11) DEFAULT NULL COMMENT 'Number of participants with matching ethnicity, gender, and race profile',
-  `ethnicity_ID` int(11) DEFAULT NULL COMMENT 'Ethnicity of the Participant',
-  `gender_ID` int(11) DEFAULT NULL COMMENT 'Gender of Participant',
   `registered_to` int(11) DEFAULT NULL,
   `participant_collection_summary_ID` int(11) NOT NULL,
+  `ethnicity` varchar(50) DEFAULT NULL,
+  `ethnicity_id` int(11) DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
+  `gender_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`participant_collection_summary_ID`),
+  KEY `ethnicity_id` (`ethnicity_id`),
+  KEY `gender_id` (`gender_id`),
   KEY `registered_to` (`registered_to`),
-  KEY `gender_ID` (`gender_ID`),
-  CONSTRAINT `FK_gender_ID` FOREIGN KEY (`gender_ID`) REFERENCES `gender` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Information about the Participant from whom the Specimen';
+  CONSTRAINT `FK_participant_collection_summary_gender` FOREIGN KEY (`gender_id`) REFERENCES `gender` (`id`),
+  CONSTRAINT `FK_participant_collection_summary_ethnicity` FOREIGN KEY (`ethnicity_id`) REFERENCES `ethnicity` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Information about the Participant from whom the Specimen...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -491,13 +506,13 @@ LOCK TABLES `participant_collection_summary` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `patient_age_group`
+-- Table structure for table `patient_age_group_at_collection`
 --
 
-DROP TABLE IF EXISTS `patient_age_group`;
+DROP TABLE IF EXISTS `patient_age_group_at_collection`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `patient_age_group` (
+CREATE TABLE `patient_age_group_at_collection` (
   `id` int(11) NOT NULL,
   `age_group_low` int(11) DEFAULT NULL,
   `age_group_high` int(11) DEFAULT NULL,
@@ -506,13 +521,13 @@ CREATE TABLE `patient_age_group` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `patient_age_group`
+-- Dumping data for table `patient_age_group_at_collection`
 --
 
-LOCK TABLES `patient_age_group` WRITE;
-/*!40000 ALTER TABLE `patient_age_group` DISABLE KEYS */;
-INSERT INTO `patient_age_group` VALUES (1,0,5),(2,6,10),(3,11,15),(4,16,20),(5,21,25),(6,26,30),(7,31,35),(8,36,40),(9,41,45),(10,46,50),(11,51,55),(12,56,60),(13,61,65),(14,66,70),(15,71,75),(16,76,80),(17,81,85),(18,86,200);
-/*!40000 ALTER TABLE `patient_age_group` ENABLE KEYS */;
+LOCK TABLES `patient_age_group_at_collection` WRITE;
+/*!40000 ALTER TABLE `patient_age_group_at_collection` DISABLE KEYS */;
+INSERT INTO `patient_age_group_at_collection` VALUES (1,0,5),(2,6,10),(3,11,15),(4,16,20),(5,21,25),(6,26,30),(7,31,35),(8,36,40),(9,41,45),(10,46,50),(11,51,55),(12,56,60),(13,61,65),(14,66,70),(15,71,75),(16,76,80),(17,81,85),(18,86,200);
+/*!40000 ALTER TABLE `patient_age_group_at_collection` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -524,12 +539,13 @@ DROP TABLE IF EXISTS `preservation_type`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `preservation_type` (
   `id` int(11) NOT NULL,
-  `preservation_type` varchar(100) DEFAULT NULL,
+  `preservation_type` varchar(100) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `NCI_code` (`NCI_code`),
-  UNIQUE KEY `preservation_type` (`preservation_type`)
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `preservation_type` (`preservation_type`),
+  UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -582,7 +598,7 @@ CREATE TABLE `specimen_collection_contact` (
   PRIMARY KEY (`specimen_collection_contact_ID`),
   KEY `specimen_collection_contact_ID` (`specimen_collection_contact_ID`),
   CONSTRAINT `FK_SpecimenCollectionContact_Person` FOREIGN KEY (`specimen_collection_contact_ID`) REFERENCES `person` (`person_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Contact information for the person who is responsible for';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Contact information for the person who is responsible...';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -602,24 +618,28 @@ DROP TABLE IF EXISTS `specimen_collection_summary`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `specimen_collection_summary` (
-  `anatomic_source_ID` int(11) DEFAULT NULL COMMENT 'Anatomic source from which the Specimen was collected',
+  `specimen_collection_summary_ID` int(11) NOT NULL,
+  `anatomic_source_id` int(11) DEFAULT NULL COMMENT 'Anatomic source from which the Specimen was collected',
+  `anatomic_source` varchar(150) DEFAULT NULL,
   `specimen_count` int(11) DEFAULT NULL COMMENT 'Number of specimens with the same collection summary information, originating from the same profile of patient',
   `patient_age_group_at_collection` int(11) DEFAULT NULL COMMENT 'Age of patient on tissue collection date',
-  `specimen_type_ID` int(11) DEFAULT NULL COMMENT 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)',
+  `specimen_type_id` int(11) DEFAULT NULL,
+  `specimen_type` varchar(50) DEFAULT NULL COMMENT 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)',
   `is_collected_from` int(11) DEFAULT NULL,
-  `specimen_collection_summary_ID` int(11) NOT NULL,
   `undergoes` int(11) DEFAULT NULL,
+  `qualifiesPatientAgeAtSpecimenCollection` int(11) DEFAULT NULL,
   PRIMARY KEY (`specimen_collection_summary_ID`),
+  KEY `anatomic_source_id` (`anatomic_source_id`),
   KEY `patient_age_group_at_collection` (`patient_age_group_at_collection`),
-  KEY `anatomic_source_ID` (`anatomic_source_ID`),
-  KEY `specimen_type_ID` (`specimen_type_ID`),
+  KEY `specimen_type_id` (`specimen_type_id`),
   KEY `is_collected_from` (`is_collected_from`),
   KEY `undergoes` (`undergoes`),
+  KEY `qualifiesPatientAgeAtSpecimenCollection` (`qualifiesPatientAgeAtSpecimenCollection`),
   CONSTRAINT `FK_undergoes` FOREIGN KEY (`undergoes`) REFERENCES `preservation` (`preservation_ID`),
   CONSTRAINT `FK_is_collected_from` FOREIGN KEY (`is_collected_from`) REFERENCES `participant_collection_summary` (`participant_collection_summary_ID`),
-  CONSTRAINT `FK_SpecimenCollectionSummary_anatomic_source` FOREIGN KEY (`anatomic_source_ID`) REFERENCES `anatomic_source` (`id`),
-  CONSTRAINT `FK_SpecimenCollectionSummary_specimen_type` FOREIGN KEY (`specimen_type_ID`) REFERENCES `specimen_type` (`id`),
-  CONSTRAINT `FK_specimen_collection_summary_patient_age` FOREIGN KEY (`patient_age_group_at_collection`) REFERENCES `patient_age_group` (`id`)
+  CONSTRAINT `FK_specimen_collection_summary_anatomic_source` FOREIGN KEY (`anatomic_source_id`) REFERENCES `anatomic_source` (`id`),
+  CONSTRAINT `FK_specimen_collection_summary_patient_age_group_at_collection` FOREIGN KEY (`patient_age_group_at_collection`) REFERENCES `patient_age_group_at_collection` (`id`),
+  CONSTRAINT `FK_specimen_collection_summary_specimen_type` FOREIGN KEY (`specimen_type_id`) REFERENCES `specimen_type` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Distinguishable portion of biomaterial';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -641,12 +661,13 @@ DROP TABLE IF EXISTS `specimen_type`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `specimen_type` (
   `id` int(11) NOT NULL,
-  `specimen_type` varchar(50) DEFAULT NULL,
+  `specimen_type` varchar(50) NOT NULL,
   `NCI_code` varchar(50) DEFAULT NULL,
   `NCI_Definition` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `NCI_code` (`NCI_code`),
-  UNIQUE KEY `specimen_type` (`specimen_type`)
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `specimen_type` (`specimen_type`),
+  UNIQUE KEY `NCI_code` (`NCI_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -669,4 +690,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-04-12  6:54:46
+-- Dump completed on 2011-05-05 14:20:28
