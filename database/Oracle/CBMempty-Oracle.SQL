@@ -1,4 +1,4 @@
-DROP TABLE patient_age_group CASCADE CONSTRAINTS
+DROP TABLE patient_age_group_at_collection CASCADE CONSTRAINTS
 ;
 DROP TABLE gender CASCADE CONSTRAINTS
 ;
@@ -47,7 +47,7 @@ DROP TABLE annotation_availability_profile CASCADE CONSTRAINTS
 
 
 
-CREATE TABLE patient_age_group
+CREATE TABLE patient_age_group_at_collection
 (
 	id              NUMBER(38) NOT NULL,
 	age_group_low   NUMBER(38),
@@ -58,8 +58,8 @@ CREATE TABLE patient_age_group
 
 CREATE TABLE gender
 (
-	gender          VARCHAR2(50),
-	ID              NUMBER(38) NOT NULL,
+	gender          VARCHAR2(50) NOT NULL,
+	id              NUMBER(38) NOT NULL,
 	NCI_code        VARCHAR2(50),
 	NCI_Definition  CLOB
 )
@@ -68,7 +68,7 @@ CREATE TABLE gender
 
 CREATE TABLE ethnicity
 (
-	ethnicity       VARCHAR2(50),
+	ethnicity       VARCHAR2(50) NOT NULL,
 	id              NUMBER(38) NOT NULL,
 	NCI_code        VARCHAR2(50),
 	NCI_definition  CLOB
@@ -79,7 +79,7 @@ CREATE TABLE ethnicity
 CREATE TABLE preservation_type
 (
 	id                 NUMBER(38) NOT NULL,
-	preservation_type  VARCHAR2(100),
+	preservation_type  VARCHAR2(100) NOT NULL,
 	NCI_code           VARCHAR2(50),
 	NCI_Definition     CLOB
 )
@@ -89,7 +89,7 @@ CREATE TABLE preservation_type
 CREATE TABLE anatomic_source
 (
 	id               NUMBER(38) NOT NULL,
-	anatomic_source  VARCHAR2(150),
+	anatomic_source  VARCHAR2(150) NOT NULL,
 	NCI_code         VARCHAR2(50),
 	NCI_Definition   CLOB
 )
@@ -99,7 +99,7 @@ CREATE TABLE anatomic_source
 CREATE TABLE specimen_type
 (
 	id              NUMBER(38) NOT NULL,
-	specimen_type   VARCHAR2(50),
+	specimen_type   VARCHAR2(50) NOT NULL,
 	NCI_code        VARCHAR2(50),
 	NCI_Definition  CLOB
 )
@@ -197,32 +197,36 @@ COMMENT ON COLUMN Address.street_or_thoroughfare_extension_name  IS 'A component
 CREATE TABLE join_participant_collection_summary_to_race
 (
 	participant_collection_summary_ID  NUMBER(38),
-	race_ID                            NUMBER(38)
+	race                               VARCHAR2(50),
+	race_id                            NUMBER(38)
 )
 ;
 
 
 CREATE TABLE specimen_collection_summary
 (
-	anatomic_source_ID               NUMBER(38),    --  Anatomic source from which the Specimen was collected Rem
-	specimen_count                   NUMBER(38),    --  Number of specimens with the same collection summary information, originating from the same profile of patient Rem
-	patient_age_group_at_collection  NUMBER(38),    --  Age of patient on tissue collection date Rem
-	specimen_type_ID                 NUMBER(38),    --  A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...) Rem
-	is_collected_from                NUMBER(38),
-	specimen_collection_summary_ID   NUMBER(38) NOT NULL,
-	undergoes                        NUMBER(38)
+	specimen_collection_summary_ID           NUMBER(38) NOT NULL,
+	anatomic_source_id                       NUMBER(38),    --  Anatomic source from which the Specimen was collected Rem
+	anatomic_source                          VARCHAR2(150),
+	specimen_count                           NUMBER(38),    --  Number of specimens with the same collection summary information, originating from the same profile of patient Rem
+	patient_age_group_at_collection          NUMBER(38),    --  Age of patient on tissue collection date Rem
+	specimen_type_id                         NUMBER(38),
+	specimen_type                            VARCHAR2(50),    --  A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...) Rem
+	is_collected_from                        NUMBER(38),
+	undergoes                                NUMBER(38),
+	qualifiesPatientAgeAtSpecimenCollection  NUMBER(38)
 )
 ;
 
 COMMENT ON TABLE specimen_collection_summary IS 'Distinguishable portion of biomaterial'
 ;
-COMMENT ON COLUMN specimen_collection_summary.anatomic_source_ID               IS 'Anatomic source from which the Specimen was collected'
+COMMENT ON COLUMN specimen_collection_summary.anatomic_source_id                       IS 'Anatomic source from which the Specimen was collected'
 ;
-COMMENT ON COLUMN specimen_collection_summary.specimen_count                   IS 'Number of specimens with the same collection summary information, originating from the same profile of patient'
+COMMENT ON COLUMN specimen_collection_summary.specimen_count                           IS 'Number of specimens with the same collection summary information, originating from the same profile of patient'
 ;
-COMMENT ON COLUMN specimen_collection_summary.patient_age_group_at_collection  IS 'Age of patient on tissue collection date'
+COMMENT ON COLUMN specimen_collection_summary.patient_age_group_at_collection          IS 'Age of patient on tissue collection date'
 ;
-COMMENT ON COLUMN specimen_collection_summary.specimen_type_ID                 IS 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)'
+COMMENT ON COLUMN specimen_collection_summary.specimen_type                            IS 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)'
 ;
 
 CREATE TABLE join_address_to_specimen_collection_contact
@@ -268,7 +272,7 @@ COMMENT ON COLUMN specimen_availability_summary_profile.is_collaboration_require
 
 CREATE TABLE Race
 (
-	race            VARCHAR2(50),    --  Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution. Rem
+	race            VARCHAR2(50) NOT NULL,    --  Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution. Rem
 	race_ID         NUMBER(38) NOT NULL,
 	NCI_code        VARCHAR2(50),
 	NCI_Definition  CLOB
@@ -280,7 +284,7 @@ COMMENT ON COLUMN Race.race            IS 'Someone who takes part in an activity
 
 CREATE TABLE Preservation
 (
-	preservation_type                  NUMBER(38),    --  Method by which specimens are stored Rem
+	preservation_type                  VARCHAR2(100),    --  Method by which specimens are stored Rem
 	storage_temperature_in_centigrade  NUMBER(38),    --  Temperature in degrees Centigrade at which the Specimen is stored Rem
 	preservation_ID                    NUMBER(38) NOT NULL
 )
@@ -296,20 +300,18 @@ COMMENT ON COLUMN Preservation.storage_temperature_in_centigrade  IS 'Temperatur
 CREATE TABLE participant_collection_summary
 (
 	participant_count                  NUMBER(38),    --  Number of participants with matching ethnicity, gender, and race profile Rem
-	ethnicity_ID                       NUMBER(38),    --  Ethnicity of the Participant Rem
-	gender_ID                          NUMBER(38),    --  Gender of Participant Rem
 	registered_to                      NUMBER(38),
-	participant_collection_summary_ID  NUMBER(38) NOT NULL
+	participant_collection_summary_ID  NUMBER(38) NOT NULL,
+	ethnicity                          VARCHAR2(50),
+	ethnicity_id                       NUMBER(38),
+	gender                             VARCHAR2(50),
+	gender_id                          NUMBER(38)
 )
 ;
 
 COMMENT ON TABLE participant_collection_summary IS 'Information about the Participant from whom the Specimen was collected'
 ;
 COMMENT ON COLUMN participant_collection_summary.participant_count                  IS 'Number of participants with matching ethnicity, gender, and race profile'
-;
-COMMENT ON COLUMN participant_collection_summary.ethnicity_ID                       IS 'Ethnicity of the Participant'
-;
-COMMENT ON COLUMN participant_collection_summary.gender_ID                          IS 'Gender of Participant'
 ;
 
 CREATE TABLE Institution
@@ -326,7 +328,8 @@ COMMENT ON COLUMN Institution.homepage_URL    IS 'URL for the institution or the
 
 CREATE TABLE join_participant_collection_summary_todiagnosis
 (
-	diagnosis_ID                       NUMBER(38),
+	diagnosis                          VARCHAR2(225),
+	diagnosis_id                       NUMBER(38),
 	participant_collection_summary_ID  NUMBER(38)
 )
 ;
@@ -334,7 +337,7 @@ CREATE TABLE join_participant_collection_summary_todiagnosis
 
 CREATE TABLE Diagnosis
 (
-	diagnosisType   VARCHAR2(225),    --  High-level groupings of diagnosis types Rem
+	diagnosisType   VARCHAR2(225) NOT NULL,    --  High-level groupings of diagnosis types Rem
 	diagnosis_ID    NUMBER(38) NOT NULL,
 	NCI_code        VARCHAR2(50),
 	NCI_Definition  CLOB
@@ -419,12 +422,12 @@ COMMENT ON COLUMN annotation_availability_profile.has_treatment_information     
 ;
 
 
-ALTER TABLE patient_age_group ADD CONSTRAINT PK_patient_age_group 
+ALTER TABLE patient_age_group_at_collection ADD CONSTRAINT PK_patient_age_group 
 	PRIMARY KEY (id)
 ;
 
 ALTER TABLE gender ADD CONSTRAINT PK_gender 
-	PRIMARY KEY (ID)
+	PRIMARY KEY (id)
 ;
 
 ALTER TABLE ethnicity ADD CONSTRAINT PK_ethnicity 
@@ -497,6 +500,10 @@ ALTER TABLE annotation_availability_profile ADD CONSTRAINT PK_AnnotationAvailabi
 
 
 ALTER TABLE gender
+	ADD CONSTRAINT UQ_gender_id UNIQUE (id)
+;
+
+ALTER TABLE gender
 	ADD CONSTRAINT UQ_gender_gender UNIQUE (gender)
 ;
 
@@ -505,11 +512,19 @@ ALTER TABLE gender
 ;
 
 ALTER TABLE ethnicity
+	ADD CONSTRAINT UQ_ethnicity_id UNIQUE (id)
+;
+
+ALTER TABLE ethnicity
 	ADD CONSTRAINT UQ_ethnicity_NCI_code UNIQUE (NCI_code)
 ;
 
 ALTER TABLE ethnicity
 	ADD CONSTRAINT UQ_ethnicity_ethnicity UNIQUE (ethnicity)
+;
+
+ALTER TABLE preservation_type
+	ADD CONSTRAINT UQ_preservation_type_id UNIQUE (id)
 ;
 
 ALTER TABLE preservation_type
@@ -525,7 +540,15 @@ ALTER TABLE anatomic_source
 ;
 
 ALTER TABLE anatomic_source
+	ADD CONSTRAINT UQ_anatomic_source_id UNIQUE (id)
+;
+
+ALTER TABLE anatomic_source
 	ADD CONSTRAINT UQ_anatomic_source_NCI_code UNIQUE (NCI_code)
+;
+
+ALTER TABLE specimen_type
+	ADD CONSTRAINT UQ_specimen_type_id UNIQUE (id)
 ;
 
 ALTER TABLE specimen_type
@@ -537,11 +560,19 @@ ALTER TABLE specimen_type
 ;
 
 ALTER TABLE Race
+	ADD CONSTRAINT UQ_Race_race_ID UNIQUE (race_ID)
+;
+
+ALTER TABLE Race
 	ADD CONSTRAINT UQ_race_race UNIQUE (race)
 ;
 
 ALTER TABLE Race
 	ADD CONSTRAINT UQ_race_NCI_code UNIQUE (NCI_code)
+;
+
+ALTER TABLE Diagnosis
+	ADD CONSTRAINT UQ_Diagnosis_diagnosis_ID UNIQUE (diagnosis_ID)
 ;
 
 ALTER TABLE Diagnosis
@@ -553,16 +584,24 @@ ALTER TABLE Diagnosis
 ;
 
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_patient_age 
-	FOREIGN KEY (patient_age_group_at_collection) REFERENCES patient_age_group (id)
+ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_participant_collection_summary 
+	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
 ;
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_anatomic_source 
-	FOREIGN KEY (anatomic_source_ID) REFERENCES anatomic_source (anatomic_source)
+ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_Race 
+	FOREIGN KEY (race_id) REFERENCES Race (race_ID)
 ;
 
-ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_SpecimenCollectionSummary_specimen_type 
-	FOREIGN KEY (specimen_type_ID) REFERENCES specimen_type (specimen_type)
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_anatomic_source 
+	FOREIGN KEY (anatomic_source_id) REFERENCES anatomic_source (id)
+;
+
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_patient_age_group_at_collection 
+	FOREIGN KEY (patient_age_group_at_collection) REFERENCES patient_age_group_at_collection (id)
+;
+
+ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_specimen_type 
+	FOREIGN KEY (specimen_type_id) REFERENCES specimen_type (id)
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_is_collected_from 
@@ -586,23 +625,27 @@ ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionCont
 ;
 
 ALTER TABLE Preservation ADD CONSTRAINT FK_Preservation_preservation_type 
-	FOREIGN KEY (preservation_type) REFERENCES preservation_type (preservation_type)
+	FOREIGN KEY (preservation_ID) REFERENCES preservation_type (id)
 ;
 
-ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_gender_ID 
-	FOREIGN KEY (gender_ID) REFERENCES gender (ID)
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_ethnicity 
+	FOREIGN KEY (ethnicity_id) REFERENCES ethnicity (id)
+;
+
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_gender 
+	FOREIGN KEY (gender_id) REFERENCES gender (id)
 ;
 
 ALTER TABLE Institution ADD CONSTRAINT FK_Institution_Organization 
 	FOREIGN KEY (institution_ID) REFERENCES Organization (organization_ID)
 ;
 
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT Diagnosis 
-	FOREIGN KEY (diagnosis_ID) REFERENCES Diagnosis (diagnosis_ID)
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis 
+	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
 ;
 
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT ParticipantCollectionSummary 
-	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis_id_Diagnosis 
+	FOREIGN KEY (diagnosis_id) REFERENCES Diagnosis (diagnosis_ID)
 ;
 
 ALTER TABLE join_collection_protocol_to_institution ADD CONSTRAINT Institution 
