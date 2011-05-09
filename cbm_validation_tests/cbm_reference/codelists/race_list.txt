@@ -1,7 +1,7 @@
-"American Indian or Alaska Native";1
-"Asian";2
-"African American";3
-"Native Hawaiian or Other Pacific Islander";4
-"White";5
-"Not Stated";6
-"Unknown";7
+American Indian or Alaska Native
+Asian
+Black or African American
+Native Hawaiian or other Pacific Islander
+Not Reported
+Unknown
+White

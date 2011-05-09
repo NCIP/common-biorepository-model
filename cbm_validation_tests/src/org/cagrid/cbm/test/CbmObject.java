@@ -7,6 +7,7 @@ import gov.nih.nci.cbm.domain.LogicalModel.Diagnosis;
 import gov.nih.nci.cbm.domain.LogicalModel.Institution;
 import gov.nih.nci.cbm.domain.LogicalModel.Organization;
 import gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary;
+import gov.nih.nci.cbm.domain.LogicalModel.PatientAgeGroupAtCollection;
 import gov.nih.nci.cbm.domain.LogicalModel.Person;
 import gov.nih.nci.cbm.domain.LogicalModel.Preservation;
 import gov.nih.nci.cbm.domain.LogicalModel.Race;
@@ -27,7 +28,8 @@ public enum CbmObject {
    RACE(Race.class),
    SPECIMEN_AVAILABILITY_SUMMARY_PROFILE(SpecimenAvailabilitySummaryProfile.class),
    SPECIMEN_COLLECTION_CONTACT(SpecimenCollectionContact.class),
-   SPECIMEN_COLLECTION_SUMMARY(SpecimenCollectionSummary.class);
+   SPECIMEN_COLLECTION_SUMMARY(SpecimenCollectionSummary.class),
+   PATIENT_AGE_GROUP_AT_COLLECTION(PatientAgeGroupAtCollection.class);
 
    Class<?> cbmClass;
 
