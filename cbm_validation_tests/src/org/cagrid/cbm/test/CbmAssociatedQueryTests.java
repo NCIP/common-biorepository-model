@@ -6,6 +6,7 @@ import gov.nih.nci.cagrid.data.faults.MalformedQueryExceptionType;
 import gov.nih.nci.cagrid.data.faults.QueryProcessingExceptionType;
 import gov.nih.nci.cagrid.data.utilities.CQLQueryResultsIterator;
 import gov.nih.nci.cbm.domain.LogicalModel.CollectionProtocol;
+import gov.nih.nci.cbm.domain.LogicalModel.Institution;
 import gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary;
 import gov.nih.nci.cbm.domain.LogicalModel.SpecimenCollectionSummary;
 
@@ -43,11 +44,11 @@ public class CbmAssociatedQueryTests extends CbmTest {
 	
 	@Test
 	public void testRetrieveInstitutionFromCollectionProtocol() throws Exception {
-		CbmObject associatedObject = CbmObject.COLLECTION_PROTOCOL;
-		CbmObject targetObject = CbmObject.INSTITUTION;
+		CbmObject associatedObject = CbmObject.INSTITUTION;
+		CbmObject targetObject = CbmObject.COLLECTION_PROTOCOL;
 		String associatedObjectName = associatedObject.getSimpleName();
 		String associationIdAttr = "id";
-		String associationName = "owns";
+		String associationName = "residesAt";
 		
 		checkAssociations(associatedObject, targetObject, associatedObjectName,
 				associationIdAttr, associationName);
@@ -175,44 +176,51 @@ public class CbmAssociatedQueryTests extends CbmTest {
 			QueryProcessingExceptionType {
 		
 		List<Object> sampleRecordSet = retrieveAllRecords(associatedObject);
-		int maxRetryCount = 3; // It's possible that not all retrieved records have associated recods
+		int maxRetryCount = 3; // It's possible that not all retrieved records have associated records
 		boolean testPassed = false;
 
 		// Start with the first summary record
 		for(int i = 0; i < maxRetryCount; i++){
 			String id = null;
 			try{
-			switch(associatedObject)
-			{
-			case PARTICIPANT_COLLECTION_SUMMARY:	
-				ParticipantCollectionSummary pcsRecord = (ParticipantCollectionSummary)sampleRecordSet.get(i);
-				id = pcsRecord.getId().toString();
-				break;
-				
-			case SPECIMEN_COLLECTION_SUMMARY:	
-				SpecimenCollectionSummary scsRecord = (SpecimenCollectionSummary)sampleRecordSet.get(i);
-				id = scsRecord.getId().toString();
-				break;
-				
-			case COLLECTION_PROTOCOL:	
-				CollectionProtocol cpRecord = (CollectionProtocol)sampleRecordSet.get(i);
-				id = cpRecord.getId().toString();
-				break;
-				
-			default:
-				throw new CbmException("Unsupported associated object reference: " + associatedObject.getSimpleName());
-			}
-			
+				switch(associatedObject)
+				{
+				case PARTICIPANT_COLLECTION_SUMMARY:	
+					ParticipantCollectionSummary pcsRecord = (ParticipantCollectionSummary)sampleRecordSet.get(i);
+					id = pcsRecord.getId().toString();
+					break;
+
+				case SPECIMEN_COLLECTION_SUMMARY:	
+					SpecimenCollectionSummary scsRecord = (SpecimenCollectionSummary)sampleRecordSet.get(i);
+					id = scsRecord.getId().toString();
+					break;
+
+				case COLLECTION_PROTOCOL:	
+					CollectionProtocol cpRecord = (CollectionProtocol)sampleRecordSet.get(i);
+					id = cpRecord.getId().toString();
+					break;
+
+				case INSTITUTION:	
+					Institution iRecord = (Institution)sampleRecordSet.get(i);
+					id = iRecord.getId().toString();
+					break;
+
+				default:
+					throw new CbmException("Unsupported associated object reference: " + associatedObject.getSimpleName());
+				}
+
 			}catch(ArrayIndexOutOfBoundsException ae){
-				throw new CbmException("Cannot properly test.  No records for for "  + associatedObject.getSimpleName());
+				fail("Cannot properly test.  No " + targetObject.getSimpleName() + " records returned for "  + associatedObject.getSimpleName() + 
+				".  This may mean that references have not been populated properly.");
 			}
 			RetrieveAssociationsQueryBuilder raqBuilder = new RetrieveAssociationsQueryBuilder();
 			
-			CQLQuery query = raqBuilder.getQuery(targetObject, associatedObjectName, associationName, associationIdAttr, id);
+			CQLQuery query = raqBuilder.getQuery(targetObject, associatedObjectName, associationName, associationIdAttr,
+					id);
 			CQLQueryResults results = serviceClient.query(query);
 			List<Object> values = processResults(results);
 
-			if(values.size() > 0){
+			if (values.size() > 0) {
 				// Values found, test passed
 				testPassed = true;
 				break;
@@ -220,14 +228,17 @@ public class CbmAssociatedQueryTests extends CbmTest {
 
 		}
 
-		if(!testPassed){
-			fail("Unable to retrieve a set of " + targetObject.getSimpleName() + " objects related to a " + associatedObject.getSimpleName() + " object");
+		if (!testPassed) {
+			fail("Unable to retrieve a set of " + targetObject.getSimpleName()
+					+ " objects related to a "
+					+ associatedObject.getSimpleName() + " object");
 		}
 	}
-	
+
 	/**
-	 * Retrieve all records for the given object.  This tests that records from each object can be retrieved.
-	 * In reality, this method really just retrieves the first 1000 records for each object due to the build in page
+	 * Retrieve all records for the given object. This tests that records from
+	 * each object can be retrieved. In reality, this method really just
+	 * retrieves the first 1000 records for each object due to the build in page
 	 * size of caCORE
 	 * 
 	 * @param theObject
@@ -236,30 +247,32 @@ public class CbmAssociatedQueryTests extends CbmTest {
 	 * @throws MalformedQueryExceptionType
 	 * @throws QueryProcessingExceptionType
 	 */
-	private List<Object> retrieveAllRecords(CbmObject theObject) throws Exception{
+	private List<Object> retrieveAllRecords(CbmObject theObject)
+			throws Exception {
 		RetrieveAllAttributesQueryBuilder builder = new RetrieveAllAttributesQueryBuilder();
 		CQLQuery query = builder.getQuery(theObject);
 		CQLQueryResults results = serviceClient.query(query);
 		List<Object> values = processResults(results);
-		//TODO: Do we want an error here?
-//		if(values.size() < 1){
-//			throw new Exception("No records found for object " + theObject.getSimpleName());
-//		}
+		// TODO: Do we want an error here?
+		// if(values.size() < 1){
+		// throw new Exception("No records found for object " +
+		// theObject.getSimpleName());
+		// }
 		return values;
 	}
-	
 
+	private List<Object> processResults(CQLQueryResults results)
+			throws Exception {
 
-
-
-	private List<Object> processResults(CQLQueryResults results) throws Exception {
-
-		InputStream resourceAsStream = CbmCodeListTests.class.getResourceAsStream("client-config.wsdd");
-		Iterator<?> iter = new CQLQueryResultsIterator(results, resourceAsStream);
+		InputStream resourceAsStream = CbmCodeListTests.class
+				.getResourceAsStream("client-config.wsdd");
+		Iterator<?> iter = new CQLQueryResultsIterator(results,
+				resourceAsStream);
 
 		List<Object> remoteValues = new Vector<Object>();
 
-		// Check that all retrieved values are supported by the reference code list while
+		// Check that all retrieved values are supported by the reference code
+		// list while
 		while (iter.hasNext()) {
 			Object rawValue = iter.next();
 
@@ -269,6 +282,3 @@ public class CbmAssociatedQueryTests extends CbmTest {
 		return remoteValues;
 	}
 }
-
-
-
