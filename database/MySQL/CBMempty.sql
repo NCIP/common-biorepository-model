@@ -175,10 +175,8 @@ CREATE TABLE Address
 CREATE TABLE join_participant_collection_summary_to_race
 (
 	participant_collection_summary_ID INTEGER,
-	race VARCHAR(50),
 	race_id INTEGER,
-	KEY (race_id),
-	KEY (race)
+	KEY (race_id)
 ) 
 ;
 
@@ -292,12 +290,10 @@ CREATE TABLE Institution
 
 CREATE TABLE join_participant_collection_summary_todiagnosis
 (
-	diagnosis VARCHAR(225),
 	diagnosis_id INTEGER,
 	participant_collection_summary_ID INTEGER,
 	KEY (participant_collection_summary_ID),
-	KEY (diagnosis_id),
-	KEY (diagnosis)
+	KEY (diagnosis_id)
 ) 
 ;
 
