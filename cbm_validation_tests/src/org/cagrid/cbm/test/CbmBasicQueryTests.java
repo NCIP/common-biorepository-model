@@ -2,11 +2,9 @@ package org.cagrid.cbm.test;
 
 import gov.nih.nci.cagrid.cqlquery.CQLQuery;
 import gov.nih.nci.cagrid.cqlresultset.CQLQueryResults;
-import gov.nih.nci.cagrid.cqlresultset.TargetAttribute;
 import gov.nih.nci.cagrid.data.faults.MalformedQueryExceptionType;
 import gov.nih.nci.cagrid.data.faults.QueryProcessingExceptionType;
 import gov.nih.nci.cagrid.data.utilities.CQLQueryResultsIterator;
-import gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary;
 
 import java.io.InputStream;
 import java.rmi.RemoteException;
@@ -14,10 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import org.cagrid.cbm.test.query.DistinctAttributesQueryBuilder;
 import org.cagrid.cbm.test.query.RetrieveAllAttributesQueryBuilder;
-import org.cagrid.cbm.test.query.RetrieveFilteredObjectsQueryBuilder;
-import org.cagrid.cbm.test.query.RetrieveAssociationsQueryBuilder;
 import org.junit.Test;
 
 /**
@@ -64,6 +59,12 @@ public class CbmBasicQueryTests extends CbmTest {
 		retrieveAllRecords(theObject);
 	}
 
+	@Test
+	public void testRetrievePatientAgeGroupAtCollectionQuery() throws Exception {
+		CbmObject theObject = CbmObject.PATIENT_AGE_GROUP_AT_COLLECTION;
+		retrieveAllRecords(theObject);
+	}
+	
 	@Test
 	public void testRetrieveParticipantCollectionSummaryQuery() throws Exception {
 		CbmObject theObject = CbmObject.PARTICIPANT_COLLECTION_SUMMARY;
@@ -134,10 +135,8 @@ public class CbmBasicQueryTests extends CbmTest {
 
 		List<Object> remoteValues = new Vector<Object>();
 
-		// Check that all retrieved values are supported by the reference code list while
 		while (iter.hasNext()) {
 			Object rawValue = iter.next();
-
 			remoteValues.add(rawValue);
 
 		}

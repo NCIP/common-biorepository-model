@@ -5,7 +5,6 @@ import gov.nih.nci.cagrid.metadata.common.UMLClassUmlAttributeCollection;
 import gov.nih.nci.cagrid.metadata.dataservice.UMLClass;
 
 import java.io.FileInputStream;
-import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Vector;
@@ -67,6 +66,11 @@ public class CbmObjectExistenceTests extends CbmTest {
    public void testPreservationObjectExistence() throws Exception {
       checkObjectExistence(CbmObject.PRESERVATION);
    }
+   
+   @Test
+   public void testPatientAgeGroupAtCollectionObjectExistence() throws Exception {
+      checkObjectExistence(CbmObject.PATIENT_AGE_GROUP_AT_COLLECTION);
+   }
 
    @Test
    public void testRaceObjectExistence() throws Exception {
@@ -123,6 +127,11 @@ public class CbmObjectExistenceTests extends CbmTest {
       checkAttributeExistenceForObject(CbmObject.PARTICIPANT_COLLECTION_SUMMARY);
    }
 
+   @Test
+   public void testPatientAgeGroupAtCollectionAttributes() throws Exception {
+      checkAttributeExistenceForObject(CbmObject.PATIENT_AGE_GROUP_AT_COLLECTION);
+   }
+   
    @Test
    public void testPreservationAttributes() throws Exception {
       checkAttributeExistenceForObject(CbmObject.PRESERVATION);

@@ -4,7 +4,8 @@ a give CBM node.
 To execute the tests in this package:
 
 - Download Ant 1.7.0 and place it in an accessible location
-- Modify the test execution script, run_tests.bat or run_tests.sh to suit your local environment
+- Modify the test execution script, run_tests.bat or run_tests.sh, to suit your local environment
+	- Modify the JAVA_HOME, ANT_HOME, and CBM_URL variables in the execution script.
 - Execute the test execution script.  This will execute the suite of the CBM validation tests against the CBM node URL specified in the script.
 - Test result xml data files are stored in the /data directory, in a directory named with a MMDDYYYY_HHMMSS timestamp
 - HTML test result files are stored in the /report directory, in a directory named with a MMDDYYYY_HHMMSS timestamp
@@ -27,8 +28,9 @@ CbmBasicQueryTests
 	These tests check that records can be returned for each object.  
 	A test fails if an exception is thrown during a query, or if no records can be found for a given object.
 	
-CbmComplexQueryTests (TO BE WRITTEN)
-	These tests check that complex queries, including retrieval of associated objects can be performed.
+CbmAssociatedQueryTests 
+	These tests check queries that return results based on restrictions of associated records.  For example, retrieving the set of 
+	SpecimenCollectionSummary records for a given ParticipantCollectionSummary object.
 	A test fails if there is an exception in the query.
 
 

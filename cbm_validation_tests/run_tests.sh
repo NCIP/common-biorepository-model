@@ -10,7 +10,7 @@ TEST_REPORT_DIRECTORY=./report
 #Modify to suit environment
 export JAVA_HOME=/usr/lib/java
 export ANT_HOME=$CBM_TEST_DIR/apache-ant-1.7.0
-CBM_URL=http://cabigapps01.cancer.gov:9294/wsrf/services/cagrid/CBM
+CBM_URL=<ADD CBM URL HERE>
 
 
 
