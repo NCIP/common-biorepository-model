@@ -427,10 +427,8 @@ DROP TABLE IF EXISTS `join_participant_collection_summary_to_race`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `join_participant_collection_summary_to_race` (
   `participant_collection_summary_ID` int(11) DEFAULT NULL,
-  `race` varchar(50) DEFAULT NULL,
   `race_id` int(11) DEFAULT NULL,
   KEY `race_id` (`race_id`),
-  KEY `race` (`race`),
   CONSTRAINT `FK_join_participant_collection_summary_to_race_id_Race` FOREIGN KEY (`race_id`) REFERENCES `race` (`race_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -452,12 +450,10 @@ DROP TABLE IF EXISTS `join_participant_collection_summary_todiagnosis`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `join_participant_collection_summary_todiagnosis` (
-  `diagnosis` varchar(225) DEFAULT NULL,
   `diagnosis_id` int(11) DEFAULT NULL,
   `participant_collection_summary_ID` int(11) DEFAULT NULL,
   KEY `participant_collection_summary_ID` (`participant_collection_summary_ID`),
   KEY `diagnosis_id` (`diagnosis_id`),
-  KEY `diagnosis` (`diagnosis`),
   CONSTRAINT `FK_join_participant_collection_summary_todiagnosis_id_Diagnosis` FOREIGN KEY (`diagnosis_id`) REFERENCES `diagnosis` (`diagnosis_ID`),
   CONSTRAINT `FK_join_participant_collection_summary_todiagnosis` FOREIGN KEY (`participant_collection_summary_ID`) REFERENCES `participant_collection_summary` (`participant_collection_summary_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
