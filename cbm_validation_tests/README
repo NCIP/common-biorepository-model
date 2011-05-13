@@ -34,7 +34,3 @@ CbmAssociatedQueryTests
 	A test fails if there is an exception in the query.
 
 
-TODO:
-- Complete the complex query tests
-- Add a connectivity test to check whether or not a node exists in a target grid index
-- Update ant build file to jar up test classes
