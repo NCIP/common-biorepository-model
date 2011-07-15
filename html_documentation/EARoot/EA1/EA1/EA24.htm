@@ -24,7 +24,7 @@ function initPage(src) {
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/16/2011 2:16:42 PM</td>
+			<td class="ObjectDetailsValue">5/2/2011 2:17:55 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -96,37 +96,23 @@ function initPage(src) {
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private INTEGER</i><br /><strong>&nbsp;&nbsp;ethnicity_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.ethnicity<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Ethnicity of the Participant
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private INTEGER</i><br /><strong>&nbsp;&nbsp;gender_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.gender<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Gender of Participant
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;registered_to</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isEnrolledIn<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isEnrolledIn<br>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;participant_collection_summary_ID</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.id<br>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;ethnicity</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.ethnicity<br>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;ethnicity_id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;gender</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.gender<br>&nbsp;</td>
+			</tr>			<tr>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;gender_id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>
 		</table>
 </div><div class="ItemBody" id="OperationsTable">
@@ -136,6 +122,78 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>FK_participant_collection_summary_ethnicity</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{B4301035-D1CF-4c53-86FB-858E617190BA}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{B4301035-D1CF-4c53-86FB-858E617190BA}" border="0" />ethnicity_id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{B4301035-D1CF-4c53-86FB-858E617190BA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B4301035-D1CF-4c53-86FB-858E617190BA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{B4301035-D1CF-4c53-86FB-858E617190BA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{B4301035-D1CF-4c53-86FB-858E617190BA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>FK_participant_collection_summary_gender</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}" border="0" />gender_id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{ED4D2AD1-6A23-4e08-9BFA-171646CA8FAA}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_ParticipantCollectionSummary</strong>(<br />
@@ -217,42 +275,6 @@ function initPage(src) {
 
 				</td>
 			</tr>
-			<tr>
-				<td width="40%" class="TableRow">
-					<i>public</i><br />
-					<strong>FK_gender_ID</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}" border="0" />gender_ID: INTEGER</a>, 
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}00" style="display: none;">
-							<td width="50"><strong>Default:</strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}01" style="display: none;">
-							<td width="50"><strong>Kind:</strong></td>
-							<td>in</td>
-						</tr>
-						<tr id="param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}02" style="display: none;">
-							<td width="50"><strong>Stereotype: </strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{8B2D2688-0D34-408b-BD83-FA90AAA8EEDA}03" style="display: none;">
-							<td width="50"></td>
-							<td></td>
-						</tr>
-					</table>
-):
-				</td>
-				<td width="60%" class="TableRow">
-					<i> &lt;&lt;FK&gt;&gt; </i>
-					<table>
-						<tr>
-							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
-							<td>property=Delete Cascade=0;Update Cascade=0;</td>
-						</tr>
-					</table>
-					
-				</td>
-			</tr>
 
 		</table>
 </div>		<div class="ItemBody" id="AssociationsToTable">
@@ -284,7 +306,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_ethnicity_id<br />
+						<strong>Name:</strong> FK_participant_collection_summary_ethnicity<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -314,7 +336,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_gender_ID<br />
+						<strong>Name:</strong> FK_participant_collection_summary_gender<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -351,26 +373,11 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
-						<a href="./EA1/EA42.htm">«table» JoinParticipantCollectionSummaryToRace</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> ParticipantCollectionSummary<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_ParticipantCollectionSummary<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
 						<a href="EA22.htm">«table» join_participant_collection_summary_todiagnosis</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> ParticipantCollectionSummary<br />
+						<strong>Name:</strong> FK_join_participant_collection_summary_todiagnosis<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -382,6 +389,21 @@ function initPage(src) {
 				<tr>
 					<td width="20%" class="TableRow" valign="top">
 						<a href="EA21.htm">«table» join_participant_collection_summary_to_race</a><br />
+						Class «FK» 
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_ParticipantCollectionSummary<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="./EA1/EA42.htm">«table» JoinParticipantCollectionSummaryToRace</a><br />
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -420,6 +442,18 @@ function initPage(src) {
 				</tr>
 				<tr>
 					<td width="24%" class="TableRow">FK_is_collected_from</td>
+					<td width="8%" class="TableRow">Invariant</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">FK_ethnicity</td>
+					<td width="8%" class="TableRow">Invariant</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="60%" class="TableRow">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">FK_gender</td>
 					<td width="8%" class="TableRow">Invariant</td>
 					<td width="8%" class="TableRow">Approved</td>
 					<td width="60%" class="TableRow">&nbsp;</td>

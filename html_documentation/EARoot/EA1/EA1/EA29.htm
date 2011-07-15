@@ -92,7 +92,7 @@ function initPage(src) {
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;race_ID</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;race_ID</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Race.id<br>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
@@ -112,21 +112,21 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_Race</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}" border="0" />race_ID: INTEGER</a>, 
+					<a href="#" onclick="parent.toggleData('param{402B3520-B982-42ef-A510-F5FA1F10F719}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{402B3520-B982-42ef-A510-F5FA1F10F719}" border="0" />race_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}00" style="display: none;">
+						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}01" style="display: none;">
+						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}02" style="display: none;">
+						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{3D8B5C9B-7B3D-4cc4-B647-E8C2A0D03E59}03" style="display: none;">
+						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -134,7 +134,43 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
+					<i> &lt;&lt;PK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_Race_race_ID</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}" border="0" />race_ID: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -232,7 +268,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Race<br />
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -253,7 +289,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA68.htm">Race</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA69.htm">Race</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Person</title>
+<title>PatientAgeGroupAtCollection</title>
 <link href="../../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Person  : public   class</span>
+	<span class="ObjectTitle">PatientAgeGroupAtCollection  : public   class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">5/24/2009 11:17:13 AM</td>
+			<td width="85%" class="ObjectDetailsValue">5/3/2011 2:40:39 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/19/2009 4:03:11 PM</td>
+			<td class="ObjectDetailsValue">7/12/2011 1:05:39 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -33,7 +33,7 @@ function initPage(src) {
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue">Baris Suzek</td>
+			<td class="ObjectDetailsValue">princeek</td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
@@ -57,18 +57,19 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{5FA73EC4-A849-43e0-9C60-2C3F6B1D5584}</td>
+			<td class="ObjectDetailsValue">{15EF804D-60AC-4f24-8672-85061AC3482E}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA50.htm">Domain Objects Revised for Standard Use</a>, <a href="../../../../../../EA1/EA52.htm">Logical Model</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA52.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">&lt;p&gt;Age (in years) of the patient at the incident of specimen collection, grouped in five year sets&lt;br/&gt;&lt;/p&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
+			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -78,97 +79,73 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;fullName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2222323<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.  <br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA79.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.&nbsp;<WBR> 
+			Identifier for the row in the class
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;firstName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179589<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname. Synonym = Given Name. <br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA79.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;patientAgeGroupHigh</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A word or group of words indicating a person&#39;s first (personal or given) name; the name that precedes the surname. Synonym = Given Name. 
+			The maximum number of years allowed to fall into the age group
 		</td>
 	</tr>
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;lastName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179591<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A means of identifying an individual by using a word or group of words indicating a person's last (family) name. Synonym = Last Name, Surname.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
+				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA79.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;patientAgeGroupLow</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i></i><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s last (family) name. Synonym = Last Name, Surname.
+			The minimum years allowed to fall into the age group
 		</td>
 	</tr>
 </table></div>
 </td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;middleNameOrInitial</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179590<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A means of identifying an individual by using a word or group of words indicating a person's middle name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A means of identifying an individual by using a word or group of words indicating a person&#39;s middle name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA80.htm">String</a></i><br /><strong>&nbsp;&nbsp;emailAddress</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2517550<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=The string of characters that represents the electronic mail address of a person.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The string of characters that represents the electronic mail address of a person.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA78.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
 			</tr>
 		</table>
-</div><div class="ItemBody" id="TaggedValTable">
-	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-	<tr>
-			<td width="30%" class="TableHeading">Tag</td>
-			<td width="30%" class="TableHeading">Value</td>
-			<td width="40%" class="TableHeading">Details</td>
-	</tr>
-					<tr>
-				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">A human being. </td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">1</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">1</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>
-</table>
-</div>		<div class="ItemBody" id="LinksTable">
+</div>		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA72.htm">SpecimenCollectionSummary</a><br />
+						Class &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> describesPatientAge<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> qualifiesPatientAgeAtSpecimenCollection<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
 			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Object</td>
@@ -177,13 +154,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="EA70.htm">SpecimenCollectionContact</a></td>
-					<td width="15%" class="TableRow" valign="top">Class</td>
-					<td width="15%" class="TableRow" valign="top">Generalization</td>
-					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA26.htm">«table» Person</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA25.htm">«table» patient_age_group_at_collection</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

@@ -80,7 +80,7 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private static VARCHAR(225)</i><br /><strong>&nbsp;&nbsp;diagnosisType</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>private static <a href="../EA2/EA4/EA86.htm">VARCHAR(225)</a></i><br /><strong>&nbsp;&nbsp;diagnosisType</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Diagnosis.diagnosisType<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
@@ -93,7 +93,7 @@ function initPage(src) {
 </table></div>
 </td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;diagnosis_ID</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;diagnosis_ID</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Diagnosis.id<br>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
@@ -113,21 +113,21 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_Diagnosis</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{B10CF33D-5564-46aa-819B-16EB17EF5363}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{B10CF33D-5564-46aa-819B-16EB17EF5363}" border="0" />diagnosis_ID: INTEGER</a>, 
+					<a href="#" onclick="parent.toggleData('param{E4D7A81A-0680-4c59-9C66-2548B79114D2}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{E4D7A81A-0680-4c59-9C66-2548B79114D2}" border="0" />diagnosis_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{B10CF33D-5564-46aa-819B-16EB17EF5363}00" style="display: none;">
+						<tr id="param{E4D7A81A-0680-4c59-9C66-2548B79114D2}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{B10CF33D-5564-46aa-819B-16EB17EF5363}01" style="display: none;">
+						<tr id="param{E4D7A81A-0680-4c59-9C66-2548B79114D2}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{B10CF33D-5564-46aa-819B-16EB17EF5363}02" style="display: none;">
+						<tr id="param{E4D7A81A-0680-4c59-9C66-2548B79114D2}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{B10CF33D-5564-46aa-819B-16EB17EF5363}03" style="display: none;">
+						<tr id="param{E4D7A81A-0680-4c59-9C66-2548B79114D2}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -135,7 +135,43 @@ function initPage(src) {
 ):
 				</td>
 				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
+					<i> &lt;&lt;PK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_Diagnosis_diagnosis_ID</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{33EE9C06-07B4-45c8-AF33-234F30495981}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{33EE9C06-07B4-45c8-AF33-234F30495981}" border="0" />diagnosis_ID: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{33EE9C06-07B4-45c8-AF33-234F30495981}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{33EE9C06-07B4-45c8-AF33-234F30495981}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{33EE9C06-07B4-45c8-AF33-234F30495981}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{33EE9C06-07B4-45c8-AF33-234F30495981}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -233,7 +269,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Diagnosis<br />
+						<strong>Name:</strong> FK_join_participant_collection_summary_todiagno...<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">

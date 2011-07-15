@@ -78,7 +78,7 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(150)</i><br /><strong>&nbsp;&nbsp;anatomic_source</strong></td>
@@ -101,21 +101,21 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_anatomic_source</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}" border="0" />id: INTEGER</a>, 
+					<a href="#" onclick="parent.toggleData('param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}" border="0" />id: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}00" style="display: none;">
+						<tr id="param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}01" style="display: none;">
+						<tr id="param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}02" style="display: none;">
+						<tr id="param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{645AE608-56CD-44c2-B117-9A5BF7EBDA1C}03" style="display: none;">
+						<tr id="param{A3D24D59-807D-4f26-B6C8-73B4ACE9AB2C}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -152,6 +152,42 @@ function initPage(src) {
 							<td></td>
 						</tr>
 						<tr id="param{9ED41F95-1342-4602-A508-9AB190A7B7A1}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_anatomic_source_id</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}" border="0" />id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{A4B3143C-340F-4eb4-9326-EC8E568E3B0E}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -221,11 +257,11 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_SpecimenCollectionSummary_anatomic_source<br />
+						<strong>Name:</strong> FK_specimen_collection_summary_anatomic_source<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> UQ_anatomic_source_anatomic_source<br />
+						<strong>Name:</strong> PK_anatomic_source<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>

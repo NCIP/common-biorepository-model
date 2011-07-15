@@ -81,10 +81,10 @@ function initPage(src) {
 				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;gender</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;ID</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public TEXT</i><br /><strong>&nbsp;&nbsp;NCI_Definition</strong></td>
@@ -101,21 +101,21 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_gender</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}" border="0" />ID: INTEGER</a>, 
+					<a href="#" onclick="parent.toggleData('param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}" border="0" />id: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}00" style="display: none;">
+						<tr id="param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}01" style="display: none;">
+						<tr id="param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}02" style="display: none;">
+						<tr id="param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{BF6C21C9-8F24-49f1-B5D4-28197B32E73B}03" style="display: none;">
+						<tr id="param{0E0BBC83-B4AB-4d66-82DE-2FE6846A19E0}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -124,6 +124,42 @@ function initPage(src) {
 				</td>
 				<td width="60%" class="TableRow">
 					<i> &lt;&lt;PK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_gender_id</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}" border="0" />id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{93D255E4-CE8C-4ec2-97F6-C194451BA2D0}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -221,7 +257,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_gender_ID<br />
+						<strong>Name:</strong> FK_participant_collection_summary_gender<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">

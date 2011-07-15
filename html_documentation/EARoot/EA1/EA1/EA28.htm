@@ -78,7 +78,7 @@ function initPage(src) {
 			<td width="60%" class="TableHeading">Details</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
+				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;id</strong></td>
 				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>&nbsp;</td>
 			</tr>			<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(100)</i><br /><strong>&nbsp;&nbsp;preservation_type</strong></td>
@@ -101,21 +101,21 @@ function initPage(src) {
 				<td width="40%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_preservation_type</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{6B922307-03F3-4308-B839-B0C334A344F0}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{6B922307-03F3-4308-B839-B0C334A344F0}" border="0" />id: INTEGER</a>, 
+					<a href="#" onclick="parent.toggleData('param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}" border="0" />id: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{6B922307-03F3-4308-B839-B0C334A344F0}00" style="display: none;">
+						<tr id="param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6B922307-03F3-4308-B839-B0C334A344F0}01" style="display: none;">
+						<tr id="param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{6B922307-03F3-4308-B839-B0C334A344F0}02" style="display: none;">
+						<tr id="param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{6B922307-03F3-4308-B839-B0C334A344F0}03" style="display: none;">
+						<tr id="param{30B8CA27-160A-4d80-9C80-E978D9EFC6FD}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
@@ -124,6 +124,42 @@ function initPage(src) {
 				</td>
 				<td width="60%" class="TableRow">
 					<i> &lt;&lt;PK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>UQ_preservation_type_id</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{6C202B02-847B-4929-8346-164A5B00262F}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{6C202B02-847B-4929-8346-164A5B00262F}" border="0" />id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{6C202B02-847B-4929-8346-164A5B00262F}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6C202B02-847B-4929-8346-164A5B00262F}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{6C202B02-847B-4929-8346-164A5B00262F}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{6C202B02-847B-4929-8346-164A5B00262F}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;unique&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
@@ -225,7 +261,7 @@ function initPage(src) {
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> UQ_preservation_type_preservation_type<br />
+						<strong>Name:</strong> PK_preservation_type<br />
 						&nbsp;	
 					</td>
 					<td width="30%" class="TableRow" valign="top">&nbsp;</td>

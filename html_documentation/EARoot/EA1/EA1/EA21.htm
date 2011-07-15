@@ -68,6 +68,7 @@ function initPage(src) {
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
 			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -78,11 +79,91 @@ function initPage(src) {
 		</tr>
 						<tr>
 				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;participant_collection_summary_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Race.classifies<br>&nbsp;</td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Race.classifies<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isClassifiedBy<br>&nbsp;</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;race_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isClassifiedBy<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.Race.classifies<br>&nbsp;</td>
+				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;race_id</strong></td>
+				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isClassifiedBy<br>&nbsp;</td>
 			</tr>
+		</table>
+</div><div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="40%" class="TableHeading">Operation</td>
+			<td width="60%" class="TableHeading">Details</td>
+		</tr>
+						<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>FK_join_participant_collection_summary_to_race_participant_collection_summary</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{7B90C5A9-258B-4d21-9276-8DF4DA756593}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}" border="0" />participant_collection_summary_ID: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="40%" class="TableRow">
+					<i>public</i><br />
+					<strong>FK_join_participant_collection_summary_to_race_Race</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}" border="0" />race_id: INTEGER</a>, 
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}00" style="display: none;">
+							<td width="50"><strong>Default:</strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}01" style="display: none;">
+							<td width="50"><strong>Kind:</strong></td>
+							<td>in</td>
+						</tr>
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}02" style="display: none;">
+							<td width="50"><strong>Stereotype: </strong></td>
+							<td></td>
+						</tr>
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}03" style="display: none;">
+							<td width="50"></td>
+							<td></td>
+						</tr>
+					</table>
+):
+				</td>
+				<td width="60%" class="TableRow">
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;</td>
+						</tr>
+					</table>
+					
+				</td>
+			</tr>
+
 		</table>
 </div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -98,7 +179,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Race<br />
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
@@ -113,7 +194,7 @@ function initPage(src) {
 						Class «FK» 
 					</td>
 					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> ParticipantCollectionSummary<br />
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
 						&nbsp;
 					</td>
 					<td width="20%" class="TableRow" valign="top">
