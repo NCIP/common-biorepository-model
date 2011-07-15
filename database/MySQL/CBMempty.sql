@@ -20,8 +20,6 @@ DROP TABLE IF EXISTS join_participant_collection_summary_to_race
 ;
 DROP TABLE IF EXISTS specimen_collection_summary
 ;
-DROP TABLE IF EXISTS join_address_to_specimen_collection_contact
-;
 DROP TABLE IF EXISTS specimen_collection_contact
 ;
 DROP TABLE IF EXISTS specimen_availability_summary_profile
@@ -145,7 +143,7 @@ CREATE TABLE Organization
 	name VARCHAR(150) COMMENT 'The name of the organization or an institution.',
 	organization_ID INTEGER NOT NULL,
 	PRIMARY KEY (organization_ID)
-)  COMMENT='A formal group of people that exists to further a...'
+)  COMMENT='A formal group of people that exists to further a particular profession.'
 ;
 
 
@@ -158,7 +156,7 @@ CREATE TABLE Address
 	entity_number VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
 	floor_or_premises VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of the story or level of a building.',
 	post_office_box VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a delivery box at a postal facility.',
-	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic ...',
+	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.',
 	state VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a principal administrative unit of a country.',
 	street_post_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.',
 	street_pre_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.',
@@ -168,7 +166,7 @@ CREATE TABLE Address
 	street_or_thoroughfare_extension_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of an expanded part of road or public highway.',
 	address_ID INTEGER NOT NULL,
 	PRIMARY KEY (address_ID)
-)  COMMENT='A standardized representation of the location of...'
+)  COMMENT='A standardized representation of the location of a person, business, building, or organization.'
 ;
 
 
@@ -176,6 +174,7 @@ CREATE TABLE join_participant_collection_summary_to_race
 (
 	participant_collection_summary_ID INTEGER,
 	race_id INTEGER,
+	KEY (participant_collection_summary_ID),
 	KEY (race_id)
 ) 
 ;
@@ -204,23 +203,13 @@ CREATE TABLE specimen_collection_summary
 ;
 
 
-CREATE TABLE join_address_to_specimen_collection_contact
-(
-	specimen_collection_contact_ID INTEGER,
-	address_ID INTEGER,
-	KEY (specimen_collection_contact_ID),
-	KEY (address_ID)
-) 
-;
-
-
 CREATE TABLE specimen_collection_contact
 (
 	phone VARCHAR(50) COMMENT 'Phone number of the Contact person',
 	specimen_collection_contact_ID INTEGER NOT NULL,
 	PRIMARY KEY (specimen_collection_contact_ID),
 	KEY (specimen_collection_contact_ID)
-)  COMMENT='Contact information for the person who is responsible...'
+)  COMMENT='Contact information for the person who is responsible for the collection'
 ;
 
 
@@ -238,7 +227,7 @@ CREATE TABLE specimen_availability_summary_profile
 
 CREATE TABLE Race
 (
-	race VARCHAR(50) NOT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of t...',
+	race VARCHAR(50) NOT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.',
 	race_ID INTEGER NOT NULL,
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
@@ -257,7 +246,7 @@ CREATE TABLE Preservation
 	preservation_ID INTEGER NOT NULL,
 	PRIMARY KEY (preservation_ID),
 	KEY (preservation_ID)
-)  COMMENT='Information that describes the storage conditions...'
+)  COMMENT='Information that describes the storage conditions for a collection of specimens'
 ;
 
 
@@ -274,7 +263,7 @@ CREATE TABLE participant_collection_summary
 	KEY (ethnicity_id),
 	KEY (gender_id),
 	KEY (registered_to)
-)  COMMENT='Information about the Participant from whom the Specimen...'
+)  COMMENT='Information about the Participant from whom the Specimen was collected'
 ;
 
 
@@ -308,7 +297,7 @@ CREATE TABLE Diagnosis
 	UNIQUE (diagnosis_ID),
 	UNIQUE (diagnosisType),
 	UNIQUE (NCI_code)
-)  COMMENT='High level groupings of medical conditions with which ...'
+)  COMMENT='High level groupings of medical conditions with which participants have been diagnosed'
 ;
 
 
@@ -355,14 +344,18 @@ CREATE TABLE annotation_availability_profile
 	has_treatment_information BOOL COMMENT 'Are treatment data (e.g. drug, schedule) available?',
 	annotation_availability_profile_ID INTEGER NOT NULL,
 	PRIMARY KEY (annotation_availability_profile_ID)
-)  COMMENT='Metadata describing the availability of information ...'
+)  COMMENT='Metadata describing the availability of information pertaining to specimens in a collection.'
 ;
 
 
 
 
 
-ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_id_Race 
+ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_participant_collection_summary 
+	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
+;
+
+ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_Race 
 	FOREIGN KEY (race_id) REFERENCES Race (race_ID)
 ;
 
@@ -384,14 +377,6 @@ ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_is_collected_from
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_undergoes 
 	FOREIGN KEY (undergoes) REFERENCES Preservation (preservation_ID)
-;
-
-ALTER TABLE join_address_to_specimen_collection_contact ADD CONSTRAINT SpecimenCollectionContact 
-	FOREIGN KEY (specimen_collection_contact_ID) REFERENCES specimen_collection_contact (specimen_collection_contact_ID)
-;
-
-ALTER TABLE join_address_to_specimen_collection_contact ADD CONSTRAINT Address 
-	FOREIGN KEY (address_ID) REFERENCES Address (address_ID)
 ;
 
 ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionContact_Person 
