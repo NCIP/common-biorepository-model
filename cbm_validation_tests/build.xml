@@ -20,6 +20,9 @@
 	<target name="build">
 		<delete file="${test.lib.dir}/cbm-test.jar"/> 
 		
+		<delete dir="${test.bin.dir}"/>
+		<mkdir dir="${test.bin.dir}"/>
+		
 		<javac destdir="${test.bin.dir}">
 		 	<src path="${test.src.dir}" />
 		 	<classpath refid="master-classpath"/>
