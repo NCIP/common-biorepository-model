@@ -1,73 +1,78 @@
 <project name="CBM Test" default="test" basedir=".">
-    	<description>
-        	CBM Test Package
-    	</description>
+    <description>
+        CBM Test Package
+    </description>
 
-  	<!-- set global properties for this build -->
-  	<property name="test.reports.dir" location="${report.dir}"/>
-	<property name="test.data.dir" location="${output.dir}"/>
-	<property name="test.bin.dir" location="bin"/>
-	<property name="test.src.dir" location="src"/>
-	<property name="test.lib.dir" location="lib"/>
+    <!-- set global properties for this build -->
+    <property name="test.data.dir" location="${output.dir}" />
+    <property name="test.bin.dir" location="bin" />
+    <property name="test.src.dir" location="src" />
+    <property name="test.lib.dir" location="lib" />
+    <property name="test.dist.dir" location="dist" />
+    <property name="test.home.dir" location="." />
 
-  
-	<path id="master-classpath">
-	  <fileset dir="${test.lib.dir}">
-	    <include name="*.jar"/>
-	  </fileset>
-	</path>
-	
-	<target name="build">
-		<delete file="${test.lib.dir}/cbm-test.jar"/> 
-		
-		<delete dir="${test.bin.dir}"/>
-		<mkdir dir="${test.bin.dir}"/>
-		
-		<javac destdir="${test.bin.dir}">
-		 	<src path="${test.src.dir}" />
-		 	<classpath refid="master-classpath"/>
-		 </javac>
-		
-		<copy todir="${test.bin.dir}/org/cagrid/cbm">
-		    <fileset dir="${test.src.dir}/org/cagrid/cbm" includes="*.xml"/>
-		</copy>
-		
-		<jar destfile="${test.lib.dir}/cbm-test.jar"
-		    basedir="${test.bin.dir}"
-		 />
-	</target>
-  
-	
-	<target name="test" depends="build">
-	  	<!-- Create the time stamp -->
-		<tstamp>
-			<format property="directory.timestamp"  pattern="MMddyyyy_hhmmss"/>
-		</tstamp>
-	    
-	  	<!-- Create the build directory structure used by compile -->
-	  	<mkdir dir="${test.reports.dir}/${directory.timestamp}"/>
-		<mkdir dir="${test.data.dir}/${directory.timestamp}"/>
-	  	
-	    <echo>Testing against CBM node: ${cbm.url}</echo>
-    	<junit fork="yes" haltonfailure="no" >
-    		<jvmarg value="-Dcbm.url=${cbm.url}"/>
-    		<classpath refid="master-classpath"/>
-    		
-    		<batchtest todir="${test.data.dir}/${directory.timestamp}">
-    			<formatter type="xml"/>
-    			<fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />	
-    		</batchtest>
-    		
-    	</junit>
+    <path id="master-classpath">
+        <fileset dir="${test.lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
 
-    	<junitreport todir="${test.data.dir}/${directory.timestamp}">
-       	<fileset dir="${test.data.dir}/${directory.timestamp}">
-      		<include name="TEST-*.xml"/>
-       	</fileset>
-    	<report todir="${test.reports.dir}/${directory.timestamp}"/>
-    		
-  	</junitreport>
+    <target name="build">
+        <delete file="${test.lib.dir}/cbm-test.jar" />
+        <delete dir="${test.bin.dir}" />
+        <mkdir dir="${test.bin.dir}" />
+        <javac destdir="${test.bin.dir}">
+            <src path="${test.src.dir}" />
+            <classpath refid="master-classpath" />
+        </javac>
+        <copy todir="${test.bin.dir}/org/cagrid/cbm">
+            <fileset dir="${test.src.dir}/org/cagrid/cbm" includes="*.xml" />
+        </copy>
+        <jar destfile="${test.lib.dir}/cbm-test.jar" basedir="${test.bin.dir}" />
+    </target>
 
-  </target>
+    <target name="test" depends="build">
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${test.data.dir}" />
+        <echo>Testing against CBM node: ${cbm.url}</echo>
+        <junit fork="yes" haltonfailure="no" >
+            <jvmarg value="-Dcbm.url=${cbm.url}" />
+            <classpath refid="master-classpath" />
+            <batchtest todir="${test.data.dir}">
+                <formatter type="xml" />
+                <fileset dir="${test.bin.dir}" includes="**/*Tests*.class" />
+            </batchtest>
+        </junit>
+        <junitreport todir="${test.data.dir}">
+           <fileset dir="${test.data.dir}">
+              <include name="TEST-*.xml" />
+           </fileset>
+        </junitreport>
+    </target>
 
+    <target name="create_distribution" depends="build">
+        <delete file="${test.home.dir}/cbm-tests.zip" /> 
+        <delete dir="${test.dist.dir}" />
+        <mkdir dir="${test.dist.dir}" />
+
+        <copy todir="${test.dist.dir}/lib">
+            <fileset dir="${test.lib.dir}" includes="*.jar" />
+        </copy>
+
+        <copy todir="${test.dist.dir}">
+            <fileset dir="${test.home.dir}">
+                <include name="*.bat" />
+                <include name="*.sh" />
+                <include name="build.xml" />
+                <include name="client-config.wsdd" />
+                <include name="README" />
+            </fileset>
+        </copy>
+
+        <zip destfile="${test.home.dir}/cbm-tests.zip">
+            <fileset dir="${test.dist.dir}" includes="*" />
+        </zip>
+
+        <delete dir="${test.dist.dir}" />
+    </target>
 </project>
