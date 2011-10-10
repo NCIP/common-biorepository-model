@@ -1,4 +1,4 @@
-drop table if exists "patient_age_group" cascade;
+﻿drop table if exists "patient_age_group_at_collection" cascade;
 drop table if exists "gender" cascade;
 drop table if exists "ethnicity" cascade;
 drop table if exists "preservation_type" cascade;
@@ -9,7 +9,6 @@ drop table if exists "organization" cascade;
 drop table if exists "address" cascade;
 drop table if exists "join_participant_collection_summary_to_race" cascade;
 drop table if exists "specimen_collection_summary" cascade;
-drop table if exists "join_address_to_specimen_collection_contact" cascade;
 drop table if exists "specimen_collection_contact" cascade;
 drop table if exists "specimen_availability_summary_profile" cascade;
 drop table if exists "race" cascade;
@@ -22,21 +21,21 @@ drop table if exists "join_collection_protocol_to_institution" cascade;
 drop table if exists "collection_protocol" cascade;
 drop table if exists "annotation_availability_profile" cascade;
 
-create table "patient_age_group" ( 
+create table "patient_age_group_at_collection" ( 
 	"id" integer not null,
 	"age_group_low" integer,
 	"age_group_high" integer
 );
 
 create table "gender" ( 
-	"gender" varchar(50),
+	"gender" varchar(50) not null,
 	"id" integer not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
 );
 
 create table "ethnicity" ( 
-	"ethnicity" varchar(50),
+	"ethnicity" varchar(50) not null,
 	"id" integer not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
@@ -44,21 +43,21 @@ create table "ethnicity" (
 
 create table "preservation_type" ( 
 	"id" integer not null,
-	"preservation_type" varchar(100),
+	"preservation_type" varchar(100) not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
 );
 
 create table "anatomic_source" ( 
 	"id" integer not null,
-	"anatomic_source" varchar(150),
+	"anatomic_source" varchar(150) not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
 );
 
 create table "specimen_type" ( 
 	"id" integer not null,
-	"specimen_type" varchar(50),
+	"specimen_type" varchar(50) not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
 );
@@ -102,23 +101,22 @@ create table "join_participant_collection_summary_to_race" (
 );
 
 create table "specimen_collection_summary" ( 
+	"specimen_collection_summary_id" integer not null,
 	"anatomic_source_id" integer,
+	"anatomic_source" varchar(150),
 	"specimen_count" integer,
 	"patient_age_group_at_collection" integer,
 	"specimen_type_id" integer,
+	"specimen_type" varchar(50),
 	"is_collected_from" integer,
-	"specimen_collection_summary_id" integer not null,
-	"undergoes" integer
-);
-
-create table "join_address_to_specimen_collection_contact" ( 
-	"specimen_collection_contact_id" integer,
-	"address_id" integer
+	"undergoes" integer,
+	"qualifiespatientageatspecimencollection" integer
 );
 
 create table "specimen_collection_contact" ( 
 	"phone" varchar(50),
-	"specimen_collection_contact_id" integer not null
+	"specimen_collection_contact_id" integer not null,
+	"address_id" integer
 );
 
 create table "specimen_availability_summary_profile" ( 
@@ -130,24 +128,26 @@ create table "specimen_availability_summary_profile" (
 );
 
 create table "race" ( 
-	"race" varchar(50),
+	"race" varchar(50) not null,
 	"race_id" integer not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
 );
 
 create table "preservation" ( 
-	"preservation_type" integer,
+	"preservation_type" varchar(100),
 	"storage_temperature_in_centigrade" integer,
 	"preservation_id" integer not null
 );
 
 create table "participant_collection_summary" ( 
 	"participant_count" integer,
-	"ethnicity_id" integer,
-	"gender_id" integer,
 	"registered_to" integer,
-	"participant_collection_summary_id" integer not null
+	"participant_collection_summary_id" integer not null,
+	"ethnicity" varchar(50),
+	"ethnicity_id" integer,
+	"gender" varchar(50),
+	"gender_id" integer
 );
 
 create table "institution" ( 
@@ -161,7 +161,7 @@ create table "join_participant_collection_summary_todiagnosis" (
 );
 
 create table "diagnosis" ( 
-	"diagnosistype" varchar(225),
+	"diagnosistype" varchar(225) not null,
 	"diagnosis_id" integer not null,
 	"nci_code" varchar(50),
 	"nci_definition" text
@@ -199,7 +199,7 @@ create table "annotation_availability_profile" (
 );
 
 
-alter table "patient_age_group" add constraint "pk_patient_age_group" 
+alter table "patient_age_group_at_collection" add constraint "pk_patient_age_group" 
 	primary key ("id");
 
 
@@ -277,13 +277,19 @@ alter table "annotation_availability_profile" add constraint "pk_annotationavail
 
 
 alter table "gender"
+	add constraint "uq_gender_id" unique ("id");
+alter table "gender"
 	add constraint "uq_gender_gender" unique ("gender");
 alter table "gender"
 	add constraint "uq_gender_nci_code" unique ("nci_code");
 alter table "ethnicity"
+	add constraint "uq_ethnicity_id" unique ("id");
+alter table "ethnicity"
 	add constraint "uq_ethnicity_nci_code" unique ("nci_code");
 alter table "ethnicity"
 	add constraint "uq_ethnicity_ethnicity" unique ("ethnicity");
+alter table "preservation_type"
+	add constraint "uq_preservation_type_id" unique ("id");
 alter table "preservation_type"
 	add constraint "uq_preservation_type_nci_code" unique ("nci_code");
 alter table "preservation_type"
@@ -291,27 +297,41 @@ alter table "preservation_type"
 alter table "anatomic_source"
 	add constraint "uq_anatomic_source_anatomic_source" unique ("anatomic_source");
 alter table "anatomic_source"
+	add constraint "uq_anatomic_source_id" unique ("id");
+alter table "anatomic_source"
 	add constraint "uq_anatomic_source_nci_code" unique ("nci_code");
+alter table "specimen_type"
+	add constraint "uq_specimen_type_id" unique ("id");
 alter table "specimen_type"
 	add constraint "uq_specimen_type_nci_code" unique ("nci_code");
 alter table "specimen_type"
 	add constraint "uq_specimen_type_specimen_type" unique ("specimen_type");
 alter table "race"
+	add constraint "uq_race_race_id" unique ("race_id");
+alter table "race"
 	add constraint "uq_race_race" unique ("race");
 alter table "race"
 	add constraint "uq_race_nci_code" unique ("nci_code");
+alter table "diagnosis"
+	add constraint "uq_diagnosis_diagnosis_id" unique ("diagnosis_id");
 alter table "diagnosis"
 	add constraint "uq_diagnosis_diagnosistype" unique ("diagnosistype");
 alter table "diagnosis"
 	add constraint "uq_diagnosis_nci_code" unique ("nci_code");
 
-alter table "specimen_collection_summary" add constraint "fk_specimen_collection_summary_patient_age" 
-	foreign key ("patient_age_group_at_collection") references "patient_age_group" ("id");
+alter table "join_participant_collection_summary_to_race" add constraint "fk_join_participant_collection_summary_to_race_participant_collection_summary" 
+	foreign key ("participant_collection_summary_id") references "participant_collection_summary" ("participant_collection_summary_id");
 
-alter table "specimen_collection_summary" add constraint "fk_specimencollectionsummary_anatomic_source" 
+alter table "join_participant_collection_summary_to_race" add constraint "fk_join_participant_collection_summary_to_race_race" 
+	foreign key ("race_id") references "race" ("race_id");
+
+alter table "specimen_collection_summary" add constraint "fk_specimen_collection_summary_anatomic_source" 
 	foreign key ("anatomic_source_id") references "anatomic_source" ("id");
 
-alter table "specimen_collection_summary" add constraint "fk_specimencollectionsummary_specimen_type" 
+alter table "specimen_collection_summary" add constraint "fk_specimen_collection_summary_patient_age_group_at_collection" 
+	foreign key ("patient_age_group_at_collection") references "patient_age_group_at_collection" ("id");
+
+alter table "specimen_collection_summary" add constraint "fk_specimen_collection_summary_specimen_type" 
 	foreign key ("specimen_type_id") references "specimen_type" ("id");
 
 alter table "specimen_collection_summary" add constraint "fk_is_collected_from" 
@@ -320,29 +340,29 @@ alter table "specimen_collection_summary" add constraint "fk_is_collected_from"
 alter table "specimen_collection_summary" add constraint "fk_undergoes" 
 	foreign key ("undergoes") references "preservation" ("preservation_id");
 
-alter table "join_address_to_specimen_collection_contact" add constraint "specimencollectioncontact" 
-	foreign key ("specimen_collection_contact_id") references "specimen_collection_contact" ("specimen_collection_contact_id");
-
-alter table "join_address_to_specimen_collection_contact" add constraint "address" 
+alter table "specimen_collection_contact" add constraint "fk_specimen_collection_contact_address" 
 	foreign key ("address_id") references "address" ("address_id");
 
 alter table "specimen_collection_contact" add constraint "fk_specimencollectioncontact_person" 
 	foreign key ("specimen_collection_contact_id") references "person" ("person_id");
 
 alter table "preservation" add constraint "fk_preservation_preservation_type" 
-	foreign key ("preservation_type") references "preservation_type" ("id");
+	foreign key ("preservation_id") references "preservation_type" ("id");
 
-alter table "participant_collection_summary" add constraint "fk_gender_id" 
+alter table "participant_collection_summary" add constraint "fk_participant_collection_summary_ethnicity" 
+	foreign key ("ethnicity_id") references "ethnicity" ("id");
+
+alter table "participant_collection_summary" add constraint "fk_participant_collection_summary_gender" 
 	foreign key ("gender_id") references "gender" ("id");
 
 alter table "institution" add constraint "fk_institution_organization" 
 	foreign key ("institution_id") references "organization" ("organization_id");
 
-alter table "join_participant_collection_summary_todiagnosis" add constraint "diagnosis" 
-	foreign key ("diagnosis_id") references "diagnosis" ("diagnosis_id");
-
-alter table "join_participant_collection_summary_todiagnosis" add constraint "participantcollectionsummary" 
+alter table "join_participant_collection_summary_todiagnosis" add constraint "fk_join_participant_collection_summary_todiagnosis" 
 	foreign key ("participant_collection_summary_id") references "participant_collection_summary" ("participant_collection_summary_id");
+
+alter table "join_participant_collection_summary_todiagnosis" add constraint "fk_join_participant_collection_summary_todiagnosis_id_diagnosis" 
+	foreign key ("diagnosis_id") references "diagnosis" ("diagnosis_id");
 
 alter table "join_collection_protocol_to_institution" add constraint "institution" 
 	foreign key ("institution_id") references "institution" ("institution_id");
