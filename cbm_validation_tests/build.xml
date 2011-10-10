@@ -56,7 +56,7 @@
             <classpath refid="master-classpath" />
             <batchtest todir="${test.data.dir}">
                 <formatter type="xml" />
-            	<zipfileset src="cbm-test.jar" include="**/*Tests.class"/>
+            	<zipfileset src="cbm-test.jar" includes="**/*Tests.class"/>
             </batchtest>
         </junit>
         <junitreport todir="${test.data.dir}">
