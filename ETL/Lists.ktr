@@ -101,6 +101,98 @@
   <order>
   <hop> <from>CBM Diagnosis Mapping</from><to>CBM Diagnosis</to><enabled>Y</enabled> </hop>  <hop> <from>Diagnoses</from><to>CBM Diagnosis Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>Anatomic Sources</from><to>CBM Anatomic Source Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Anatomic Source Mapping</from><to>CBM Anatomic Source</to><enabled>Y</enabled> </hop>  <hop> <from>Preservation Types</from><to>CBM preservation Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM preservation Mapping</from><to>CBM preservation</to><enabled>Y</enabled> </hop>  <hop> <from>Specimen Types</from><to>CBM Specimen Types Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Specimen Types Mapping</from><to>CBM Specimen Types</to><enabled>Y</enabled> </hop>  <hop> <from>Race</from><to>CBM Race Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Race Mapping</from><to>CBM Race</to><enabled>Y</enabled> </hop>  <hop> <from>Ethnicity</from><to>CBM Ethnicity Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM Ethnicity Mapping</from><to>CBM Ethnicity</to><enabled>Y</enabled> </hop>  <hop> <from>Gender</from><to>CBM gender Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM gender Mapping</from><to>CBM gender</to><enabled>Y</enabled> </hop>  <hop> <from>Age groups</from><to>CBM patient age group Mapping</to><enabled>Y</enabled> </hop>  <hop> <from>CBM patient age group Mapping</from><to>CBM patient age group</to><enabled>Y</enabled> </hop>  </order>
   <step>
+    <name>Age groups</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield>row</rownumfield>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
+      <filemask/>
+      <file_required/>
+    </file>
+    <fields>
+      <field>
+        <name>Tab</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>FLOOR</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>CEILING</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Patient Age Group at Collection</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>707</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Anatomic Sources</name>
     <type>ExcelInput</type>
     <description/>
@@ -126,9 +218,9 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
       <filemask/>
-      <file_required>N</file_required>
+      <file_required/>
     </file>
     <fields>
       <field>
@@ -361,6 +453,78 @@
     </step>
 
   <step>
+    <name>CBM Ethnicity</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>ethnicity</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>519</xloc>
+      <yloc>567</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM Ethnicity Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>NCI Preferred Name</name>
+        <rename>ethnicity</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Row</name>
+        <rename>id</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Code</name>
+        <rename>NCI_code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Definition</name>
+        <rename>NCI_definition</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>566</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>CBM Race</name>
     <type>TableOutput</type>
     <description/>
@@ -393,6 +557,41 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>491</xloc>
       <yloc>25</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM Race Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>NCI Code</name>
+        <rename>NCI_code</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NCI Definition</name>
+        <rename>NCI_Definition</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>NCI Preferred Name</name>
+        <rename>race</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Row</name>
+        <rename>race_ID</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>303</xloc>
+      <yloc>21</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -481,6 +680,146 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>315</xloc>
       <yloc>492</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM gender</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>gender</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>524</xloc>
+      <yloc>660</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM gender Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>NCI Code</name>
+        <rename>NCI_code</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Preferred Name</name>
+        <rename>gender</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>Row</name>
+        <rename>ID</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>      <field>        <name>NCI Definition</name>
+        <rename>NCI_Definition</rename>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>308</xloc>
+      <yloc>651</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM patient age group</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CBMMySQL</connection>
+    <schema/>
+    <table>patient_age_group_at_collection</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>500</xloc>
+      <yloc>717</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CBM patient age group Mapping</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>FLOOR</name>
+        <rename>age_group_low</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>CEILING</name>
+        <rename>age_group_high</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>row</name>
+        <rename>id</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>326</xloc>
+      <yloc>711</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -583,9 +922,9 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
       <filemask/>
-      <file_required>N</file_required>
+      <file_required/>
     </file>
     <fields>
       <field>
@@ -674,475 +1013,6 @@
     </step>
 
   <step>
-    <name>Preservation Types</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
-      <filemask/>
-      <file_required>N</file_required>
-    </file>
-    <fields>
-      <field>
-        <name>NCI Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Preferred Name</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Definition</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Row</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tab</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Preservation Types</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>113</xloc>
-      <yloc>280</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Specimen Types</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>N</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
-      <filemask/>
-      <file_required>N</file_required>
-    </file>
-    <fields>
-      <field>
-        <name>NCI Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Preferred Name</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Definition</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Row</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tab</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Specimen Type</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>118</xloc>
-      <yloc>493</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Race</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>Y</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
-      <filemask/>
-      <file_required/>
-    </file>
-    <fields>
-      <field>
-        <name>NCI Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Preferred Name</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Definition</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Row</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tab</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NCI Synonyms</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Race</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>124</xloc>
-      <yloc>19</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Race Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>NCI Code</name>
-        <rename>NCI_code</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Definition</name>
-        <rename>NCI_Definition</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Preferred Name</name>
-        <rename>race</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>Row</name>
-        <rename>race_ID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>303</xloc>
-      <yloc>21</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM Ethnicity</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>ethnicity</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>519</xloc>
-      <yloc>567</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>CBM gender</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>gender</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>524</xloc>
-      <yloc>660</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Ethnicity</name>
     <type>ExcelInput</type>
     <description/>
@@ -1168,7 +1038,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
       <filemask/>
       <file_required/>
     </file>
@@ -1271,41 +1141,6 @@
     </step>
 
   <step>
-    <name>CBM Ethnicity Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>NCI Preferred Name</name>
-        <rename>ethnicity</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>Row</name>
-        <rename>id</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Code</name>
-        <rename>NCI_code</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Definition</name>
-        <rename>NCI_definition</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
-      <yloc>566</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Gender</name>
     <type>ExcelInput</type>
     <description/>
@@ -1331,7 +1166,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
       <filemask/>
       <file_required/>
     </file>
@@ -1434,42 +1269,7 @@
     </step>
 
   <step>
-    <name>CBM gender Mapping</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>NCI Code</name>
-        <rename>NCI_code</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Preferred Name</name>
-        <rename>gender</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>Row</name>
-        <rename>ID</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>      <field>        <name>NCI Definition</name>
-        <rename>NCI_Definition</rename>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>308</xloc>
-      <yloc>651</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Age groups</name>
+    <name>Preservation Types</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1484,7 +1284,7 @@
     <filefield/>
     <sheetfield/>
     <sheetrownumfield/>
-    <rownumfield>row</rownumfield>
+    <rownumfield/>
     <sheetfield/>
     <filefield/>
     <limit>0</limit>
@@ -1494,11 +1294,59 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>${Internal.Transformation.Filename.Directory}&#47;data&#47;EVS definitions and mappings_caDSR.xls</name>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
       <filemask/>
       <file_required/>
     </file>
     <fields>
+      <field>
+        <name>NCI Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Preferred Name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Definition</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Row</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
       <field>
         <name>Tab</name>
         <type>String</type>
@@ -1511,34 +1359,10 @@
         <decimal/>
         <group/>
       </field>
-      <field>
-        <name>FLOOR</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>CEILING</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
     </fields>
     <sheets>
       <sheet>
-        <name>Patient Age Group at Collection</name>
+        <name>Preservation Types</name>
         <startrow>0</startrow>
         <startcol>0</startcol>
         </sheet>
@@ -1554,15 +1378,15 @@
     <line_number_files_extension>line</line_number_files_extension>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
-      <yloc>707</yloc>
+      <xloc>113</xloc>
+      <yloc>280</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>CBM patient age group</name>
-    <type>TableOutput</type>
+    <name>Race</name>
+    <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -1570,36 +1394,127 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>CBMMySQL</connection>
-    <schema/>
-    <table>patient_age_group</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>Y</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
+      <filemask/>
+      <file_required/>
+    </file>
     <fields>
+      <field>
+        <name>NCI Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Preferred Name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Definition</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Row</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Tab</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Synonyms</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
     </fields>
+    <sheets>
+      <sheet>
+        <name>Race</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>500</xloc>
-      <yloc>717</yloc>
+      <xloc>124</xloc>
+      <yloc>19</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>CBM patient age group Mapping</name>
-    <type>SelectValues</type>
+    <name>Specimen Types</name>
+    <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -1607,23 +1522,108 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>FLOOR</name>
-        <rename>age_group_low</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CEILING</name>
-        <rename>age_group_high</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>row</name>
-        <rename>id</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>&#47;Users&#47;forei&#47;dev&#47;CornerstoneTest&#47;trunk&#47;database&#47;data&#47;CBM_VocabularyTerms.xls</name>
+      <filemask/>
+      <file_required/>
+    </file>
+    <fields>
+      <field>
+        <name>NCI Code</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Preferred Name</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NCI Definition</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Row</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Tab</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Specimen Type</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>326</xloc>
-      <yloc>711</yloc>
+      <xloc>118</xloc>
+      <yloc>493</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
