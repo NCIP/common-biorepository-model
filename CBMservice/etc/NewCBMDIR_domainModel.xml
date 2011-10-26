@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:DomainModel xmlns:ns1="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice" projectShortName="NewCBMDIR" projectVersion="4.3">
+  <ns1:exposedUMLAssociationCollection>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="1" roleName="isClassifiedBy">
+          <ns1:UMLClassReference refid="1243269" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="classifies">
+          <ns1:UMLClassReference refid="22677814" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="isLocatedAt">
+          <ns1:UMLClassReference refid="31110117" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="describesLocationOf">
+          <ns1:UMLClassReference refid="22577238" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="restrictsAccessTo">
+          <ns1:UMLClassReference refid="26598252" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="isConstrainedBy">
+          <ns1:UMLClassReference refid="7130238" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="makesAvailable">
+          <ns1:UMLClassReference refid="22130064" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="providesInformationTo">
+          <ns1:UMLClassReference refid="26598252" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="1" roleName="enrolls">
+          <ns1:UMLClassReference refid="22677814" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="isEnrolledIn">
+          <ns1:UMLClassReference refid="26598252" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="0" roleName="qualifiesPatientAgeAtSpecimenCollection">
+          <ns1:UMLClassReference refid="19363238" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="describesPatientAge">
+          <ns1:UMLClassReference refid="24690022" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="undergoes">
+          <ns1:UMLClassReference refid="24769853" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="isAppliedTo">
+          <ns1:UMLClassReference refid="24690022" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="isCollectedFrom">
+          <ns1:UMLClassReference refid="22677814" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="1" roleName="provides">
+          <ns1:UMLClassReference refid="24690022" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="receives">
+          <ns1:UMLClassReference refid="30637485" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="isProvidedTo">
+          <ns1:UMLClassReference refid="22677814" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="1" roleName="residesAt">
+          <ns1:UMLClassReference refid="27060994" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="1" roleName="owns">
+          <ns1:UMLClassReference refid="26598252" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+    <ns1:UMLAssociation bidirectional="true">
+      <ns1:targetUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="1" minCardinality="1" roleName="isAssignedTo">
+          <ns1:UMLClassReference refid="22577238" />
+        </ns1:UMLAssociationEdge>
+      </ns1:targetUMLAssociationEdge>
+      <ns1:sourceUMLAssociationEdge>
+        <ns1:UMLAssociationEdge maxCardinality="-1" minCardinality="0" roleName="isResponsibleFor">
+          <ns1:UMLClassReference refid="26598252" />
+        </ns1:UMLAssociationEdge>
+      </ns1:sourceUMLAssociationEdge>
+    </ns1:UMLAssociation>
+  </ns1:exposedUMLAssociationCollection>
+  <ns1:exposedUMLClassCollection>
+    <ns1:UMLClass allowableAsTarget="true" className="Organization" id="26657829" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns2:umlAttributeCollection xmlns:ns2="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns2:UMLAttribute dataTypeName="java.lang.Integer" description="Identifier for the row of the table" name="id" publicID="3211590" version="1.0" />
+        <ns2:UMLAttribute dataTypeName="java.lang.String" description="The name of the organization or an institution." name="name" publicID="2152" version="2.31" />
+      </ns2:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="AnnotationAvailabilityProfile" id="22130064" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns3:umlAttributeCollection xmlns:ns3="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are demographic information (e.g. age, sex, race, ethnicity) available?" name="hasAdditionalPatientDemographics" publicID="3211606" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are the exposure data (e.g. smoking, alcohol, drugs, chemicals) available?" name="hasExposureHistory" publicID="3211607" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are family history data available?" name="hasFamilyHistory" publicID="3211608" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are histopathologic data (e.g. stage, grade, histologic type, subtype) available?" name="hasHistopathologicInformation" publicID="3211609" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are lab data available?" name="hasLabData" publicID="3211610" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are longitudinal specimens (specimens collected from the same patient over time) available?" name="hasLongitudinalSpecimens" publicID="3211611" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are matched specimens (tumor and non-tumor from the same patient, tissue and blood from the same patient, for example) available?" name="hasMatchedSpecimens" publicID="3211612" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Is outcome information (effectiveness of treatment, side effects, etc) available?" name="hasOutcomeInformation" publicID="3211613" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="For the collection (for example, clinical trial group), are patients available for follow-up?" name="hasParticipantsAvailableForFollowup" publicID="3211614" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Boolean" description="Are treatment data (e.g. drug, schedule) available?" name="hasTreatmentInformation" publicID="3211615" version="1.0" />
+        <ns3:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211616" version="1.0" />
+      </ns3:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="SpecimenCollectionContact" id="22577238" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns4:umlAttributeCollection xmlns:ns4="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns4:UMLAttribute dataTypeName="java.lang.String" description="Phone number of the Contact person" name="phone" publicID="3211605" version="1.0" />
+      </ns4:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="PatientAgeGroupAtCollection" id="19363238" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns5:umlAttributeCollection xmlns:ns5="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns5:UMLAttribute dataTypeName="java.lang.Integer" description="Identifier for the row in the class" name="id" publicID="-9223372035307347646" version="1.0" />
+        <ns5:UMLAttribute dataTypeName="java.lang.Integer" description="The maximum number of years allowed to fall into the age group" name="patientAgeGroupHigh" publicID="-9223372035752840590" version="1.0" />
+        <ns5:UMLAttribute dataTypeName="java.lang.Integer" description="The minimum years allowed to fall into the age group" name="patientAgeGroupLow" publicID="-9223372035120787126" version="1.0" />
+      </ns5:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="SpecimenAvailabilitySummaryProfile" id="7130238" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns6:umlAttributeCollection xmlns:ns6="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns6:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211632" version="1.0" />
+        <ns6:UMLAttribute dataTypeName="java.lang.Boolean" description="Can specimen be provided to commercial organizations?" name="isAvailableToCommercialOrganizations" publicID="3211628" version="1.0" />
+        <ns6:UMLAttribute dataTypeName="java.lang.Boolean" description="Can specimen be provided to investigators at foreign institutions?" name="isAvailableToForeignInvestigators" publicID="3211629" version="1.0" />
+        <ns6:UMLAttribute dataTypeName="java.lang.Boolean" description="Is specimen available to researchers outside this institution / group?" name="isAvailableToOutsideInstitution" publicID="3211630" version="1.0" />
+        <ns6:UMLAttribute dataTypeName="java.lang.Boolean" description="Is collaboration required to obtain specimen?" name="isCollaborationRequired" publicID="3211631" version="1.0" />
+      </ns6:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="CollectionProtocol" id="26598252" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns7:umlAttributeCollection xmlns:ns7="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns7:UMLAttribute dataTypeName="java.util.Date" description="Date collection information was most recently updated." name="dateLastUpdated" publicID="3211593" version="1.0" />
+        <ns7:UMLAttribute dataTypeName="java.util.Date" description="Date when the study officially closes" name="endDate" publicID="3211594" version="1.0" />
+        <ns7:UMLAttribute dataTypeName="java.lang.Integer" description="Identifier for the row of the table" name="id" publicID="3211597" version="1.0" />
+        <ns7:UMLAttribute dataTypeName="java.lang.String" description="This identifier is reserved for the federal identifier for the clinical trial study for which the protocol is being used.  If more that one identifier exists, enter only one identifier.  If the protocol does not refer to a clinical trial, leave blank." name="identifier" publicID="3211598" version="1.0" />
+        <ns7:UMLAttribute dataTypeName="java.lang.String" description="The name of the study for which the specimens are identified." name="name" publicID="3211595" version="1.0" />
+        <ns7:UMLAttribute dataTypeName="java.util.Date" description="The date on which the collection begins collecting specimens" name="startDate" publicID="3211596" version="1.0" />
+      </ns7:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Person" id="17364758" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns8:umlAttributeCollection xmlns:ns8="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns8:UMLAttribute dataTypeName="java.lang.String" description="The string of characters that represents the electronic mail address of a person." name="emailAddress" publicID="2517550" version="1.0" />
+        <ns8:UMLAttribute dataTypeName="java.lang.String" description="A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname. Synonym = Given Name. " name="firstName" publicID="2179589" version="2.0" />
+        <ns8:UMLAttribute dataTypeName="java.lang.String" description="A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.  " name="fullName" publicID="2222323" version="1.0" />
+        <ns8:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211592" version="1.0" />
+        <ns8:UMLAttribute dataTypeName="java.lang.String" description="A means of identifying an individual by using a word or group of words indicating a person's last (family) name. Synonym = Last Name, Surname." name="lastName" publicID="2179591" version="2.0" />
+        <ns8:UMLAttribute dataTypeName="java.lang.String" description="A means of identifying an individual by using a word or group of words indicating a person's middle name." name="middleNameOrInitial" publicID="2179590" version="2.0" />
+      </ns8:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="ParticipantCollectionSummary" id="22677814" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns9:umlAttributeCollection xmlns:ns9="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns9:UMLAttribute dataTypeName="java.lang.String" description="Ethnicity of the Participant" name="ethnicity" publicID="3211618" version="1.0" />
+        <ns9:UMLAttribute dataTypeName="java.lang.String" description="Gender of Participant" name="gender" publicID="3211619" version="1.0" />
+        <ns9:UMLAttribute dataTypeName="java.lang.Integer" description="Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution." name="id" publicID="3211620" version="1.0" />
+        <ns9:UMLAttribute dataTypeName="java.lang.Integer" description="Number of participants with matching ethnicity, gender, and race profile" name="participantCount" publicID="3211617" version="1.0" />
+      </ns9:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Address" id="31110117" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns10:umlAttributeCollection xmlns:ns10="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a city, town, or village." name="city" publicID="2179601" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a country." name="country" publicID="2179604" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a specialized division of a large organization." name="departmentOrDivision" publicID="2341930" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit." name="entityName" publicID="2341926" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit." name="entityNumber" publicID="2341928" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of the story or level of a building." name="floorOrPremises" publicID="2405150" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211604" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a delivery box at a postal facility." name="postOfficeBox" publicID="2341934" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a principal administrative unit of a country." name="state" publicID="2179603" version="2.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of an expanded part of road or public highway." name="streetOrThoroughfareExtensionName" publicID="2405176" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a related road or public highway and a component of an address that specifies a location by identification of a street/thoroughfare by type." name="streetOrThoroughfareNameAndType" publicID="2341883" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare." name="streetOrThoroughfareNumber" publicID="2341863" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of a distinct area of road or public highway." name="streetOrThoroughfareSectionName" publicID="2405174" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name." name="streetPostDirectional" publicID="2341900" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name." name="streetPreDirectional" publicID="2341893" version="1.0" />
+        <ns10:UMLAttribute dataTypeName="java.lang.String" description="The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered." name="zipCode" publicID="2179606" version="2.0" />
+      </ns10:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Institution" id="27060994" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns11:umlAttributeCollection xmlns:ns11="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns11:UMLAttribute dataTypeName="java.lang.String" description="URL for the institution or the institution's biobank" name="homepageURL" publicID="3211591" version="1.0" />
+      </ns11:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Race" id="1243269" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns12:umlAttributeCollection xmlns:ns12="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns12:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211622" version="1.0" />
+        <ns12:UMLAttribute dataTypeName="java.lang.String" description="Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution." name="race" publicID="3211621" version="1.0" />
+      </ns12:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Diagnosis" id="30637485" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns13:umlAttributeCollection xmlns:ns13="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns13:UMLAttribute dataTypeName="java.lang.String" description="High-level groupings of diagnosis types" name="diagnosisType" publicID="3211626" version="1.0" />
+        <ns13:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211627" version="1.0" />
+      </ns13:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="Preservation" id="24769853" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns14:umlAttributeCollection xmlns:ns14="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns14:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211625" version="1.0" />
+        <ns14:UMLAttribute dataTypeName="java.lang.String" description="Method by which specimens are stored" name="preservationType" publicID="3211623" version="1.0" />
+        <ns14:UMLAttribute dataTypeName="java.lang.Integer" description="Temperature in degrees Centigrade at which the Specimen is stored" name="storageTemperatureInCentegrades" publicID="3211624" version="1.0" />
+      </ns14:umlAttributeCollection>
+    </ns1:UMLClass>
+    <ns1:UMLClass allowableAsTarget="true" className="SpecimenCollectionSummary" id="24690022" packageName="gov.nih.nci.cbm.domain.LogicalModel">
+      <ns15:umlAttributeCollection xmlns:ns15="gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common">
+        <ns15:UMLAttribute dataTypeName="java.lang.String" description="Anatomic source from which the Specimen was collected" name="anatomicSource" publicID="3211599" version="1.0" />
+        <ns15:UMLAttribute dataTypeName="java.lang.Integer" description="Identifies the row of the data table" name="id" publicID="3211603" version="1.0" />
+        <ns15:UMLAttribute dataTypeName="java.lang.Integer" description="Number of specimens with the same collection summary information, originating from the same profile of patient" name="specimenCount" publicID="3211600" version="1.0" />
+        <ns15:UMLAttribute dataTypeName="java.lang.String" description="A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)" name="specimenType" publicID="3211602" version="1.0" />
+      </ns15:umlAttributeCollection>
+    </ns1:UMLClass>
+  </ns1:exposedUMLClassCollection>
+  <ns1:umlGeneralizationCollection>
+    <ns1:UMLGeneralization>
+      <ns1:subClassReference refid="27060994" />
+      <ns1:superClassReference refid="26657829" />
+    </ns1:UMLGeneralization>
+    <ns1:UMLGeneralization>
+      <ns1:subClassReference refid="22577238" />
+      <ns1:superClassReference refid="17364758" />
+    </ns1:UMLGeneralization>
+  </ns1:umlGeneralizationCollection>
+</ns1:DomainModel>
+

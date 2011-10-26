@@ -1,0 +1,11 @@
+hasAdditionalPatientDemographics
+hasExposureHistory
+hasFamilyHistory
+hasHistopathologicInformation
+hasLabData
+hasLongitudinalSpecimens
+hasMatchedSpecimens
+hasOutcomeInformation
+hasParticipantsAvailableForFollowup
+hasTreatmentInformation
+id

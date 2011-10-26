@@ -1,0 +1,24 @@
+package org.cagrid.CBM.test;
+
+import org.cagrid.CBM.client.CBMClient;
+import org.junit.Test;
+
+/**
+ * @author powersb
+ */
+public class CbmDataExtractionTests extends CbmTest {
+
+
+	@Test
+	public void testDataExtractionMethodExists() throws Exception{
+		CBMClient.retrieveData("", "");
+	}
+	
+	@Test
+	public void testExtractedDataValid() throws Exception{
+		// Make a call to the data extraction method
+		// Validate retrieved XML file
+		CBMClient.retrieveData("", "");
+	}
+
+}

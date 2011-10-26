@@ -1,0 +1,3 @@
+preservationType
+storageTemperatureInCentegrades
+id

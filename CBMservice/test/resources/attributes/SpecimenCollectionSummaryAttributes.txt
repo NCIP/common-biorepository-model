@@ -1,0 +1,4 @@
+anatomicSource
+specimenCount
+specimenType
+id

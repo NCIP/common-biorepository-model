@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CBM" targetNamespace="http://CBM.cagrid.org/CBM/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:binding="http://CBM.cagrid.org/CBM/bindings" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://CBM.cagrid.org/CBM/bindings" location="CBM_bindings.wsdl"/>
+  <wsdl:service name="CBMService">
+    <wsdl:port name="CBMPortTypePort" binding="binding:CBMPortTypeSOAPBinding">
+      <soap:address location="http://localhost:8080/wsrf/services/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

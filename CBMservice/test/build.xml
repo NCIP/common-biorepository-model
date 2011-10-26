@@ -1,0 +1,75 @@
+<project name="CBM Test" default="test" basedir=".">
+    <description>
+        CBM Test Package
+    </description>
+
+    <!-- set global properties for this build -->
+	<property name="cbm.root.dir" location=".." />
+	<property name="cbm.lib.dir" location="${cbm.root.dir}/lib" />
+	<property name="test.data.dir" location="${output.dir}" />
+    <property name="test.bin.dir" location="bin" />
+    <property name="test.src.dir" location="src" />
+    <property name="test.lib.dir" location="lib" />
+    <property name="test.dist.dir" location="dist" />
+    <property name="test.home.dir" location="." />
+
+    <path id="master-classpath">
+    	<fileset dir="${cbm.lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+        <fileset dir="${test.lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    	<fileset dir="${test.home.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="build" description="Builds the CBM validation tests.  Creates gzipped distribution of tests.">
+        <delete file="${test.lib.dir}/cbm-test.jar" />
+        <delete dir="${test.bin.dir}" />
+        <mkdir dir="${test.bin.dir}" />
+        <javac destdir="${test.bin.dir}">
+            <src path="${test.src.dir}" />
+            <classpath refid="master-classpath" />
+        </javac>
+    	
+        <copy todir="${test.bin.dir}/org/cagrid/CBM">
+            <fileset dir="${test.src.dir}/org/cagrid/CBM" includes="*.xml" />
+        </copy>
+        
+    	<jar destfile="${test.home.dir}/cbm-test.jar" basedir="${test.bin.dir}" />
+    	
+    	<tar destfile="${test.home.dir}/cbm-validation.tar" 
+    		 basedir="${test.home.dir}" 
+    		 includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,reference/**"
+    	/>
+    	
+    	<gzip src="cbm-validation.tar" destfile="cbm-validation.tar.gz"/>
+    	
+    	<delete file="cbm-validation.tar"/>
+    
+    </target>
+	
+
+    <target name="test">
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${test.data.dir}" />
+        <echo>Testing against CBM node: ${cbm.url}</echo>
+        <junit fork="yes" haltonfailure="no" >
+            <jvmarg value="-Dcbm.url=${cbm.url}" />
+            <classpath refid="master-classpath" />
+            <batchtest todir="${test.data.dir}">
+                <formatter type="xml" />
+            	<zipfileset src="cbm-test.jar" includes="**/*Tests.class"/>
+            </batchtest>
+        </junit>
+        <junitreport todir="${test.data.dir}">
+           <fileset dir="${test.data.dir}">
+              <include name="TEST-*.xml" />
+           </fileset>
+        </junitreport>
+    </target>
+
+
+</project>

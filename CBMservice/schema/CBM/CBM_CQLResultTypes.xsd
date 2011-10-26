@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://CBM.cagrid.org/CBM/CQLResultTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <!-- Exposed Objects' schemas are imported here -->
+	<xs:import namespace="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel" schemaLocation="gov.nih.nci.cbm.domain.LogicalModel.xsd"/>
+
+
+
+    <xs:group name="PermissibleCQLObjectResults">
+        <xs:choice>        
+        <!-- element references to exposed objects -->
+		<xs:element ref="ns0:Organization" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:AnnotationAvailabilityProfile" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:SpecimenCollectionContact" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:PatientAgeGroupAtCollection" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:SpecimenAvailabilitySummaryProfile" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:CollectionProtocol" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Person" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:ParticipantCollectionSummary" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Address" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Institution" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Race" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Diagnosis" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:Preservation" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+		<xs:element ref="ns0:SpecimenCollectionSummary" xmlns:ns0="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel"/>
+ 
+        </xs:choice>
+    </xs:group>
+</xs:schema>

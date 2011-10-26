@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel" targetNamespace="gme://caCORE.caCORE/3.2/gov.nih.nci.cbm.domain.LogicalModel" elementFormDefault="qualified">
+  <xs:element name="Organization" type="Organization" />
+  <xs:complexType name="Organization">
+    <xs:sequence />
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="PatientAgeGroupAtCollection" type="PatientAgeGroupAtCollection" />
+  <xs:complexType name="PatientAgeGroupAtCollection">
+    <xs:sequence>
+      <xs:element name="describesPatientAge" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="SpecimenCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="patientAgeGroupHigh" type="xs:integer" />
+    <xs:attribute name="patientAgeGroupLow" type="xs:integer" />
+  </xs:complexType>
+  <xs:element name="Institution" type="Institution" />
+  <xs:complexType name="Institution">
+    <xs:complexContent>
+      <xs:extension base="Organization">
+        <xs:sequence>
+          <xs:element name="owns" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="CollectionProtocol" minOccurs="0" maxOccurs="unbounded" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="homepageURL" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Person" type="Person" />
+  <xs:complexType name="Person">
+    <xs:sequence />
+    <xs:attribute name="emailAddress" type="xs:string" />
+    <xs:attribute name="firstName" type="xs:string" />
+    <xs:attribute name="fullName" type="xs:string" />
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="lastName" type="xs:string" />
+    <xs:attribute name="middleNameOrInitial" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="CollectionProtocol" type="CollectionProtocol" />
+  <xs:complexType name="CollectionProtocol">
+    <xs:sequence>
+      <xs:element name="makesAvailable" type="AnnotationAvailabilityProfile" minOccurs="0" maxOccurs="1" />
+      <xs:element name="isAssignedTo" type="SpecimenCollectionContact" minOccurs="0" maxOccurs="1" />
+      <xs:element name="isConstrainedBy" type="SpecimenAvailabilitySummaryProfile" minOccurs="0" maxOccurs="1" />
+      <xs:element name="enrolls" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ParticipantCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="residesAt" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Institution" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="dateLastUpdated" type="xs:dateTime" />
+    <xs:attribute name="endDate" type="xs:dateTime" />
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="identifier" type="xs:string" />
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="startDate" type="xs:dateTime" />
+  </xs:complexType>
+  <xs:element name="SpecimenCollectionSummary" type="SpecimenCollectionSummary" />
+  <xs:complexType name="SpecimenCollectionSummary">
+    <xs:sequence>
+      <xs:element name="qualifiesPatientAgeAtSpecimenCollection" type="PatientAgeGroupAtCollection" minOccurs="0" maxOccurs="1" />
+      <xs:element name="isCollectedFrom" type="ParticipantCollectionSummary" minOccurs="0" maxOccurs="1" />
+      <xs:element name="undergoes" type="Preservation" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="anatomicSource" type="xs:string" />
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="specimenCount" type="xs:integer" />
+    <xs:attribute name="specimenType" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="Address" type="Address" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="describesLocationOf" type="SpecimenCollectionContact" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="city" type="xs:string" />
+    <xs:attribute name="country" type="xs:string" />
+    <xs:attribute name="departmentOrDivision" type="xs:string" />
+    <xs:attribute name="entityName" type="xs:string" />
+    <xs:attribute name="entityNumber" type="xs:string" />
+    <xs:attribute name="floorOrPremises" type="xs:string" />
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="postOfficeBox" type="xs:string" />
+    <xs:attribute name="state" type="xs:string" />
+    <xs:attribute name="streetOrThoroughfareExtensionName" type="xs:string" />
+    <xs:attribute name="streetOrThoroughfareNameAndType" type="xs:string" />
+    <xs:attribute name="streetOrThoroughfareNumber" type="xs:string" />
+    <xs:attribute name="streetOrThoroughfareSectionName" type="xs:string" />
+    <xs:attribute name="streetPostDirectional" type="xs:string" />
+    <xs:attribute name="streetPreDirectional" type="xs:string" />
+    <xs:attribute name="zipCode" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="SpecimenCollectionContact" type="SpecimenCollectionContact" />
+  <xs:complexType name="SpecimenCollectionContact">
+    <xs:complexContent>
+      <xs:extension base="Person">
+        <xs:sequence>
+          <xs:element name="isResponsibleFor" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="CollectionProtocol" minOccurs="0" maxOccurs="unbounded" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="isLocatedAt" type="Address" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="phone" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AnnotationAvailabilityProfile" type="AnnotationAvailabilityProfile" />
+  <xs:complexType name="AnnotationAvailabilityProfile">
+    <xs:sequence>
+      <xs:element name="providesInformationTo" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="CollectionProtocol" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="hasAdditionalPatientDemographics" type="xs:boolean" />
+    <xs:attribute name="hasExposureHistory" type="xs:boolean" />
+    <xs:attribute name="hasFamilyHistory" type="xs:boolean" />
+    <xs:attribute name="hasHistopathologicInformation" type="xs:boolean" />
+    <xs:attribute name="hasLabData" type="xs:boolean" />
+    <xs:attribute name="hasLongitudinalSpecimens" type="xs:boolean" />
+    <xs:attribute name="hasMatchedSpecimens" type="xs:boolean" />
+    <xs:attribute name="hasOutcomeInformation" type="xs:boolean" />
+    <xs:attribute name="hasParticipantsAvailableForFollowup" type="xs:boolean" />
+    <xs:attribute name="hasTreatmentInformation" type="xs:boolean" />
+    <xs:attribute name="id" type="xs:integer" />
+  </xs:complexType>
+  <xs:element name="ParticipantCollectionSummary" type="ParticipantCollectionSummary" />
+  <xs:complexType name="ParticipantCollectionSummary">
+    <xs:sequence>
+      <xs:element name="isClassifiedBy" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Race" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="isEnrolledIn" type="CollectionProtocol" minOccurs="0" maxOccurs="1" />
+      <xs:element name="provides" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="SpecimenCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="receives" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Diagnosis" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="ethnicity" type="xs:string" />
+    <xs:attribute name="gender" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>CADSR_ConceptualDomainVersion="2.0"</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="participantCount" type="xs:integer" />
+  </xs:complexType>
+  <xs:element name="Race" type="Race" />
+  <xs:complexType name="Race">
+    <xs:sequence>
+      <xs:element name="classifies" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ParticipantCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="race" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="Preservation" type="Preservation" />
+  <xs:complexType name="Preservation">
+    <xs:sequence>
+      <xs:element name="isAppliedTo" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="SpecimenCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="preservationType" type="xs:string" />
+    <xs:attribute name="storageTemperatureInCentegrades" type="xs:integer" />
+  </xs:complexType>
+  <xs:element name="Diagnosis" type="Diagnosis" />
+  <xs:complexType name="Diagnosis">
+    <xs:sequence>
+      <xs:element name="isProvidedTo" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ParticipantCollectionSummary" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="diagnosisType" type="xs:string" />
+    <xs:attribute name="id" type="xs:integer" />
+  </xs:complexType>
+  <xs:element name="SpecimenAvailabilitySummaryProfile" type="SpecimenAvailabilitySummaryProfile" />
+  <xs:complexType name="SpecimenAvailabilitySummaryProfile">
+    <xs:sequence>
+      <xs:element name="restrictsAccessTo" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="CollectionProtocol" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" />
+    <xs:attribute name="isAvailableToCommercialOrganizations" type="xs:boolean" />
+    <xs:attribute name="isAvailableToForeignInvestigators" type="xs:boolean" />
+    <xs:attribute name="isAvailableToOutsideInstitution" type="xs:boolean" />
+    <xs:attribute name="isCollaborationRequired" type="xs:boolean" />
+  </xs:complexType>
+</xs:schema>
+
