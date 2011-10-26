@@ -37,7 +37,7 @@ public abstract class CbmTest extends junit.framework.TestCase {
    protected static DataServiceClient serviceClient;
    protected static UMLClass[] umlClassList;
    protected static final String cqlDirectory = "./cql/";
-   protected static final String referenceDirectory = "./cbm_reference/";
+   protected static final String referenceDirectory = "./test/resources/";
 
    public static final QueryType DEFAULT_QUERY_TYPE = QueryType.CQL;
 
@@ -48,20 +48,8 @@ public abstract class CbmTest extends junit.framework.TestCase {
        * TODO: Pull URL from environment args set value in one of the following: - ant build script;
        * test execution script; as argument to test execution script
        */
-      boolean authenticate = false;
-      if (authenticate) {
-         try {
-            GridAuthenticator.authenticateWithGrid();
-         }
-         catch (Exception e) {
-            fail("Unable to authenticate with grid");
-         }
-      }
-      // IMS CBM URL
-      
-      serviceUrl = System.getProperty("cbm.url");
 
-      // "http://cabigapps01.cancer.gov:9294/wsrf/services/cagrid/CBM";
+      serviceUrl = System.getProperty("cbm.url");
       serviceClient = new DataServiceClient(serviceUrl);
    }
 
@@ -153,7 +141,7 @@ public abstract class CbmTest extends junit.framework.TestCase {
       List<String> valuesMissingFromRight = new Vector<String>();
 
       for (String value: right) {
-         if (!left.contains(value)) {
+         if (!left.contains(value) && value != null && !value.equals("")) {
             valuesMissingFromRight.add(value);
          }
       }
