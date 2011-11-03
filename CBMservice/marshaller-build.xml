@@ -1,0 +1,77 @@
+<project name="Marshaller"  basedir=".">
+    	<description>
+        	Builds and runs the CBM marshaller
+    	</description>
+	
+	<!-- 	Follow the followign steps to execute the marshaller.
+			1.	run 'ant -buildfile marshaller-build.xml build'
+			2.  Check the newly created package directory and make sure the hibernate.cfg.xml
+				file has the correct diver class, connection url, username, and password setup.
+			3.	run 'ant -buildfile marshaller-build.xml execute'
+	-->
+	
+	<property name="lib"   location="lib" />
+  	<property name="src"   location="src" />
+	<property name="build" location="bin" />
+	<property name="bin" location="bin" />
+	<property name="package"   location="package" />
+
+	<path id="cp.classpath">
+		<pathelement location="${build}" />
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="compile">
+		<javac classpathref="cp.classpath" srcdir="${src}" destdir="${build}" debug="true">
+			<include name="**/marshaller/*.java" />
+		</javac>
+	</target>
+	
+	<target name="generate_schema">
+		<java classname="org.cagrid.CBM.marshaller.SchemaGenerator" classpathref="cp.classpath" />
+	</target>
+	
+	<target name="build">
+		<antcall target="compile" />
+		<antcall target="generate_schema" />
+		<delete dir="${package}"/>
+		<mkdir dir="${package}"/>
+		<mkdir dir="${package}/lib"/>
+
+		<copy todir="${package}/lib">
+			<fileset dir="${lib}" />
+		</copy>
+
+		<!-- may need to handle XML escape characters -->
+		<filter token="DRIVER_CLASS" value="${db_driver}" /> 		<!-- e.g. 'org.postgresql.Driver'-->
+		<filter token="DATABASE_PROTOCOL" value="${db_protocol}" /> <!-- e.g. 'jdbc:postgresql'-->
+		<filter token="HOST" value="${db_host}" />
+		<filter token="PORT" value="${db_port}" />
+		<filter token="DATABASE_NAME" value="${db_name}" />
+		<filter token="USER" value="${db_user}" />
+		<filter token="PASSWORD" value="${db_password}" />
+
+		<copy file="templates/hibernate.cfg.xml" todir="${package}" filtering="true" />
+		<copy file="CBM.xsd" todir="${package}" />
+
+		<manifestclasspath property="manifest_cp" jarfile="cbm-marshaller.jar">
+			<classpath refid="cp.classpath" />
+		</manifestclasspath>
+
+		<jar destfile="${package}/cbm-marshaller.jar"	basedir="${bin}" includes="**/*.class" >
+		<manifest>
+			<attribute name="Main-Class" value="org.cagrid.CBM.marshaller.CbmMarshaller"/>
+			<attribute name="Class-Path" value=". ${manifest_cp}" />
+		</manifest>
+		</jar>
+	</target>
+
+	<target name="execute" >
+		<java jar="${package}/cbm-marshaller.jar" fork="true">
+		<arg value="${info}" />
+		<arg value="${file}" />	
+		</java>
+	</target>
+</project>

@@ -177,5 +177,7 @@
 	<classpathentry kind="var" path="GLOBUS_LOCATION/lib/xercesImpl.jar"/>
 	<classpathentry kind="var" path="GLOBUS_LOCATION/lib/xml-apis.jar"/>
 	<classpathentry kind="var" path="GLOBUS_LOCATION/lib/xmlsec.jar"/>
+	<classpathentry kind="lib" path="lib/marshaller_cbm_beans.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

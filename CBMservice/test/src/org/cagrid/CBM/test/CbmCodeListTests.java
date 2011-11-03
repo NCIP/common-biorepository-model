@@ -69,7 +69,8 @@ public class CbmCodeListTests extends CbmTest {
       List<String> extraValues = compareCodeLists(referenceValues, remoteValues);
 
       if (extraValues.size() > 0) {
-         String errorMsg = "Remote code list contains the following extra values: \n";
+         String errorMsg = "Some data values do not conform to the CBM value domains.  For a list of the valid values, please visit: ";
+         errorMsg += "/nTo resolve this issue, remove the following values from the CBM data: \n";
          String failMessage = buildFailMessage(errorMsg, extraValues);
          fail(failMessage);
       }
