@@ -13,10 +13,16 @@
     <property name="test.dist.dir" location="dist" />
     <property name="test.home.dir" location="." />
 
-	<path id="master-classpath">
-	        <fileset dir="${test.dist.dir}/lib">
-	            <include name="*.jar" />
-	        </fileset>
+	<path id="build-classpath">
+		        <fileset dir="${test.dist.dir}/lib">
+		            <include name="*.jar" />
+		        </fileset>
+	</path>
+	
+	<path id="test-classpath">
+        <fileset dir="./lib">
+            <include name="*.jar" />
+        </fileset>
 	</path>
 	
 
@@ -48,7 +54,7 @@
 
     	<javac destdir="${test.dist.dir}/bin">
             <src path="${test.src.dir}" />
-            <classpath refid="master-classpath" />
+            <classpath refid="build-classpath" />
         </javac>
     	    	
     	
@@ -76,7 +82,7 @@
         <echo>Testing against CBM node: ${cbm.url}</echo>
         <junit fork="yes" haltonfailure="no" >
             <jvmarg value="-Dcbm.url=${cbm.url}" />
-            <classpath refid="master-classpath" />
+            <classpath refid="test-classpath" />
             <batchtest todir="${test.data.dir}">
                 <formatter type="xml" />
             	<zipfileset src="cbm-test.jar" includes="**/*Tests.class"/>
