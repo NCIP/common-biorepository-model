@@ -62,7 +62,7 @@
             <fileset dir="${test.src.dir}/org/cagrid/CBM" includes="*.xml" />
         </copy>
         
-    	<jar destfile="${test.dist.dir}/lib/cbm-test.jar" basedir="${test.bin.dir}" />
+    	<jar destfile="${test.dist.dir}/lib/cbm-test.jar" basedir="${test.dist.dir}/bin" />
     	
     	<tar destfile="${test.home.dir}/cbm-validation.tar" 
     		 basedir="${test.dist.dir}" 
