@@ -13,35 +13,53 @@
     <property name="test.dist.dir" location="dist" />
     <property name="test.home.dir" location="." />
 
-    <path id="master-classpath">
-    	<fileset dir="${cbm.lib.dir}">
-            <include name="*.jar" />
-        </fileset>
-        <fileset dir="${test.lib.dir}">
-            <include name="*.jar" />
-        </fileset>
-    	<fileset dir="${test.home.dir}">
-            <include name="*.jar" />
-        </fileset>
-    </path>
+	<path id="master-classpath">
+	        <fileset dir="${test.dist.dir}/lib">
+	            <include name="*.jar" />
+	        </fileset>
+	</path>
+	
 
     <target name="build" description="Builds the CBM validation tests.  Creates gzipped distribution of tests.">
         <delete file="${test.lib.dir}/cbm-test.jar" />
-        <delete dir="${test.bin.dir}" />
+        
+    	<delete dir="${test.bin.dir}" />
         <mkdir dir="${test.bin.dir}" />
-        <javac destdir="${test.bin.dir}">
+    	
+    	<delete dir="${test.dist.dir}" />
+    	<mkdir dir="${test.dist.dir}" />
+    	<mkdir dir="${test.dist.dir}/bin" />
+        
+    	<copy todir="${test.dist.dir}\lib">
+    		<fileset dir="${cbm.lib.dir}">
+	            <include name="*.jar"/>
+	        </fileset>
+	    </copy>
+    	
+    	<copy todir="${test.dist.dir}/lib">
+    		<fileset dir="${test.lib.dir}">
+	            <include name="*.jar"/>
+	        </fileset>
+	    </copy>
+    	
+    	<copy todir="${test.dist.dir}">
+    		<fileset dir="${test.home.dir}" includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,reference/**"/>
+	    </copy>
+
+    	<javac destdir="${test.dist.dir}/bin">
             <src path="${test.src.dir}" />
             <classpath refid="master-classpath" />
         </javac>
+    	    	
     	
-        <copy todir="${test.bin.dir}/org/cagrid/CBM">
+        <copy todir="${test.dist.dir}/bin/org/cagrid/CBM">
             <fileset dir="${test.src.dir}/org/cagrid/CBM" includes="*.xml" />
         </copy>
         
-    	<jar destfile="${test.home.dir}/cbm-test.jar" basedir="${test.bin.dir}" />
+    	<jar destfile="${test.dist.dir}/lib/cbm-test.jar" basedir="${test.bin.dir}" />
     	
     	<tar destfile="${test.home.dir}/cbm-validation.tar" 
-    		 basedir="${test.home.dir}" 
+    		 basedir="${test.dist.dir}" 
     		 includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,reference/**"
     	/>
     	
