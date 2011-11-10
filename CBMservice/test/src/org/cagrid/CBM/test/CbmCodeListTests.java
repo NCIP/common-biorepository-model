@@ -69,7 +69,7 @@ public class CbmCodeListTests extends CbmTest {
       List<String> extraValues = compareCodeLists(referenceValues, remoteValues);
 
       if (extraValues.size() > 0) {
-         String errorMsg = "Some data values do not conform to the CBM value domains.  For a list of the valid values, please visit: ";
+         String errorMsg = "Some data values do not conform to the CBM value domains.  \nFor a list of the valid values, please visit: https://wiki.nci.nih.gov/display/TBPT/Common+Biorepository+Model+%28CBM%29";
          errorMsg += "/nTo resolve this issue, remove the following values from the CBM data: \n";
          String failMessage = buildFailMessage(errorMsg, extraValues);
          fail(failMessage);
@@ -82,7 +82,8 @@ public class CbmCodeListTests extends CbmTest {
       List<String> missingValues = compareCodeLists(remoteValues, referenceValues);
 
       if (missingValues.size() > 0) {
-         String errorMsg = "Remote code list is missing the following values: \n";
+    	 String errorMsg = "Some data values do not conform to the CBM value domains.  \nFor a list of the valid values, please visit: https://wiki.nci.nih.gov/display/TBPT/Common+Biorepository+Model+%28CBM%29";
+         errorMsg += "/nTo resolve this issue, add the following values to the CBM data: \n";
          String failMessage = buildFailMessage(errorMsg, missingValues);
          fail(failMessage);
       }
@@ -94,7 +95,8 @@ public class CbmCodeListTests extends CbmTest {
       List<String> extraValues = compareCodeLists(referenceValues, valuesFromNode);
 
       if (extraValues.size() > 0) {
-         String errorMsg = "The remote " + codeList.getCodeListName() + "data contains the following extra values: \n";
+    	 String errorMsg = "Some data values do not conform to the CBM value domains.  \nFor a list of the valid values, please visit: https://wiki.nci.nih.gov/display/TBPT/Common+Biorepository+Model+%28CBM%29";
+         errorMsg += "/nTo resolve this issue, remove the following values from the CBM data: \n";
          String failMessage = buildFailMessage(errorMsg, extraValues);
          fail(failMessage);
       }

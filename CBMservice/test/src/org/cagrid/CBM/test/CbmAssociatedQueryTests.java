@@ -229,9 +229,12 @@ public class CbmAssociatedQueryTests extends CbmTest {
 		}
 
 		if (!testPassed) {
-			fail("Unable to retrieve a set of " + targetObject.getSimpleName()
+			String errorMsg = "Unable to retrieve a set of " + targetObject.getSimpleName()
 					+ " objects related to a "
-					+ associatedObject.getSimpleName() + " object");
+					+ associatedObject.getSimpleName() + " object."
+					+ "\nPlease confirm that the latest version of the CBM service is being used.  "
+					+ "Please visit https://wiki.nci.nih.gov/display/TBPT/Common+Biorepository+Model+%28CBM%29 for more information";
+			fail(errorMsg);
 		}
 	}
 

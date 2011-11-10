@@ -119,10 +119,7 @@ public class CbmBasicQueryTests extends CbmTest {
 		CQLQuery query = builder.getQuery(theObject);
 		CQLQueryResults results = serviceClient.query(query);
 		List<Object> values = processResults(results);
-		//TODO: Do we want an error here?
-//		if(values.size() < 1){
-//			throw new Exception("No records found for object " + theObject.getSimpleName());
-//		}
+
 		return values;
 	}
 

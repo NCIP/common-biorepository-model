@@ -23,7 +23,6 @@ public class CbmConnectivityTests extends CbmTest {
 		serviceClient.query(query);
 
 
-
 	}
 
 }
