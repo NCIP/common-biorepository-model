@@ -49,14 +49,17 @@
 	    </copy>
     	
     	<copy todir="${test.dist.dir}">
-    		<fileset dir="${test.home.dir}" includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,reference/**"/>
+    		<fileset dir="${test.home.dir}" includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"/>
 	    </copy>
 
     	<javac destdir="${test.dist.dir}/bin">
             <src path="${test.src.dir}" />
             <classpath refid="build-classpath" />
         </javac>
-    	    	
+    	
+    	<copy todir="${test.dist.dir}/bin/org/cagrid/CBM/test">
+    		<fileset dir="${test.home.dir}" includes="client-config.wsdd"/>
+    	</copy>
     	
         <copy todir="${test.dist.dir}/bin/org/cagrid/CBM">
             <fileset dir="${test.src.dir}/org/cagrid/CBM" includes="*.xml" />
@@ -66,7 +69,7 @@
     	
     	<tar destfile="${test.home.dir}/cbm-validation.tar" 
     		 basedir="${test.dist.dir}" 
-    		 includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,reference/**"
+    		 includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"
     	/>
     	
     	<gzip src="cbm-validation.tar" destfile="cbm-validation.tar.gz"/>

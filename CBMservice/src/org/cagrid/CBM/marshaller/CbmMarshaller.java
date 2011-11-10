@@ -106,28 +106,6 @@ public class CbmMarshaller {
     public CbmNode createCbmNode(String sourceData) throws RemoteException {
 	List<CollectionProtocol> protocols = getCollectionProtocols();
 
-	int id = 50;
-	int pId = 100;
-	int sId = 200;
-	for (int i = 0; i < 10; i++) {
-	    List<CollectionProtocol> clones = getCollectionProtocols();
-	    for (CollectionProtocol a : clones) {
-		a.setId(id);
-		a.setName("protocol: " + id);
-		Collection<ParticipantCollectionSummary> list = a.getEnrolls();
-		for (ParticipantCollectionSummary b : list) {
-		    b.setId(pId++);
-		    Collection<SpecimenCollectionSummary> sums = b
-			    .getProvides();
-		    for (SpecimenCollectionSummary s : sums) {
-			s.setId(sId++);
-		    }
-		}
-		id++;
-	    }
-	    protocols.addAll(clones);
-	}
-
 	CbmNode node = new CbmNode(protocols, sourceData);
 	return node;
     }

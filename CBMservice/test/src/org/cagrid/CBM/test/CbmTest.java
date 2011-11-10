@@ -37,7 +37,7 @@ public abstract class CbmTest extends junit.framework.TestCase {
    protected static DataServiceClient serviceClient;
    protected static UMLClass[] umlClassList;
    protected static final String cqlDirectory = "./cql/";
-   protected static final String referenceDirectory = "./test/resources/";
+   protected static final String referenceDirectory = "./resources/";
 
    public static final QueryType DEFAULT_QUERY_TYPE = QueryType.CQL;
 
