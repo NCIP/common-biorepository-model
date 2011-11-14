@@ -1,98 +1,72 @@
-DROP TABLE IF EXISTS patient_age_group_at_collection
-;
-DROP TABLE IF EXISTS gender
-;
-DROP TABLE IF EXISTS ethnicity
-;
-DROP TABLE IF EXISTS preservation_type
-;
-DROP TABLE IF EXISTS anatomic_source
-;
-DROP TABLE IF EXISTS specimen_type
-;
-DROP TABLE IF EXISTS Person
-;
-DROP TABLE IF EXISTS Organization
-;
-DROP TABLE IF EXISTS Address
-;
-DROP TABLE IF EXISTS join_participant_collection_summary_to_race
-;
-DROP TABLE IF EXISTS specimen_collection_summary
-;
-DROP TABLE IF EXISTS specimen_collection_contact
-;
-DROP TABLE IF EXISTS specimen_availability_summary_profile
-;
-DROP TABLE IF EXISTS Race
-;
-DROP TABLE IF EXISTS Preservation
-;
-DROP TABLE IF EXISTS participant_collection_summary
-;
-DROP TABLE IF EXISTS Institution
-;
-DROP TABLE IF EXISTS join_participant_collection_summary_todiagnosis
-;
-DROP TABLE IF EXISTS Diagnosis
-;
-DROP TABLE IF EXISTS join_collection_protocol_to_institution
-;
-DROP TABLE IF EXISTS collection_protocol
-;
-DROP TABLE IF EXISTS annotation_availability_profile
-;
+SET FOREIGN_KEY_CHECKS=0;
 
 
 
-CREATE TABLE patient_age_group_at_collection
+DROP TABLE IF EXISTS Address CASCADE
+;
+DROP TABLE IF EXISTS anatomic_source CASCADE
+;
+DROP TABLE IF EXISTS annotation_availability_profile CASCADE
+;
+DROP TABLE IF EXISTS collection_protocol CASCADE
+;
+DROP TABLE IF EXISTS Diagnosis CASCADE
+;
+DROP TABLE IF EXISTS ethnicity CASCADE
+;
+DROP TABLE IF EXISTS gender CASCADE
+;
+DROP TABLE IF EXISTS Institution CASCADE
+;
+DROP TABLE IF EXISTS join_collection_protocol_to_institution CASCADE
+;
+DROP TABLE IF EXISTS join_participant_collection_summary_to_race CASCADE
+;
+DROP TABLE IF EXISTS join_participant_collection_summary_todiagnosis CASCADE
+;
+DROP TABLE IF EXISTS Organization CASCADE
+;
+DROP TABLE IF EXISTS participant_collection_summary CASCADE
+;
+DROP TABLE IF EXISTS patient_age_group_at_collection CASCADE
+;
+DROP TABLE IF EXISTS Person CASCADE
+;
+DROP TABLE IF EXISTS Preservation CASCADE
+;
+DROP TABLE IF EXISTS preservation_type CASCADE
+;
+DROP TABLE IF EXISTS Race CASCADE
+;
+DROP TABLE IF EXISTS specimen_availability_summary_profile CASCADE
+;
+DROP TABLE IF EXISTS specimen_collection_contact CASCADE
+;
+DROP TABLE IF EXISTS specimen_collection_summary CASCADE
+;
+DROP TABLE IF EXISTS specimen_type CASCADE
+;
+
+CREATE TABLE Address
 (
-	id INTEGER NOT NULL,
-	age_group_low INTEGER,
-	age_group_high INTEGER,
-	PRIMARY KEY (id)
-) 
-;
+	city VARCHAR(50),
+	country VARCHAR(50),
+	department_or_division VARCHAR(50),
+	entity_name VARCHAR(50),
+	entity_number VARCHAR(50),
+	floor_or_premises VARCHAR(50),
+	post_office_box VARCHAR(50),
+	zip_code VARCHAR(50),
+	state VARCHAR(50),
+	street_post_directional VARCHAR(50),
+	street_pre_directional VARCHAR(50),
+	street_or_thoroughfare_name_and_type VARCHAR(150),
+	street_or_thoroughfare_number VARCHAR(50),
+	street_or_thoroughfare_section_name VARCHAR(50),
+	street_or_thoroughfare_extension_name VARCHAR(50),
+	address_ID INTEGER NOT NULL,
+	PRIMARY KEY (address_ID)
 
-
-CREATE TABLE gender
-(
-	gender VARCHAR(50) NOT NULL,
-	id INTEGER NOT NULL,
-	NCI_code VARCHAR(50),
-	NCI_Definition TEXT,
-	PRIMARY KEY (id),
-	UNIQUE (id),
-	UNIQUE (gender),
-	UNIQUE (NCI_code)
-) 
-;
-
-
-CREATE TABLE ethnicity
-(
-	ethnicity VARCHAR(50) NOT NULL,
-	id INTEGER NOT NULL,
-	NCI_code VARCHAR(50),
-	NCI_definition TEXT,
-	PRIMARY KEY (id),
-	UNIQUE (id),
-	UNIQUE (NCI_code),
-	UNIQUE (ethnicity)
-) 
-;
-
-
-CREATE TABLE preservation_type
-(
-	id INTEGER NOT NULL,
-	preservation_type VARCHAR(100) NOT NULL,
-	NCI_code VARCHAR(50),
-	NCI_Definition TEXT,
-	PRIMARY KEY (id),
-	UNIQUE (id),
-	UNIQUE (NCI_code),
-	UNIQUE (preservation_type)
 ) 
 ;
 
@@ -104,9 +78,280 @@ CREATE TABLE anatomic_source
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
-	UNIQUE (anatomic_source),
-	UNIQUE (id),
-	UNIQUE (NCI_code)
+	UNIQUE UQ_anatomic_source_anatomic_source(anatomic_source),
+	UNIQUE UQ_anatomic_source_id(id),
+	UNIQUE UQ_anatomic_source_NCI_code(NCI_code)
+
+) 
+;
+
+
+CREATE TABLE annotation_availability_profile
+(
+	has_additional_patient_demographics BOOL,
+	has_exposure_history BOOL,
+	has_family_history BOOL,
+	has_histopathologic_information BOOL,
+	has_lab_data BOOL,
+	has_longitudinal_specimens BOOL,
+	has_matched_specimens BOOL,
+	has_outcome_information BOOL,
+	has_participants_available_for_followup BOOL,
+	has_treatment_information BOOL,
+	annotation_availability_profile_ID INTEGER NOT NULL,
+	PRIMARY KEY (annotation_availability_profile_ID)
+
+) 
+;
+
+
+CREATE TABLE collection_protocol
+(
+	date_last_updated DATE,
+	end_date DATE,
+	name VARCHAR(255),
+	start_date DATE,
+	identifier VARCHAR(50),
+	makes_available INTEGER,
+	is_assigned_to INTEGER,
+	collectionProtocolID INTEGER NOT NULL,
+	is_constrained_by INTEGER,
+	PRIMARY KEY (collectionProtocolID),
+	KEY (makes_available),
+	KEY (is_assigned_to),
+	KEY (is_constrained_by)
+
+) 
+;
+
+
+CREATE TABLE Diagnosis
+(
+	diagnosisType VARCHAR(225) NOT NULL,
+	diagnosis_ID INTEGER NOT NULL,
+	NCI_code VARCHAR(50),
+	NCI_Definition TEXT,
+	PRIMARY KEY (diagnosis_ID),
+	UNIQUE UQ_Diagnosis_diagnosis_ID(diagnosis_ID),
+	UNIQUE UQ_Diagnosis_diagnosisType(diagnosisType),
+	UNIQUE UQ_Diagnosis_NCI_code(NCI_code)
+
+) 
+;
+
+
+CREATE TABLE ethnicity
+(
+	ethnicity VARCHAR(50) NOT NULL,
+	id INTEGER NOT NULL,
+	NCI_code VARCHAR(50),
+	NCI_definition TEXT,
+	PRIMARY KEY (id),
+	UNIQUE UQ_ethnicity_id(id),
+	UNIQUE UQ_ethnicity_NCI_code(NCI_code),
+	UNIQUE UQ_ethnicity_ethnicity(ethnicity)
+
+) 
+;
+
+
+CREATE TABLE gender
+(
+	gender VARCHAR(50) NOT NULL,
+	id INTEGER NOT NULL,
+	NCI_code VARCHAR(50),
+	NCI_Definition TEXT,
+	PRIMARY KEY (id),
+	UNIQUE UQ_gender_id(id),
+	UNIQUE UQ_gender_gender(gender),
+	UNIQUE UQ_gender_NCI_code(NCI_code)
+
+) 
+;
+
+
+CREATE TABLE Institution
+(
+	homepage_URL VARCHAR(50),
+	institution_ID INTEGER NOT NULL,
+	PRIMARY KEY (institution_ID)
+
+) 
+;
+
+
+CREATE TABLE join_collection_protocol_to_institution
+(
+	institution_ID INTEGER,
+	collection_protocol_ID INTEGER,
+	KEY (institution_ID),
+	KEY (collection_protocol_ID)
+
+) 
+;
+
+
+CREATE TABLE join_participant_collection_summary_to_race
+(
+	participant_collection_summary_ID INTEGER,
+	race_id INTEGER,
+	KEY (participant_collection_summary_ID),
+	KEY (race_id)
+
+) 
+;
+
+
+CREATE TABLE join_participant_collection_summary_todiagnosis
+(
+	diagnosis_id INTEGER,
+	participant_collection_summary_ID INTEGER,
+	KEY (participant_collection_summary_ID),
+	KEY (diagnosis_id)
+
+) 
+;
+
+
+CREATE TABLE Organization
+(
+	name VARCHAR(150),
+	organization_ID INTEGER NOT NULL,
+	PRIMARY KEY (organization_ID)
+
+) 
+;
+
+
+CREATE TABLE participant_collection_summary
+(
+	participant_count INTEGER,
+	registered_to INTEGER,
+	participant_collection_summary_ID INTEGER NOT NULL,
+	ethnicity VARCHAR(50),
+	ethnicity_id INTEGER,
+	gender VARCHAR(50),
+	gender_id INTEGER,
+	PRIMARY KEY (participant_collection_summary_ID),
+	KEY (ethnicity_id),
+	KEY (gender_id),
+	KEY (registered_to)
+
+) 
+;
+
+
+CREATE TABLE patient_age_group_at_collection
+(
+	id INTEGER NOT NULL,
+	age_group_low INTEGER,
+	age_group_high INTEGER,
+	PRIMARY KEY (id)
+
+) 
+;
+
+
+CREATE TABLE Person
+(
+	full_name VARCHAR(50),
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	middle_name_or_initial VARCHAR(50),
+	email_address VARCHAR(50),
+	person_ID INTEGER NOT NULL,
+	PRIMARY KEY (person_ID)
+
+) 
+;
+
+
+CREATE TABLE Preservation
+(
+	preservation_type VARCHAR(100),
+	storage_temperature_in_centigrade INTEGER,
+	preservation_ID INTEGER NOT NULL,
+	PRIMARY KEY (preservation_ID)
+
+) 
+;
+
+
+CREATE TABLE preservation_type
+(
+	id INTEGER NOT NULL,
+	preservation_type VARCHAR(100) NOT NULL,
+	NCI_code VARCHAR(50),
+	NCI_Definition TEXT,
+	PRIMARY KEY (id),
+	UNIQUE UQ_preservation_type_id(id),
+	UNIQUE UQ_preservation_type_NCI_code(NCI_code),
+	UNIQUE UQ_preservation_type_preservation_type(preservation_type)
+
+) 
+;
+
+
+CREATE TABLE Race
+(
+	race VARCHAR(50) NOT NULL,
+	race_ID INTEGER NOT NULL,
+	NCI_code VARCHAR(50),
+	NCI_Definition TEXT,
+	PRIMARY KEY (race_ID),
+	UNIQUE UQ_Race_race_ID(race_ID),
+	UNIQUE UQ_race_race(race),
+	UNIQUE UQ_race_NCI_code(NCI_code)
+
+) 
+;
+
+
+CREATE TABLE specimen_availability_summary_profile
+(
+	is_available_to_commercial_organizations BOOL,
+	is_available_to_foreign_investigators BOOL,
+	is_available_to_outside_institution BOOL,
+	is_collaboration_required BOOL,
+	specimen_availability_summary_profile_ID INTEGER NOT NULL,
+	PRIMARY KEY (specimen_availability_summary_profile_ID)
+
+) 
+;
+
+
+CREATE TABLE specimen_collection_contact
+(
+	phone VARCHAR(50),
+	specimen_collection_contact_ID INTEGER NOT NULL,
+	address_id INTEGER,
+	PRIMARY KEY (specimen_collection_contact_ID),
+	KEY (address_id)
+
+) 
+;
+
+
+CREATE TABLE specimen_collection_summary
+(
+	specimen_collection_summary_ID INTEGER NOT NULL,
+	anatomic_source_id INTEGER,
+	anatomic_source VARCHAR(150),
+	specimen_count INTEGER,
+	patient_age_group_at_collection INTEGER,
+	specimen_type_id INTEGER,
+	specimen_type VARCHAR(50),
+	is_collected_from INTEGER,
+	undergoes INTEGER,
+	qualifiesPatientAgeAtSpecimenCollection INTEGER,
+	PRIMARY KEY (specimen_collection_summary_ID),
+	KEY (anatomic_source_id),
+	KEY (patient_age_group_at_collection),
+	KEY (specimen_type_id),
+	KEY (is_collected_from),
+	KEY (undergoes),
+	KEY (qualifiesPatientAgeAtSpecimenCollection)
+
 ) 
 ;
 
@@ -118,238 +363,41 @@ CREATE TABLE specimen_type
 	NCI_code VARCHAR(50),
 	NCI_Definition TEXT,
 	PRIMARY KEY (id),
-	UNIQUE (id),
-	UNIQUE (NCI_code),
-	UNIQUE (specimen_type)
+	UNIQUE UQ_specimen_type_id(id),
+	UNIQUE UQ_specimen_type_NCI_code(NCI_code),
+	UNIQUE UQ_specimen_type_specimen_type(specimen_type)
+
 ) 
 ;
 
 
-CREATE TABLE Person
-(
-	full_name VARCHAR(50) COMMENT 'A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.  ',
-	first_name VARCHAR(50) COMMENT 'A word or group of words indicating a person''s first (personal or given) name; the name that precedes the surname. Synonym = Given Name. ',
-	last_name VARCHAR(50) COMMENT 'A means of identifying an individual by using a word or group of words indicating a person''s last (family) name. Synonym = Last Name, Surname.',
-	middle_name_or_initial VARCHAR(50) COMMENT 'A means of identifying an individual by using a word or group of words indicating a person''s middle name.',
-	email_address VARCHAR(50) COMMENT 'The string of characters that represents the electronic mail address of a person.',
-	person_ID INTEGER NOT NULL,
-	PRIMARY KEY (person_ID)
-) 
+
+SET FOREIGN_KEY_CHECKS=1;
+
+
+ALTER TABLE collection_protocol ADD CONSTRAINT FK_makes_available 
+	FOREIGN KEY (makes_available) REFERENCES annotation_availability_profile (annotation_availability_profile_ID)
 ;
 
-
-CREATE TABLE Organization
-(
-	name VARCHAR(150) COMMENT 'The name of the organization or an institution.',
-	organization_ID INTEGER NOT NULL,
-	PRIMARY KEY (organization_ID)
-)  COMMENT='A formal group of people that exists to further a particular profession.'
+ALTER TABLE collection_protocol ADD CONSTRAINT FK_is_assigned_to 
+	FOREIGN KEY (is_assigned_to) REFERENCES specimen_collection_contact (specimen_collection_contact_ID)
 ;
 
-
-CREATE TABLE Address
-(
-	city VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a city, town, or village.',
-	country VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a country.',
-	department_or_division VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specialized division of a large organization.',
-	entity_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
-	entity_number VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.',
-	floor_or_premises VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of the story or level of a building.',
-	post_office_box VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a delivery box at a postal facility.',
-	zip_code VARCHAR(50) COMMENT 'The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.',
-	state VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a principal administrative unit of a country.',
-	street_post_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.',
-	street_pre_directional VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.',
-	street_or_thoroughfare_name_and_type VARCHAR(150) COMMENT 'A component of an address that specifies a location by identification of a related road or public highway and a component of an address that specifies a location by identification of a street/thoroughfare by type.',
-	street_or_thoroughfare_number VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare.',
-	street_or_thoroughfare_section_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of a distinct area of road or public highway.',
-	street_or_thoroughfare_extension_name VARCHAR(50) COMMENT 'A component of an address that specifies a location by identification of an expanded part of road or public highway.',
-	address_ID INTEGER NOT NULL,
-	PRIMARY KEY (address_ID)
-)  COMMENT='A standardized representation of the location of a person, business, building, or organization.'
+ALTER TABLE collection_protocol ADD CONSTRAINT FK_is_constrained_by 
+	FOREIGN KEY (is_constrained_by) REFERENCES specimen_availability_summary_profile (specimen_availability_summary_profile_ID)
 ;
 
-
-CREATE TABLE join_participant_collection_summary_to_race
-(
-	participant_collection_summary_ID INTEGER,
-	race_id INTEGER,
-	KEY (participant_collection_summary_ID),
-	KEY (race_id)
-) 
+ALTER TABLE Institution ADD CONSTRAINT FK_Institution_Organization 
+	FOREIGN KEY (institution_ID) REFERENCES Organization (organization_ID)
 ;
 
-
-CREATE TABLE specimen_collection_summary
-(
-	specimen_collection_summary_ID INTEGER NOT NULL,
-	anatomic_source_id INTEGER COMMENT 'Anatomic source from which the Specimen was collected',
-	anatomic_source VARCHAR(150),
-	specimen_count INTEGER COMMENT 'Number of specimens with the same collection summary information, originating from the same profile of patient',
-	patient_age_group_at_collection INTEGER COMMENT 'Age of patient on tissue collection date',
-	specimen_type_id INTEGER,
-	specimen_type VARCHAR(50) COMMENT 'A description of the type of specimen that is stored (blood, serum, tissue, DNA, ...)',
-	is_collected_from INTEGER,
-	undergoes INTEGER,
-	qualifiesPatientAgeAtSpecimenCollection INTEGER,
-	PRIMARY KEY (specimen_collection_summary_ID),
-	KEY (anatomic_source_id),
-	KEY (patient_age_group_at_collection),
-	KEY (specimen_type_id),
-	KEY (is_collected_from),
-	KEY (undergoes),
-	KEY (qualifiesPatientAgeAtSpecimenCollection)
-)  COMMENT='Distinguishable portion of biomaterial'
+ALTER TABLE join_collection_protocol_to_institution ADD CONSTRAINT Institution 
+	FOREIGN KEY (institution_ID) REFERENCES Institution (institution_ID)
 ;
 
-
-CREATE TABLE specimen_collection_contact
-(
-	phone VARCHAR(50) COMMENT 'Phone number of the Contact person',
-	specimen_collection_contact_ID INTEGER NOT NULL,
-	PRIMARY KEY (specimen_collection_contact_ID),
-	KEY (specimen_collection_contact_ID)
-)  COMMENT='Contact information for the person who is responsible for the collection'
+ALTER TABLE join_collection_protocol_to_institution ADD CONSTRAINT CollectionProtocol 
+	FOREIGN KEY (collection_protocol_ID) REFERENCES collection_protocol (collectionProtocolID)
 ;
-
-
-CREATE TABLE specimen_availability_summary_profile
-(
-	is_available_to_commercial_organizations BOOL COMMENT 'Can specimen be provided to commercial organizations?',
-	is_available_to_foreign_investigators BOOL COMMENT 'Can specimen be provided to investigators at foreign institutions?',
-	is_available_to_outside_institution BOOL COMMENT 'Is specimen available to researchers outside this institution / group?',
-	is_collaboration_required BOOL COMMENT 'Is collaboration required to obtain specimen?',
-	specimen_availability_summary_profile_ID INTEGER NOT NULL,
-	PRIMARY KEY (specimen_availability_summary_profile_ID)
-)  COMMENT='Details of availability to specimens to types of requestors.'
-;
-
-
-CREATE TABLE Race
-(
-	race VARCHAR(50) NOT NULL COMMENT 'Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.',
-	race_ID INTEGER NOT NULL,
-	NCI_code VARCHAR(50),
-	NCI_Definition TEXT,
-	PRIMARY KEY (race_ID),
-	UNIQUE (race_ID),
-	UNIQUE (race),
-	UNIQUE (NCI_code)
-) 
-;
-
-
-CREATE TABLE Preservation
-(
-	preservation_type VARCHAR(100) COMMENT 'Method by which specimens are stored',
-	storage_temperature_in_centigrade INTEGER COMMENT 'Temperature in degrees Centigrade at which the Specimen is stored',
-	preservation_ID INTEGER NOT NULL,
-	PRIMARY KEY (preservation_ID),
-	KEY (preservation_ID)
-)  COMMENT='Information that describes the storage conditions for a collection of specimens'
-;
-
-
-CREATE TABLE participant_collection_summary
-(
-	participant_count INTEGER COMMENT 'Number of participants with matching ethnicity, gender, and race profile',
-	registered_to INTEGER,
-	participant_collection_summary_ID INTEGER NOT NULL,
-	ethnicity VARCHAR(50),
-	ethnicity_id INTEGER,
-	gender VARCHAR(50),
-	gender_id INTEGER,
-	PRIMARY KEY (participant_collection_summary_ID),
-	KEY (ethnicity_id),
-	KEY (gender_id),
-	KEY (registered_to)
-)  COMMENT='Information about the Participant from whom the Specimen was collected'
-;
-
-
-CREATE TABLE Institution
-(
-	homepage_URL VARCHAR(50) COMMENT 'URL for the institution or the institution''s biobank',
-	institution_ID INTEGER NOT NULL,
-	PRIMARY KEY (institution_ID),
-	KEY (institution_ID)
-)  COMMENT='Facility at which the Collection resides'
-;
-
-
-CREATE TABLE join_participant_collection_summary_todiagnosis
-(
-	diagnosis_id INTEGER,
-	participant_collection_summary_ID INTEGER,
-	KEY (participant_collection_summary_ID),
-	KEY (diagnosis_id)
-) 
-;
-
-
-CREATE TABLE Diagnosis
-(
-	diagnosisType VARCHAR(225) NOT NULL COMMENT 'High-level groupings of diagnosis types',
-	diagnosis_ID INTEGER NOT NULL,
-	NCI_code VARCHAR(50),
-	NCI_Definition TEXT,
-	PRIMARY KEY (diagnosis_ID),
-	UNIQUE (diagnosis_ID),
-	UNIQUE (diagnosisType),
-	UNIQUE (NCI_code)
-)  COMMENT='High level groupings of medical conditions with which participants have been diagnosed'
-;
-
-
-CREATE TABLE join_collection_protocol_to_institution
-(
-	institution_ID INTEGER,
-	collection_protocol_ID INTEGER,
-	KEY (institution_ID),
-	KEY (collection_protocol_ID)
-) 
-;
-
-
-CREATE TABLE collection_protocol
-(
-	date_last_updated DATE COMMENT 'Date collection information was most recently updated.',
-	end_date DATE COMMENT 'Date when the study officially closes',
-	name VARCHAR(255) COMMENT 'The name of the study for which the specimens are identified.',
-	start_date DATE COMMENT 'The date on which the collection begins collecting specimens',
-	identifier VARCHAR(50),
-	makes_available INTEGER,
-	is_assigned_to INTEGER,
-	collectionProtocolID INTEGER NOT NULL,
-	is_constrained_by INTEGER,
-	PRIMARY KEY (collectionProtocolID),
-	KEY (makes_available),
-	KEY (is_assigned_to),
-	KEY (is_constrained_by)
-)  COMMENT='The Protocol or Study for which the Specimens are collected'
-;
-
-
-CREATE TABLE annotation_availability_profile
-(
-	has_additional_patient_demographics BOOL COMMENT 'Are demographic information (e.g. age, sex, race, ethnicity) available?',
-	has_exposure_history BOOL COMMENT 'Are the exposure data (e.g. smoking, alcohol, drugs, chemicals) available?',
-	has_family_history BOOL COMMENT 'Are family history data available?',
-	has_histopathologic_information BOOL COMMENT 'Are histopathologic data (e.g. stage, grade, histologic type, subtype) available?',
-	has_lab_data BOOL COMMENT 'Are lab data available?',
-	has_longitudinal_specimens BOOL COMMENT 'Are longitudinal specimens (specimens collected from the same patient over time) available?',
-	has_matched_specimens BOOL COMMENT 'Are matched specimens (tumor and non-tumor from the same patient, tissue and blood from the same patient, for example) available?',
-	has_outcome_information BOOL COMMENT 'Is outcome information (effectiveness of treatment, side effects, etc) available?',
-	has_participants_available_for_followup BOOL COMMENT 'For the collection (for example, clinical trial group), are patients available for follow-up?',
-	has_treatment_information BOOL COMMENT 'Are treatment data (e.g. drug, schedule) available?',
-	annotation_availability_profile_ID INTEGER NOT NULL,
-	PRIMARY KEY (annotation_availability_profile_ID)
-)  COMMENT='Metadata describing the availability of information pertaining to specimens in a collection.'
-;
-
-
-
-
 
 ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_participant_collection_summary 
 	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
@@ -357,6 +405,34 @@ ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_p
 
 ALTER TABLE join_participant_collection_summary_to_race ADD CONSTRAINT FK_join_participant_collection_summary_to_race_Race 
 	FOREIGN KEY (race_id) REFERENCES Race (race_ID)
+;
+
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis 
+	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
+;
+
+ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis_id_Diagnosis 
+	FOREIGN KEY (diagnosis_id) REFERENCES Diagnosis (diagnosis_ID)
+;
+
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_ethnicity 
+	FOREIGN KEY (ethnicity_id) REFERENCES ethnicity (id)
+;
+
+ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_gender 
+	FOREIGN KEY (gender_id) REFERENCES gender (id)
+;
+
+ALTER TABLE Preservation ADD CONSTRAINT FK_Preservation_preservation_type 
+	FOREIGN KEY (preservation_ID) REFERENCES preservation_type (id)
+;
+
+ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_specimen_collection_contact_Address 
+	FOREIGN KEY (address_id) REFERENCES Address (address_ID)
+;
+
+ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionContact_Person 
+	FOREIGN KEY (specimen_collection_contact_ID) REFERENCES Person (person_ID)
 ;
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_specimen_collection_summary_anatomic_source 
@@ -377,52 +453,4 @@ ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_is_collected_from
 
 ALTER TABLE specimen_collection_summary ADD CONSTRAINT FK_undergoes 
 	FOREIGN KEY (undergoes) REFERENCES Preservation (preservation_ID)
-;
-
-ALTER TABLE specimen_collection_contact ADD CONSTRAINT FK_SpecimenCollectionContact_Person 
-	FOREIGN KEY (specimen_collection_contact_ID) REFERENCES Person (person_ID)
-;
-
-ALTER TABLE Preservation ADD CONSTRAINT FK_Preservation_preservation_type 
-	FOREIGN KEY (preservation_ID) REFERENCES preservation_type (id)
-;
-
-ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_ethnicity 
-	FOREIGN KEY (ethnicity_id) REFERENCES ethnicity (id)
-;
-
-ALTER TABLE participant_collection_summary ADD CONSTRAINT FK_participant_collection_summary_gender 
-	FOREIGN KEY (gender_id) REFERENCES gender (id)
-;
-
-ALTER TABLE Institution ADD CONSTRAINT FK_Institution_Organization 
-	FOREIGN KEY (institution_ID) REFERENCES Organization (organization_ID)
-;
-
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis 
-	FOREIGN KEY (participant_collection_summary_ID) REFERENCES participant_collection_summary (participant_collection_summary_ID)
-;
-
-ALTER TABLE join_participant_collection_summary_todiagnosis ADD CONSTRAINT FK_join_participant_collection_summary_todiagnosis_id_Diagnosis 
-	FOREIGN KEY (diagnosis_id) REFERENCES Diagnosis (diagnosis_ID)
-;
-
-ALTER TABLE join_collection_protocol_to_institution ADD CONSTRAINT Institution 
-	FOREIGN KEY (institution_ID) REFERENCES Institution (institution_ID)
-;
-
-ALTER TABLE join_collection_protocol_to_institution ADD CONSTRAINT CollectionProtocol 
-	FOREIGN KEY (collection_protocol_ID) REFERENCES collection_protocol (collectionProtocolID)
-;
-
-ALTER TABLE collection_protocol ADD CONSTRAINT FK_makes_available 
-	FOREIGN KEY (makes_available) REFERENCES annotation_availability_profile (annotation_availability_profile_ID)
-;
-
-ALTER TABLE collection_protocol ADD CONSTRAINT FK_is_assigned_to 
-	FOREIGN KEY (is_assigned_to) REFERENCES specimen_collection_contact (specimen_collection_contact_ID)
-;
-
-ALTER TABLE collection_protocol ADD CONSTRAINT FK_is_constrained_by 
-	FOREIGN KEY (is_constrained_by) REFERENCES specimen_availability_summary_profile (specimen_availability_summary_profile_ID)
 ;
