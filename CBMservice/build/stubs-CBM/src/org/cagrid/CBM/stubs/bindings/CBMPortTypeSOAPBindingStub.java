@@ -261,184 +261,23 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferDataServiceResourceProperties");
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">>TransferQueryRequest>cqlQuery");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.transfer.TransferDataServiceResourceProperties.class;
+            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryRequestCqlQuery.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">Subscribe");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Service>serviceContextCollection");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.Subscribe.class;
+            cls = gov.nih.nci.cagrid.metadata.service.ServiceServiceContextCollection.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.cql/QueryLanguageSupport", ">QueryLanguageSupport>CQL2Support");
+            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataDescriptor");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.cql.support.QueryLanguageSupportCQL2Support.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Relationship");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.Relationship.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "InvalidTopicExpressionFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.InvalidTopicExpressionFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">QueryResourceProperties");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.QueryResourceProperties_Element.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "InputParameter");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.InputParameter.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">DataServiceResourceProperties");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.DataServiceResourceProperties.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">ExtractCBMdataRequest");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.CBM.stubs.ExtractCBMdataRequest.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UnableToModifyResourcePropertyFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.UnableToModifyResourcePropertyFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">ExecuteQueryResponse");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.ExecuteQueryResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>exposedUMLAssociationCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelExposedUMLAssociationCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">>ExecuteQueryRequest>query");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.ExecuteQueryRequestQuery.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "ResourceUnknownFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.ResourceUnknownFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">ScheduledResourceTerminationRP");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.ScheduledResourceTerminationRP.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Fault");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.Fault.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">ValueDomain>enumerationCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.ValueDomainEnumerationCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "QueryEvaluationErrorFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.QueryEvaluationErrorFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLClassReference");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLClassReference.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "TerminationTimeChangeRejectedFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.TerminationTimeChangeRejectedFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "QueryModifier");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.QueryModifier.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService/types", ">TransferDataServiceReference");
-            cachedSerQNames.add(qName);
-            cls = transfer.dataservice.cagrid.org.Cql2TransferDataService.types.TransferDataServiceReference.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">ExecuteTransferQueryRequest");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryRequest.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ValueDomain");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.ValueDomain.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Service");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.Service.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", "BaseFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.faults.BaseFaultType.class;
+            cls = org.cagrid.transfer.descriptor.DataDescriptor.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -450,19 +289,12 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Operation>faultCollection");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "InputParameter");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.OperationFaultCollection.class;
+            cls = gov.nih.nci.cagrid.metadata.service.InputParameter.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "FaultSubcodeValues");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.FaultSubcodeValues.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "UMLClass");
             cachedSerQNames.add(qName);
@@ -471,6 +303,20 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UnknownQueryExpressionDialectFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.UnknownQueryExpressionDialectFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "AttributedQName");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.AttributedQName.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
+
             qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InvalidResourcePropertyQNameFaultType");
             cachedSerQNames.add(qName);
             cls = org.oasis.wsrf.properties.InvalidResourcePropertyQNameFaultType.class;
@@ -478,51 +324,9 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">SetResourceProperties");
+            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">GetServiceSecurityMetadataResponse");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.SetResourceProperties_Element.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ServiceNameType");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.ServiceNameType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">DestroyResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.DestroyResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">PauseSubscriptionResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.PauseSubscriptionResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">ResourcePropertyValueChangeNotificationType>NewValue");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationTypeNewValue.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Operation>inputParameterCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.OperationInputParameterCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "NotificationMessageHolderType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.NotificationMessageHolderType.class;
+            cls = gov.nih.nci.cagrid.introduce.security.stubs.GetServiceSecurityMetadataResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -534,75 +338,33 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "None");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">ServiceContext>operationCollection");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.None.class;
+            cls = gov.nih.nci.cagrid.metadata.service.ServiceContextOperationCollection.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLAttributeResult");
+            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "Status");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLAttributeResult.class;
+            cls = org.cagrid.transfer.descriptor.Status.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", ">ServiceSecurityMetadata>operations");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.ServiceSecurityMetadataOperations.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLQueryResults");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Output");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLQueryResults.class;
+            cls = gov.nih.nci.cagrid.metadata.service.Output.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">ResumeSubscriptionResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.ResumeSubscriptionResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "EndpointReferenceType");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.EndpointReferenceType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">QueryResourcePropertiesResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.QueryResourcePropertiesResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLResult");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "ResourceUnknownFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.ResourceUnknownFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM/CQLResultTypes", "PermissibleCQLObjectResults");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.CBM.cqlresulttypes.PermissibleCQLObjectResults.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "AttributedURI");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.AttributedURI.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
 
             qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "QueryExpressionType");
             cachedSerQNames.add(qName);
@@ -611,44 +373,37 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">TransferDataServiceResourceProperties");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "Address");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.transfer.TransferDataServiceResourceProperties.class;
+            cls = gov.nih.nci.cagrid.metadata.common.Address.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "ResourcePropertyValueChangeNotificationType");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "CaDSRRegistration");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationType.class;
+            cls = gov.nih.nci.cagrid.metadata.service.CaDSRRegistration.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ReplyAfterType");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">Subscribe");
             cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.ReplyAfterType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
-
-            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">GetServiceSecurityMetadataRequest");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.introduce.security.stubs.GetServiceSecurityMetadataRequest.class;
+            cls = org.oasis.wsn.Subscribe.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">ExecuteTransferQueryResponse");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">SetResourcePropertiesResponse");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryResponse.class;
+            cls = org.oasis.wsrf.properties.SetResourcePropertiesResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">TerminationNotification");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "ServiceSecurityMetadata");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.TerminationNotification.class;
+            cls = gov.nih.nci.cagrid.metadata.security.ServiceSecurityMetadata.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -660,37 +415,51 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", ">ServiceMetadata>hostingResearchCenter");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">GetCurrentMessage");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.ServiceMetadataHostingResearchCenter.class;
+            cls = org.oasis.wsn.GetCurrentMessage.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "protectionLevelType");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>exposedUMLClassCollection");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.ProtectionLevelType.class;
+            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelExposedUMLClassCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">ExtractCBMdataResponse");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.CBM.stubs.ExtractCBMdataResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">QueryResourcePropertiesResponse");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.QueryResourcePropertiesResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ValueDomain");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.ValueDomain.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Predicate");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlquery.Predicate.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.cql/QueryLanguageSupport", "QueryLanguageSupport");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>umlGeneralizationCollection");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.cql.support.QueryLanguageSupport.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">ServiceSecurityResourceProperties");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.introduce.security.stubs.ServiceSecurityResourceProperties.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM/types", ">CBMReference");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.CBM.stubs.types.CBMReference.class;
+            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelUmlGeneralizationCollection.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -702,6 +471,188 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "GSISecureMessage");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.GSISecureMessage.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ServiceNameType");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.ServiceNameType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "CommunicationStyle");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.CommunicationStyle.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Operation>inputParameterCollection");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.OperationInputParameterCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">SetResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.SetResourceProperties_Element.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ResearchCenter");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenter.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">GetServiceSecurityMetadataRequest");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.introduce.security.stubs.GetServiceSecurityMetadataRequest.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLAssociation");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociation.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">ResumeSubscriptionResponse");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.ResumeSubscriptionResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", "BaseFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.faults.BaseFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">>QueryRequest>cqlQuery");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.QueryRequestCqlQuery.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLClassReference");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLClassReference.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">TerminationNotification");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.TerminationNotification.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "None");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.None.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "QueryEvaluationErrorFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.QueryEvaluationErrorFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLObjectResult");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLObjectResult.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM/types", ">CBMReference");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.CBM.stubs.types.CBMReference.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "ServiceContext");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.ServiceContext.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Relationship");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.Relationship.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">Notify");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.Notify.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">ResourcePropertyValueChangeNotificationType>NewValue");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationTypeNewValue.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Operation");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.Operation.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "TerminationTimeChangeRejectedFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.TerminationTimeChangeRejectedFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", ">BaseFaultType>Description");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.faults.BaseFaultTypeDescription.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">ResearchCenter>pointOfContactCollection");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenterPointOfContactCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", "ServiceMetadata");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.ServiceMetadata.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "SetResourcePropertyRequestFailedFaultType");
             cachedSerQNames.add(qName);
             cls = org.oasis.wsrf.properties.SetResourcePropertyRequestFailedFaultType.class;
@@ -709,37 +660,149 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLAssociationEdge");
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLIdentifierResult");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociationEdge.class;
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLIdentifierResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ReferencePropertiesType");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">ServiceContext>contextPropertyCollection");
             cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.ReferencePropertiesType.class;
+            cls = gov.nih.nci.cagrid.metadata.service.ServiceContextContextPropertyCollection.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "ResourceNotDestroyedFaultType");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "UMLAttribute");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.ResourceNotDestroyedFaultType.class;
+            cls = gov.nih.nci.cagrid.metadata.common.UMLAttribute.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "TargetAttribute");
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">DataServiceResourceProperties");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.TargetAttribute.class;
+            cls = org.cagrid.dataservice.DataServiceResourceProperties.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/TransferService/Context/types", ">TransferServiceContextReference");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UpdateType");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.transfer.context.stubs.types.TransferServiceContextReference.class;
+            cls = org.oasis.wsrf.properties.UpdateType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">ExecuteQueryResponse");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.ExecuteQueryResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "RelationshipTypeValues");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.RelationshipTypeValues.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService/types", ">TransferDataServiceReference");
+            cachedSerQNames.add(qName);
+            cls = transfer.data.cagrid.nci.nih.gov.TransferDataService.types.TransferDataServiceReference.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Operation>faultCollection");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.OperationFaultCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">ResumeSubscription");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.ResumeSubscription.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">ExtractCBMdataRequest");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.CBM.stubs.ExtractCBMdataRequest.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "GSITransport");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.GSITransport.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">>ExecuteQueryRequest>query");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.ExecuteQueryRequestQuery.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "protectionLevelType");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.ProtectionLevelType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "ResumeFailedFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.ResumeFailedFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "CommunicationMechanism");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.CommunicationMechanism.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "TBDIdentifier");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlresultset.TBDIdentifier.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataServiceExceptions", "QueryProcessingExceptionType");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.faults.QueryProcessingExceptionType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">GetMultipleResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.GetMultipleResourceProperties_Element.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>exposedUMLAssociationCollection");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelExposedUMLAssociationCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicNotSupportedFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.TopicNotSupportedFaultType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -758,275 +821,9 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InvalidSetResourcePropertiesRequestContentFaultType");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">PauseSubscriptionResponse");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.InvalidSetResourcePropertiesRequestContentFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicNotSupportedFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.TopicNotSupportedFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">GetCurrentMessageResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.GetCurrentMessageResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", ">ServiceSecurityMetadata>operations");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.ServiceSecurityMetadataOperations.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferQueryRequest");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryRequest.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">>ExecuteTransferQueryRequest>cqlQuery");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryRequestCqlQuery.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", "ServiceMetadata");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.ServiceMetadata.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "PauseFailedFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.PauseFailedFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ResearchCenter");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenter.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">ResourcePropertyValueChangeNotificationType>OldValue");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationTypeOldValue.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLObjectResult");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLObjectResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService/types", ">TransferDataServiceReference");
-            cachedSerQNames.add(qName);
-            cls = transfer.data.cagrid.nci.nih.gov.TransferDataService.types.TransferDataServiceReference.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">DataServiceResourceProperties");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.DataServiceResourceProperties.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicPathDialectUnknownFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.TopicPathDialectUnknownFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLCountResult");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLCountResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Operation");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.Operation.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Association");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.Association.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "NoCurrentMessageOnTopicFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.NoCurrentMessageOnTopicFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "GSITransport");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.GSITransport.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">Destroy");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.Destroy.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">SetResourcePropertiesResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.SetResourcePropertiesResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>umlGeneralizationCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelUmlGeneralizationCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataTransferDescriptor");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.transfer.descriptor.DataTransferDescriptor.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "DeleteType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.DeleteType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService/types", ">DataServiceReference");
-            cachedSerQNames.add(qName);
-            cls = data.cagrid.nci.nih.gov.DataService.types.DataServiceReference.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Predicate");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.Predicate.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLIdentifierResult");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.CQLIdentifierResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">SubscriptionManagerRP");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.SubscriptionManagerRP.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferQueryResponse");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", ">BaseFaultType>ErrorCode");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.faults.BaseFaultTypeErrorCode.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">ServiceContext>operationCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.ServiceContextOperationCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "SemanticMetadata");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.SemanticMetadata.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">GetMultipleResourcePropertiesResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.GetMultipleResourcePropertiesResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "ResumeFailedFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.ResumeFailedFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataStorageDescriptor");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.transfer.descriptor.DataStorageDescriptor.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">PauseSubscription");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.PauseSubscription.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "Operation");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.Operation.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">ServiceContext>contextPropertyCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.ServiceContextContextPropertyCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "PointOfContact");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.PointOfContact.class;
+            cls = org.oasis.wsn.PauseSubscriptionResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1038,226 +835,65 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "CommunicationMechanism");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">SubscribeResponse");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.CommunicationMechanism.class;
+            cls = org.oasis.wsn.SubscribeResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UnknownQueryExpressionDialectFaultType");
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLCountResult");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.UnknownQueryExpressionDialectFaultType.class;
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLCountResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "Address");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">SubscriptionManagerRP");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.Address.class;
+            cls = org.oasis.wsn.SubscriptionManagerRP.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">ResearchCenter>pointOfContactCollection");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "PointOfContact");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenterPointOfContactCollection.class;
+            cls = gov.nih.nci.cagrid.metadata.common.PointOfContact.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">NotificationProducerRP");
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Object");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.NotificationProducerRP.class;
+            cls = gov.nih.nci.cagrid.cqlquery.Object.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "ServiceSecurityMetadata");
+            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataTransferDescriptor");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.ServiceSecurityMetadata.class;
+            cls = org.cagrid.transfer.descriptor.DataTransferDescriptor.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">GetMultipleResourceProperties");
+            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM/CQLResultTypes", "PermissibleCQLObjectResults");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.GetMultipleResourceProperties_Element.class;
+            cls = org.cagrid.CBM.cqlresulttypes.PermissibleCQLObjectResults.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLAssociation");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLAssociationEdge");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociation.class;
+            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociationEdge.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "ServiceContext");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InvalidSetResourcePropertiesRequestContentFaultType");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.ServiceContext.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">QueryRequest");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.QueryRequest.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "TBDIdentifier");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlresultset.TBDIdentifier.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "UnableToSetTerminationTimeFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.UnableToSetTerminationTimeFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "CommunicationStyle");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.CommunicationStyle.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", ">BaseFaultType>Description");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.faults.BaseFaultTypeDescription.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataServiceExceptions", "MalformedQueryExceptionType");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.faults.MalformedQueryExceptionType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">QueryResponse");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.QueryResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataServiceExceptions", "QueryProcessingExceptionType");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.faults.QueryProcessingExceptionType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">ExtractCBMdataResponse");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.CBM.stubs.ExtractCBMdataResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "ResourceUnknownFaultType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.ResourceUnknownFaultType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "CaDSRRegistration");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.CaDSRRegistration.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">>TransferQueryRequest>cqlQuery");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryRequestCqlQuery.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">GetServiceSecurityMetadataResponse");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.introduce.security.stubs.GetServiceSecurityMetadataResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InsertType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.InsertType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicExpressionType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.TopicExpressionType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", ">ServiceMetadata>serviceDescription");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.ServiceMetadataServiceDescription.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "RelationshipTypeValues");
-            cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.RelationshipTypeValues.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">SetTerminationTimeResponse");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.SetTerminationTimeResponse.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "UMLAttribute");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.UMLAttribute.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">>QueryRequest>cqlQuery");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.data.QueryRequestCqlQuery.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">CBMResourceProperties");
-            cachedSerQNames.add(qName);
-            cls = org.cagrid.CBM.stubs.CBMResourceProperties.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Output");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.Output.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "ContextProperty");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.ContextProperty.class;
+            cls = org.oasis.wsrf.properties.InvalidSetResourcePropertiesRequestContentFaultType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1269,16 +905,121 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">DomainModel>exposedUMLClassCollection");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", ">ServiceMetadata>hostingResearchCenter");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.DomainModelExposedUMLClassCollection.class;
+            cls = gov.nih.nci.cagrid.metadata.ServiceMetadataHostingResearchCenter.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">ExecuteQueryRequest");
+            qName = new javax.xml.namespace.QName("http://security.introduce.cagrid.nci.nih.gov/ServiceSecurity", ">ServiceSecurityResourceProperties");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.dataservice.ExecuteQueryRequest.class;
+            cls = gov.nih.nci.cagrid.introduce.security.stubs.ServiceSecurityResourceProperties.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UnableToModifyResourcePropertyFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.UnableToModifyResourcePropertyFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferQueryRequest");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryRequest.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">PauseSubscription");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.PauseSubscription.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicPathDialectUnknownFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.TopicPathDialectUnknownFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">SetTerminationTimeResponse");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.SetTerminationTimeResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "Operation");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.security.Operation.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "ResourceNotDestroyedFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.ResourceNotDestroyedFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferDataServiceResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.transfer.TransferDataServiceResourceProperties.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">Destroy");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.Destroy.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "FaultSubcodeValues");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.FaultSubcodeValues.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "TopicExpressionType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.TopicExpressionType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", ">CQLQuery");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlquery.CQLQuery.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "ResourceUnknownFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.ResourceUnknownFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">UMLAssociation>targetUMLAssociationEdge");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociationTargetUMLAssociationEdge.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "Enumeration");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.Enumeration.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1286,6 +1027,55 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InvalidQueryExpressionFaultType");
             cachedSerQNames.add(qName);
             cls = org.oasis.wsrf.properties.InvalidQueryExpressionFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "InvalidTopicExpressionFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.InvalidTopicExpressionFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">QueryResponse");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.QueryResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService/types", ">DataServiceReference");
+            cachedSerQNames.add(qName);
+            cls = data.cagrid.nci.nih.gov.DataService.types.DataServiceReference.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "UnableToSetTerminationTimeFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.UnableToSetTerminationTimeFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Service");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.Service.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data.transfer/TransferDataService", ">TransferQueryResponse");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.transfer.TransferQueryResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">DestroyResponse");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.DestroyResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1304,6 +1094,160 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "Fault");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.Fault.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">NotificationProducerRP");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.NotificationProducerRP.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.cql/QueryLanguageSupport", "QueryLanguageSupport");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.cql.support.QueryLanguageSupport.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ResearchCenterDescription");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenterDescription.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", "ResourceUnknownFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.ResourceUnknownFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">QueryResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.QueryResourceProperties_Element.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CBM.cagrid.org/CBM", ">CBMResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.CBM.stubs.CBMResourceProperties.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "SemanticMetadata");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.SemanticMetadata.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataStorageDescriptor");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.transfer.descriptor.DataStorageDescriptor.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataServiceExceptions", "MalformedQueryExceptionType");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.faults.MalformedQueryExceptionType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "PauseFailedFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.PauseFailedFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "ResourceUnknownFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.ResourceUnknownFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "TargetAttribute");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlresultset.TargetAttribute.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLQueryResults");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLQueryResults.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "NoCurrentMessageOnTopicFaultType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.NoCurrentMessageOnTopicFaultType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", "NotificationMessageHolderType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.NotificationMessageHolderType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">DataServiceResourceProperties");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.DataServiceResourceProperties.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "EndpointReferenceType");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.EndpointReferenceType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">ScheduledResourceTerminationRP");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.ScheduledResourceTerminationRP.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://gov.nih.nci.cagrid.data/DataService", ">QueryRequest");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.data.QueryRequest.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", "ContextProperty");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.service.ContextProperty.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "AttributedURI");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.AttributedURI.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
+
             qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Group");
             cachedSerQNames.add(qName);
             cls = gov.nih.nci.cagrid.cqlquery.Group.class;
@@ -1311,19 +1255,82 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Object");
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService/types", ">TransferDataServiceReference");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.Object.class;
+            cls = transfer.dataservice.cagrid.org.Cql2TransferDataService.types.TransferDataServiceReference.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "DataDescriptor");
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">GetMultipleResourcePropertiesResponse");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.transfer.descriptor.DataDescriptor.class;
+            cls = org.oasis.wsrf.properties.GetMultipleResourcePropertiesResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", ">ResourcePropertyValueChangeNotificationType>OldValue");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationTypeOldValue.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "Association");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlquery.Association.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">ValueDomain>enumerationCollection");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.common.ValueDomainEnumerationCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">ExecuteTransferQueryResponse");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLClass");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLClass.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">GetCurrentMessageResponse");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsn.GetCurrentMessageResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "ResourcePropertyValueChangeNotificationType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.ResourcePropertyValueChangeNotificationType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata", ">ServiceMetadata>serviceDescription");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.metadata.ServiceMetadataServiceDescription.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ReplyAfterType");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.ReplyAfterType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(simplesf);
+            cachedDeserFactories.add(simpledf);
 
     }
     private void addBindings2() {
@@ -1339,107 +1346,23 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">Notify");
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">TransferDataServiceResourceProperties");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.Notify.class;
+            cls = org.cagrid.dataservice.transfer.TransferDataServiceResourceProperties.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "AttributedQName");
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLAttributeResult");
             cachedSerQNames.add(qName);
-            cls = org.apache.axis.message.addressing.AttributedQName.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(simplesf);
-            cachedDeserFactories.add(simpledf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">UMLClass>umlAttributeCollection");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.UMLClassUmlAttributeCollection.class;
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLAttributeResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.service", ">Service>serviceContextCollection");
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">ExecuteTransferQueryRequest");
             cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.service.ServiceServiceContextCollection.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">SetTerminationTime");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.lifetime.SetTerminationTime.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", ">CQLQuery");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.CQLQuery.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">ResumeSubscription");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.ResumeSubscription.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "UpdateType");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsrf.properties.UpdateType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.security", "GSISecureMessage");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.security.GSISecureMessage.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "ResearchCenterDescription");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.ResearchCenterDescription.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", "Enumeration");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.common.Enumeration.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "LogicalOperator");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.cqlquery.LogicalOperator.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", "UMLClass");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLClass.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">GetCurrentMessage");
-            cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.GetCurrentMessage.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.dataservice", ">UMLAssociation>targetUMLAssociationEdge");
-            cachedSerQNames.add(qName);
-            cls = gov.nih.nci.cagrid.metadata.dataservice.UMLAssociationTargetUMLAssociationEdge.class;
+            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryRequest.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1451,16 +1374,93 @@ public class CBMPortTypeSOAPBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/Transfer", "Status");
+            qName = new javax.xml.namespace.QName("gme://caGrid.caBIG/1.0/gov.nih.nci.cagrid.metadata.common", ">UMLClass>umlAttributeCollection");
             cachedSerQNames.add(qName);
-            cls = org.cagrid.transfer.descriptor.Status.class;
+            cls = gov.nih.nci.cagrid.metadata.common.UMLClassUmlAttributeCollection.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-BaseFaults-1.2-draft-01.xsd", ">BaseFaultType>ErrorCode");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.faults.BaseFaultTypeErrorCode.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "InsertType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.InsertType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceLifetime-1.2-draft-01.xsd", ">SetTerminationTime");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.lifetime.SetTerminationTime.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "ReferencePropertiesType");
+            cachedSerQNames.add(qName);
+            cls = org.apache.axis.message.addressing.ReferencePropertiesType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "QueryModifier");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlquery.QueryModifier.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsrf/2004/06/wsrf-WS-ResourceProperties-1.2-draft-01.xsd", "DeleteType");
+            cachedSerQNames.add(qName);
+            cls = org.oasis.wsrf.properties.DeleteType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://transfer.cagrid.org/TransferService/Context/types", ">TransferServiceContextReference");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.transfer.context.stubs.types.TransferServiceContextReference.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLResultSet", "CQLResult");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlresultset.CQLResult.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.cql/QueryLanguageSupport", ">QueryLanguageSupport>CQL2Support");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.cql.support.QueryLanguageSupportCQL2Support.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice/DataService", ">ExecuteQueryRequest");
+            cachedSerQNames.add(qName);
+            cls = org.cagrid.dataservice.ExecuteQueryRequest.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://CQL.caBIG/1/gov.nih.nci.cagrid.CQLQuery", "LogicalOperator");
+            cachedSerQNames.add(qName);
+            cls = gov.nih.nci.cagrid.cqlquery.LogicalOperator.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://docs.oasis-open.org/wsn/2004/06/wsn-WS-BaseNotification-1.2-draft-01.xsd", ">SubscribeResponse");
+            qName = new javax.xml.namespace.QName("http://org.cagrid.dataservice.transfer/Cql2TransferDataService", ">>ExecuteTransferQueryRequest>cqlQuery");
             cachedSerQNames.add(qName);
-            cls = org.oasis.wsn.SubscribeResponse.class;
+            cls = org.cagrid.dataservice.transfer.ExecuteTransferQueryRequestCqlQuery.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

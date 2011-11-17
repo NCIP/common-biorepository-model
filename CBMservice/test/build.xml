@@ -39,7 +39,9 @@
         
     	<copy todir="${test.dist.dir}\lib">
     		<fileset dir="${cbm.build.dir}\lib">
-	            <include name="*.jar"/>
+    			<include name="CBM-common.jar"/>
+    			<include name="CBM-stubs.jar"/>
+    			<include name="CBM-client.jar"/>
 	        </fileset>
 	    </copy>
     	
@@ -56,9 +58,10 @@
 	    </copy>
     	
     	<copy todir="${test.dist.dir}">
-    		<fileset dir="${test.home.dir}" includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"/>
+    		<fileset dir="${test.home.dir}" includes="build.xml,CBM.xsd,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"/>
 	    </copy>
 
+    	
     	<javac destdir="${test.dist.dir}/bin">
             <src path="${test.src.dir}" />
             <classpath refid="build-classpath" />
