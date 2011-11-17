@@ -79,7 +79,7 @@
     	
     	<tar destfile="${test.home.dir}/cbm-validation.tar" 
     		 basedir="${test.dist.dir}" 
-    		 includes="build.xml,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"
+    		 includes="build.xml,CBM.xsd,cbm-test.jar,client-config.wsdd,README,run_tests.sh,lib/**,resources/**"
     	/>
     	
     	<gzip src="cbm-validation.tar" destfile="cbm-validation.tar.gz"/>
