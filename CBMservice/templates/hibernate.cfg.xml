@@ -22,7 +22,7 @@
 		<property name="c3p0.validate">false</property>
 		
 		<property name="show_sql">false</property>
-		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="dialect">@HIBERNATE_DIALECT@</property>
 		<property name="max_fetch_depth">1</property>
 		<property name="bytecode.use_reflection_optimizer">false</property>
 		<property name="jdbc.batch_versioned_data">true</property>

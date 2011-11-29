@@ -52,6 +52,7 @@
 		<filter token="DATABASE_NAME" value="${db_name}" />
 		<filter token="USER" value="${db_user}" />
 		<filter token="PASSWORD" value="${db_password}" />
+		<filter token="HIBERNATE_DIALECT" value="${db_dialect}" />
 
 		<copy file="templates/hibernate.cfg.xml" todir="${package}" filtering="true" />
 		<copy file="CBM.xsd" todir="${package}" />
