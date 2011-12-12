@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>join_collection_protocol_to_institution</title>
+<title>join_participant_collection_summary_to_race</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,15 +16,15 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">join_collection_protocol_to_institution  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">join_participant_collection_summary_to_race  : public  &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/20/2009 6:40:55 PM</td>
+			<td width="85%" class="ObjectDetailsValue">8/20/2009 7:25:51 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">2/16/2011 2:18:08 PM</td>
+			<td class="ObjectDetailsValue">2/16/2011 2:17:13 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,7 +57,7 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{D4C1D826-C540-4dd7-9D3A-CA493EBDC336}</td>
+			<td class="ObjectDetailsValue">{28D0CF6A-DE3C-4f2f-96EE-F83DCB19F81E}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
@@ -74,93 +74,120 @@ function initPage(src) {
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;institution_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.CollectionProtocol.residesAt<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.Institution.owns<br>&nbsp;</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;collection_protocol_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Institution.owns<br>&nbsp;</td>
+				<td width="100%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;participant_collection_summary_ID</strong></td>
 			</tr>
-		</table>
-</div><div class="ItemBody" id="OperationsTable">
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes122" onclick="parent.toggleDiv('detailsDIVAttributes122','DetailsImageAttributes122')" />Details:
+						<div id="detailsDIVAttributes122" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.Race.classifies<br>inverse-of=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isClassifiedBy<br>&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;race_id</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes123" onclick="parent.toggleDiv('detailsDIVAttributes123','DetailsImageAttributes123')" />Details:
+						<div id="detailsDIVAttributes123" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>implements-association=gov.nih.nci.cbm.domain.LogicalModel.ParticipantCollectionSummary.isClassifiedBy<br>&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Operation</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Operation</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow">
+				<td width="100%" class="TableRow">
 					<i>public</i><br />
-					<strong>Institution</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{C1787238-0841-4917-9ADB-B0C51C12C3A4}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}" border="0" />institution_ID: INTEGER</a>, 
+					<strong>FK_join_participant_collection_summary_to_race_participant_collection_summary</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{7B90C5A9-258B-4d21-9276-8DF4DA756593}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}" border="0" />participant_collection_summary_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}00" style="display: none;">
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}01" style="display: none;">
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}02" style="display: none;">
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{C1787238-0841-4917-9ADB-B0C51C12C3A4}03" style="display: none;">
+						<tr id="param{7B90C5A9-258B-4d21-9276-8DF4DA756593}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
 					</table>
 ):
-				</td>
-				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
-					<table>
-						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
-						</tr>
-					</table>
-					
 				</td>
 			</tr>
 			<tr>
-				<td width="40%" class="TableRow">
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations124" onclick="parent.toggleDiv('detailsDIVOperations124','DetailsImageOperations124')" />Details:
+						<div id="detailsDIVOperations124" class="DetailsDiv" >
+					<i> &lt;&lt;FK&gt;&gt; </i>
+					<table>
+						<tr>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;<br/></td>
+						</tr>
+					</table>
+											
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" class="TableRow">
 					<i>public</i><br />
-					<strong>CollectionProtocol</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}" border="0" />collection_protocol_ID: Integer</a>, 
+					<strong>FK_join_participant_collection_summary_to_race_Race</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}" border="0" />race_id: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}00" style="display: none;">
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}01" style="display: none;">
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}02" style="display: none;">
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{50184CB9-1CDC-458e-BE81-6D8AAFFBC21F}03" style="display: none;">
+						<tr id="param{157718B2-A0C4-464d-B6AD-0273AD01FF3E}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
 					</table>
 ):
 				</td>
-				<td width="60%" class="TableRow">
-					<i>Sequential &lt;&lt;FK&gt;&gt; </i>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations125" onclick="parent.toggleDiv('detailsDIVOperations125','DetailsImageOperations125')" />Details:
+						<div id="detailsDIVOperations125" class="DetailsDiv" >
+					<i> &lt;&lt;FK&gt;&gt; </i>
 					<table>
 						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
+							<td valign = "top"><i>Tags:</i><span style="margin-left: .7cm;"> </span></td>
+							<td>property=Delete Cascade=0;Update Cascade=0;<br/></td>
 						</tr>
 					</table>
-					
+											
+						</div>
+					</div>
 				</td>
 			</tr>
 
@@ -168,40 +195,55 @@ function initPage(src) {
 </div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA13.htm">«table» collection_protocol</a><br />
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA28.htm">«table» Race</a><br />
 						Class «FK» 
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> CollectionProtocol<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
 						&nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_CollectionProtocol<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_Race<br />
 						&nbsp;	
 					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA18.htm">«table» Institution</a><br />
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink126" onclick="parent.toggleDiv('detailsDIVLink126','DetailsImageLink126')" />Details:
+							<div id="detailsDIVLink126" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA23.htm">«table» participant_collection_summary</a><br />
 						Class «FK» 
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Institution<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
 						&nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Institution<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_ParticipantCollectionSummary<br />
 						&nbsp;	
 					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink127" onclick="parent.toggleDiv('detailsDIVLink127','DetailsImageLink127')" />Details:
+							<div id="detailsDIVLink127" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 
 			</table>

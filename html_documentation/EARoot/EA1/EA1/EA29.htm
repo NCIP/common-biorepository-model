@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Race</title>
+<title>specimen_availability_summary_profile</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
 function initPage(src) {
@@ -16,7 +16,7 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Race  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">specimen_availability_summary_profile  : public  &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -24,7 +24,7 @@ function initPage(src) {
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/22/2009 9:31:40 PM</td>
+			<td class="ObjectDetailsValue">2/16/2011 2:15:20 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -57,14 +57,15 @@ function initPage(src) {
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{998D7C9C-0722-4f58-B4A1-18B00AC07856}</td>
+			<td class="ObjectDetailsValue">{A4124669-55CA-41a2-8F14-69DF8B7A9BD1}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
 			<td class="ObjectDetailsValue"><a href="EA8.htm">DDL</a></td>
 		</tr>
 	</table>
-	
+	<div class="ObjectDetailsNotes">&lt;p&gt;Details of availability to specimens to types of requestors.&lt;br /&gt;&lt;/p&gt;</div>
+
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
@@ -75,181 +76,151 @@ function initPage(src) {
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private static <a href="EA29.htm">VARCHAR(50)</a></i><br /><strong>&nbsp;&nbsp;race</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Race.race<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private BOOL</i><br /><strong>&nbsp;&nbsp;is_available_to_commercial_organizations</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes216" onclick="parent.toggleDiv('detailsDIVAttributes216','DetailsImageAttributes216')" />Details:
+						<div id="detailsDIVAttributes216" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile.isAvailableToCommercialOrganizations<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.
+			Can specimen be provided to commercial organizations?
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public static INTEGER</i><br /><strong>&nbsp;&nbsp;race_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Race.id<br>&nbsp;</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public static VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;NCI_code</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public TEXT</i><br /><strong>&nbsp;&nbsp;NCI_Definition</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>&nbsp;</td>
+				<td width="100%" class="TableRow" valign="top"><i>private BOOL</i><br /><strong>&nbsp;&nbsp;is_available_to_foreign_investigators</strong></td>
 			</tr>
-		</table>
-</div><div class="ItemBody" id="OperationsTable">
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes217" onclick="parent.toggleDiv('detailsDIVAttributes217','DetailsImageAttributes217')" />Details:
+						<div id="detailsDIVAttributes217" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile.isAvailableToForeignInvestigators<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Can specimen be provided to investigators at foreign institutions?
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>private BOOL</i><br /><strong>&nbsp;&nbsp;is_available_to_outside_institution</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes218" onclick="parent.toggleDiv('detailsDIVAttributes218','DetailsImageAttributes218')" />Details:
+						<div id="detailsDIVAttributes218" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile.isAvailableToOutsideInstitution<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Is specimen available to researchers outside this institution / group?
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>private BOOL</i><br /><strong>&nbsp;&nbsp;is_collaboration_required</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes219" onclick="parent.toggleDiv('detailsDIVAttributes219','DetailsImageAttributes219')" />Details:
+						<div id="detailsDIVAttributes219" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile.isCollaborationRequired<br><div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Is collaboration required to obtain specimen?
+		</td>
+	</tr>
+</table></div>
+
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;specimen_availability_summary_profile_ID</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes220" onclick="parent.toggleDiv('detailsDIVAttributes220','DetailsImageAttributes220')" />Details:
+						<div id="detailsDIVAttributes220" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.SpecimenAvailabilitySummaryProfile.id<br>&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Operation</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Operation</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow">
+				<td width="100%" class="TableRow">
 					<i>public</i><br />
-					<strong>PK_Race</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{402B3520-B982-42ef-A510-F5FA1F10F719}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{402B3520-B982-42ef-A510-F5FA1F10F719}" border="0" />race_ID: INTEGER</a>, 
+					<strong>PK_SpecimenAvailabilitySummaryProfile</strong>(<br />
+					<a href="#" onclick="parent.toggleData('param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}" border="0" />specimen_availability_summary_profile_ID: INTEGER</a>, 
 					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}00" style="display: none;">
+						<tr id="param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}00" style="display: none;">
 							<td width="50"><strong>Default:</strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}01" style="display: none;">
+						<tr id="param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}01" style="display: none;">
 							<td width="50"><strong>Kind:</strong></td>
 							<td>in</td>
 						</tr>
-						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}02" style="display: none;">
+						<tr id="param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}02" style="display: none;">
 							<td width="50"><strong>Stereotype: </strong></td>
 							<td></td>
 						</tr>
-						<tr id="param{402B3520-B982-42ef-A510-F5FA1F10F719}03" style="display: none;">
+						<tr id="param{47836B31-9D3F-4bd3-A89C-3954C1CF782E}03" style="display: none;">
 							<td width="50"></td>
 							<td></td>
 						</tr>
 					</table>
 ):
-				</td>
-				<td width="60%" class="TableRow">
-					<i> &lt;&lt;PK&gt;&gt; </i>
-					<table>
-						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
-						</tr>
-					</table>
-					
 				</td>
 			</tr>
 			<tr>
-				<td width="40%" class="TableRow">
-					<i>public</i><br />
-					<strong>UQ_Race_race_ID</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}" border="0" />race_ID: INTEGER</a>, 
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}00" style="display: none;">
-							<td width="50"><strong>Default:</strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}01" style="display: none;">
-							<td width="50"><strong>Kind:</strong></td>
-							<td>in</td>
-						</tr>
-						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}02" style="display: none;">
-							<td width="50"><strong>Stereotype: </strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{73A0EAD8-94C5-4aa7-817A-DFAD03D999C1}03" style="display: none;">
-							<td width="50"></td>
-							<td></td>
-						</tr>
-					</table>
-):
-				</td>
-				<td width="60%" class="TableRow">
-					<i> &lt;&lt;unique&gt;&gt; </i>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations221" onclick="parent.toggleDiv('detailsDIVOperations221','DetailsImageOperations221')" />Details:
+						<div id="detailsDIVOperations221" class="DetailsDiv" >
+					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
 					<table>
 						<tr>
 							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
 							<td></td>
 						</tr>
 					</table>
-					
-				</td>
-			</tr>
-			<tr>
-				<td width="40%" class="TableRow">
-					<i>public</i><br />
-					<strong>UQ_race_race</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}" border="0" />race: VARCHAR</a>, 
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}00" style="display: none;">
-							<td width="50"><strong>Default:</strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}01" style="display: none;">
-							<td width="50"><strong>Kind:</strong></td>
-							<td>in</td>
-						</tr>
-						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}02" style="display: none;">
-							<td width="50"><strong>Stereotype: </strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{6BCD881A-3498-42ca-8DA9-F0B02B76D798}03" style="display: none;">
-							<td width="50"></td>
-							<td></td>
-						</tr>
-					</table>
-):
-				</td>
-				<td width="60%" class="TableRow">
-					<i> &lt;&lt;unique&gt;&gt; </i>
-					<table>
-						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
-						</tr>
-					</table>
-					
-				</td>
-			</tr>
-			<tr>
-				<td width="40%" class="TableRow">
-					<i>public</i><br />
-					<strong>UQ_race_NCI_code</strong>(<br />
-					<a href="#" onclick="parent.toggleData('param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}" border="0" />NCI_code: VARCHAR</a>, 
-					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
-						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}00" style="display: none;">
-							<td width="50"><strong>Default:</strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}01" style="display: none;">
-							<td width="50"><strong>Kind:</strong></td>
-							<td>in</td>
-						</tr>
-						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}02" style="display: none;">
-							<td width="50"><strong>Stereotype: </strong></td>
-							<td></td>
-						</tr>
-						<tr id="param{42D50A53-2D85-4bc1-BB40-90B1EB66FB22}03" style="display: none;">
-							<td width="50"></td>
-							<td></td>
-						</tr>
-					</table>
-):
-				</td>
-				<td width="60%" class="TableRow">
-					<i> &lt;&lt;unique&gt;&gt; </i>
-					<table>
-						<tr>
-							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
-							<td></td>
-						</tr>
-					</table>
-					
+											
+						</div>
+					</div>
 				</td>
 			</tr>
 
@@ -257,25 +228,55 @@ function initPage(src) {
 </div>		<div class="ItemBody" id="AssociationsFromTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA21.htm">«table» join_participant_collection_summary_to_race</a><br />
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA13.htm">«table» collection_protocol</a><br />
 						Class «FK» 
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> FK_join_participant_collection_summary_to_race_...<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_is_constrained_by<br />
 						&nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Race<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_SpecimenAvailabilitySummaryProfile<br />
 						&nbsp;	
 					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink224" onclick="parent.toggleDiv('detailsDIVLink224','DetailsImageLink224')" />Details:
+							<div id="detailsDIVLink224" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA13.htm">«table» collection_protocol</a><br />
+						Class «FK» 
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_isConstrainedBy<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> PK_SpecimenAvailabilitySummaryProfile<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink225" onclick="parent.toggleDiv('detailsDIVLink225','DetailsImageLink225')" />Details:
+							<div id="detailsDIVLink225" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 
 			</table>
@@ -289,7 +290,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA69.htm">Race</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA57.htm">SpecimenAvailabilitySummaryProfile</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

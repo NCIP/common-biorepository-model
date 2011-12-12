@@ -16,7 +16,7 @@ function initPage(src) {
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Address  : public   &lt;&lt;table&gt;&gt; class</span>
+	<span class="ObjectTitle">Address  : public  &lt;&lt;table&gt;&gt; class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
@@ -64,25 +64,28 @@ function initPage(src) {
 			<td class="ObjectDetailsValue"><a href="EA8.htm">DDL</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;A standardized representation of the location of a person, business, building, or organization.&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">&lt;p&gt;A standardized representation of the location of a person, business, building, or organization.&lt;br /&gt;&lt;/p&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
-			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;city</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.city<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;city</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes0" onclick="parent.toggleDiv('detailsDIVAttributes0','DetailsImageAttributes0')" />Details:
+						<div id="detailsDIVAttributes0" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.city<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -92,10 +95,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;country</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.country<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;country</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes1" onclick="parent.toggleDiv('detailsDIVAttributes1','DetailsImageAttributes1')" />Details:
+						<div id="detailsDIVAttributes1" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.country<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -105,10 +116,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;department_or_division</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.departmentOrDivision<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;department_or_division</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes2" onclick="parent.toggleDiv('detailsDIVAttributes2','DetailsImageAttributes2')" />Details:
+						<div id="detailsDIVAttributes2" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.departmentOrDivision<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -118,10 +137,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;entity_name</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.entityName<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;entity_name</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes3" onclick="parent.toggleDiv('detailsDIVAttributes3','DetailsImageAttributes3')" />Details:
+						<div id="detailsDIVAttributes3" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.entityName<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -131,10 +158,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;entity_number</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.entityNumber<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;entity_number</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes4" onclick="parent.toggleDiv('detailsDIVAttributes4','DetailsImageAttributes4')" />Details:
+						<div id="detailsDIVAttributes4" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.entityNumber<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -144,10 +179,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;floor_or_premises</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.floorOrPremises<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;floor_or_premises</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes5" onclick="parent.toggleDiv('detailsDIVAttributes5','DetailsImageAttributes5')" />Details:
+						<div id="detailsDIVAttributes5" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.floorOrPremises<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -157,10 +200,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;post_office_box</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.postOfficeBox<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;post_office_box</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes6" onclick="parent.toggleDiv('detailsDIVAttributes6','DetailsImageAttributes6')" />Details:
+						<div id="detailsDIVAttributes6" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.postOfficeBox<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -170,10 +221,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;zip_code</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.zipCode<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;zip_code</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes7" onclick="parent.toggleDiv('detailsDIVAttributes7','DetailsImageAttributes7')" />Details:
+						<div id="detailsDIVAttributes7" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.zipCode<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -183,10 +242,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;state</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.state<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;state</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes8" onclick="parent.toggleDiv('detailsDIVAttributes8','DetailsImageAttributes8')" />Details:
+						<div id="detailsDIVAttributes8" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.state<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -196,10 +263,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_post_directional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetPostDirectional<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_post_directional</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes9" onclick="parent.toggleDiv('detailsDIVAttributes9','DetailsImageAttributes9')" />Details:
+						<div id="detailsDIVAttributes9" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetPostDirectional<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -209,10 +284,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_pre_directional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetPreDirectional<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_pre_directional</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes10" onclick="parent.toggleDiv('detailsDIVAttributes10','DetailsImageAttributes10')" />Details:
+						<div id="detailsDIVAttributes10" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetPreDirectional<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -222,10 +305,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(150)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_name_and_type</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareNameAndType<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(150)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_name_and_type</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes11" onclick="parent.toggleDiv('detailsDIVAttributes11','DetailsImageAttributes11')" />Details:
+						<div id="detailsDIVAttributes11" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareNameAndType<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -235,10 +326,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_number</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareNumber<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_number</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes12" onclick="parent.toggleDiv('detailsDIVAttributes12','DetailsImageAttributes12')" />Details:
+						<div id="detailsDIVAttributes12" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareNumber<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -248,10 +347,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_section_name</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareSectionName<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_section_name</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes13" onclick="parent.toggleDiv('detailsDIVAttributes13','DetailsImageAttributes13')" />Details:
+						<div id="detailsDIVAttributes13" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareSectionName<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -261,10 +368,18 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_extension_name</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;<br></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareExtensionName<br><div class="ObjectDetailsNotes"><table>
+				<td width="100%" class="TableRow" valign="top"><i>private VARCHAR(50)</i><br /><strong>&nbsp;&nbsp;street_or_thoroughfare_extension_name</strong></td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes14" onclick="parent.toggleDiv('detailsDIVAttributes14','DetailsImageAttributes14')" />Details:
+						<div id="detailsDIVAttributes14" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;</i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.streetOrThoroughfareExtensionName<br><div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
@@ -274,20 +389,31 @@ function initPage(src) {
 		</td>
 	</tr>
 </table></div>
-</td>
+
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;address_ID</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.id<br>&nbsp;</td>
+				<td width="100%" class="TableRow" valign="top"><i>public INTEGER</i><br /><strong>&nbsp;&nbsp;address_ID</strong></td>
 			</tr>
-		</table>
-</div><div class="ItemBody" id="OperationsTable">
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageAttributes15" onclick="parent.toggleDiv('detailsDIVAttributes15','DetailsImageAttributes15')" />Details:
+						<div id="detailsDIVAttributes15" class="DetailsDiv" >
+						<i>&lt;&lt;column&gt;&gt;Ordered <br /></i>mapped-attributes=gov.nih.nci.cbm.domain.LogicalModel.Address.id<br>&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Operation</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Operation</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow">
+				<td width="100%" class="TableRow">
 					<i>public</i><br />
 					<strong>PK_Address</strong>(<br />
 					<a href="#" onclick="parent.toggleData('param{A7D85654-29B1-47d2-B61F-420015F20761}')" style="text-decoration: none; color: #000000;"><img src="../../../images/plus03.gif" align="absmiddle" id="param{A7D85654-29B1-47d2-B61F-420015F20761}" border="0" />address_ID: INTEGER</a>, 
@@ -311,7 +437,11 @@ function initPage(src) {
 					</table>
 ):
 				</td>
-				<td width="60%" class="TableRow">
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations16" onclick="parent.toggleDiv('detailsDIVOperations16','DetailsImageOperations16')" />Details:
+						<div id="detailsDIVOperations16" class="DetailsDiv" >
 					<i>Sequential &lt;&lt;PK&gt;&gt; </i>
 					<table>
 						<tr>
@@ -319,59 +449,42 @@ function initPage(src) {
 							<td></td>
 						</tr>
 					</table>
-					
+											
+						</div>
+					</div>
 				</td>
 			</tr>
 
 		</table>
-</div>		<div class="ItemBody" id="AssociationsToTable">
+</div>		<div class="ItemBody" id="AssociationsFromTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA31.htm">«table» specimen_collection_contact</a><br />
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA30.htm">«table» specimen_collection_contact</a><br />
 						Class «FK» 
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_Address<br />
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> FK_specimen_collection_contact_Address<br />
 						&nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> PK_SpecimenCollectionContact<br />
-						&nbsp;	
-					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table border="0" cellspacing="0" cellpadding="0" class="Table">
-				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
-				</tr>
-				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA19.htm">«table» join_address_to_specimen_collection_contact</a><br />
-						Class «FK» 
-					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> Address<br />
-						&nbsp;
-					</td>
-					<td width="20%" class="TableRow" valign="top">
+					<td width="30%" class="TableRow" valign="top">
 						<strong>Name:</strong> PK_Address<br />
 						&nbsp;	
 					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink18" onclick="parent.toggleDiv('detailsDIVLink18','DetailsImageLink18')" />Details:
+							<div id="detailsDIVLink18" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
 				</tr>
 
 			</table>
@@ -385,7 +498,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA59.htm">Address</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA46.htm">Address</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
