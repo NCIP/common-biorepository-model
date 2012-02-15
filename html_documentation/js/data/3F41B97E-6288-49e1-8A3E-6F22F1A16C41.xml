@@ -1,2 +1,2 @@
-tocTab[tocTab.length] = new Array("1.2.1:1", "", "Domain Objects Revised for Standard Use", "EARoot/EA1/EA2/EA1/EA50.htm", "175.png", "118", "0", "", "Logical diagram0","{1689D92F-374D-47e6-8478-BF79D01B6997}");
-tocTab[tocTab.length] = new Array("1.2.1:2", "", "Logical Model", "EARoot/EA1/EA2/EA1/EA52.htm", "175.png", "119", "0", "", "Logical diagram0","{B2A4C292-BAAF-47e2-BFDE-083E55CB3CDE}");
+tocTab[tocTab.length] = new Array("0:1", "", "Domain Objects Revised for Standard Use", "EARoot/EA1.htm", "175.png", "118", "0", "", "Logical diagram0","{1689D92F-374D-47e6-8478-BF79D01B6997}");
+tocTab[tocTab.length] = new Array("0:2", "", "Logical Model", "EARoot/EA3.htm", "175.png", "119", "0", "", "Logical diagram0","{B2A4C292-BAAF-47e2-BFDE-083E55CB3CDE}");
