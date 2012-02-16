@@ -2,29 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>LogicalModel::Race</title>
+<title>LogicalModel::Diagnosis</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
-function initPage(src) {
+function initPage(src) {	
 	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
 		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
 	else
 		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
 }
 </script>
 </head>
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Race  : public   class</span>
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Diagnosis", " : "))</script>  : Public   Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">8/20/2009 7:08:58 PM</td>
+			<td width="85%" class="ObjectDetailsValue">10/31/2008 9:24:45 PM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:41 PM</td>
+			<td class="ObjectDetailsValue">8/20/2009 9:27:34 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -33,7 +51,7 @@ function initPage(src) {
 		</tr>
 		<tr id="proj00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
-			<td class="ObjectDetailsValue">princeek</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
@@ -51,68 +69,267 @@ function initPage(src) {
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
 			<td class="ObjectDetailsValue">Easy</td>
 		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic"><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{DC5F178A-1C88-4c9f-A3F4-CBC583350BEE}</td>
+			<td class="ObjectDetailsValue">{F92513CA-1900-4121-BF39-DBF3DA3B7FBC}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA32.htm">Logical Model</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA38.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Someone who takes part in an activity._An arbitrary classification of taxonomic group that is a division of a species; usually arise as a consequence of geographical isolation within a species and characterised by shared heredity, physical attributes and behavior, and in case of humans, by common history, nationality, or geographic distribution.&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">High level groupings of medical conditions with which participants have been diagnosed</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
+			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private java.lang.String</i><br /><strong>&nbsp;&nbsp;race</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private int</i><br /><strong>&nbsp;&nbsp;id</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;diagnosisType</strong>
+				</td>
 			</tr>
-		</table>
-</div>		<div class="ItemBody" id="AssociationsFromTable">
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes299')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes299" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes299_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes299_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes299_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes299_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes299_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR Local Value Domain=DiagnosisType<br>CADSR_DE_ID=3211626<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=Full description of the diagnosis (e.g. breast cancer, schizophrenia, Glioma)<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C15220<br>PropertyConceptDefinition=The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Diagnosis<br>PropertyQualifierConceptCode1=C25284<br>PropertyQualifierConceptDefinition1=Something distinguishable as an identifiable class based on common qualities.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Type<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			High-level groupings of diagnosis types
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA65.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes300')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes300" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes300_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes300_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes300_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes300_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes300_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211627<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Identifies the row of the data table
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>
+	</table>
+</div>
+		<div class="ItemBody" id="AssociationsFromTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA45.htm">ParticipantCollectionSummary</a><br />
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA51.htm">ParticipantCollectionSummary</a><br />
 						Class &nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> classifies<br />
-						&nbsp;
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> isProvidedTo<br />
+						A Patient receives zero or more Diagnoses
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isClassifiedBy<br />
-						&nbsp;	
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> receives<br />
+						A Diagnosis is provided to zero or more Patients.	
 					</td>
-					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink301" onclick="parent.toggleDiv('detailsDIVLink301','DetailsImageLink301')" />Details:
+							<div id="detailsDIVLink301" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">A Patient receives zero or more Diagnoses.&#160; A Diagnosis is provided to zero or more Patients.</div>
+
+							</div>
+						</div>
+					</td>
 				</tr>
 
 			</table>
 		</div>
-		<div class="ItemBody" id="LinksTable">
+<div class="ItemBody" id="TaggedValTable">
+	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="50%" class="TableHeading">Tag</td>
+			<td width="50%" class="TableHeading">Value</td>
+		</tr>
+					<tr>
+				<td width="50%" class="TableRow" valign="top">CADSR_Description</td>
+				<td width="50%" class="TableRow" valign="top">High level groupings of medical conditions with which participants have been diagnosed</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario302" onclick="parent.toggleDiv('detailsDIVScenario302','DetailsImageScenario302')" />Details:
+						<div id="detailsDIVScenario302" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario303" onclick="parent.toggleDiv('detailsDIVScenario303','DetailsImageScenario303')" />Details:
+						<div id="detailsDIVScenario303" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptCode</td>
+				<td width="50%" class="TableRow" valign="top">C15220</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario304" onclick="parent.toggleDiv('detailsDIVScenario304','DetailsImageScenario304')" />Details:
+						<div id="detailsDIVScenario304" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
+				<td width="50%" class="TableRow" valign="top">The investigation, analysis and recognition of the presence and nature of disease, condition, or injury from expressed signs and symptoms; also, the scientific determination of any kind; the concise results of such an investigation.</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario305" onclick="parent.toggleDiv('detailsDIVScenario305','DetailsImageScenario305')" />Details:
+						<div id="detailsDIVScenario305" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
+				<td width="50%" class="TableRow" valign="top">NCI</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario306" onclick="parent.toggleDiv('detailsDIVScenario306','DetailsImageScenario306')" />Details:
+						<div id="detailsDIVScenario306" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
+				<td width="50%" class="TableRow" valign="top">Diagnosis</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario307" onclick="parent.toggleDiv('detailsDIVScenario307','DetailsImageScenario307')" />Details:
+						<div id="detailsDIVScenario307" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">OWNER_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario308" onclick="parent.toggleDiv('detailsDIVScenario308','DetailsImageScenario308')" />Details:
+						<div id="detailsDIVScenario308" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>
+	</table>
+</div>		<div class="ItemBody" id="LinksTable">
 			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
 					<td width="30%" class="TableHeading">Object</td>
@@ -121,7 +338,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA23.htm">«table» Race</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA14.htm">«table» Diagnosis</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>

@@ -2,29 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Address</title>
+<title>LogicalModel::Person</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
-function initPage(src) {
+function initPage(src) {	
 	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
 		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
 	else
 		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
 }
 </script>
 </head>
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Address  : public   class</span>
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("Person", " : "))</script>  : Public   Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">5/24/2009 11:17:21 AM</td>
+			<td width="85%" class="ObjectDetailsValue">5/24/2009 11:17:13 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">11/19/2009 4:02:57 PM</td>
+			<td class="ObjectDetailsValue">11/19/2009 4:03:11 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -51,21 +69,32 @@ function initPage(src) {
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
 			<td class="ObjectDetailsValue">Easy</td>
 		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic"><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B0E78028-62D5-4e55-9E7D-915192730BDC}</td>
+			<td class="ObjectDetailsValue">{5FA73EC4-A849-43e0-9C60-2C3F6B1D5584}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA46.htm">Logical Model</a>, <a href="../../../../../../EA1/EA44.htm">Domain Objects Revised for Standard Use</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA36.htm">Domain Objects Revised for Standard Use</a>, <a href="../../../../../../EA1/EA38.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;A standardized representation of the location of a person, business, building, or organization.&lt;br/&gt;&lt;/p&gt;</div>
-
+	
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
@@ -75,230 +104,331 @@ function initPage(src) {
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;city</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179601<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a city, town, or village.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a city, town, or village.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;country</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179604<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a country.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a country.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;departmentOrDivision</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341930<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specialized division of a large organization.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a specialized division of a large organization.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;entityName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341926<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;entityNumber</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341928<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a specific person, corporation, organization, building or similar unit.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;floorOrPremises</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405150<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of the story or level of a building.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of the story or level of a building.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;postOfficeBox</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341934<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a delivery box at a postal facility.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a delivery box at a postal facility.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;zipCode</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179606<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a ge<br>CADSR_Description2=ographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The string of characters used to identify the five-digit Zone Improvement Plan (ZIP) code and the four-digit extension code (if available) that represents the geographic segment that is a subunit of the ZIPcode, assigned by the U.S. Postal Service to a geographic location to facilitate mail delivery; or the postal zone specific to the country, other than the U.S., where the mail is delivered.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;state</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2179603<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A component of an address that specifies a location by identification of a principal administrative unit of a country.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a principal administrative unit of a country.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetPostDirectional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341900<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of directional text occurring after the street/thoroughfare name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetPreDirectional</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341893<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of directional text occurring before the street/thoroughfare name.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA74.htm">String</a></i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareNameAndType</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341883<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a related road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a related road or public highway and a component of an address that specifies a location by identification of a street/thoroughfare by type.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareNumber</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2341863<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of an assigned numeral or string of numerals on a street/thoroughfare.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareSectionName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405174<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of a distinct area of road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of a distinct area of road or public highway.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private String</i><br /><strong>&nbsp;&nbsp;streetOrThoroughfareExtensionName</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_DE_ID=2405176<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A component of an address that specifies a location by identification of an expanded part of road or public highway.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A component of an address that specifies a location by identification of an expanded part of road or public highway.
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private <a href="../../../../../../EA3/EA1/EA72.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>&nbsp;</td>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;emailAddress</strong>
+				</td>
 			</tr>
-		</table>
-</div><div class="ItemBody" id="TaggedValTable">
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes354')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes354" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes354_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes354_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes354_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes354_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes354_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=2517550<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=The string of characters that represents the electronic mail address of a person.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			The string of characters that represents the electronic mail address of a person.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;firstName</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes355')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes355" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes355_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes355_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes355_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes355_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes355_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=2179589<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A word or group of words indicating a person's first (personal or given) name; the name that precedes the surname. Synonym = Given Name. <br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			A word or group of words indicating a person&#39;s first (personal or given) name; the name that precedes the surname. Synonym = Given Name. 
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;fullName</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes356')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes356" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes356_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes356_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes356_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes356_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes356_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=2222323<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.  <br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			A formatted means of uniquely identifying an individual derived from multiple naming elements; first middle and last names.&#160; 
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA65.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes357')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes357" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes357_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes357_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes357_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes357_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes357_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211592<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Identifies the row of the data table
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;lastName</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes358')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes358" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes358_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes358_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes358_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes358_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes358_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=2179591<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A means of identifying an individual by using a word or group of words indicating a person's last (family) name. Synonym = Last Name, Surname.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			A means of identifying an individual by using a word or group of words indicating a person&#39;s last (family) name. Synonym = Last Name, Surname.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;middleNameOrInitial</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes359')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes359" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes359_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes359_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes359_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes359_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes359_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=2179590<br>CADSR_DE_VERSION=2.0<br>CADSR_Description=A means of identifying an individual by using a word or group of words indicating a person's middle name.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			A means of identifying an individual by using a word or group of words indicating a person&#39;s middle name.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-	<tr>
-			<td width="30%" class="TableHeading">Tag</td>
-			<td width="30%" class="TableHeading">Value</td>
-			<td width="40%" class="TableHeading">Details</td>
-	</tr>
+		<tr>
+			<td width="50%" class="TableHeading">Tag</td>
+			<td width="50%" class="TableHeading">Value</td>
+		</tr>
 					<tr>
-				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">A standardized representation of the location of a person, business, building, or organization.</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">CADSR_Description</td>
+				<td width="50%" class="TableRow" valign="top">A human being. </td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario360" onclick="parent.toggleDiv('detailsDIVScenario360','DetailsImageScenario360')" />Details:
+						<div id="detailsDIVScenario360" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">1</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario361" onclick="parent.toggleDiv('detailsDIVScenario361','DetailsImageScenario361')" />Details:
+						<div id="detailsDIVScenario361" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">1</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">OWNER_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario362" onclick="parent.toggleDiv('detailsDIVScenario362','DetailsImageScenario362')" />Details:
+						<div id="detailsDIVScenario362" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>
-</table>
+	</table>
 </div>		<div class="ItemBody" id="LinksTable">
 			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
@@ -308,9 +438,15 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA9.htm">«table» Address</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA24.htm">«table» Person</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA57.htm">SpecimenCollectionContact</a></td>
+					<td width="15%" class="TableRow" valign="top">Class</td>
+					<td width="15%" class="TableRow" valign="top">Generalization</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
 				</tr>
 

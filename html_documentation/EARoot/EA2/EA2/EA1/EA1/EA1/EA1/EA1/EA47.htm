@@ -2,29 +2,47 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>LogicalModel::Preservation</title>
+<title>LogicalModel::CollectionProtocol</title>
 <link href="../../../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script>
-function initPage(src) {
+function initPage(src) {	
 	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
 		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
 	else
 		parent.initPage(src);
+}
+
+function nameClassifier(name, separator)
+{
+  var str = name;
+  var classifierName;
+  var node = document.getElementById('name_classifier');
+  if(node != null)
+  {
+    classifierName = node.innerHTML;
+  }
+  if(classifierName != "")
+  {
+   str += separator + classifierName;
+  }
+  
+  return str;
 }
 </script>
 </head>
 <body onload="initPage(this);" class="Content">
 <div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">Preservation  : public   class</span>
+	<div id="name_classifier" style="display: none;"></div>
+	<span class="ObjectTitle"><script type="text/javascript">document.write(nameClassifier("CollectionProtocol", " : "))</script>  : Public   Class</span>
 	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">11/2/2008 9:46:11 PM</td>
+			<td width="85%" class="ObjectDetailsValue">11/3/2008 11:27:15 AM</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">8/20/2009 9:27:38 PM</td>
+			<td class="ObjectDetailsValue">2/9/2011 12:18:04 PM</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -51,24 +69,38 @@ function initPage(src) {
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
 			<td class="ObjectDetailsValue">Easy</td>
 		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Difficulty:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj06" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Priority:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj05" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Multiplicity:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic"><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
 			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{F202D5E0-5E21-4cc3-905D-C887BD7AA33A}</td>
+			<td class="ObjectDetailsValue">{84780FE1-777F-4441-A1AF-33F98DE7F367}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA32.htm">Logical Model</a></td>
+			<td class="ObjectDetailsValue"><a href="../../../../../../EA1/EA38.htm">Logical Model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">&lt;p&gt;Information that describes the storage conditions for a collection of specimens&lt;br/&gt;&lt;/p&gt;</div>
+	<div class="ObjectDetailsNotes">The Protocol or Study for which the Specimens are collected</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent.toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent.toggleItem('Operations');" id="OperationsTitle">Operations</li>
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent.toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent.toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
@@ -76,106 +108,598 @@ function initPage(src) {
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
 		<tr>
-			<td width="40%" class="TableHeading">Attribute</td>
-			<td width="60%" class="TableHeading">Details</td>
+			<td width="100%" class="TableHeading">Attribute</td>
 		</tr>
 						<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private java.lang.String</i><br /><strong>&nbsp;&nbsp;preservationType</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR Local Value Domain=PreservationType<br>CADSR_Description=Method by which specimens are stored<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=0<br>PropertyConceptCode=C25284<br>PropertyConceptDefinition=Something distinguishable as an identifiable class based on common qualities.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Type<br>PropertyQualifierConceptCode1=C19232<br>PropertyQualifierConceptDefinition1=Procedures utilized to save substances from decay. Some preservation procedures are meant to maintain cells, tissues, or organisms in a viable state.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Preservation Procedure<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Method by which specimens are stored
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private java.lang.Integer</i><br /><strong>&nbsp;&nbsp;storageTemperatureInCentegrades</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>CADSR_Description=Temperature in degrees Centigrade at which the Specimen is stored<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=0<br>PropertyConceptCode=C25206<br>PropertyConceptDefinition=A measure of the average kinetic energy of a system of particles. Temperature may be quantified, in the context of thermodynamics, as the potential of one system to transfer thermal energy to another system until both systems reach a state of thermal equi<br>PropertyConceptDefinition_2=librium.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Temperature<br>PropertyQualifierConceptCode1=C60824<br>PropertyQualifierConceptCode2=C42559<br>PropertyQualifierConceptDefinition1=The act of safekeeping goods in a depository.<br>PropertyQualifierConceptDefinition2=A unit of temperature of the temperature scale designed so that the freezing point of water is 0 degrees and the boiling point is 100 degrees at standard atmospheric pressure. The current official definition of the Celsius sets 0.01 C to be at the triple <br>PropertyQualifierConceptDefinition2_2=point of water and a degree to be 1/273.16 of the difference in temperature between the triple point of water and absolute zero. One degree Celsius represents the same temperature difference as one Kelvin.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Storage<br>PropertyQualifierConceptPreferredName2=Degree Celsius<br><div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Temperature in degrees Centigrade at which the Specimen is stored
-		</td>
-	</tr>
-</table></div>
-</td>
-			</tr>			<tr>
-				<td width="40%" class="TableRow" valign="top"><i>private int</i><br /><strong>&nbsp;&nbsp;id</strong></td>
-				<td width="60%" class="TableRow" valign="top"><i></i>&nbsp;</td>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA2/EA68.htm">Date</a></i><br /><strong>&nbsp;&nbsp;dateLastUpdated</strong>
+				</td>
 			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes276')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes276" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes276_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes276_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes276_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes276_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes276_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211593<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=Date collection information was most recently updated.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25164<br>PropertyConceptDefinition=The particular day, month and year an event has happened or will happen.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Date<br>PropertyQualifierConceptCode1=C25710<br>PropertyQualifierConceptCode2=C25551<br>PropertyQualifierConceptDefinition1=Make current; supply with recent information or technology.<br>PropertyQualifierConceptDefinition2=Coming after all others in time or space or degree or being the only one remaining.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptDefinitionSource2=NCI<br>PropertyQualifierConceptPreferredName1=Update<br>PropertyQualifierConceptPreferredName2=Last<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Date collection information was most recently updated.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA2/EA68.htm">Date</a></i><br /><strong>&nbsp;&nbsp;endDate</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes277')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes277" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes277_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes277_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes277_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes277_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes277_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211594<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=Date when the study officially closes<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25164<br>PropertyConceptDefinition=The particular day, month and year an event has happened or will happen.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Date<br>PropertyQualifierConceptCode1=C25496<br>PropertyQualifierConceptDefinition1=The point or place at which something terminates in time, space, or extent.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=End<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Date when the study officially closes
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA65.htm">Integer</a></i><br /><strong>&nbsp;&nbsp;id</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes278')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes278" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes278_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes278_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes278_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes278_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes278_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211597<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C48693<br>PropertyConceptDefinition=A set of data arranged in rows and columns.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Data Table<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			Identifier for the row of the table
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;identifier</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes279')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes279" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes279_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes279_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes279_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes279_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes279_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211598<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25364<br>PropertyConceptDefinition=One or more characters used to identify, name, or characterize the nature, properties, or contents of a thing.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Identifier<br>PropertyQualifierConceptCode1=C42651<br>PropertyQualifierConceptDefinition1=A rule which guides how an activity should be performed.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Protocol<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			This identifier is reserved for the federal identifier for the clinical trial study for which the protocol is being used.&#160; If more that one identifier exists, enter only one identifier.&#160; If the protocol does not refer to a clinical trial, leave blank.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA1/EA67.htm">String</a></i><br /><strong>&nbsp;&nbsp;name</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes280')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes280" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes280_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes280_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes280_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes280_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes280_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211595<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=The name of the study for which the specimens are identified.<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C42614<br>PropertyConceptDefinition=The words or language units by which a thing is known.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Name<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			The name of the study for which the specimens are identified.
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="100%" class="TableRow">
+					<i>Private <a href="../../../../../../EA3/EA2/EA68.htm">Date</a></i><br /><strong>&nbsp;&nbsp;startDate</strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">										
+					<a href="#" onclick="parent.toggleData('DetailsImageAttributes281')" style="text-decoration: none; color: #000000;"></BR><img src="../../../../../../../../images/plus03.gif" align="absmiddle" id="DetailsImageAttributes281" border="0" />Details:
+					<table border="0" cellspacing="0" cellpadding="0" class="Table" style="padding: 4px 18px;">
+					
+						<tr id="DetailsImageAttributes281_00" style="display: none;">
+							<td width="75"><i>Alias:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes281_01" style="display: none;">
+							<td width="75"><i>Initial:</i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes281_02" style="display: none;">
+							<td width="75"><i>Stereotype: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes281_03" style="display: none;">
+							<td width="75"><i>Ordered: </i></td>
+							<td></td>
+						</tr>
+						<tr id="DetailsImageAttributes281_03" style="display: none;">
+							<td width="75"><i>Range: </i></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					CADSR_DE_ID=3211596<br>CADSR_DE_VERSION=1.0<br>CADSR_Description=The date on which the collection begins collecting specimens<br>CURATOR_REVIEWED=1<br>OWNER_REVIEWED=1<br>PropertyConceptCode=C25164<br>PropertyConceptDefinition=The particular day, month and year an event has happened or will happen.<br>PropertyConceptDefinitionSource=NCI<br>PropertyConceptPreferredName=Date<br>PropertyQualifierConceptCode1=C25431<br>PropertyQualifierConceptDefinition1=Have a beginning, in a temporal, spatial, or evaluative sense; the point in space or time where something begins.<br>PropertyQualifierConceptDefinitionSource1=NCI<br>PropertyQualifierConceptPreferredName1=Begin<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			The date on which the collection begins collecting specimens
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>
+	</table>
+</div>
+<div class="ItemBody" id="OperationsTable">
+	<table border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="100%" class="TableHeading">Operation</td>
+		</tr>
+						<tr>
+				<td width="100%" class="TableRow">
+					<i>Public</i><br />
+					<strong>getSpecimens</strong>():<a href="EA58.htm">Specimen Collection Summary</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="1">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageOperations282" onclick="parent.toggleDiv('detailsDIVOperations282','DetailsImageOperations282')" />Details:
+						<div id="detailsDIVOperations282" class="DetailsDiv" >
+					<i>Sequential  </i>
+					<table>
+						<tr>
+							<td valign = "top"><i></i><span style="margin-left: .7cm;"> </span></td>
+							<td></td>
+						</tr>
+					</table>
+					
+					
+					
+						</div>
+					</div>
+				</td>
+			</tr>
+
 		</table>
-</div>		<div class="ItemBody" id="AssociationsFromTable">
+</div>		<div class="ItemBody" id="AssociationsToTable">
 			<table border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
-					<td width="20%" class="TableHeading">Element</td>
-					<td width="25%" class="TableHeading">Source Role</td>
-					<td width="25%" class="TableHeading">Target Role</td>
-					<td width="30%" class="TableHeading">Details</td>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
 				</tr>
 				<tr>
-					<td width="20%" class="TableRow" valign="top">
-						<a href="EA51.htm">SpecimenCollectionSummary</a><br />
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA57.htm">SpecimenCollectionContact</a><br />
 						Class &nbsp;
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> isAppliedTo<br />
-						A Specimen undergoes exactly one Preservation protocol.
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> isResponsibleFor<br />
+						A Collection is assigned to exactly one Contact person.
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> isAssignedTo<br />
+						A Contact person is responsible for zero or more Collections.	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink283" onclick="parent.toggleDiv('detailsDIVLink283','DetailsImageLink283')" />Details:
+							<div id="detailsDIVLink283" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">A Contact person is responsible for a Collection.&#160; A Collection is assigned to a Contact person.&#160; A Contact has zero or more Collections.&#160; A Collection is assigned one Contact.</div>
 
+							</div>
+						</div>
 					</td>
-					<td width="20%" class="TableRow" valign="top">
-						<strong>Name:</strong> undergoes<br />
-						A Preservation method is applied to zero or more Specimens.
-	
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA51.htm">ParticipantCollectionSummary</a><br />
+						Class &nbsp;
 					</td>
-					<td width="30%" class="TableRow" valign="top"><div class="ObjectDetailsNotes">&lt;p&gt;A Specimen undergoes one form of Preservation.&#160; A Preservation method is applied is applied to zero or more Specimens.&lt;br/&gt;&lt;/p&gt;</div>
-</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> isEnrolledIn<br />
+						A Collection enrolls at least one Patient
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> enrolls<br />
+						A Patient is enrolled in at least one Collection.	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink284" onclick="parent.toggleDiv('detailsDIVLink284','DetailsImageLink284')" />Details:
+							<div id="detailsDIVLink284" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">A Collection enrolls a Patient.&#160; A Patient is enrolled in a Collection.&#160; A Collection is comprised of at least one Patient.&#160; A Patient is entrolled in at least on Collection.</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA46.htm">AnnotationAvailabilityProfile</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> providesInformationTo<br />
+						One Collection makes available zero or more Collection Summary Data.
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> makesAvailable<br />
+						Zero or more Collection Summary Data indicates whether information is stored for one Collection	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink285" onclick="parent.toggleDiv('detailsDIVLink285','DetailsImageLink285')" />Details:
+							<div id="detailsDIVLink285" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Collection Summary Data indicates whether information is stored for a Collection, and Collection Summary Data is made available through a Collection.&#160; A Collection has zero or more Collection Summary Data, and a Collection Data Summary has exactly one Collection.</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA49.htm">Institution</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> owns<br />
+						A Collection resides at exactly one Institution
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> residesAt<br />
+						An Institution owns at least one Collection	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink286" onclick="parent.toggleDiv('detailsDIVLink286','DetailsImageLink286')" />Details:
+							<div id="detailsDIVLink286" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">An Institution owns at least one Collection.&#160; A Collection resides at one Institution.</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="AssociationsFromTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA56.htm">SpecimenAvailabilitySummaryProfile</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> isConstrainedBy<br />
+						Rules contained in Access Data restrict access to one Collection by creating rules for requestors.  Each set of Access Data rules applies to exactly one Collection.
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> restrictsAccessTo<br />
+						Researchers to whom a Collection can be ship are constrained by Access Data.  A Collection may have zero or more sets of Access Data Rules.	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageLink287" onclick="parent.toggleDiv('detailsDIVLink287','DetailsImageLink287')" />Details:
+							<div id="detailsDIVLink287" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Rules contained in Access Data restrict access to specimens by creating rules for requestors.&#160; Researchers to whom a Collection can be ship are constrained by Access Data.&#160; A Collection Summary Data describes one collection;&#160; a Collection may have zero or more Collection Summary Data.</div>
+
+							</div>
+						</div>
+					</td>
 				</tr>
 
 			</table>
 		</div>
 <div class="ItemBody" id="TaggedValTable">
 	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-	<tr>
-			<td width="30%" class="TableHeading">Tag</td>
-			<td width="30%" class="TableHeading">Value</td>
-			<td width="40%" class="TableHeading">Details</td>
-	</tr>
+		<tr>
+			<td width="50%" class="TableHeading">Tag</td>
+			<td width="50%" class="TableHeading">Value</td>
+		</tr>
 					<tr>
-				<td width="30%" class="TableRow" valign="top">CADSR_Description</td>
-				<td width="30%" class="TableRow" valign="top">Information that describes the storage conditions for a collection of specimens</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">CADSR_Description</td>
+				<td width="50%" class="TableRow" valign="top">The Protocol or Study for which the Specimens are collected</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario288" onclick="parent.toggleDiv('detailsDIVScenario288','DetailsImageScenario288')" />Details:
+						<div id="detailsDIVScenario288" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">1</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">CURATOR_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario289" onclick="parent.toggleDiv('detailsDIVScenario289','DetailsImageScenario289')" />Details:
+						<div id="detailsDIVScenario289" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassConceptCode</td>
-				<td width="30%" class="TableRow" valign="top">C19232</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptCode</td>
+				<td width="50%" class="TableRow" valign="top">C70817</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario290" onclick="parent.toggleDiv('detailsDIVScenario290','DetailsImageScenario290')" />Details:
+						<div id="detailsDIVScenario290" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
-				<td width="30%" class="TableRow" valign="top">Procedures utilized to save substances from decay. Some preservation procedures are meant to maintain cells, tissues, or organisms in a viable state.</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptDefinition</td>
+				<td width="50%" class="TableRow" valign="top">The formal plan of an experiment or research activity, including the objective, rationale, design, materials and methods for the conduct of the study; intervention description, and method of data analysis.</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario291" onclick="parent.toggleDiv('detailsDIVScenario291','DetailsImageScenario291')" />Details:
+						<div id="detailsDIVScenario291" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
-				<td width="30%" class="TableRow" valign="top">NCI</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptDefinitionSource</td>
+				<td width="50%" class="TableRow" valign="top">NCI</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario292" onclick="parent.toggleDiv('detailsDIVScenario292','DetailsImageScenario292')" />Details:
+						<div id="detailsDIVScenario292" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
-				<td width="30%" class="TableRow" valign="top">Preservation Procedure</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">ObjectClassConceptPreferredName</td>
+				<td width="50%" class="TableRow" valign="top">Study Protocol</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario293" onclick="parent.toggleDiv('detailsDIVScenario293','DetailsImageScenario293')" />Details:
+						<div id="detailsDIVScenario293" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>			<tr>
-				<td width="30%" class="TableRow" valign="top">OWNER_REVIEWED</td>
-				<td width="30%" class="TableRow" valign="top">0</td>
-				<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				<td width="50%" class="TableRow" valign="top">ObjectClassQualifierConceptCode1</td>
+				<td width="50%" class="TableRow" valign="top">C25453</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario294" onclick="parent.toggleDiv('detailsDIVScenario294','DetailsImageScenario294')" />Details:
+						<div id="detailsDIVScenario294" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinition1</td>
+				<td width="50%" class="TableRow" valign="top">The act of gathering things together; having been brought together in one place.</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario295" onclick="parent.toggleDiv('detailsDIVScenario295','DetailsImageScenario295')" />Details:
+						<div id="detailsDIVScenario295" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassQualifierConceptDefinitionSource1</td>
+				<td width="50%" class="TableRow" valign="top">NCI</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario296" onclick="parent.toggleDiv('detailsDIVScenario296','DetailsImageScenario296')" />Details:
+						<div id="detailsDIVScenario296" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">ObjectClassQualifierConceptPreferredName1</td>
+				<td width="50%" class="TableRow" valign="top">Collection</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario297" onclick="parent.toggleDiv('detailsDIVScenario297','DetailsImageScenario297')" />Details:
+						<div id="detailsDIVScenario297" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">OWNER_REVIEWED</td>
+				<td width="50%" class="TableRow" valign="top">1</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					<div class="DetailsDivParent"><img src="../../../../../../../../images/minus03.gif" align="absmiddle" id="DetailsImageScenario298" onclick="parent.toggleDiv('detailsDIVScenario298','DetailsImageScenario298')" />Details:
+						<div id="detailsDIVScenario298" class="DetailsDiv" >
+						&nbsp;
+						</div>
+					</div>
+				</td>
 			</tr>
-</table>
+	</table>
 </div>		<div class="ItemBody" id="LinksTable">
 			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
 				<tr>
@@ -185,7 +709,7 @@ function initPage(src) {
 					<td width="40%" class="TableHeading">Notes</td>
 				</tr>
 				<tr>
-					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA22.htm">«table» Preservation</a></td>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../../../EA1/EA12.htm">«table» collection_protocol</a></td>
 					<td width="15%" class="TableRow" valign="top">Class</td>
 					<td width="15%" class="TableRow" valign="top">Dependency</td>
 					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
