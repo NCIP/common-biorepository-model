@@ -50,6 +50,7 @@
     <target name="test" depends="build">
         <!-- Create the build directory structure used by compile -->
         <mkdir dir="${test.data.dir}" />
+        <mkdir dir="${report.dir}" />
         <echo>Testing against CBM node: ${cbm.url}</echo>
         <junit fork="yes" haltonfailure="no" >
             <jvmarg value="-Dcbm.url=${cbm.url}" />
@@ -59,11 +60,14 @@
             	<zipfileset src="cbm-test.jar" includes="**/*Tests.class"/>
             </batchtest>
         </junit>
-        <junitreport todir="${test.data.dir}">
+        
+        <junitreport todir="${report.dir}">
            <fileset dir="${test.data.dir}">
               <include name="TEST-*.xml" />
            </fileset>
+            <report format="frames" todir="./report/html"/>
         </junitreport>
+                
     </target>
 
 
