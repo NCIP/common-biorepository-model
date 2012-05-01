@@ -1,4 +1,0 @@
-participantCount
-ethnicity
-gender
-id

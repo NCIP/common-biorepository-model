@@ -1,4 +1,0 @@
-anatomicSource
-specimenCount
-specimenType
-id
