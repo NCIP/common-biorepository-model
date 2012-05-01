@@ -125,7 +125,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 
 	}
 	
-	@Test
+/*	@Test
 	public void testRetrieveDiagnosisFromParticipantSummary() throws Exception {
 		CbmObject associatedObject = CbmObject.PARTICIPANT_COLLECTION_SUMMARY;
 		CbmObject targetObject = CbmObject.DIAGNOSIS;
@@ -137,6 +137,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
+ */
 	
 	/*
 	 * Test of retrievals with a parent specimen collection summary object
@@ -153,7 +154,8 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
-	
+
+	/*
 	@Test
 	public void testRetrievePatientAgeFromSpecimenSummary() throws Exception {
 		CbmObject associatedObject = CbmObject.SPECIMEN_COLLECTION_SUMMARY;
@@ -166,7 +168,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
-	
+	*/
 	
 
 	private void checkAssociations(CbmObject associatedObject,
