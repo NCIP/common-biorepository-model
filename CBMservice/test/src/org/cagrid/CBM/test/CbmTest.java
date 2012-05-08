@@ -82,7 +82,8 @@ public abstract class CbmTest extends junit.framework.TestCase {
          String[] valuePair = line.split(";");
          String value = valuePair[0];
          value = value.replace("\"", "");
-         codeListValues.add(value);
+         // Store as upper case so we can make case insensitive comparisons efficiently
+         codeListValues.add(value.toUpperCase());
       }
 
       if (codeListValues.size() <= 0) {

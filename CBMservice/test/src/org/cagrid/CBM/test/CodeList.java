@@ -114,7 +114,8 @@ enum CodeList {
          else {
             throw new CbmException("Code list " + codeList + " not supported.");
          }
-         remoteValues.add(typeValue);
+         // Store as upper case so we can make case insensitive comparisons efficiently
+         remoteValues.add(typeValue.toUpperCase());
 
       }
       return remoteValues;
@@ -146,7 +147,8 @@ enum CodeList {
          else {
             throw new CbmException("Unsupported object: " + codeList + " attribute not supported.");
          }
-         remoteValues.add(typeValue);
+         // Store as upper case so we can make case insensitive comparisons efficiently
+         remoteValues.add(typeValue.toUpperCase());
 
       }
       return remoteValues;

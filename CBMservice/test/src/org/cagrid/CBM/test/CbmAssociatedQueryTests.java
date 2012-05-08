@@ -54,7 +54,8 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
-	
+
+	/*
 	@Test
 	public void testRetrieveContactFromCollectionProtocol() throws Exception {
 		CbmObject associatedObject = CbmObject.COLLECTION_PROTOCOL;
@@ -67,6 +68,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
+*/
 	
 	@Test
 	public void testRetrieveAnnotationsFromCollectionProtocol() throws Exception {
@@ -81,7 +83,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 
 	}
 	
-	@Test
+/*
 	public void testRetrieveAvailabilityFromCollectionProtocol() throws Exception {
 		CbmObject associatedObject = CbmObject.COLLECTION_PROTOCOL;
 		CbmObject targetObject = CbmObject.SPECIMEN_AVAILABILITY_SUMMARY_PROFILE;
@@ -93,6 +95,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
+ */
 	
 	
 	/*
@@ -112,7 +115,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 
 	}
 	
-	@Test
+/*	@Test
 	public void testRetrieveRaceFromParticipantSummary() throws Exception {
 		CbmObject associatedObject = CbmObject.PARTICIPANT_COLLECTION_SUMMARY;
 		CbmObject targetObject = CbmObject.RACE;
@@ -124,6 +127,7 @@ public class CbmAssociatedQueryTests extends CbmTest {
 				associationIdAttr, associationName);
 
 	}
+*/
 	
 /*	@Test
 	public void testRetrieveDiagnosisFromParticipantSummary() throws Exception {
