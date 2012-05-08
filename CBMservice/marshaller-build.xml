@@ -24,6 +24,7 @@
 	</path>
 	
 	<target name="compile">
+		<mkdir dir="${bin}" />
 		<javac classpathref="cp.classpath" srcdir="${src}" destdir="${build}" debug="true">
 			<include name="**/marshaller/*.java" />
 		</javac>
