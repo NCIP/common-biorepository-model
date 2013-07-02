@@ -1,3 +1,13 @@
+/*L
+   Copyright Washington University in St.Louis
+   Copyright Information Management Services, Inc.
+   Copyright Sapient
+   Copyright Booz Allen Hamilton
+
+   Distributed under the OSI-approved BSD 3-Clause License.
+   See http://ncip.github.com/common-biorepository-model/LICENSE.txt for details.
+L*/
+
 /*
 SQLyog Enterprise Trial - MySQL GUI v8.18 
 MySQL - 5.0.45-community-nt : Database - cbm

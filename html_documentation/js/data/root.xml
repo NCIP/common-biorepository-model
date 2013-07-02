@@ -1,1 +1,11 @@
+<!--L
+   Copyright Washington University in St.Louis
+   Copyright Information Management Services, Inc.
+   Copyright Sapient
+   Copyright Booz Allen Hamilton
+
+   Distributed under the OSI-approved BSD 3-Clause License.
+   See http://ncip.github.com/common-biorepository-model/LICENSE.txt for details.
+L-->
+
 tocTab[tocTab.length] = new Array("0", "1", "Logical View", "", "31.png", "", "", "{8222EBE7-03BB-400c-875D-81C6E4C20270}", "Package");

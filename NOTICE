@@ -1,0 +1,304 @@
+Common Biorepository Model
+Copyright (c) 2011, Washington University in St.Louis,
+Information Management Services, Inc., Sapient and
+Booz Allen Hamilton 
+
+
+This project is distributed under the BSD 3-Clause License.
+Please see LICENSE file for details.
+
+This project was developed as part of the NCI caBIG initiative.
+
+The project was initially developed by Washington University in St.Louis, Information Management Services, Inc.,
+Sapient and Booz Allen Hamilton under funding from the CBIIT office of the National Cancer Institute.
+
+In 2013, as part of the National Cancer Informatics Program (NCIP) Open Development Initiative, 
+the Common Biorepository Model source code was migrated to GitHub to allow further development by the broader community.
+
+This project includes as sub-components other projects that are copyrighted by third parties and that distributed under various licenses. Please find a summary in the list below:
+
+1) WS-Addressing.xsd
+   Copyright by BEA Systems Inc. and IBM Corporation and Microsoft Corporation 
+   Distributed under W3C Document License
+2) policy.xsd:
+   Copyright by BEA Systems Inc. and IBM Corporation and Microsoft Corporation and SAP AG 
+   Distributed under W3C Document License
+3) utility.xsd:
+   Copyright by IBM Corporation and Microsoft Corporation
+   Distributed under W3C Document License
+4) ws-secureconversation.xsd:
+   Copyright by BEA Systems, Inc., Computer Associates International,
+   Inc., International Business Machines Corporation, Layer 7
+   Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+   OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc.,
+   RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc.
+   Distributed under W3C Document License
+5) oasis-200401-wss-wssecurity-secext-1.0.xsd
+   oasis-200401-wss-wssecurity-utility-1.0.xsd
+   xmldsig-core-schema.xsd
+   WS-BaseFaults.wsdl
+   WS-BaseFaults.xsd
+   WS-ResourceLifetime.wsdl
+   WS-ResourceLifetime.xsd
+   WS-BaseN.wsdl
+   WS-BaseN.xsd
+   WS-Topics.xsd
+   WS-ResourceProperties.wsdl
+   WS-ResourceProperties.xsd
+   WS-ServiceGroup.wsdl
+   WS-ServiceGroup.xsd
+   Copyright by OASIS Open
+   Distributed under W3C Document License 
+6) ws-trust.wsdl, ws-trust.xsd:
+   Copyright by BEA Systems, Inc., Computer Associates International,
+   Inc., International Business Machines Corporation, Layer 7
+   Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+   OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc., 
+   RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc. 
+   Distributed under W3C Document License
+7) build-stubs.xml
+   Copyright by University of Chicago, The University of Southern California
+   Distributed under The Globus Toolkit Public License
+   
+   
+==================== Copyright notice by BEA Systems Inc. and IBM Corporation and Microsoft Corporation =========================
+
+<!-- 
+ 
+Legal Disclaimer
+
+The presentation, distribution or other dissemination of the information 
+contained in this document is not a license, either expressly or impliedly, 
+to any intellectual property owned or controlled by BEA or IBM or Microsoft
+and\or any other third party.  BEA and IBM and Microsoft and\or any other
+third party may have patents, patent applications, trademarks, copyrights, 
+or other intellectual property rights covering subject matter in this 
+document.  The furnishing of this document does not give you any license 
+to BEA's and IBM's and Microsoft's or any other third party's patents, 
+trademarks, copyrights, or other intellectual property.
+
+This document and the information contained herein is provided on an "AS IS"
+basis and to the maximum extent permitted by applicable law, BEA and IBM 
+and Microsoft provide the document AS IS AND WITH ALL FAULTS, and hereby 
+disclaims all other warranties and conditions, either express, implied or 
+statutory, including, but not limited to, any (if any) implied warranties, 
+duties or conditions of merchantability, of fitness for a particular 
+purpose, of accuracy or completeness of responses, of results, of 
+workmanlike effort, of lack of viruses, and of lack of negligence, all with
+regard to the document. ALSO, THERE IS NO WARRANTY OR CONDITION OF 
+TITLE, QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR 
+NON-INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS WITH REGARD TO THE 
+DOCUMENT.
+
+IN NO EVENT WILL BEA or IBM or MICROSOFT BE LIABLE TO ANY OTHER PARTY FOR THE
+COST OF PROCURING SUBSTITUTE GOODS OR SERVICES, LOST PROFITS, LOSS OF USE, 
+LOSS OF DATA, OR ANY INCIDENTAL, CONSEQUENTIAL, DIRECT, INDIRECT, OR SPECIAL 
+DAMAGES WHETHER UNDER CONTRACT, TORT, WARRANTY, OR OTHERWISE, ARISING IN ANY 
+WAY OUT OF THIS OR ANY OTHER AGREEMENT RELATING TO THIS DOCUMENT, WHETHER OR 
+NOT SUCH PARTY HAD ADVANCE NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Copyright Notice
+
+Copyright 2003,2004 BEA Systems Inc. and IBM Corporation and Microsoft Corporation. All rights reserved.
+
+-->
+==================== Copyright notice by BEA Systems Inc. and IBM Corporation and Microsoft Corporation and SAP AG =========================
+
+<!-- 
+Legal Disclaimer
+
+The presentation, distribution or other dissemination of the information 
+contained in this document is not a license, either expressly or impliedly, 
+to any intellectual property owned or controlled by IBM or Microsoft or BEA or SAP and\or any other 
+third party.  IBM and Microsoft and BEA or SAP and\or any other third party may have patents, patent 
+applications, trademarks, copyrights, or other intellectual property rights 
+covering subject matter in this document.  The furnishing of this document 
+does not give you any license to IBM's and Microsoft's and BEA or SAP or any other third party's patents, 
+trademarks, copyrights, or other intellectual property.
+
+This document and the information contained herein is provided on an "AS IS"
+ basis and to the maximum extent permitted by applicable law, IBM and Microsoft and BEA or SAP provides 
+the document AS IS AND WITH ALL FAULTS, and hereby disclaims all other warranties 
+and conditions, either express, implied or statutory, including, but not limited 
+to, any (if any) implied warranties, duties or conditions of merchantability, of 
+fitness for a particular purpose, of accuracy or completeness of responses, of 
+results, of workmanlike effort, of lack of viruses, and of lack of negligence, 
+all with regard to the document. ALSO, THERE IS NO WARRANTY OR CONDITION OF 
+TITLE, QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR 
+NON-INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS WITH REGARD TO THE DOCUMENT.
+
+IN NO EVENT WILL IBM or MICROSOFT or BEA or SAP BE LIABLE TO ANY OTHER PARTY FOR THE COST OF PROCURING 
+SUBSTITUTE GOODS OR SERVICES, LOST PROFITS, LOSS OF USE, LOSS OF DATA, OR ANY 
+INCIDENTAL, CONSEQUENTIAL, DIRECT, INDIRECT, OR SPECIAL DAMAGES WHETHER UNDER 
+CONTRACT, TORT, WARRANTY, OR OTHERWISE, ARISING IN ANY WAY OUT OF THIS OR ANY 
+OTHER AGREEMENT RELATING TO THIS DOCUMENT, WHETHER OR NOT SUCH PARTY HAD ADVANCE 
+NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Copyright Notice
+
+Copyright 2001-2002 BEA Systems Inc. and IBM Corporation and Microsoft Corporation and SAP AG. All rights reserved.
+-->
+
+==================== Copyright notice by IBM Corporation and Microsoft Corporation =========================
+
+<!-- 
+Legal Disclaimer
+
+The presentation, distribution or other dissemination of the information 
+contained in this specification is not a license, either expressly or impliedly, 
+to any intellectual property owned or controlled by IBM or Microsoft and\or any other 
+third party.  IBM and Microsoft and\or any other third party may have patents, patent 
+applications, trademarks, copyrights, or other intellectual property rights 
+covering subject matter in this document.  The furnishing of this document 
+does not give you any license to IBM's and Microsoft's or any other third party's patents, 
+trademarks, copyrights, or other intellectual property.
+
+This specification and the information contained herein is provided on an "AS IS"
+ basis and to the maximum extent permitted by applicable law, IBM and Microsoft provides 
+the document AS IS AND WITH ALL FAULTS, and hereby disclaims all other warranties 
+and conditions, either express, implied or statutory, including, but not limited 
+to, any (if any) implied warranties, duties or conditions of merchantability, of 
+fitness for a particular purpose, of accuracy or completeness of responses, of 
+results, of workmanlike effort, of lack of viruses, and of lack of negligence, 
+all with regard to the document. ALSO, THERE IS NO WARRANTY OR CONDITION OF 
+TITLE, QUIET ENJOYMENT, QUIET POSSESSION, CORRESPONDENCE TO DESCRIPTION OR 
+NON-INFRINGEMENT OF ANY INTELLECTUAL PROPERTY RIGHTS WITH REGARD TO THE DOCUMENT.
+
+IN NO EVENT WILL IBM or MICROSOFT BE LIABLE TO ANY OTHER PARTY FOR THE COST OF PROCURING 
+SUBSTITUTE GOODS OR SERVICES, LOST PROFITS, LOSS OF USE, LOSS OF DATA, OR ANY 
+INCIDENTAL, CONSEQUENTIAL, DIRECT, INDIRECT, OR SPECIAL DAMAGES WHETHER UNDER 
+CONTRACT, TORT, WARRANTY, OR OTHERWISE, ARISING IN ANY WAY OUT OF THIS OR ANY 
+OTHER AGREEMENT RELATING TO THIS DOCUMENT, WHETHER OR NOT SUCH PARTY HAD ADVANCE 
+NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Copyright Notice
+
+Copyright 2001, 2002 IBM Corporation and Microsoft Corporation. All rights reserved.
+-->
+
+==================== Copyright notice by BEA Systems, Inc., Computer Associates International,
+Inc., International Business Machines Corporation, Layer 7
+Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc.,
+RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc. =========================
+
+
+Copyright Notice
+
+(c) 2001-2004 BEA Systems, Inc., Computer Associates International,
+Inc., International Business Machines Corporation, Layer 7
+Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc.,
+RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc. 
+All rights reserved. 
+
+BEA, Computer Associates, IBM, Layer 7, Microsoft, Netegrity, Oblix,
+OpenNetwork, Ping Identity, Reactivity, RSA Security, VeriSign, and Westbridge
+(collectively, the "Authors") hereby grant you permission to copy and
+display the WS-SecureConversation Schema Document, in any medium without fee or
+royalty, provided that you include the following on ALL copies of the
+WS-SecureConversation Schema Document that you make: 
+
+1.      A link or URL to the Specification at this location. 
+
+2.      The copyright notice as shown in the WS-SecureConversation Specification.
+
+BEA, Computer Associates, IBM, Layer7, Microsoft, Netegrity, Oblix,
+OpenNetwork, Ping Identity, Reactivity, RSA Security, VeriSign, and Westbridge
+(collectively, the "Authors") each agree to grant you a license, under
+royalty-free and otherwise reasonable, non-discriminatory terms and
+conditions, to their respective essential patent claims that they deem
+necessary to implement the WS-SecureConversation Schema Document. 
+
+THE WS-SecureConversation SCHEMA DOCUMENT IS PROVIDED "AS IS," AND THE AUTHORS MAKE
+NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT
+NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF
+THE WS-SecureConversation SCHEMA DOCUMENT ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE
+IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY
+PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. 
+
+THE AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL,
+INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO ANY
+USE OR DISTRIBUTION OF THE WS-SecureConversation SPECIFICATION. 
+
+The WS-SecureConversation Schema Document may change before final release and you are
+cautioned against relying on the content of this specification. 
+
+The name and trademarks of the Authors may NOT be used in any manner,
+including advertising or publicity pertaining to the Specification or
+its contents without specific, written prior permission. Title to
+copyright in the WS-SecureConversation Schema Document will at all times remain with
+the Authors. 
+
+No other rights are granted by implication, estoppel or otherwise.
+
+==================== Copyright notice by OASIS Open =========================
+
+<!-- 
+OASIS takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights. Information on OASIS's procedures with respect to rights in OASIS specifications can be found at the OASIS website. Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementors or users of this specification, can be obtained from the OASIS Executive Director.
+OASIS invites any interested party to bring to its attention any copyrights, patents or patent applications, or other proprietary rights which may cover technology that may be required to implement this specification. Please address the information to the OASIS Executive Director.
+Copyright (C) OASIS Open 2002-2004. All Rights Reserved.
+This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself does not be modified in any way, such as by removing the copyright notice or references to OASIS, except as needed for the purpose of developing OASIS specifications, in which case the procedures for copyrights defined in the OASIS Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.
+The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.
+This document and the information contained herein is provided on an AS IS basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+-->
+
+==================== Copyright notice by BEA Systems, Inc., Computer Associates International,
+Inc., International Business Machines Corporation, Layer 7
+Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc., 
+RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc. =========================
+
+<!--
+
+Copyright Notice
+
+(c) 2001-2004 BEA Systems, Inc., Computer Associates International,
+Inc., International Business Machines Corporation, Layer 7
+Technologies, Microsoft Corporation, Netegrity, Inc., Oblix Inc.,
+OpenNetwork Technologies Inc., Ping Identity Corporation, Reactivity Inc., 
+RSA Security Inc., VeriSign Inc., and Westbridge Technology, Inc. 
+All rights reserved. 
+
+BEA, Computer Associates, IBM, Layer 7, Microsoft, Netegrity, Oblix,
+OpenNetwork, Ping Identity, Reactivity, RSA Security, VeriSign, and Westbridge
+(collectively, the "Authors") hereby grant you permission to copy and
+display the WS-Trust WSDL document, in any medium without fee or
+royalty, provided that you include the following on ALL copies of the
+WS-Trust WSDL document that you make: 
+
+1.      A link or URL to the Specification at this location. 
+
+2.      The copyright notice as shown in the WS-Trust Specification.
+
+BEA, Computer Associates, IBM, Layer7, Microsoft, Netegrity, Oblix,
+OpenNetwork, Ping Identity, Reactivity, RSA Security, VeriSign, and Westbridge
+(collectively, the "Authors") each agree to grant you a license, under
+royalty-free and otherwise reasonable, non-discriminatory terms and
+conditions, to their respective essential patent claims that they deem
+necessary to implement the WS-Trust WSDL document. 
+
+THE WS-Trust WSDL DOCUMENT IS PROVIDED "AS IS," AND THE AUTHORS MAKE
+NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT
+NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF
+THE WS-Trust WSDL DOCUMENT ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE
+IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY
+PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. 
+
+THE AUTHORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL,
+INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO ANY
+USE OR DISTRIBUTION OF THE WS-Trust SPECIFICATION. 
+
+The WS-Trust WSDL document may change before final release and you are
+cautioned against relying on the content of this specification. 
+
+The name and trademarks of the Authors may NOT be used in any manner,
+including advertising or publicity pertaining to the Specification or
+its contents without specific, written prior permission. Title to
+copyright in the WS-Trust WSDL document will at all times remain with
+the Authors. 
+
+No other rights are granted by implication, estoppel or otherwise.
+   

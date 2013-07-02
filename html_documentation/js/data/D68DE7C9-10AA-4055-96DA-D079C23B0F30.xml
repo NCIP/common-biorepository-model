@@ -1,3 +1,13 @@
+<!--L
+   Copyright Washington University in St.Louis
+   Copyright Information Management Services, Inc.
+   Copyright Sapient
+   Copyright Booz Allen Hamilton
+
+   Distributed under the OSI-approved BSD 3-Clause License.
+   See http://ncip.github.com/common-biorepository-model/LICENSE.txt for details.
+L-->
+
 tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1.1:1", "", "Address", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA45.htm", "5.png", "1556", "0", "", "Class0","{B0E78028-62D5-4e55-9E7D-915192730BDC}");
 tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1.1:2", "", "AnnotationAvailabilityProfile", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA46.htm", "5.png", "1558", "0", "", "Class0","{B94EA73A-6368-4f56-BDB8-A434509B7BB1}");
 tocTab[tocTab.length] = new Array("0.2.2.1.1.1.1.1:3", "", "CollectionProtocol", "EARoot/EA2/EA2/EA1/EA1/EA1/EA1/EA1/EA47.htm", "5.png", "1554", "0", "", "Class0","{84780FE1-777F-4441-A1AF-33F98DE7F367}");

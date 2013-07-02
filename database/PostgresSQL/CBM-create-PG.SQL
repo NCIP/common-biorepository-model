@@ -1,3 +1,13 @@
+/*L
+   Copyright Washington University in St.Louis
+   Copyright Information Management Services, Inc.
+   Copyright Sapient
+   Copyright Booz Allen Hamilton
+
+   Distributed under the OSI-approved BSD 3-Clause License.
+   See http://ncip.github.com/common-biorepository-model/LICENSE.txt for details.
+L*/
+
 ﻿drop table if exists "patient_age_group_at_collection" cascade;
 drop table if exists "gender" cascade;
 drop table if exists "ethnicity" cascade;
